@@ -1,5 +1,9 @@
 $( document ).ready(function() {
     console.log( "ready!" );
+    $("#myClickBtn").click(function(){
+      alert("HIER!");
+      psqlconnect();
+    });
 
 Function psqlconnect(){
   $.ajax({
