@@ -1,5 +1,6 @@
 <?php
 include('/connect.php');
+ini_set('display_errors', 1);
 $stmt="select * from basiswerte.final";
 $result=pg_query($dbconn,$stmt);
 if (!$result){
