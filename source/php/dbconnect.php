@@ -8,7 +8,7 @@ if (!$result){
     exit;
 }
 $rows = array();
-whilde ($row=pg_fetch_row($result)){
+while ($row=pg_fetch_row($result)){
   $rows[]=$row;
 }
 print json_encode($rows);
