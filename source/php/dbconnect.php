@@ -1,4 +1,4 @@
-<?
+<?php
 $dbconn = pg_connect ("dbname=gandarlin") or die("Konnte keine Verbindung aufbauen");
 $stat = pg_connection_status($dbconn);
 if ($stat === PGSQL_CONNECTION_OK) {
@@ -7,5 +7,5 @@ if ($stat === PGSQL_CONNECTION_OK) {
     echo 'Verbindungsstatus bad';
 }
 $response="1";
-echo "1";
+echo "Test1";
 ?>
