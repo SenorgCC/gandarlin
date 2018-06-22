@@ -15,7 +15,7 @@ function psqlconnect(){
       //callback
       success: function(data){
 //        var antwort=$.parseJSON(data);
-        window.alert(data);
+        window.alert(JSON.stringify(data));
       }
   });
 }
