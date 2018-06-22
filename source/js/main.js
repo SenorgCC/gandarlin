@@ -14,7 +14,7 @@ function psqlconnect(){
       //datatype:"json",
       //callback
       success: function(data){
-//        var antwort=$.parseJSON(data);
+        var antwort=$.parseJSON(data);
         window.alert(JSON.stringify(data));
       }
   });
