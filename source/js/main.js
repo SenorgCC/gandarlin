@@ -15,7 +15,8 @@ function psqlconnect(){
       //Methode Post oder GET
       //callback
       success: function(data){
-        window.alert(data)
+        var antwort=$.parseJSON(data);
+        window.alert(antwort);
       }
   });
 }
