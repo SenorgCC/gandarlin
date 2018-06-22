@@ -7,7 +7,7 @@ $( document ).ready(function() {
 
 function psqlconnect(){
   $.ajax({
-      type:POST,
+      type:'POST',
       url:"php/dbconnect.php",
       //Daten an den Server in JSON
       //data: {test:1,a:2},
