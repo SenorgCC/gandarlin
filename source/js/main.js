@@ -4,17 +4,8 @@ $( document ).ready(function() {
       alert("HIER!");
       psqlconnect();
     });
-function arrayToTable(tableData) {
-        var table = $('<table></table>');
-        $(tableData).each(function (i, rowData) {
-            var row = $('<tr></tr>');
-            $(rowData).each(function (j, cellData) {
-                row.append($('<td>'+cellData+'</td>'));
-            });
-            table.append(row);
-        });
-        return table;
-    }
+
+
 function psqlconnect(){
   $.ajax({
       type:'POST',
@@ -25,13 +16,15 @@ function psqlconnect(){
       //callback
       success: function(data){
 //       var antwort=$.parseJSON(data);
-        var daten = JSON.parse(data);
         //daten[0]["id"];
-        $('#spieler.basiswerte').append(arrayToTable(daten));
-/*        var basiswerte=[];
-        $.each(daten, function(i,item){
-          basiswerte.push("<tr><td>"+item.kb)
-        })*/
+        var $tbody =$('#spielerbasiswerte').find('tbody');
+/*       JSON.parse(data,function(k,b) {
+        $tbody.append('<tr><td>'+k+'</td><td>'+b+'</td><td>'+m+'</td><td>'+f+'</tr>');
+        });
+*/
+        $('#spielerbasiswerte').bootstrapTable({
+            data:JSON.parse(data)
+        });
       }
   });
 }
