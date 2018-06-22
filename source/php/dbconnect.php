@@ -7,5 +7,5 @@ if ($stat === PGSQL_CONNECTION_OK) {
     echo 'Verbindungsstatus bad';
 }
 $response="1";
-echo json_encode($response);
+echo "1";
 ?>
