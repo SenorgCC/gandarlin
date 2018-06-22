@@ -5,6 +5,8 @@ $( document ).ready(function() {
       psqlconnect();
     });
 
+});
+
 function psqlconnect(){
   $.ajax({
       url:"php/dbconnect.php",
@@ -19,5 +21,3 @@ function psqlconnect(){
       }
   });
 }
-
-});
