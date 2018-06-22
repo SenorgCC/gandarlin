@@ -9,6 +9,6 @@ if (!$result){
 }
 $row=pg_fetch_all($result);
 
-print json_encode($rows);
+print json_encode($row);
 pg_close($dbconn);
 ?>
