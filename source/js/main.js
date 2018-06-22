@@ -12,11 +12,10 @@ function psqlconnect(){
       //Daten an den Server in JSON
       //data: {test:1,a:2},
       //datatype:"json",
-      //Methode Post oder GET
       //callback
       success: function(data){
-        var antwort=$.parseJSON(data);
-        window.alert(antwort);
+//        var antwort=$.parseJSON(data);
+        window.alert(data);
       }
   });
 }
