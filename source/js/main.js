@@ -78,7 +78,16 @@ function getTable(data){
         }
         tabledata.push(tablerow);
 }
-window.alert(tabledef);
+  var rowtext;
+  for (i = 0; i < tabledef.length; i++){
+    rowtext +="<tr><td>"+tabledef[i]+"</td>";
+      for (i = 0; i < data.length; i++){
+        rowtext +="<td>"+data[i][tabledef[i]]+"</td>";
+      }
+      rowtext +="</tr>";
+      $tbody.append(rowtext);
+      rowtext = "";
+  }
 }
 });
 /*
