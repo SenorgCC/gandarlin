@@ -59,7 +59,7 @@ function bwmod(){
       }
   });
 }
-function getTable(daten){
+function getTable(data){
     var htmlobject="spielerbasiswerte";
     var tbody = $('#'+htmlobject).find('tbody');
     var tabledef = [];
