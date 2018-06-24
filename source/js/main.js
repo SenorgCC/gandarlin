@@ -81,7 +81,7 @@ function getTable(data){
         }
     }
   var rowtext;
-  window.alert("TB: "+tabledef.length+"B: "data.length);
+  window.alert("TB: "+tabledef.length+"B: "+data.length);
   for (i = 0; i < tabledef.length; i++){
     rowtext +="<tr><td>"+tabledef[i]+"</td>";
       for (j = 0; j < data.length; j++){
