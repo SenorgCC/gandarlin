@@ -9,7 +9,9 @@ $( document ).ready(function() {
         bwmod();
         bwfinal();
     });
-
+    $("#gobtn").click(function(){
+        getTable(basiswert_arr);
+    });
 function bwfinal(){
   $.ajax({
       type:'POST',
@@ -56,6 +58,17 @@ function bwmod(){
         basiswert_arr.push(basiswert_mod);
       }
   });
+}
+function getTable(daten){
+    var htmlobject="spielerbasiswerte";
+    var tbody = $('#'+htmlobject).find('tbody');
+    for (i =0 ; i< daten.length; i++){
+        if ( i == 0){
+            $.each(data[i],function (k,v){
+            
+                
+            });
+
 }
 
 });
