@@ -65,7 +65,7 @@ function getTable(data){
     var tabledef = [];
     var tabledata = [];
     var tablerow = [];
-    for (i =0 ; i< daten.length; i++){
+    for (i =0 ; i< data.length; i++){
         if ( i == 0){
             $.each(data[i],function (k,v){
               tabledef.push(k);
