@@ -82,17 +82,15 @@ function getTable(data){
     }
   var rowtext;
   window.alert("TB: "+tabledef.length+"B: "data.length);
-  /*
   for (i = 0; i < tabledef.length; i++){
     rowtext +="<tr><td>"+tabledef[i]+"</td>";
-      for (i = 0; i < data.length; i++){
-        rowtext +="<td>"+data[i][tabledef[i]]+"</td>";
+      for (j = 0; j < data.length; j++){
+        rowtext +="<td>"+data[j][tabledef[i]]+"</td>";
       }
       rowtext +="</tr>";
       console.log(rowtext);
-//      $tbody.append(rowtext);
+      $tbody.append(rowtext);
       rowtext = "";
-      */
   }
 }
 });
