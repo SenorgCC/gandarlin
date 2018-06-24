@@ -79,6 +79,7 @@ function getTable(daten){
         tabledata.push(tablerow);
 }
 window.alert(tabledef);
+}
 });
 /*
       var $tbody =$('#spielerbasiswerte').find('tbody');
