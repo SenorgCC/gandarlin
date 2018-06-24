@@ -62,18 +62,25 @@ function bwmod(){
 function getTable(daten){
     var htmlobject="spielerbasiswerte";
     var tbody = $('#'+htmlobject).find('tbody');
+    var tabledef = [];
+    var tabledata = [];
+    var tablerow = [];
     for (i =0 ; i< daten.length; i++){
         if ( i == 0){
             $.each(data[i],function (k,v){
-            
-                
+              tabledef.push(k);
+              tablerow.push(v);
             });
-
+        }else{
+          $.each(data[i],function (k,v){
+            tablerow.push(v);
+          });
+        }
+        tabledata.push(tablerow);
 }
-//TBD
-
+window.alert(tabledef);
 });
-/*       
+/*
       var $tbody =$('#spielerbasiswerte').find('tbody');
     JSON.parse(data,function(k,b) {
 
