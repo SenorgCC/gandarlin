@@ -81,6 +81,8 @@ function getTable(data){
         }
     }
   var rowtext;
+  window.alert("TB: "+tabledef.length+"B: "data.length);
+  /*
   for (i = 0; i < tabledef.length; i++){
     rowtext +="<tr><td>"+tabledef[i]+"</td>";
       for (i = 0; i < data.length; i++){
@@ -90,6 +92,7 @@ function getTable(data){
       console.log(rowtext);
 //      $tbody.append(rowtext);
       rowtext = "";
+      */
   }
 }
 });
