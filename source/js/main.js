@@ -82,7 +82,7 @@ function getTable(data){
     }
   var rowtext;
   window.alert("TB: "+tabledef.length+"B: "+data.length);
-  for (i = 0; i < tabledef.length; i++){
+  for (i = 1; i < tabledef.length; i++){
     rowtext +="<tr><td>"+tabledef[i]+"</td>";
       for (j = 0; j < data.length; j++){
         rowtext +="<td>"+data[j][tabledef[i]]+"</td>";
