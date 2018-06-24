@@ -69,15 +69,17 @@ function getTable(data){
         if ( i == 0){
             $.each(data[i],function (k,v){
               tabledef.push(k);
-              tablerow.push(v);
+//              tablerow.push(v);
             });
-        }else{
+        /*}else{
           $.each(data[i],function (k,v){
             tablerow.push(v);
           });
         }
         tabledata.push(tablerow);
-}
+        */
+        }
+    }
   var rowtext;
   for (i = 0; i < tabledef.length; i++){
     rowtext +="<tr><td>"+tabledef[i]+"</td>";
@@ -85,7 +87,8 @@ function getTable(data){
         rowtext +="<td>"+data[i][tabledef[i]]+"</td>";
       }
       rowtext +="</tr>";
-      $tbody.append(rowtext);
+      console.log(rowtext);
+//      $tbody.append(rowtext);
       rowtext = "";
   }
 }
