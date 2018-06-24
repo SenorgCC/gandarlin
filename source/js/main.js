@@ -61,7 +61,7 @@ function bwmod(){
 }
 function getTable(data){
     var htmlobject="spielerbasiswerte";
-    var tbody = $('#'+htmlobject).find('tbody');
+    var $tbody = $('#'+htmlobject).find('tbody');
     var tabledef = [];
     var tabledata = [];
     var tablerow = [];
