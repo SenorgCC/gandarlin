@@ -23,7 +23,7 @@ function bwfinal(){
       success: function(data){
       //daten[0]["id"];
       basiswert_final = JSON.parse(data)[0];
-        basiswert_arr.push(basiswert_final);
+        basiswert_arr[2] = basiswert_final;
       }
   });
 }
@@ -39,7 +39,7 @@ function bwbasis(){
       success: function(data){
       //daten[0]["id"];
       basiswert_basis = JSON.parse(data)[0];
-        basiswert_arr.push(basiswert_basis);
+        basiswert_arr[0] = basiswert_basis;
       }
   });
 }
@@ -55,7 +55,7 @@ function bwmod(){
       success: function(data){
       //daten[0]["id"];
       basiswert_mod = JSON.parse(data)[0];
-        basiswert_arr.push(basiswert_mod);
+        basiswert_arr[1]=basiswert_mod;
       }
   });
 }
@@ -81,7 +81,7 @@ function getTable(data){
         }
     }
   var rowtext;
-  window.alert("TB: "+tabledef.length+"B: "data.length);
+  window.alert("TB: "+tabledef.length+"B: "+data.length);
   for (i = 0; i < tabledef.length; i++){
     rowtext +="<tr><td>"+tabledef[i]+"</td>";
       for (j = 0; j < data.length; j++){
