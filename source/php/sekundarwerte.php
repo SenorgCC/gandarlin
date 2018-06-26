@@ -18,7 +18,6 @@ if (!$result){
     echo "Es ist ein Fehler aufgetreten\n";
     exit;
 }
-$result=pg_query($dbconn,$stmt);
 $row2=pg_fetch_object($result);
 
 $erg_array = array($row1,$row2);
