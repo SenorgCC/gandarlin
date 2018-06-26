@@ -3,7 +3,7 @@ include('../../../connect.php');
 ini_set('display_errors', 1);
 $ID = $_POST['ID'];
 //$stmt="select * from basiswerte.basis union all select * from basiswerte.modifikation union all select * from basiswerte.final";
-$result=pg_prepare($dbconn,"normalwerte",'select * from sekundaerwerte.normalwerte where ID = $1');
+$result=pg_prepare($dbconn,"normalwerte",'select * from koerpertalente.talentwert where ID = $1');
 $result=pg_execute($dbconn,"normalwerte",array($ID));
 if (!$result){
     echo "Es ist ein Fehler aufgetreten\n";
@@ -12,7 +12,7 @@ if (!$result){
 $row1=pg_fetch_object($result);
 
 $stmt="select * from sekundaerwerte.aktuell where ID = $1";
-$result=pg_prepare($dbconn,"aktuell",'select * from sekundaerwerte.aktuell where ID = $1');
+$result=pg_prepare($dbconn,"aktuell",'select * from koerpertalent.modifikation where ID = $1');
 $result=pg_execute($dbconn,"aktuell",array($ID));
 if (!$result){
     echo "Es ist ein Fehler aufgetreten\n";

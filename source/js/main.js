@@ -1,17 +1,19 @@
 var basiswert_arr= [];
 var sekundarwert_arr = [];
+var koerperttalente_arr = [];
 var SpielerID;
 $( document ).ready(function() {
     $("#myClickBtn").click(function(){
       SpielerID=$('#SpielerID').val();
-      window.alert("ID:"+SpielerID);
       bwbasis();
       sekwerte();
+      korprtalente();
     });
-    $("#gobtn").click(function(){
 
+    $("#gobtn").click(function(){
         getTable(basiswert_arr,"spielerbasiswerte");
         getTable(sekundarwert_arr,"spielersekundarwerte");
+        getTable(koerperttalente_arr,"körpertalente");
     });
 
 function bwbasis(){
@@ -57,14 +59,12 @@ function sekwerte(){
       success: function(data){
       //daten[0]["id"];
       sekundarwert_arr=kalkulation.concat(JSON.parse(data));
-      window.alert(sekundarwert_arr[2]["ausweichen"]);
       }
   });
 }
 
 function getTable(data,htmlobject){
     var $tbody = $('#'+htmlobject).find('tbody');
-    window.alert(JSON.stringify(data));
     var tabledef = [];
     var tabledata = [];
     var tablerow = [];
@@ -93,6 +93,28 @@ function getTable(data,htmlobject){
       $tbody.append(rowtext);
       rowtext = "";
   }
+}
+
+function korprtalente(){
+var wuerfelwerte = [{ "id":"",
+                      "Schleichen": basiswert_arr[2]["GSK"]+"(GSK), "+basiswert_arr[2]["GEW"]+"(GEW), "+basiswert_arr[2]["KON"]+"(KON)",
+                      "Aufmerksamkeit": basiswert_arr[2]["MUT"]+"(MUT), "+basiswert_arr[2]["INT"]+"(IN), "+basiswert_arr[2]["GEW"]+"(GEW)",
+                      "Robustheit": basiswert_arr[2]["GEW"]+"(GEW), "+basiswert_arr[2]["KON"]+"(KON), "+basiswert_arr[2]["KK"]+"(KK)",
+                      "Fingerfertigkeit": basiswert_arr[2]["GSK"]+"(GSK), "+basiswert_arr[2]["GSK"]+"(GSK), "+basiswert_arr[2]["INT"]+"(IN)",
+                      "Zechen": basiswert_arr[2]["MUT"]+"(MUT), "+basiswert_arr[2]["KON"]+"(KON), "+basiswert_arr[2]["KON"]+"(KON)",
+                      "Taschendiebstahl": basiswert_arr[2]["GEW"]+"(GEW), "+basiswert_arr[2]["GSK"]+"(GSK), "+basiswert_arr[2]["INT"]+"(IN)"
+                    }];
+
+  $.ajax({
+      type:'POST',
+      url:"source/php/koerpertalente.php",
+      //Daten an den Server in JSON
+      data: {ID:SpielerID},
+      datatype:"json",
+      //callback
+      success: function(data){
+      //daten[0]["id"];
+      koerperttalente_arr=wuerfelwerte.concat(JSON.parse(data));
 }
 
 function getSekundarWerte(){
