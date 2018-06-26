@@ -2,9 +2,6 @@ var basiswert_arr= [];
 var sekundarwert_arr = [];
 var SpielerID;
 $( document ).ready(function() {
-  var SpielerID=$('#SpielerID').val();
-  window.alert("ID:"+SpielerID);
-    console.log( "ready!" );
     $("#myClickBtn").click(function(){
       SpielerID=$('#SpielerID').val();
       window.alert("ID:"+SpielerID);
