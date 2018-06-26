@@ -37,6 +37,8 @@ function sekwerte(){
                       "ausweichen": "((GSK +2 * GEW) /4) - Ausrüstungsmalus",
                       "ruestung": "Rüstungswert + Boni",
                       "initiative": "((MUT+GEW+2*IN)/5)+Aufmerksamkeit",
+                      "attacke_basis" : "(GEW+MUT+KK)/5",
+                      "parade_basis" : "(GEW+KK+IN)/5",
                       "luftresistenz": "KL/4",
                       "wasserresistenz": "GEW/4",
                       "erdresistenz": "GSK/4",
@@ -44,9 +46,7 @@ function sekwerte(){
                       "feuerresistenz" : "MUT/4",
                       "eisresistenz" : "KON/4",
                       "metallresistenz" : "KK/4",
-                      "das_toteresistenz" : "IN/4",
-                      "attacke_basis" : "(GEW+MUT+KK)/5",
-                      "parade_basis" : "(GEW+KK+IN)/5"}];
+                      "das_toteresistenz" : "IN/4",}];
   $.ajax({
       type:'POST',
       url:"source/php/sekundarwerte.php",
