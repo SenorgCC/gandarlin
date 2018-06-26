@@ -10,7 +10,7 @@ $( document ).ready(function() {
  //       bwfinal();
     });
     $("#gobtn").click(function(){
-        getTable(basiswert_arr,spielerbasiswerte);
+        getTable(basiswert_arr,"spielerbasiswerte");
     });
 function bwfinal(){
   $.ajax({
