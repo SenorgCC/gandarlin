@@ -53,7 +53,7 @@ function sekwerte(){
       //callback
       success: function(data){
       //daten[0]["id"];
-      sekundarwert_arr=JSON.parse(data);
+      sekundarwert_arr=kalkulation.concat(JSON.parse(data));
       }
   });
 }
