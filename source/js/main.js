@@ -65,6 +65,7 @@ function sekwerte(){
 
 function getTable(data,htmlobject){
     var $tbody = $('#'+htmlobject).find('tbody');
+    $tbody.empty();
     var tabledef = [];
     var tabledata = [];
     var tablerow = [];
