@@ -1,6 +1,7 @@
 var basiswert_arr= [];
 var sekundarwert_arr = [];
 $( document ).ready(function() {
+  var SpielerID=$('#SpielerID').val();
     console.log( "ready!" );
     $("#myClickBtn").click(function(){
         bwbasis();
@@ -16,7 +17,7 @@ function bwbasis(){
       type:'POST',
       url:"source/php/bwbasis.php",
       //Daten an den Server in JSON
-      //data: {test:1,a:2},
+      data: {ID:SpielerID},
       datatype:"json",
       //callback
       success: function(data){
@@ -48,7 +49,7 @@ function sekwerte(){
       type:'POST',
       url:"source/php/sekundarwerte.php",
       //Daten an den Server in JSON
-      //data: {test:1,a:2},
+      data: {ID:SpielerID},
       datatype:"json",
       //callback
       success: function(data){
