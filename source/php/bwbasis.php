@@ -21,6 +21,7 @@ if (!$result){
 }
 $row2=pg_fetch_object($result);
 
+//
 //$stmt="select * from basiswerte.final where ID = $1";
 $result = pg_prepare($dbconn,"final",'select * from basiswerte.final where ID = $1');
 $result=pg_execute($dbconn,"final",array("1"));
