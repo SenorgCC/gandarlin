@@ -54,6 +54,7 @@ function sekwerte(){
       success: function(data){
       //daten[0]["id"];
       sekundarwert_arr=kalkulation.concat(JSON.parse(data));
+      window.alert(sekundarwert_arr[2]["ausweichen"]);
       }
   });
 }
