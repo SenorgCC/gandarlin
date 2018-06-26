@@ -7,7 +7,6 @@ $( document ).ready(function() {
       SpielerID=$('#SpielerID').val();
       bwbasis();
       sekwerte();
-      korprtalente();
     });
 
     $("#gobtn").click(function(){
@@ -27,6 +26,7 @@ function bwbasis(){
       success: function(data){
       //daten[0]["id"];
       basiswert_arr=JSON.parse(data);
+      korprtalente();
       }
   });
 }
@@ -97,14 +97,13 @@ function getTable(data,htmlobject){
 
 function korprtalente(){
 var wuerfelwerte = [{ "id":"",
-                      "Schleichen": basiswert_arr[2]["GSK"]+"(GSK), "+basiswert_arr[2]["GEW"]+"(GEW), "+basiswert_arr[2]["KON"]+"(KON)",
-                      "Aufmerksamkeit": basiswert_arr[2]["MUT"]+"(MUT), "+basiswert_arr[2]["INT"]+"(IN), "+basiswert_arr[2]["GEW"]+"(GEW)",
-                      "Robustheit": basiswert_arr[2]["GEW"]+"(GEW), "+basiswert_arr[2]["KON"]+"(KON), "+basiswert_arr[2]["KK"]+"(KK)",
-                      "Fingerfertigkeit": basiswert_arr[2]["GSK"]+"(GSK), "+basiswert_arr[2]["GSK"]+"(GSK), "+basiswert_arr[2]["INT"]+"(IN)",
-                      "Zechen": basiswert_arr[2]["MUT"]+"(MUT), "+basiswert_arr[2]["KON"]+"(KON), "+basiswert_arr[2]["KON"]+"(KON)",
+                      "Schleichen": basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["KON"]+"(KON)",
+                      "Aufmerksamkeit": basiswert_arr[2]["mut"]+"(MUT), "+basiswert_arr[2]["INT"]+"(IN), "+basiswert_arr[2]["GEW"]+"(GEW)",
+                      "Robustheit": basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["KON"]+"(KON), "+basiswert_arr[2]["KK"]+"(KK)",
+                      "Fingerfertigkeit": basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["GSK"]+"(GSK), "+basiswert_arr[2]["INT"]+"(IN)",
+                      "Zechen": basiswert_arr[2]["mut"]+"(MUT), "+basiswert_arr[2]["KON"]+"(KON), "+basiswert_arr[2]["KON"]+"(KON)",
                       "Taschendiebstahl": basiswert_arr[2]["GEW"]+"(GEW), "+basiswert_arr[2]["GSK"]+"(GSK), "+basiswert_arr[2]["INT"]+"(IN)"
                     }];
-
   $.ajax({
       type:'POST',
       url:"source/php/koerpertalente.php",
