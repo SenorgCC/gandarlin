@@ -38,7 +38,8 @@ function bwbasis(){
       //callback
       success: function(data){
       //daten[0]["id"];
-      baiswert_arr = JSON.parse(data);
+      basiswert_arr=JSON.parse(data);
+//        window.alert(basiswert_arr);
 //        basiswert_arr[0] = basiswert_basis;
       }
   });
@@ -62,6 +63,7 @@ function bwmod(){
 
 function getTable(data,htmlobject){
     var $tbody = $('#'+htmlobject).find('tbody');
+    window.alert(JSON.stringify(data));
     var tabledef = [];
     var tabledata = [];
     var tablerow = [];
