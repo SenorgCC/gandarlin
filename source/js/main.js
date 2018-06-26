@@ -1,14 +1,18 @@
 var basiswert_arr= [];
 var sekundarwert_arr = [];
+var SpielerID;
 $( document ).ready(function() {
   var SpielerID=$('#SpielerID').val();
   window.alert("ID:"+SpielerID);
     console.log( "ready!" );
     $("#myClickBtn").click(function(){
-        bwbasis();
-        sekwerte();
+      SpielerID=$('#SpielerID').val();
+      window.alert("ID:"+SpielerID);
+      bwbasis();
+      sekwerte();
     });
     $("#gobtn").click(function(){
+
         getTable(basiswert_arr,"spielerbasiswerte");
         getTable(sekundarwert_arr,"spielersekundarwerte");
     });
