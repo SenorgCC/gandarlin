@@ -28,22 +28,22 @@ function bwbasis(){
 
 
 function sekwerte(){
-  var kalkulation = [{"Lebenspunkte": "KK+KON+KON",
-                      "Ausdauer":"KON+GEW+KK",
-                      "EE": "MUT+KL+KL",
-                      "Ausweichen": "((GSK +2 * GEW) /4) - Ausrüstungsmalus",
-                      "Ruestung": "Rüstungswert + Boni",
-                      "Initiative": "((MUT+GEW+2*IN)/5)+Aufmerksamkeit",
-                      "Luftresistenz": "KL/4",
-                      "Wasserresistenz": "GEW/4",
-                      "Erdresistenz": "GSK/4",
-                      "Das_lebenderesistenz": "CHA/4",
-                      "Feuerresistenz" : "MUT/4",
-                      "Eisresistenz" : "KON/4",
-                      "Metallresistenz" : "KK/4",
-                      "Das_toteresistenz" : "IN/4",
-                      "Attacke_basis" : "(GEW+MUT+KK)/5",
-                      "Parade_basis" : "(GEW+KK+IN)/5"}];
+  var kalkulation = [{"lebenspunkte": "KK+KON+KON",
+                      "ausdauer":"KON+GEW+KK",
+                      "ee": "MUT+KL+KL",
+                      "ausweichen": "((GSK +2 * GEW) /4) - Ausrüstungsmalus",
+                      "ruestung": "Rüstungswert + Boni",
+                      "initiative": "((MUT+GEW+2*IN)/5)+Aufmerksamkeit",
+                      "luftresistenz": "KL/4",
+                      "wasserresistenz": "GEW/4",
+                      "erdresistenz": "GSK/4",
+                      "das_lebenderesistenz": "CHA/4",
+                      "feuerresistenz" : "MUT/4",
+                      "eisresistenz" : "KON/4",
+                      "metallresistenz" : "KK/4",
+                      "das_toteresistenz" : "IN/4",
+                      "attacke_basis" : "(GEW+MUT+KK)/5",
+                      "parade_basis" : "(GEW+KK+IN)/5"}];
   $.ajax({
       type:'POST',
       url:"source/php/sekundarwerte.php",
