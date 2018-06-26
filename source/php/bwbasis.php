@@ -2,7 +2,7 @@
 include('../../../connect.php');
 ini_set('display_errors', 1);
 //$stmt="select * from basiswerte.basis union all select * from basiswerte.modifikation union all select * from basiswerte.final";
-$erg_array[];
+$erg_array=[];
 $stmt="select * from basiswerte.basis";
 $result=pg_query($dbconn,$stmt);
 if (!$result){
@@ -30,6 +30,6 @@ $result=pg_query($dbconn,$stmt);
 $row=pg_fetch_all($result);
 array_push($erg_array,$row);
 
-print json_encode($row);
+print json_encode($erg_array);
 pg_close($dbconn);
 ?>
