@@ -97,12 +97,12 @@ function getTable(data,htmlobject){
 
 function korprtalente(){
 var wuerfelwerte = [{ "id":"",
-                      "Schleichen": basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["KON"]+"(KON)",
-                      "Aufmerksamkeit": basiswert_arr[2]["mut"]+"(MUT), "+basiswert_arr[2]["INT"]+"(IN), "+basiswert_arr[2]["GEW"]+"(GEW)",
-                      "Robustheit": basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["KON"]+"(KON), "+basiswert_arr[2]["KK"]+"(KK)",
-                      "Fingerfertigkeit": basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["GSK"]+"(GSK), "+basiswert_arr[2]["INT"]+"(IN)",
-                      "Zechen": basiswert_arr[2]["mut"]+"(MUT), "+basiswert_arr[2]["KON"]+"(KON), "+basiswert_arr[2]["KON"]+"(KON)",
-                      "Taschendiebstahl": basiswert_arr[2]["GEW"]+"(GEW), "+basiswert_arr[2]["GSK"]+"(GSK), "+basiswert_arr[2]["INT"]+"(IN)"
+                      "Schleichen": basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["kon"]+"(KON)",
+                      "Aufmerksamkeit": basiswert_arr[2]["mut"]+"(MUT), "+basiswert_arr[2]["int"]+"(IN), "+basiswert_arr[2]["gew"]+"(GEW)",
+                      "Robustheit": basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["kon"]+"(KON), "+basiswert_arr[2]["kk"]+"(KK)",
+                      "Fingerfertigkeit": basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["int"]+"(IN)",
+                      "Zechen": basiswert_arr[2]["mut"]+"(MUT), "+basiswert_arr[2]["kon"]+"(KON), "+basiswert_arr[2]["kon"]+"(KON)",
+                      "Taschendiebstahl": basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["int"]+"(IN)"
                     }];
   $.ajax({
       type:'POST',
