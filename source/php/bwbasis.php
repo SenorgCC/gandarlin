@@ -19,7 +19,6 @@ if (!$result){
     echo "Es ist ein Fehler aufgetreten\n";
     exit;
 }
-$result=pg_query($dbconn,$stmt);
 $row2=pg_fetch_object($result);
 
 //$stmt="select * from basiswerte.final where ID = $1";
@@ -29,8 +28,8 @@ if (!$result){
     echo "Es ist ein Fehler aufgetreten\n";
     exit;
 }
-$result=pg_query($dbconn,$stmt);
 $row3=pg_fetch_object($result);
+
 $erg_array = array($row1,$row2,$row3);
 
 print json_encode($erg_array);
