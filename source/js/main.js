@@ -114,7 +114,9 @@ var wuerfelwerte = [{ "id":"",
       //callback
       success: function(data){
       //daten[0]["id"];
-      koerperttalente_arr=wuerfelwerte.concat(JSON.parse(data));
+        koerperttalente_arr=wuerfelwerte.concat(JSON.parse(data));
+      }
+    });
 }
 
 function getSekundarWerte(){
