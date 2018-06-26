@@ -1,32 +1,15 @@
-var basiswert_final ;
-var basiswert_basis ;
-var basiswert_mod ;
 var basiswert_arr= [];
+var sekundarwert_arr = [];
 $( document ).ready(function() {
     console.log( "ready!" );
     $("#myClickBtn").click(function(){
         bwbasis();
-//        bwmod();
- //       bwfinal();
+        sekwerte();
     });
     $("#gobtn").click(function(){
         getTable(basiswert_arr,"spielerbasiswerte");
+        getTable(sekundarwert_arr,"spielersekundarwerte");
     });
-function bwfinal(){
-  $.ajax({
-      type:'POST',
-      url:"source/php/bwfinal.php",
-      //Daten an den Server in JSON
-      //data: {test:1,a:2},
-      datatype:"json",
-      //callback
-      success: function(data){
-      //daten[0]["id"];
-      basiswert_final = JSON.parse(data)[0];
-        basiswert_arr[2] = basiswert_final;
-      }
-  });
-}
 
 function bwbasis(){
   $.ajax({
@@ -39,24 +22,22 @@ function bwbasis(){
       success: function(data){
       //daten[0]["id"];
       basiswert_arr=JSON.parse(data);
-//        window.alert(basiswert_arr);
-//        basiswert_arr[0] = basiswert_basis;
       }
   });
 }
 
-function bwmod(){
+
+function sekwerte(){
   $.ajax({
       type:'POST',
-      url:"source/php/bwmod.php",
+      url:"source/php/sekundarwerte.php",
       //Daten an den Server in JSON
       //data: {test:1,a:2},
       datatype:"json",
       //callback
       success: function(data){
       //daten[0]["id"];
-      basiswert_mod = JSON.parse(data)[0];
-        basiswert_arr[1]=basiswert_mod;
+      sekundarwert_arr=JSON.parse(data);
       }
   });
 }
