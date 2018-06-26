@@ -6,11 +6,11 @@ $( document ).ready(function() {
     console.log( "ready!" );
     $("#myClickBtn").click(function(){
         bwbasis();
-        bwmod();
-        bwfinal();
+//        bwmod();
+ //       bwfinal();
     });
     $("#gobtn").click(function(){
-        getTable(basiswert_arr);
+        getTable(basiswert_arr,spielerbasiswerte);
     });
 function bwfinal(){
   $.ajax({
@@ -38,8 +38,8 @@ function bwbasis(){
       //callback
       success: function(data){
       //daten[0]["id"];
-      basiswert_basis = JSON.parse(data)[0];
-        basiswert_arr[0] = basiswert_basis;
+      baiswert_arr = JSON.parse(data);
+//        basiswert_arr[0] = basiswert_basis;
       }
   });
 }
@@ -59,8 +59,8 @@ function bwmod(){
       }
   });
 }
-function getTable(data){
-    var htmlobject="spielerbasiswerte";
+
+function getTable(data,htmlobject){
     var $tbody = $('#'+htmlobject).find('tbody');
     var tabledef = [];
     var tabledata = [];
@@ -90,6 +90,10 @@ function getTable(data){
       $tbody.append(rowtext);
       rowtext = "";
   }
+}
+
+function getSekundarWerte(){
+
 }
 });
 /*
