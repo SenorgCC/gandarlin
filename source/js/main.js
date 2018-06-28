@@ -121,7 +121,7 @@ function getTable(data,htmlobject){
 }
 
 function korprtalente(){
-var wuerfelwerte = [{ "id":"",
+/*var wuerfelwerte = [{ "id":"",
                       "schleichen": basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["kon"]+"(KON)",
                       "aufmerksamkeit": basiswert_arr[2]["mut"]+"(MUT), "+basiswert_arr[2]["int"]+"(IN), "+basiswert_arr[2]["gew"]+"(GEW)",
                       "robustheit": basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["kon"]+"(KON), "+basiswert_arr[2]["kk"]+"(KK)",
@@ -129,7 +129,33 @@ var wuerfelwerte = [{ "id":"",
                       "zechen": basiswert_arr[2]["mut"]+"(MUT), "+basiswert_arr[2]["kon"]+"(KON), "+basiswert_arr[2]["kon"]+"(KON)",
                       "taschendiebstahl": basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["int"]+"(IN)"
                     }];
-  $.ajax({
+                    */
+
+var wuerfelwerte = [{ "id":"",
+                      "schleichen": basiswert_arr[2]["gsk"]+"(GSK)",
+                      "aufmerksamkeit": basiswert_arr[2]["mut"]+"(MUT)",
+                      "robustheit": basiswert_arr[2]["gew"]+"(GEW)",
+                      "fingerfertigkeit": basiswert_arr[2]["gsk"]+"(GSK)",
+                      "zechen": basiswert_arr[2]["mut"]+"(MUT)",
+                      "taschendiebstahl": basiswert_arr[2]["gew"]+"(GEW)"
+                    },
+          					{"id":"",
+            					"schleichen": basiswert_arr[2]["gew"]+"(GEW)",
+                      "aufmerksamkeit": basiswert_arr[2]["int"]+"(IN)",
+                      "robustheit": basiswert_arr[2]["kon"]+"(KON)",
+                      "fingerfertigkeit": basiswert_arr[2]["gsk"]+"(GSK)",
+                      "zechen": basiswert_arr[2]["kon"]+"(KON)",
+                      "taschendiebstahl": basiswert_arr[2]["gsk"]+"(GSK)"
+                    },
+          					{"id":"",
+            					"schleichen":basiswert_arr[2]["kon"]+"(KON)",
+                      "aufmerksamkeit":basiswert_arr[2]["gew"]+"(GEW)",
+                      "robustheit":basiswert_arr[2]["kk"]+"(KK)",
+                      "fingerfertigkeit":basiswert_arr[2]["int"]+"(IN)",
+                      "zechen":basiswert_arr[2]["kon"]+"(KON)",
+                      "taschendiebstahl":basiswert_arr[2]["int"]+"(IN)"
+                    }];  
+      $.ajax({
       type:'POST',
       url:"source/php/koerpertalente.php",
       //Daten an den Server in JSON
