@@ -89,12 +89,12 @@ function getTable(data,htmlobject){
   for (i = 1; i < tabledef.length; i++){
     rowtext +="<tr><th scope=\"row\">"+translate(tabledef[i])+"</th>";
       for (j = 0; j < data.length; j++){
-        if (! data[j][tabledef[i]]){
+        if (!data[j][tabledef[i]]){
           celltext = "Nicht erlernt";
         }else {
             celltext = data[j][tabledef[i]];
         }
-        rowtext +="<td>"+data[j][tabledef[i]]+"</td>";
+        rowtext +="<td>"+celltext+"</td>";
       }
       rowtext +="</tr>";
       $tbody.append(rowtext);
