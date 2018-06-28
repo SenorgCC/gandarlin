@@ -85,14 +85,37 @@ function getTable(data,htmlobject){
         }
     }
   var rowtext;
+  var celltext;
   for (i = 1; i < tabledef.length; i++){
-    rowtext +="<tr><th scope=\"row\">"+tabledef[i]+"</th>";
+    rowtext +="<tr><th scope=\"row\">"+translate(tabledef[i])+"</th>";
       for (j = 0; j < data.length; j++){
+        if (data[j][tabledel[i]] == "null"){
+          celltext = "Nicht erlernt";
+        }else {
+            celltext = data[j][tabledel[i]];
+        }
         rowtext +="<td>"+data[j][tabledef[i]]+"</td>";
       }
       rowtext +="</tr>";
       $tbody.append(rowtext);
       rowtext = "";
+  }
+  function translate (word){
+    var kuerzel = {
+      "ee":"Elementar Essenz",
+      "kl":"Klugheit (KL)",
+      "gew":"Gewandheit (GEW)",
+      "cha":"Charisma (CHA)",
+      "mut":"Mut (MUT)",
+      "kon":"Konstitution (KON)",
+      "kk" :"Körperkraft (KK)",
+      "int":"Intuition (IN)",
+      "attacke_basis":"Attacke-Basiswert",
+      "parade_basis":"Parade-Basiswert",
+      "das_lebenderesistenz":"Das Lebenderesistenz",
+      "das_toteresistenz":"Das Toteresistenz"
+    };
+    return kuerzel[word] || word;
   }
 }
 
