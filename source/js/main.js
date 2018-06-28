@@ -132,29 +132,29 @@ function korprtalente(){
                     */
 
 var wuerfelwerte = [{ "id":"",
-                      "schleichen": basiswert_arr[2]["gsk"]+"(GSK)",
-                      "aufmerksamkeit": basiswert_arr[2]["mut"]+"(MUT)",
-                      "robustheit": basiswert_arr[2]["gew"]+"(GEW)",
-                      "fingerfertigkeit": basiswert_arr[2]["gsk"]+"(GSK)",
-                      "zechen": basiswert_arr[2]["mut"]+"(MUT)",
-                      "taschendiebstahl": basiswert_arr[2]["gew"]+"(GEW)"
+                      "schleichen": basiswert_arr[2]["gsk"]+" (GSK)",
+                      "aufmerksamkeit": basiswert_arr[2]["mut"]+" (MUT)",
+                      "robustheit": basiswert_arr[2]["gew"]+" (GEW)",
+                      "fingerfertigkeit": basiswert_arr[2]["gsk"]+" (GSK)",
+                      "zechen": basiswert_arr[2]["mut"]+" (MUT)",
+                      "taschendiebstahl": basiswert_arr[2]["gew"]+" (GEW)"
                     },
           					{"id":"",
-            					"schleichen": basiswert_arr[2]["gew"]+"(GEW)",
-                      "aufmerksamkeit": basiswert_arr[2]["int"]+"(IN)",
-                      "robustheit": basiswert_arr[2]["kon"]+"(KON)",
-                      "fingerfertigkeit": basiswert_arr[2]["gsk"]+"(GSK)",
-                      "zechen": basiswert_arr[2]["kon"]+"(KON)",
-                      "taschendiebstahl": basiswert_arr[2]["gsk"]+"(GSK)"
+            					"schleichen": basiswert_arr[2]["gew"]+" (GEW)",
+                      "aufmerksamkeit": basiswert_arr[2]["int"]+" (IN)",
+                      "robustheit": basiswert_arr[2]["kon"]+" (KON)",
+                      "fingerfertigkeit": basiswert_arr[2]["gsk"]+" (GSK)",
+                      "zechen": basiswert_arr[2]["kon"]+" (KON)",
+                      "taschendiebstahl": basiswert_arr[2]["gsk"]+" (GSK)"
                     },
           					{"id":"",
-            					"schleichen":basiswert_arr[2]["kon"]+"(KON)",
-                      "aufmerksamkeit":basiswert_arr[2]["gew"]+"(GEW)",
-                      "robustheit":basiswert_arr[2]["kk"]+"(KK)",
-                      "fingerfertigkeit":basiswert_arr[2]["int"]+"(IN)",
-                      "zechen":basiswert_arr[2]["kon"]+"(KON)",
-                      "taschendiebstahl":basiswert_arr[2]["int"]+"(IN)"
-                    }];  
+            					"schleichen":basiswert_arr[2]["kon"]+" (KON)",
+                      "aufmerksamkeit":basiswert_arr[2]["gew"]+" (GEW)",
+                      "robustheit":basiswert_arr[2]["kk"]+" (KK)",
+                      "fingerfertigkeit":basiswert_arr[2]["int"]+" (IN)",
+                      "zechen":basiswert_arr[2]["kon"]+" (KON)",
+                      "taschendiebstahl":basiswert_arr[2]["int"]+" (IN)"
+                    }];
       $.ajax({
       type:'POST',
       url:"source/php/koerpertalente.php",
