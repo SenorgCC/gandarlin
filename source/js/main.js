@@ -89,7 +89,7 @@ function getTable(data,htmlobject){
   for (i = 1; i < tabledef.length; i++){
     rowtext +="<tr><th scope=\"row\">"+translate(tabledef[i])+"</th>";
       for (j = 0; j < data.length; j++){
-        if (data[j][tabledel[i]] == "null"){
+        if (data[j][tabledel[i] == "null"){
           celltext = "Nicht erlernt";
         }else {
             celltext = data[j][tabledel[i]];
