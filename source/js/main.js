@@ -104,7 +104,7 @@ function getTable(data,htmlobject){
     var kuerzel = {
       "ee":"Elementar Essenz",
       "kl":"Klugheit (KL)",
-      "gsk":"Geschicklichkeit",
+      "gsk":"Geschicklichkeit (GSK)",
       "gew":"Gewandheit (GEW)",
       "cha":"Charisma (CHA)",
       "mut":"Mut (MUT)",
