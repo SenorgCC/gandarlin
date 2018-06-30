@@ -2,6 +2,7 @@ var basiswert_arr= [];
 var sekundarwert_arr = [];
 var koerperttalente_arr = [];
 var wissenstalente_arr = [];
+var naturtalente_arr = [];
 var SpielerID;
 $( document ).ready(function() {
     $("#myClickBtn").click(function(){
@@ -15,6 +16,7 @@ $( document ).ready(function() {
         getTable(sekundarwert_arr,"spielersekundarwerte");
         getTable(koerperttalente_arr,"körpertalente");
         getTable(wissenstalente_arr,"wissenstalente");
+        getTable(naturtalente_arr,"naturtalente");
     });
 
 function bwbasis(){
@@ -216,6 +218,52 @@ var wuerfelwerte = [{ "id":"",
       }
     });
 }
+
+function naturtalente(){
+var wuerfelwerte = [{ "id":"",
+                      "heilung": basiswert_arr[2]["kl"]+" (KL)",
+                      "gifte": basiswert_arr[2]["kl"]+" (KL)",
+                      "schriften": basiswert_arr[2]["kl"]+" (KL)",
+                      "magie": basiswert_arr[2]["kl"]+" (KL)",
+                      "gassenwissen": basiswert_arr[2]["kl"]+" (KL)",
+                      "weltenkenntnis": basiswert_arr[2]["mut"]+" (MUT)",
+                      "sprachen": basiswert_arr[2]["kl"]+" (KL)",
+                      "anatomie": basiswert_arr[2]["kl"]+" (KL)"
+                    },
+                    { "id":"",
+                      "heilung": basiswert_arr[2]["int"]+" (IN)",
+                      "gifte": basiswert_arr[2]["kon"]+" (KON)",
+                      "schriften": basiswert_arr[2]["gsk"]+" (GSK)",
+                      "magie": basiswert_arr[2]["kl"]+" (KL)",
+                      "gassenwissen": basiswert_arr[2]["cha"]+" (CHA)",
+                      "weltenkenntnis": basiswert_arr[2]["int"]+" (IN)",
+                      "sprachen": basiswert_arr[2]["cha"]+" (CHA)",
+                      "anatomie": basiswert_arr[2]["gsk"]+" (GSK)"
+                    },
+                    { "id":"",
+                      "heilung": basiswert_arr[2]["gsk"]+" (GSK)",
+                      "gifte": basiswert_arr[2]["mut"]+" (MUT)",
+                      "schriften": basiswert_arr[2]["gsk"]+" (GSK)",
+                      "magie": basiswert_arr[2]["int"]+" (IN)",
+                      "gassenwissen": basiswert_arr[2]["kk"]+" (KK)",
+                      "weltenkenntnis": basiswert_arr[2]["mut"]+" (MUT)",
+                      "sprachen": basiswert_arr[2]["in"]+" (INT)",
+                      "anatomie": basiswert_arr[2]["mut"]+" (MUT)"
+                    }];
+      $.ajax({
+      type:'POST',
+      url:"source/php/naturtalente.php",
+      //Daten an den Server in JSON
+      data: {ID:SpielerID},
+      datatype:"json",
+      //callback
+      success: function(data){
+      //daten[0]["id"];
+        naturtalente_arr=wuerfelwerte.concat(JSON.parse(data));
+      }
+    });
+}
+
 function getSekundarWerte(){
 
 }
