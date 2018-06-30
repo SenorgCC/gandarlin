@@ -179,7 +179,7 @@ var wuerfelwerte = [{ "id":"",
                       "schriften": basiswert_arr[2]["kl"]+" (KL)",
                       "magie": basiswert_arr[2]["kl"]+" (KL)",
                       "gassenwissen": basiswert_arr[2]["kl"]+" (KL)",
-                      "weltenkenntniss": basiswert_arr[2]["mut"]+" (MUT)",
+                      "weltenkenntnis": basiswert_arr[2]["mut"]+" (MUT)",
                       "sprachen": basiswert_arr[2]["kl"]+" (KL)",
                       "anatomie": basiswert_arr[2]["kl"]+" (KL)"
                     },
@@ -189,7 +189,7 @@ var wuerfelwerte = [{ "id":"",
                       "schriften": basiswert_arr[2]["gsk"]+" (GSK)",
                       "magie": basiswert_arr[2]["kl"]+" (KL)",
                       "gassenwissen": basiswert_arr[2]["cha"]+" (CHA)",
-                      "weltenkenntniss": basiswert_arr[2]["int"]+" (IN)",
+                      "weltenkenntnis": basiswert_arr[2]["int"]+" (IN)",
                       "sprachen": basiswert_arr[2]["cha"]+" (CHA)",
                       "anatomie": basiswert_arr[2]["gsk"]+" (GSK)"
                     },
@@ -199,7 +199,7 @@ var wuerfelwerte = [{ "id":"",
                       "schriften": basiswert_arr[2]["gsk"]+" (GSK)",
                       "magie": basiswert_arr[2]["int"]+" (IN)",
                       "gassenwissen": basiswert_arr[2]["kk"]+" (KK)",
-                      "weltenkenntniss": basiswert_arr[2]["mut"]+" (MUT)",
+                      "weltenkenntnis": basiswert_arr[2]["mut"]+" (MUT)",
                       "sprachen": basiswert_arr[2]["in"]+" (INT)",
                       "anatomie": basiswert_arr[2]["mut"]+" (MUT)"
                     }];
@@ -213,7 +213,6 @@ var wuerfelwerte = [{ "id":"",
       success: function(data){
       //daten[0]["id"];
         wissenstalente_arr=wuerfelwerte.concat(JSON.parse(data));
-        window.alert(JSON.stringify(wissenstalente_arr[4]));
       }
     });
 }
