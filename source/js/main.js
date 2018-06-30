@@ -247,6 +247,7 @@ var wuerfelwerte = [{ "id":"",
       success: function(data){
       //daten[0]["id"];
         naturtalente_arr=wuerfelwerte.concat(JSON.parse(data));
+        window.alert(JSON.stringify(naturtalente_arr[4]));
       }
     });
 }
