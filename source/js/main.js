@@ -3,6 +3,7 @@ var sekundarwert_arr = [];
 var koerperttalente_arr = [];
 var wissenstalente_arr = [];
 var naturtalente_arr = [];
+var gesellschaftstalente_arr = [];
 var SpielerID;
 $( document ).ready(function() {
     $("#myClickBtn").click(function(){
@@ -17,6 +18,7 @@ $( document ).ready(function() {
         getTable(koerperttalente_arr,"körpertalente");
         getTable(wissenstalente_arr,"wissenstalente");
         getTable(naturtalente_arr,"naturtalente");
+        getTable(gesellschaftstalente_arr,"gesellschaftstalente");
     });
 
 function bwbasis(){
@@ -33,6 +35,7 @@ function bwbasis(){
       korprtalente();
       wissenstalente();
       naturtalente();
+      gesellschaftstalente();
       }
   });
 }
@@ -112,7 +115,11 @@ function getTable(data,htmlobject){
       "attacke_basis":"Attacke-Basiswert",
       "parade_basis":"Parade-Basiswert",
       "das_lebenderesistenz":"Das Lebenderesistenz",
-      "das_toteresistenz":"Das Toteresistenz"
+      "das_toteresistenz":"Das Toteresistenz",
+      "ueberleben":"Überleben",
+      "kraeuterkunde":"Kräuterkunde",
+      "ueberreden":"Überreden",
+      "betoeren":"Betören"
     };
     return kuerzel[word] || word;
   }
@@ -252,14 +259,40 @@ var wuerfelwerte = [{ "id":"",
     });
 }
 
-function getSekundarWerte(){
-
+function gesellschaftstalente(){
+var wuerfelwerte =[{ "id":"",
+                    "feilschen": basiswert_arr[2]["mut"]+" (MUT)",
+                    "ueberreden": basiswert_arr[2]["mut"]+" (MUT)",
+                    "betoeren": basiswert_arr[2]["cha"]+" (CHA)",
+                    "etikette": basiswert_arr[2]["cha"]+" (CHA)",
+                    "menschenkenntnis": basiswert_arr[2]["cha"]+" (CHA)"
+                    },
+                  { "id":"",
+                    "feilschen": basiswert_arr[2]["int"]+" (IN)",
+                    "ueberreden": basiswert_arr[2]["cha"]+" (CHA)",
+                    "betoeren": basiswert_arr[2]["cha"]+" (CHA)",
+                    "etikette": basiswert_arr[2]["mut"]+" (MUT)",
+                    "menschenkenntnis": basiswert_arr[2]["int"]+" (IN)"
+                  },
+                  { "id":"",
+                    "feilschen": basiswert_arr[2]["cha"]+" (CHA)",
+                    "ueberreden": basiswert_arr[2]["kl"]+" (KL)",
+                    "betoeren": basiswert_arr[2]["mut"]+" (MUT)",
+                    "etikette": basiswert_arr[2]["kl"]+" (KL)",
+                    "menschenkenntnis": basiswert_arr[2]["kl"]+" (KL)"
+                  }];
+      $.ajax({
+      type:'POST',
+      url:"source/php/gesellschaftstalente.php",
+      //Daten an den Server in JSON
+      data: {ID:SpielerID},
+      datatype:"json",
+      //callback
+      success: function(data){
+      //daten[0]["id"];
+        gesellschaftstalente_arr=wuerfelwerte.concat(JSON.parse(data));
+      }
+    });
 }
-});
-/*
-      var $tbody =$('#spielerbasiswerte').find('tbody');
-    JSON.parse(data,function(k,b) {
 
-        $tbody.append('<tr><td>'+k+'</td><td>'+b+'</td><td>'+m+'</td><td>'+f+'</tr>');
-        });
-*/
+});
