@@ -32,6 +32,7 @@ function bwbasis(){
       basiswert_arr=JSON.parse(data);
       korprtalente();
       wissenstalente();
+      naturtalente();
       }
   });
 }
@@ -78,15 +79,7 @@ function getTable(data,htmlobject){
         if ( i == 0){
             $.each(data[i],function (k,v){
               tabledef.push(k);
-//              tablerow.push(v);
             });
-        /*}else{
-          $.each(data[i],function (k,v){
-            tablerow.push(v);
-          });
-        }
-        tabledata.push(tablerow);
-        */
         }
     }
   var rowtext;
