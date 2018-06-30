@@ -243,7 +243,6 @@ var wuerfelwerte = [{ "id":"",
                       "ueberleben": basiswert_arr[2]["kon"]+" (KON)",
                       "orientierung": basiswert_arr[2]["gsk"]+" (GSK)",
                       "faehrtenlesen": basiswert_arr[2]["int"]+" (IN)"
-                    },
                     }];
       $.ajax({
       type:'POST',
