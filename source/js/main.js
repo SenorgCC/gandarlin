@@ -1,6 +1,7 @@
 var basiswert_arr= [];
 var sekundarwert_arr = [];
 var koerperttalente_arr = [];
+var wissenstalente_arr = [];
 var SpielerID;
 $( document ).ready(function() {
     $("#myClickBtn").click(function(){
@@ -13,6 +14,7 @@ $( document ).ready(function() {
         getTable(basiswert_arr,"spielerbasiswerte");
         getTable(sekundarwert_arr,"spielersekundarwerte");
         getTable(koerperttalente_arr,"körpertalente");
+        getTable(wissenstalente_arr,"wissenstalente");
     });
 
 function bwbasis(){
@@ -27,6 +29,7 @@ function bwbasis(){
       //daten[0]["id"];
       basiswert_arr=JSON.parse(data);
       korprtalente();
+      wissenstalente();
       }
   });
 }
@@ -120,7 +123,6 @@ function getTable(data,htmlobject){
   }
 }
 
-function korprtalente(){
 /*var wuerfelwerte = [{ "id":"",
                       "schleichen": basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["kon"]+"(KON)",
                       "aufmerksamkeit": basiswert_arr[2]["mut"]+"(MUT), "+basiswert_arr[2]["int"]+"(IN), "+basiswert_arr[2]["gew"]+"(GEW)",
@@ -131,6 +133,7 @@ function korprtalente(){
                     }];
                     */
 
+function korprtalente(){
 var wuerfelwerte = [{ "id":"",
                       "schleichen": basiswert_arr[2]["gsk"]+" (GSK)",
                       "aufmerksamkeit": basiswert_arr[2]["mut"]+" (MUT)",
@@ -169,6 +172,50 @@ var wuerfelwerte = [{ "id":"",
     });
 }
 
+function wissenstalente(){
+var wuerfelwerte = [{ "id":"",
+                      "heilung": basiswert_arr[2]["kl"]+" (KL)",
+                      "gifte": basiswert_arr[2]["kl"]+" (KL)",
+                      "schriften": basiswert_arr[2]["kl"]+" (KL)",
+                      "magie": basiswert_arr[2]["kl"]+" (KL)",
+                      "gassenwissen": basiswert_arr[2]["kl"]+" (KL)",
+                      "weltenkenntniss": basiswert_arr[2]["mut"]+" (MUT)",
+                      "sprachen": basiswert_arr[2]["kl"]+" (KL)",
+                      "anatomie": basiswert_arr[2]["kl"]+" (KL)"
+                    },
+                    { "id":"",
+                      "heilung": basiswert_arr[2]["int"]+" (IN)",
+                      "gifte": basiswert_arr[2]["kon"]+" (KON)",
+                      "schriften": basiswert_arr[2]["gsk"]+" (GSK)",
+                      "magie": basiswert_arr[2]["kl"]+" (KL)",
+                      "gassenwissen": basiswert_arr[2]["cha"]+" (CHA)",
+                      "weltenkenntniss": basiswert_arr[2]["int"]+" (IN)",
+                      "sprachen": basiswert_arr[2]["cha"]+" (CHA)",
+                      "anatomie": basiswert_arr[2]["gsk"]+" (GSK)"
+                    },
+                    { "id":"",
+                      "heilung": basiswert_arr[2]["gsk"]+" (GSK)",
+                      "gifte": basiswert_arr[2]["mut"]+" (MUT)",
+                      "schriften": basiswert_arr[2]["gsk"]+" (GSK)",
+                      "magie": basiswert_arr[2]["int"]+" (IN)",
+                      "gassenwissen": basiswert_arr[2]["kk"]+" (KK)",
+                      "weltenkenntniss": basiswert_arr[2]["mut"]+" (MUT)",
+                      "sprachen": basiswert_arr[2]["in"]+" (INT)",
+                      "anatomie": basiswert_arr[2]["mut"]+" (MUT)"
+                    }];
+      $.ajax({
+      type:'POST',
+      url:"source/php/wissenstalente.php",
+      //Daten an den Server in JSON
+      data: {ID:SpielerID},
+      datatype:"json",
+      //callback
+      success: function(data){
+      //daten[0]["id"];
+        wissenstalente_arr=wuerfelwerte.concat(JSON.parse(data));
+      }
+    });
+}
 function getSekundarWerte(){
 
 }
