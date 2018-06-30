@@ -221,34 +221,29 @@ var wuerfelwerte = [{ "id":"",
 
 function naturtalente(){
 var wuerfelwerte = [{ "id":"",
-                      "heilung": basiswert_arr[2]["kl"]+" (KL)",
-                      "gifte": basiswert_arr[2]["kl"]+" (KL)",
-                      "schriften": basiswert_arr[2]["kl"]+" (KL)",
-                      "magie": basiswert_arr[2]["kl"]+" (KL)",
-                      "gassenwissen": basiswert_arr[2]["kl"]+" (KL)",
-                      "weltenkenntnis": basiswert_arr[2]["mut"]+" (MUT)",
-                      "sprachen": basiswert_arr[2]["kl"]+" (KL)",
-                      "anatomie": basiswert_arr[2]["kl"]+" (KL)"
+                      "kraeuterkunde": basiswert_arr[2]["kl"]+" (KL)",
+                      "tierkunde": basiswert_arr[2]["mut"]+" (MUT)",
+                      "geographie ": basiswert_arr[2]["kl"]+" (KL)",
+                      "ueberleben": basiswert_arr[2]["int"]+" (IN)",
+                      "orientierung": basiswert_arr[2]["mut"]+" (MUT)",
+                      "faehrtenlesen": basiswert_arr[2]["gsk"]+" (GSK)"
                     },
                     { "id":"",
-                      "heilung": basiswert_arr[2]["int"]+" (IN)",
-                      "gifte": basiswert_arr[2]["kon"]+" (KON)",
-                      "schriften": basiswert_arr[2]["gsk"]+" (GSK)",
-                      "magie": basiswert_arr[2]["kl"]+" (KL)",
-                      "gassenwissen": basiswert_arr[2]["cha"]+" (CHA)",
-                      "weltenkenntnis": basiswert_arr[2]["int"]+" (IN)",
-                      "sprachen": basiswert_arr[2]["cha"]+" (CHA)",
-                      "anatomie": basiswert_arr[2]["gsk"]+" (GSK)"
+                      "kraeuterkunde": basiswert_arr[2]["int"]+" (IN)",
+                      "tierkunde": basiswert_arr[2]["gew"]+" (GEW)",
+                      "geographie ": basiswert_arr[2]["int"]+" (IN)",
+                      "ueberleben": basiswert_arr[2]["gew"]+" (GEW)",
+                      "orientierung": basiswert_arr[2]["int"]+" (IN)",
+                      "faehrtenlesen": basiswert_arr[2]["gew"]+" (GEW)"
                     },
                     { "id":"",
-                      "heilung": basiswert_arr[2]["gsk"]+" (GSK)",
-                      "gifte": basiswert_arr[2]["mut"]+" (MUT)",
-                      "schriften": basiswert_arr[2]["gsk"]+" (GSK)",
-                      "magie": basiswert_arr[2]["int"]+" (IN)",
-                      "gassenwissen": basiswert_arr[2]["kk"]+" (KK)",
-                      "weltenkenntnis": basiswert_arr[2]["mut"]+" (MUT)",
-                      "sprachen": basiswert_arr[2]["in"]+" (INT)",
-                      "anatomie": basiswert_arr[2]["mut"]+" (MUT)"
+                      "kraeuterkunde": basiswert_arr[2]["gsk"]+" (GSK)",
+                      "tierkunde": basiswert_arr[2]["int"]+" (IN)",
+                      "geographie ": basiswert_arr[2]["kk"]+" (KK)",
+                      "ueberleben": basiswert_arr[2]["kon"]+" (KON)",
+                      "orientierung": basiswert_arr[2]["gsk"]+" (GSK)",
+                      "faehrtenlesen": basiswert_arr[2]["int"]+" (IN)"
+                    },
                     }];
       $.ajax({
       type:'POST',
