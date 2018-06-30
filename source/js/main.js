@@ -4,6 +4,7 @@ var koerperttalente_arr = [];
 var wissenstalente_arr = [];
 var naturtalente_arr = [];
 var gesellschaftstalente_arr = [];
+var spezialetalente_arr = [];
 var SpielerID;
 $( document ).ready(function() {
     $("#myClickBtn").click(function(){
@@ -19,6 +20,7 @@ $( document ).ready(function() {
         getTable(wissenstalente_arr,"wissenstalente");
         getTable(naturtalente_arr,"naturtalente");
         getTable(gesellschaftstalente_arr,"gesellschaftstalente");
+        getTable(spezialetalente_arr,"spezialetalente");
     });
 
 function bwbasis(){
@@ -36,10 +38,10 @@ function bwbasis(){
       wissenstalente();
       naturtalente();
       gesellschaftstalente();
+      spezialetalente();
       }
   });
 }
-
 
 function sekwerte(){
   var kalkulation = [{"lebenspunkte": "KK+KON+KON",
@@ -254,7 +256,6 @@ var wuerfelwerte = [{ "id":"",
       success: function(data){
       //daten[0]["id"];
         naturtalente_arr=wuerfelwerte.concat(JSON.parse(data));
-        window.alert(JSON.stringify(naturtalente_arr[4]));
       }
     });
 }
@@ -291,6 +292,42 @@ var wuerfelwerte =[{ "id":"",
       success: function(data){
       //daten[0]["id"];
         gesellschaftstalente_arr=wuerfelwerte.concat(JSON.parse(data));
+      }
+    });
+}
+
+function spezialetalente(){
+var wuerfelwerte =[{ "id":"",
+                    "reiten": basiswert_arr[2]["kk"]+" (KK)",
+                    "schwimmen": basiswert_arr[2]["kon"]+" (KON)",
+                    "klettern": basiswert_arr[2]["kk"]+" (KK)",
+                    "gaukeleien": basiswert_arr[2]["cha"]+" (CHA)",
+                    "seefahrt": basiswert_arr[2]["kl"]+" (KL)"
+                  },
+                  { "id":"",
+                    "reiten": basiswert_arr[2]["gew"]+" (GEW)",
+                    "schwimmen": basiswert_arr[2]["gsk"]+" (GSK)",
+                    "klettern": basiswert_arr[2]["gew"]+" (GEW)",
+                    "gaukeleien": basiswert_arr[2]["gsk"]+" (GSK)",
+                    "seefahrt": basiswert_arr[2]["mut"]+" (MUT)"
+                    },
+                  { "id":"",
+                    "reiten": basiswert_arr[2]["kon"]+" (KON)",
+                    "schwimmen": basiswert_arr[2]["kk"]+" (KK)",
+                    "klettern": basiswert_arr[2]["gsk"]+" (GSK)",
+                    "gaukeleien": basiswert_arr[2]["int"]+" (IN)",
+                    "seefahrt": basiswert_arr[2]["int"]+" (IN)"
+                  }];
+      $.ajax({
+      type:'POST',
+      url:"source/php/spezialetalente.php",
+      //Daten an den Server in JSON
+      data: {ID:SpielerID},
+      datatype:"json",
+      //callback
+      success: function(data){
+      //daten[0]["id"];
+        spezialetalente_arr=wuerfelwerte.concat(JSON.parse(data));
       }
     });
 }
