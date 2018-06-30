@@ -213,7 +213,6 @@ var wuerfelwerte = [{ "id":"",
       success: function(data){
       //daten[0]["id"];
         wissenstalente_arr=wuerfelwerte.concat(JSON.parse(data));
-        window.alert(JSON.stringify(wissenstalente_arr[]));
       }
     });
 }
