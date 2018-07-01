@@ -15,6 +15,7 @@ $( document ).ready(function() {
       bwbasis();
       sekwerte();
       einhandwaffen_arr=normaltalente("einhandwaffen.php");
+      window.alert(einhandwaffen_arr);
       zweihandwaffen_arr=normaltalente("zweihandwaffen.php");
       fernkampfwaffen_arr=normaltalente("fernkampfwaffen.php");
     });
