@@ -376,18 +376,16 @@ function normaltalente(filename){
   var dbdata = [];
   $.ajax({
       type:'POST',
+      async:false,
       url:filepath,
       //Daten an den Server in JSON
       data: {ID:SpielerID},
       datatype:"json",
-      async:false,
       //callback
       success: function(data){
       //daten[0]["id"];
         dbdata = JSON.parse(data);
       }
-  }).done(function(){
-    return dbdata;
   });
 }
 
