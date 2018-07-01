@@ -9,6 +9,7 @@ var einhandwaffen_arr = [];
 var zweihandwaffen_arr = [];
 var fernkampfwaffen_arr = [];
 var anderewaffen_arr = [];
+var handwerkstalente_arr = [];
 var SpielerID;
 $( document ).ready(function() {
     $("#myClickBtn").click(function(){
@@ -33,6 +34,7 @@ $( document ).ready(function() {
         getTable(zweihandwaffen_arr,"zweihandwaffen");
         getTable(fernkampfwaffen_arr,"fernkampfwaffen");
         getTable(anderewaffen_arr,"anderewaffen");
+        getTable(handwerkstalente_arr,"handwerkstalente");
     });
 
 function bwbasis(){
@@ -402,5 +404,41 @@ function anderewaffen(){
       anderewaffen_arr=JSON.parse(data);
       }
   });
+}
+
+function handwerkstalente(){
+var wuerfelwerte =[{ "id":"",
+                    "schmieden": basiswert_arr[2]["kk"]+" (KK)",
+                    "lederverarbeitung": basiswert_arr[2]["gsk"]+" (GSK)",
+                    "holzverarbeitung": basiswert_arr[2]["gsk"]+" (GSK)",
+                    "koch": basiswert_arr[2]["kl"]+" (KL)",
+                    "lehren": " "
+                  },
+                  { "id":"",
+                    "schmieden": basiswert_arr[2]["kk"]+" (KK)",
+                    "lederverarbeitung": basiswert_arr[2]["gsk"]+" (GSK)",
+                    "holzverarbeitung": basiswert_arr[2]["kon"]+" (KON)",
+                    "koch": basiswert_arr[2]["gew"]+" (GEW)",
+                    "lehren": " "
+                  },
+                  { "id":"",
+                    "schmieden": basiswert_arr[2]["kon"]+" (KON)",
+                    "lederverarbeitung": basiswert_arr[2]["kon"]+" (KON)",
+                    "holzverarbeitung": basiswert_arr[2]["kk"]+" (KK)",
+                    "koch": basiswert_arr[2]["kon"]+" (KON)",
+                    "lehren": " "
+                  }];
+      $.ajax({
+      type:'POST',
+      url:"source/php/spezialetalente.php",
+      //Daten an den Server in JSON
+      data: {ID:SpielerID},
+      datatype:"json",
+      //callback
+      success: function(data){
+      //daten[0]["id"];
+        spezialetalente_arr=wuerfelwerte.concat(JSON.parse(data));
+      }
+    });
 }
 });
