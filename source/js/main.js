@@ -430,14 +430,14 @@ var wuerfelwerte =[{ "id":"",
                   }];
       $.ajax({
       type:'POST',
-      url:"source/php/spezialetalente.php",
+      url:"source/php/handwerkstalente.php",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
       datatype:"json",
       //callback
       success: function(data){
       //daten[0]["id"];
-        spezialetalente_arr=wuerfelwerte.concat(JSON.parse(data));
+        handwerkstalente_arr=wuerfelwerte.concat(JSON.parse(data));
       }
     });
 }
