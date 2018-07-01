@@ -53,7 +53,7 @@ function bwbasis(){
       naturtalente();
       gesellschaftstalente();
       spezialetalente();
-//      handwerkstalente();
+      handwerkstalente();
       }
   });
 }
@@ -409,24 +409,10 @@ function anderewaffen(){
 
 function handwerkstalente(){
 var wuerfelwerte =[{ "id":"",
-                    "schmieden": basiswert_arr[2]["kk"]+" (KK)",
-                    "lederverarbeitung": basiswert_arr[2]["gsk"]+" (GSK)",
-                    "holzverarbeitung": basiswert_arr[2]["gsk"]+" (GSK)",
-                    "koch": basiswert_arr[2]["kl"]+" (KL)",
-                    "lehren": " "
-                  },
-                  { "id":"",
-                    "schmieden": basiswert_arr[2]["kk"]+" (KK)",
-                    "lederverarbeitung": basiswert_arr[2]["gsk"]+" (GSK)",
-                    "holzverarbeitung": basiswert_arr[2]["kon"]+" (KON)",
-                    "koch": basiswert_arr[2]["gew"]+" (GEW)",
-                    "lehren": " "
-                  },
-                  { "id":"",
-                    "schmieden": basiswert_arr[2]["kon"]+" (KON)",
-                    "lederverarbeitung": basiswert_arr[2]["kon"]+" (KON)",
-                    "holzverarbeitung": basiswert_arr[2]["kk"]+" (KK)",
-                    "koch": basiswert_arr[2]["kon"]+" (KON)",
+                    "schmieden": (basiswert_arr[2]["kk"]+basiswert_arr[2]["kk"]+basiswert_arr[2]["kon"])/5+<br>+"(KK+KK+KON)/5",
+                    "lederverarbeitung": (basiswert_arr[2]["gsk"]+basiswert_arr[2]["gsk"]+basiswert_arr[2]["kon"])/5+<br>+"(GSK+GSK+KON)/5",
+                    "holzverarbeitung": (basiswert_arr[2]["gsk"]+basiswert_arr[2]["kon"]+basiswert_arr[2]["kk"])/5+<br>+"(GSK+KON+KK)/5",
+                    "koch": (basiswert_arr[2]["kl"]+basiswert_arr[2]["gew"]+basiswert_arr[2]["kon"])/5+<br>+"(KL+GEW+KON)/5",
                     "lehren": " "
                   }];
       $.ajax({
