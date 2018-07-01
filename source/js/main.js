@@ -53,7 +53,7 @@ function bwbasis(){
       naturtalente();
       gesellschaftstalente();
       spezialetalente();
-      handwerkstalente();
+//      handwerkstalente();
       }
   });
 }
