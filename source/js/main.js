@@ -5,12 +5,14 @@ var wissenstalente_arr = [];
 var naturtalente_arr = [];
 var gesellschaftstalente_arr = [];
 var spezialetalente_arr = [];
+var einhandwaffen_arr = [];
 var SpielerID;
 $( document ).ready(function() {
     $("#myClickBtn").click(function(){
       SpielerID=$('#SpielerID').val();
       bwbasis();
       sekwerte();
+      einhandwaffen();
     });
 
     $("#gobtn").click(function(){
@@ -21,6 +23,7 @@ $( document ).ready(function() {
         getTable(naturtalente_arr,"naturtalente");
         getTable(gesellschaftstalente_arr,"gesellschaftstalente");
         getTable(spezialetalente_arr,"spezialetalente");
+        getTable(einhandwaffen_arr,"einhandwaffen");
     });
 
 function bwbasis(){
@@ -330,6 +333,21 @@ var wuerfelwerte =[{ "id":"",
         spezialetalente_arr=wuerfelwerte.concat(JSON.parse(data));
       }
     });
+}
+
+function einhandwaffen(){
+  $.ajax({
+      type:'POST',
+      url:"source/php/einhandwaffen.php",
+      //Daten an den Server in JSON
+      data: {ID:SpielerID},
+      datatype:"json",
+      //callback
+      success: function(data){
+      //daten[0]["id"];
+      einhandwaffen_arr=JSON.parse(data);
+      }
+  });
 }
 
 });

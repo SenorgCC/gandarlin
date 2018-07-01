@@ -1,9 +1,9 @@
 <?php
 include('../../../connect.php');
 $ID = $_POST['ID'];
-//$stmt="select * from basiswerte.basis union all select * from basiswerte.modifikation union all select * from basiswerte.final";
-//$stmt="select * from basiswerte.basis where ID = $1";
-$result = pg_prepare($dbconn,"basiswert",'select * from basiswerte.basis where ID = $1');
+//$stmt="select * from einhandwaffen.basis union all select * from einhandwaffen.modifikation union all select * from einhandwaffen.final";
+//$stmt="select * from einhandwaffen.basis where ID = $1";
+$result = pg_prepare($dbconn,"basiswert",'select * from einhandwaffen.basis where ID = $1');
 $result=pg_execute($dbconn,"basiswert",array($ID));
 if (!$result){
     echo "Es ist ein Fehler aufgetreten\n";
@@ -11,8 +11,8 @@ if (!$result){
 }
 $row1=pg_fetch_object($result);
 
-//$stmt="select * from basiswerte.modifikation where ID = $1";
-$result = pg_prepare($dbconn,"mod",'select * from basiswerte.modifikation where ID = $1');
+//$stmt="select * from einhandwaffen.modifikation where ID = $1";
+$result = pg_prepare($dbconn,"mod",'select * from einhandwaffen.modifikation where ID = $1');
 $result=pg_execute($dbconn,"mod",array($ID));
 if (!$result){
     echo "Es ist ein Fehler aufgetreten\n";
@@ -21,8 +21,8 @@ if (!$result){
 $row2=pg_fetch_object($result);
 
 //
-//$stmt="select * from basiswerte.final where ID = $1";
-$result = pg_prepare($dbconn,"final",'select * from basiswerte.final where ID = $1');
+//$stmt="select * from einhandwaffen.final where ID = $1";
+$result = pg_prepare($dbconn,"final",'select * from einhandwaffen.final where ID = $1');
 $result=pg_execute($dbconn,"final",array($ID));
 if (!$result){
     echo "Es ist ein Fehler aufgetreten\n";
