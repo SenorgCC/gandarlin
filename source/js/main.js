@@ -353,7 +353,7 @@ function einhandwaffen(){
   });
 }
 
-function einhandwaffen(){
+function zweihandwaffen(){
   $.ajax({
       type:'POST',
       url:"source/php/zweihandwaffen.php",
