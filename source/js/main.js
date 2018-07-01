@@ -31,7 +31,7 @@ $( document ).ready(function() {
         getTable(spezialetalente_arr,"spezialetalente");
         getTable(einhandwaffen_arr,"einhandwaffen");
         getTable(zweihandwaffen_arr,"zweihandwaffen");
-        getTable(fernkampfwaffen_arr,"zweihandwaffen");
+        getTable(fernkampfwaffen_arr,"fernkampfwaffen");
         getTable(anderewaffen_arr,"anderewaffen");
     });
 
