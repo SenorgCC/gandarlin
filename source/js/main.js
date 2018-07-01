@@ -6,6 +6,7 @@ var naturtalente_arr = [];
 var gesellschaftstalente_arr = [];
 var spezialetalente_arr = [];
 var einhandwaffen_arr = [];
+var zweihandwaffen_arr = [];
 var SpielerID;
 $( document ).ready(function() {
     $("#myClickBtn").click(function(){
@@ -13,6 +14,7 @@ $( document ).ready(function() {
       bwbasis();
       sekwerte();
       einhandwaffen();
+      zweihandwaffen();
     });
 
     $("#gobtn").click(function(){
@@ -24,6 +26,7 @@ $( document ).ready(function() {
         getTable(gesellschaftstalente_arr,"gesellschaftstalente");
         getTable(spezialetalente_arr,"spezialetalente");
         getTable(einhandwaffen_arr,"einhandwaffen");
+        getTable(zweihandwaffen_arr,"zweihandwaffen");
     });
 
 function bwbasis(){
@@ -350,4 +353,18 @@ function einhandwaffen(){
   });
 }
 
+function einhandwaffen(){
+  $.ajax({
+      type:'POST',
+      url:"source/php/zweihandwaffen.php",
+      //Daten an den Server in JSON
+      data: {ID:SpielerID},
+      datatype:"json",
+      //callback
+      success: function(data){
+      //daten[0]["id"];
+      zweihandwaffen_arr=JSON.parse(data);
+      }
+  });
+}
 });
