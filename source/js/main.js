@@ -34,7 +34,7 @@ $( document ).ready(function() {
         getTable(zweihandwaffen_arr,"zweihandwaffen");
         getTable(fernkampfwaffen_arr,"fernkampfwaffen");
         getTable(anderewaffen_arr,"anderewaffen");
-        getTable(handwerkstalente_arr,"handwerkstalente");
+     //   getTable(handwerkstalente_arr,"handwerkstalente");
     });
 
 function bwbasis(){
@@ -53,7 +53,7 @@ function bwbasis(){
       naturtalente();
       gesellschaftstalente();
       spezialetalente();
-      handwerkstalente();
+    //  handwerkstalente();
       }
   });
 }
