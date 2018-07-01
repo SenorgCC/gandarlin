@@ -8,6 +8,7 @@ var spezialetalente_arr = [];
 var einhandwaffen_arr = [];
 var zweihandwaffen_arr = [];
 var fernkampfwaffen_arr = [];
+var anderewaffen_arr = [];
 var SpielerID;
 $( document ).ready(function() {
     $("#myClickBtn").click(function(){
@@ -17,6 +18,7 @@ $( document ).ready(function() {
       einhandwaffen();
       zweihandwaffen();
       fernkampfwaffen();
+      anderewaffen();
     });
 
     $("#gobtn").click(function(){
@@ -29,7 +31,8 @@ $( document ).ready(function() {
         getTable(spezialetalente_arr,"spezialetalente");
         getTable(einhandwaffen_arr,"einhandwaffen");
         getTable(zweihandwaffen_arr,"zweihandwaffen");
-        getTable(fernkampfwaffen_arr,"fernkampfwaffen");
+        getTable(fernkampfwaffen_arr,"zweihandwaffen");
+        getTable(anderewaffen_arr,"anderewaffen");
     });
 
 function bwbasis(){
@@ -386,4 +389,18 @@ function fernkampfwaffen(){
   });
 }
 
+function anderewaffen(){
+  $.ajax({
+      type:'POST',
+      url:"source/php/anderewaffen.php",
+      //Daten an den Server in JSON
+      data: {ID:SpielerID},
+      datatype:"json",
+      //callback
+      success: function(data){
+      //daten[0]["id"];
+      anderewaffen_arr=JSON.parse(data);
+      }
+  });
+}
 });
