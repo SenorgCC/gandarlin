@@ -3,7 +3,7 @@ include('../../../connect.php');
 $ID = $_POST['ID'];
 //$stmt="select * from einhandwaffen.basis union all select * from einhandwaffen.modifikation union all select * from einhandwaffen.final";
 //$stmt="select * from einhandwaffen.basis where ID = $1";
-$result = pg_prepare($dbconn,"basiswert",'select * from einhandwaffen.basis where ID = $1');
+$result = pg_prepare($dbconn,"basiswert",'select * from einhandwaffen.talentwert where ID = $1');
 $result=pg_execute($dbconn,"basiswert",array($ID));
 if (!$result){
     echo "Es ist ein Fehler aufgetreten\n";
