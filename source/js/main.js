@@ -373,6 +373,7 @@ function zweihandwaffen(){
 
 function normaltalente(filename){
   var filepath = "source/php/"+filename;
+  var dbdata = [];
   $.ajax({
       type:'POST',
       url:filepath,
@@ -383,8 +384,10 @@ function normaltalente(filename){
       //callback
       success: function(data){
       //daten[0]["id"];
-      return JSON.parse(data);
+        dbdata = JSON.parse(data);
       }
+  }).done(function(){
+    return dbdata;
   });
 }
 
