@@ -7,6 +7,7 @@ var gesellschaftstalente_arr = [];
 var spezialetalente_arr = [];
 var einhandwaffen_arr = [];
 var zweihandwaffen_arr = [];
+var fernkampfwaffen_arr = [];
 var SpielerID;
 $( document ).ready(function() {
     $("#myClickBtn").click(function(){
@@ -15,6 +16,7 @@ $( document ).ready(function() {
       sekwerte();
       einhandwaffen_arr=normaltalente("einhandwaffen.php");
       zweihandwaffen_arr=normaltalente("zweihandwaffen.php");
+      fernkampfwaffen_arr=normaltalente("fernkampfwaffen.php");
     });
 
     $("#gobtn").click(function(){
@@ -369,15 +371,17 @@ function zweihandwaffen(){
 }
 
 function normaltalente(filename){
+  var filepath = "source/php/"+filename;
   $.ajax({
       type:'POST',
-      url:"source/php/"+filename,
+      url:filepath,
       //Daten an den Server in JSON
       data: {ID:SpielerID},
       datatype:"json",
       //callback
       success: function(data){
       //daten[0]["id"];
+      window.alert("Data: "+JSON.stringify(data));
       return JSON.parse(data);
       }
   });
