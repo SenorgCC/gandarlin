@@ -13,8 +13,8 @@ $( document ).ready(function() {
       SpielerID=$('#SpielerID').val();
       bwbasis();
       sekwerte();
-      einhandwaffen();
-      zweihandwaffen();
+      einhandwaffen_arr=normaltalente("einhandwaffen.php");
+      zweihandwaffen_arr=normaltalente("zweihandwaffen.php");
     });
 
     $("#gobtn").click(function(){
@@ -367,4 +367,20 @@ function zweihandwaffen(){
       }
   });
 }
+
+function normaltalente(filename){
+  $.ajax({
+      type:'POST',
+      url:"source/php/"+filename,
+      //Daten an den Server in JSON
+      data: {ID:SpielerID},
+      datatype:"json",
+      //callback
+      success: function(data){
+      //daten[0]["id"];
+      return JSON.parse(data);
+      }
+  });
+}
+
 });
