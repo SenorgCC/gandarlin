@@ -378,10 +378,10 @@ function normaltalente(filename){
       //Daten an den Server in JSON
       data: {ID:SpielerID},
       datatype:"json",
+      async:false,
       //callback
       success: function(data){
       //daten[0]["id"];
-      window.alert("Data: "+JSON.stringify(data));
       return JSON.parse(data);
       }
   });
