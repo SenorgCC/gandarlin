@@ -10,6 +10,7 @@ var zweihandwaffen_arr = [];
 var fernkampfwaffen_arr = [];
 var anderewaffen_arr = [];
 var handwerkstalente_arr = [];
+var spielerwaffen_ar = [];
 var SpielerID;
 $( document ).ready(function() {
     $("#myClickBtn").click(function(){
@@ -34,6 +35,7 @@ $( document ).ready(function() {
         getTable(zweihandwaffen_arr,"zweihandwaffen");
         getTable(fernkampfwaffen_arr,"fernkampfwaffen");
         getTable(anderewaffen_arr,"anderewaffen");
+        getTable(spielerwaffen_ar,"spielerwaffen");
      //   getTable(handwerkstalente_arr,"handwerkstalente");
     });
 
@@ -53,6 +55,7 @@ function bwbasis(){
       naturtalente();
       gesellschaftstalente();
       spezialetalente();
+      spielerwaffen();
     //  handwerkstalente();
       }
   });
@@ -428,4 +431,20 @@ var wuerfelwerte =[{ "id":"",
       }
     });
 }
+
+function spielerwaffen(){
+      $.ajax({
+      type:'POST',
+      url:"source/php/spielerwaffen.php",
+      //Daten an den Server in JSON
+      data: {ID:SpielerID},
+      datatype:"json",
+      //callback
+      success: function(data){
+      //daten[0]["id"];
+        spielerwaffen_ar=JSON.parse(data);
+      }
+    });
+  }
+
 });
