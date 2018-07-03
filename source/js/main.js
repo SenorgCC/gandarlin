@@ -446,7 +446,7 @@ function spielerwaffen(){
       //daten[0]["id"];
 
         spielerwaffen_ar=JSON.parse(data);
-        window.alert(spielerwaffen_ar);
+        window.alert(JSON.stringify(spielerwaffen_ar));
       }
     });
   }
