@@ -123,6 +123,7 @@ function getTable(data,htmlobject){
   }
 
 function getrowTable(data,htmlobject){
+  window.alert("RowTableData:"+data);
     var $tbody = $('#'+htmlobject).find('tbody');
     $tbody.empty();
     var tabledata = [];
@@ -478,7 +479,7 @@ function spielerwaffen(){
                         tempdata[0]["attackebonus"],
                         tempdata[0]["paradebonus"],
                         tempdata[0]["final_at"],
-                        tempdata[1]["final_pa"]);
+                        tempdata[0]["final_pa"]);
           spielerwaffen_ar.push(tempdata);
       }
     });
