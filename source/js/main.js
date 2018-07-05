@@ -481,7 +481,7 @@ function spielerwaffen(){
                         tempdata[i]["paradebonus"],
                         tempdata[i]["final_at"],
                         tempdata[i]["final_pa"]]);
-          waffen[i].push(tempwaffen);
+          waffen[i] = tempwaffen;
         }
         spielerwaffen_ar=waffen;
       }
