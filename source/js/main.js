@@ -458,7 +458,7 @@ function handwerkstalente(){
 
 function spielerwaffen(){
       var tempwaffen= [];
-      var waffen = [];
+      var waffen = [][];
       var tempdata;
       $.ajax({
       type:'POST',
