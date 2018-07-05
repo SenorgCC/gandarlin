@@ -121,6 +121,7 @@ function getTable(data,htmlobject){
       $tbody.append(rowtext);
       rowtext = "";
   }
+}
 
 function getrowTable(data,htmlobject){
   window.alert("RowTableData:"+data);
