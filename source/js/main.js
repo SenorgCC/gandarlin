@@ -165,7 +165,6 @@ function getrowTable(data,htmlobject){
     };
     return kuerzel[word] || word;
   }
-}
 
 /*var wuerfelwerte = [{ "id":"",
                       "schleichen": basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["kon"]+"(KON)",
