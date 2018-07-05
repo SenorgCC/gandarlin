@@ -468,6 +468,7 @@ function spielerwaffen(){
       success: function(data){
       //daten[0]["id"];
         tempdata=JSON.parse(data);
+        window.alert(JSON.stringify(tempdata));
         for (i=0; i< tempdata.length; i++)
           tempwaffen = [];
           tempwaffen = [tempdata[i]["beschreibung"],
