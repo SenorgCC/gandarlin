@@ -134,6 +134,7 @@ function getrowTable(data,htmlobject){
     for (i = 1; i < data.length; i++){
       rowtext +="<tr>";
         for (j = 0; j < data[i].length; j++){
+              window.alert("Data:"+data[i][j]);
               celltext = data[i][j];
           }
           rowtext +="<td>"+celltext+"</td>";
