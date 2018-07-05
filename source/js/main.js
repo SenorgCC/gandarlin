@@ -473,13 +473,13 @@ function spielerwaffen(){
         window.alert(tempdata[i]["beschreibung"]);
           tempwaffen = [];
 
-          tempwaffen = [tempdata[i]["beschreibung"],
+          tempwaffen.push(tempdata[i]["beschreibung"],
                         tempdata[i]["schaden_wuerfel"]+"+"+tempdata[i]["schaden"],
                         tempdata[i]["kk_bonus"],
                         tempdata[i]["attackebonus"],
                         tempdata[i]["paradebonus"],
                         tempdata[i]["final_at"],
-                        tempdata[i]["final_pa"]];
+                        tempdata[i]["final_pa"]);
           spielerwaffen_ar.push(tempdata);
       }
     });
