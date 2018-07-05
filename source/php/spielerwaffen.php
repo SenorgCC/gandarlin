@@ -8,7 +8,7 @@ if (!$result){
     echo "Es ist ein Fehler aufgetreten\n";
     exit;
 }
-$row1=pg_fetch_object($result);
+$row1=pg_fetch_all($result);
 
 $erg_array = array($row1);
 
