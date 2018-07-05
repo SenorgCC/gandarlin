@@ -470,17 +470,18 @@ function spielerwaffen(){
       //daten[0]["id"];
         tempdata=JSON.parse(data);
         window.alert((tempdata[0]["beschreibung"]));
-        for (i=0; i< tempdata.length; i++)
+        for (i=0; i< tempdata.length; i++){
         window.alert(JSON.stringify(tempdata[i]));
           tempwaffen = [];
-          tempwaffen.push(tempdata[0]["beschreibung"],
-                        tempdata[0]["schaden_wuerfel"]+"+"+tempdata[0]["schaden"],
-                        tempdata[0]["kk_bonus"],
-                        tempdata[0]["attackebonus"],
-                        tempdata[0]["paradebonus"],
-                        tempdata[0]["final_at"],
-                        tempdata[0]["final_pa"]);
+          tempwaffen.push(tempdata[i]["beschreibung"],
+                        tempdata[i]["schaden_wuerfel"]+"+"+tempdata[i]["schaden"],
+                        tempdata[i]["kk_bonus"],
+                        tempdata[i]["attackebonus"],
+                        tempdata[i]["paradebonus"],
+                        tempdata[i]["final_at"],
+                        tempdata[i]["final_pa"]);
           spielerwaffen_ar.push(tempwaffen);
+        }
       }
     });
   }
