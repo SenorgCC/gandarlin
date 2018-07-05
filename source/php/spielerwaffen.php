@@ -8,9 +8,11 @@ if (!$result){
     echo "Es ist ein Fehler aufgetreten\n";
     exit;
 }
-$row1=pg_fetch_all($result);
-
-$erg_array = array($row1);
+//$row1=pg_fetch_all($result);
+while ($row = pg_fetch_assoc($result)){
+  array_push($erg_array,$row);
+}
+//$erg_array = array($row1);
 
 print json_encode($erg_array);
 pg_close($dbconn);
