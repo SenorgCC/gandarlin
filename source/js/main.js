@@ -131,7 +131,7 @@ function getrowTable(data,htmlobject){
     var tablerow = [];
     var rowtext;
     var celltext;
-    for (i = 1; i < data.length; i++){
+    for (i = 0; i < data.length; i++){
       rowtext +="<tr>";
         for (j = 0; j < data[i].length; j++){
               window.alert("Data:"+data[i][j]);
