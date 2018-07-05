@@ -35,7 +35,7 @@ $( document ).ready(function() {
         getTable(zweihandwaffen_arr,"zweihandwaffen");
         getTable(fernkampfwaffen_arr,"fernkampfwaffen");
         getTable(anderewaffen_arr,"anderewaffen");
-        getTable(spielerwaffen_ar,"spielerwaffen");
+        getrowTable(spielerwaffen_ar,"spielerwaffen");
      //   getTable(handwerkstalente_arr,"handwerkstalente");
     });
 
@@ -121,6 +121,26 @@ function getTable(data,htmlobject){
       $tbody.append(rowtext);
       rowtext = "";
   }
+
+function getrowTable(data,htmlobject){
+    var $tbody = $('#'+htmlobject).find('tbody');
+    $tbody.empty();
+    var tabledata = [];
+    var tablerow = [];
+    var rowtext;
+    var celltext;
+    for (i = 1; i < data.length; i++){
+      rowtext +="<tr>";
+        for (j = 0; j < data[i].length; j++){
+              celltext = data[i][j]];
+          }
+          rowtext +="<td>"+celltext+"</td>";
+        }
+        rowtext +="</tr>";
+        $tbody.append(rowtext);
+        rowtext = "";
+  }
+
   function translate (word){
     var kuerzel = {
       "ee":"Elementar Essenz",
@@ -435,6 +455,9 @@ function handwerkstalente(){
 }
 
 function spielerwaffen(){
+      var tempwaffen= [];
+      var waffen = [];
+      var tempdata;
       $.ajax({
       type:'POST',
       url:"source/php/spielerwaffen.php",
@@ -444,10 +467,19 @@ function spielerwaffen(){
       //callback
       success: function(data){
       //daten[0]["id"];
-
-        spielerwaffen_ar=JSON.parse(data);
-        window.alert(JSON.stringify(spielerwaffen_ar));
+        tempdata=JSON.parse(data);
+        for (i=0; i< tempdata.length; i++)
+          tempwaffen = [];
+          tempwaffen = [tempdata[i]["beschreibung"],
+                        tempdata[i]["schaden_wuerfel"]+"+"+tempdata[i]["schaden"],
+                        tempdata[i]["kk_bonus"],
+                        tempdata[i]["attackebonus"],
+                        tempdata[i]["paradebonus"],
+                        tempdata[i]["final_at"],
+                        tempdata[i]["final_pa"]];
+          waffen.push(tempdata);
       }
+      spielerwaffen_ar = waffen;
     });
   }
 
