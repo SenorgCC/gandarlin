@@ -480,7 +480,7 @@ function spielerwaffen(){
                         tempdata[0]["paradebonus"],
                         tempdata[0]["final_at"],
                         tempdata[0]["final_pa"]);
-          spielerwaffen_ar.push(tempdata);
+          spielerwaffen_ar.push(tempwaffen);
       }
     });
   }
