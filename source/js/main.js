@@ -10,7 +10,7 @@ var zweihandwaffen_arr = [];
 var fernkampfwaffen_arr = [];
 var anderewaffen_arr = [];
 var handwerkstalente_arr = [];
-var spielerwaffen_ar = [];
+var spielerwaffen_ar = [[]];
 var SpielerID;
 $( document ).ready(function() {
     $("#myClickBtn").click(function(){
