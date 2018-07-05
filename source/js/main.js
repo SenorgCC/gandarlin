@@ -473,7 +473,7 @@ function spielerwaffen(){
         window.alert(JSON.stringify(tempdata[i]));
           tempwaffen = [];
           tempwaffen.push(tempdata[0]["beschreibung"],
-                        tempdata[0]["schaden_wuerfel"]+"+"+tempdata[i]["schaden"],
+                        tempdata[0]["schaden_wuerfel"]+"+"+tempdata[0]["schaden"],
                         tempdata[0]["kk_bonus"],
                         tempdata[0]["attackebonus"],
                         tempdata[0]["paradebonus"],
