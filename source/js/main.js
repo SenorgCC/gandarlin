@@ -504,12 +504,9 @@ function spielerruestungen(){
         for (i=0; i< tempdata.length; i++){
           tempruestung = [];
           tempruestung =([tempdata[i]["beschreibung"],
-                        tempdata[i]["schaden_wuerfel"]+"+"+tempdata[i]["schaden"],
-                        tempdata[i]["kk_bonus"],
-                        tempdata[i]["attackebonus"],
-                        tempdata[i]["paradebonus"],
-                        tempdata[i]["final_at"],
-                        tempdata[i]["final_pa"]]);
+                        tempdata[i]["ruestungswert"],
+                        tempdata[i]["ausruestungsmodifikation"]
+                        ]);
           ruestung[i] = tempruestung;
         }
         spielerruestungen_arr=ruestung;
