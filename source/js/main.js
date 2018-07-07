@@ -58,6 +58,7 @@ function bwbasis(){
       gesellschaftstalente();
       spezialetalente();
       spielerwaffen();
+      spielerruestungen();
     //  handwerkstalente();
       }
   });
