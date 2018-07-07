@@ -134,14 +134,14 @@ function getrowTable(data,htmlobject){
   for (i = 0; i < data.length; i++){
     rowtext +="<tr>";
     for (j = 0; j < data[i].length; j++){
-      window.alert("Data:"+data[i][j]);
       celltext = data[i][j];
+      rowtext +="<td>"+celltext+"</td>";
     }
-    rowtext +="<td>"+celltext+"</td>";
+    rowtext +="</tr>";
+    window.alert("Row: "+rowtext);
+    $tbody.append(rowtext);
+    rowtext = "";
   }
-  rowtext +="</tr>";
-  $tbody.append(rowtext);
-        rowtext = "";
 }
 
 function translate (word){
@@ -482,8 +482,6 @@ function spielerwaffen(){
           waffen[i] = tempwaffen;
         }
         spielerwaffen_ar=waffen;
-        window.alert("Test0: "+spielerwaffen_ar[0][1]);
-        window.alert("Test1: "+spielerwaffen_ar[0][1]);
       }
     });
   }
