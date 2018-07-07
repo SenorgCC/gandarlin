@@ -11,6 +11,7 @@ var fernkampfwaffen_arr = [];
 var anderewaffen_arr = [];
 var handwerkstalente_arr = [];
 var spielerwaffen_ar = [[]];
+var spielerruestungen_arr = [[]]
 var SpielerID;
 $( document ).ready(function() {
     $("#myClickBtn").click(function(){
@@ -36,6 +37,7 @@ $( document ).ready(function() {
         getTable(fernkampfwaffen_arr,"fernkampfwaffen");
         getTable(anderewaffen_arr,"anderewaffen");
         getrowTable(spielerwaffen_ar,"spielerwaffen");
+        getrowTable(spielerruestungen_arr,"spielerruestungen")
      //   getTable(handwerkstalente_arr,"handwerkstalente");
     });
 
@@ -124,13 +126,12 @@ function getTable(data,htmlobject){
 }
 
 function getrowTable(data,htmlobject){
-  window.alert("RowTableData:"+data[0][1]);
   var $tbody = $('#'+htmlobject).find('tbody');
   $tbody.empty();
   var tabledata = [];
   var tablerow = [];
   var rowtext;
-  var celltext;
+  var celltext = "";
   for (i = 0; i < data.length; i++){
     rowtext +="<tr>";
     for (j = 0; j < data[i].length; j++){
@@ -138,7 +139,6 @@ function getrowTable(data,htmlobject){
       rowtext +="<td>"+celltext+"</td>";
     }
     rowtext +="</tr>";
-    window.alert("Row: "+rowtext);
     $tbody.append(rowtext);
     rowtext = "";
   }
@@ -482,6 +482,36 @@ function spielerwaffen(){
           waffen[i] = tempwaffen;
         }
         spielerwaffen_ar=waffen;
+      }
+    });
+  }
+
+function spielerruestungen(){
+      var tempruestung= [];
+      var  ruestung= [[]];
+      var tempdata;
+      $.ajax({
+      type:'POST',
+      url:"source/php/spielerruestungen.php",
+      //Daten an den Server in JSON
+      data: {ID:SpielerID},
+      datatype:"json",
+      //callback
+      success: function(data){
+      //daten[0]["id"];
+        tempdata=JSON.parse(data);
+        for (i=0; i< tempdata.length; i++){
+          tempruestung = [];
+          tempruestung =([tempdata[i]["beschreibung"],
+                        tempdata[i]["schaden_wuerfel"]+"+"+tempdata[i]["schaden"],
+                        tempdata[i]["kk_bonus"],
+                        tempdata[i]["attackebonus"],
+                        tempdata[i]["paradebonus"],
+                        tempdata[i]["final_at"],
+                        tempdata[i]["final_pa"]]);
+          ruestung[i] = tempruestung;
+        }
+        spielerruestungen_arr=ruestung;
       }
     });
   }
