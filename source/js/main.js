@@ -472,7 +472,7 @@ function spielerwaffen(){
         tempdata=JSON.parse(data);
         for (i=0; i< tempdata.length; i++){
           tempwaffen = [];
-          tempwaffen.push([tempdata[i]["beschreibung"],
+          tempwaffen=([tempdata[i]["beschreibung"],
                         tempdata[i]["schaden_wuerfel"]+"+"+tempdata[i]["schaden"],
                         tempdata[i]["kk_bonus"],
                         tempdata[i]["attackebonus"],
@@ -482,6 +482,7 @@ function spielerwaffen(){
           waffen[i] = tempwaffen;
         }
         spielerwaffen_ar=waffen;
+        window.alert("Test0: "+spielerwaffen_ar[0][1]);
         window.alert("Test1: "+spielerwaffen_ar[0][1]);
       }
     });
