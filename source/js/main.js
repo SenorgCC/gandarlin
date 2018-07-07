@@ -105,47 +105,47 @@ function getTable(data,htmlobject){
             });
         }
     }
-  var rowtext;
-  var celltext;
-  for (i = 1; i < tabledef.length; i++){
+    var rowtext;
+    var celltext;
+    for (i = 1; i < tabledef.length; i++){
     rowtext +="<tr><th scope=\"row\">"+translate(tabledef[i])+"</th>";
-      for (j = 0; j < data.length; j++){
-        if (!data[j][tabledef[i]]){
+    for (j = 0; j < data.length; j++){
+      if (!data[j][tabledef[i]]){
           celltext = "Nicht erlernt";
-        }else {
+      }else {
             celltext = data[j][tabledef[i]];
-        }
-        rowtext +="<td>"+celltext+"</td>";
       }
-      rowtext +="</tr>";
-      $tbody.append(rowtext);
-      rowtext = "";
+      rowtext +="<td>"+celltext+"</td>";
+    }
+    rowtext +="</tr>";
+    $tbody.append(rowtext);
+    rowtext = "";
   }
 }
 
 function getrowTable(data,htmlobject){
-  window.alert("RowTableData:"+data);
-    var $tbody = $('#'+htmlobject).find('tbody');
-    $tbody.empty();
-    var tabledata = [];
-    var tablerow = [];
-    var rowtext;
-    var celltext;
-    for (i = 0; i < data.length; i++){
-      rowtext +="<tr>";
-        for (j = 0; j < data[i].length; j++){
-              window.alert("Data:"+data[i][j]);
-              celltext = data[i][j];
-          }
-          rowtext +="<td>"+celltext+"</td>";
-        }
-        rowtext +="</tr>";
-        $tbody.append(rowtext);
-        rowtext = "";
+  window.alert("RowTableData:"+data[0][1]);
+  var $tbody = $('#'+htmlobject).find('tbody');
+  $tbody.empty();
+  var tabledata = [];
+  var tablerow = [];
+  var rowtext;
+  var celltext;
+  for (i = 0; i < data.length; i++){
+    rowtext +="<tr>";
+    for (j = 0; j < data[i].length; j++){
+      window.alert("Data:"+data[i][j]);
+      celltext = data[i][j];
+    }
+    rowtext +="<td>"+celltext+"</td>";
   }
+  rowtext +="</tr>";
+  $tbody.append(rowtext);
+        rowtext = "";
+}
 
-  function translate (word){
-    var kuerzel = {
+function translate (word){
+  var kuerzel = {
       "ee":"Elementar Essenz",
       "kl":"Klugheit (KL)",
       "gsk":"Geschicklichkeit (GSK)",
@@ -163,8 +163,8 @@ function getrowTable(data,htmlobject){
       "kraeuterkunde":"Kräuterkunde",
       "ueberreden":"Überreden",
       "betoeren":"Betören"
-    };
-    return kuerzel[word] || word;
+  };
+  return kuerzel[word] || word;
   }
 
 /*var wuerfelwerte = [{ "id":"",
@@ -470,7 +470,6 @@ function spielerwaffen(){
       success: function(data){
       //daten[0]["id"];
         tempdata=JSON.parse(data);
-        window.alert((tempdata[0]["beschreibung"]));
         for (i=0; i< tempdata.length; i++){
         window.alert(JSON.stringify(tempdata[i]));
           tempwaffen = [];
