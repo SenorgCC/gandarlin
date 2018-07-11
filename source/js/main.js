@@ -38,7 +38,7 @@ $( document ).ready(function() {
         getTable(anderewaffen_arr,"anderewaffen");
         getrowTable(spielerwaffen_ar,"spielerwaffen");
         getrowTable(spielerruestungen_arr,"spielerruestungen")
-        $('#spielerbasiswerte').editableTableWidget();
+        addEditable("Aktuell");
      //   getTable(handwerkstalente_arr,"handwerkstalente");
     });
 
@@ -514,6 +514,12 @@ function spielerruestungen(){
       }
     });
   }
+
+function addEditable(colname){
+  columnTh = $("table th:contains('"+colname+"')");
+  columnIndex = columnTh.index() +1;
+  $('table tr td:nth-child('+columnIndex+')').css("color","#F00");
+}
 //#######################################
 //plugins
 //#######################################
