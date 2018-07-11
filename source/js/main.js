@@ -38,7 +38,7 @@ $( document ).ready(function() {
         getTable(anderewaffen_arr,"anderewaffen");
         getrowTable(spielerwaffen_ar,"spielerwaffen");
         getrowTable(spielerruestungen_arr,"spielerruestungen")
-        dataTab("spielersekundarwerte",sekundarwert_arr);
+        dataTab("spielerruestungen",spielerruestungen_arrr);
      //   getTable(handwerkstalente_arr,"handwerkstalente");
     });
 
@@ -521,13 +521,13 @@ function addEditable(tablename,colname){
   $('#'+tablename+' tr td:nth-child('+columnIndex+')').css("color","#F00");
 }
 function dataTab(tablename,array){
-  columns=array[0];
-  data=array.shift();
-  window.alert("Colums: "+JSON.stringify(columns));
-  window.alert("Daten: "+JSON.stringify(data));
   $('#'+tablename).DataTable({
-    "data":data,
-    "columns":columns
+    "data":array,
+    "columns":[
+      {"data": "Name+Beschreibung"},
+      {"data": "Rüstungswert"},
+      {"data": "Ausrüstungsmalus / Bonus"}
+    ]
   });
 }
 //#######################################
