@@ -518,7 +518,7 @@ function spielerruestungen(){
 function addEditable(tablename,colname){
   columnTh = $("#"+tablename+" th:contains('"+colname+"')");
   columnIndex = columnTh.index() +1;
-  $('table tr td:nth-child('+columnIndex+')').css("color","#F00");
+  $('#'+tablename+' tr td:nth-child('+columnIndex+')').css("color","#F00");
 }
 //#######################################
 //plugins
