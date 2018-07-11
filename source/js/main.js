@@ -523,8 +523,8 @@ function addEditable(tablename,colname){
 function dataTab(tablename,array){
   columns=array[0];
   data=array.shift();
-  window.alert("Colums: "+columns);
-  window.alert("Daten: "+data);
+  window.alert("Colums: "+JSON.stringify(columns));
+  window.alert("Daten: "+JSON.stringify(data));
   $('#'+tablename).DataTable({
     "data":data,
     "columns":columns
