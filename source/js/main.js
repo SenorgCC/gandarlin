@@ -521,6 +521,7 @@ function addEditable(tablename,colname){
   $('#'+tablename+' tr td:nth-child('+columnIndex+')').css("color","#F00");
 }
 function dataTab(tablename,array){
+  window.alert("Data: "array);
   columns=array[0];
   data=array.shift();
   $('#'+tablename).DataTable({
