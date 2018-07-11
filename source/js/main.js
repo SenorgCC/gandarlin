@@ -38,7 +38,7 @@ $( document ).ready(function() {
         getTable(anderewaffen_arr,"anderewaffen");
         getrowTable(spielerwaffen_ar,"spielerwaffen");
         getrowTable(spielerruestungen_arr,"spielerruestungen")
-        addEditable("spielersekundarwerte","Aktuell");
+        dataTab("spielersekundarwerte",sekundarwert_arr);
      //   getTable(handwerkstalente_arr,"handwerkstalente");
     });
 
@@ -519,6 +519,14 @@ function addEditable(tablename,colname){
   columnTh = $("#"+tablename+" th:contains('"+colname+"')");
   columnIndex = columnTh.index() +1;
   $('#'+tablename+' tr td:nth-child('+columnIndex+')').css("color","#F00");
+}
+function dataTab(tablename,array){
+  columns=array[0];
+  data=array.shift();
+  $('#'+tablename).DataTable({
+    "data":data,
+    "columns":columns
+  });
 }
 //#######################################
 //plugins
