@@ -516,7 +516,7 @@ function spielerruestungen(){
   }
 
 function addEditable(tablename,colname){
-  columnTh = $("#"+tablename+" table th:contains('"+colname+"')");
+  columnTh = $("#"+tablename+" th:contains('"+colname+"')");
   columnIndex = columnTh.index() +1;
   $('table tr td:nth-child('+columnIndex+')').css("color","#F00");
 }
