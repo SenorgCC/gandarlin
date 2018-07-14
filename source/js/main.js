@@ -520,16 +520,6 @@ function addEditable(tablename,colname){
   columnIndex = columnTh.index() +1;
   $('#'+tablename+' tr td:nth-child('+columnIndex+')').css("color","#F00");
 }
-function dataTab(tablename,array){
-  $('#'+tablename).DataTable({
-    "data":array,
-    "columns":[
-      {"data": "Name+Beschreibung"},
-      {"data": "Rüstungswert"},
-      {"data": "Ausrüstungsmalus / Bonus"}
-    ]
-  });
-}
 //#######################################
 //plugins
 //#######################################
