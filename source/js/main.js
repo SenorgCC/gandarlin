@@ -14,7 +14,6 @@ var spielerwaffen_ar = [[]];
 var spielerruestungen_arr = [[]];
 var SpielerID;
 $( document ).ready(function() {
-  window.alert("Test0");
     $("#myClickBtn").click(function(){
       SpielerID=$('#SpielerID').val();
       bwbasis();
@@ -26,7 +25,6 @@ $( document ).ready(function() {
     });
 
     $("#gobtn").click(function(){
-        window.alert("Debug1");
         getTable(basiswert_arr,"spielerbasiswerte");
         getTable(sekundarwert_arr,"spielersekundarwerte");
         getTable(koerperttalente_arr,"körpertalente");
@@ -99,7 +97,6 @@ function sekwerte(){
 }
 
 function getTable(data,htmlobject){
-  window.alert("Debug 2");
     var $tbody = $('#'+htmlobject).find('tbody');
     $tbody.empty();
     var tabledef = [];
@@ -131,7 +128,6 @@ function getTable(data,htmlobject){
 }
 
 function getrowTable(data,htmlobject){
-  window.alert("Debug3");
   var $tbody = $('#'+htmlobject).find('tbody');
   $tbody.empty();
   var tabledata = [];
