@@ -11,9 +11,10 @@ var fernkampfwaffen_arr = [];
 var anderewaffen_arr = [];
 var handwerkstalente_arr = [];
 var spielerwaffen_ar = [[]];
-var spielerruestungen_arr = [[]]
+var spielerruestungen_arr = [[]];
 var SpielerID;
 $( document ).ready(function() {
+  window.aler("Test0");
     $("#myClickBtn").click(function(){
       SpielerID=$('#SpielerID').val();
       bwbasis();
