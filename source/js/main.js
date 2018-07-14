@@ -37,7 +37,7 @@ $( document ).ready(function() {
         getTable(fernkampfwaffen_arr,"fernkampfwaffen");
         getTable(anderewaffen_arr,"anderewaffen");
         getrowTable(spielerwaffen_ar,"spielerwaffen");
-        getrowTable(spielerruestungen_arr,"spielerruestungen")
+        getrowTable(spielerruestungen_arr,"spielerruestungen");
         //dataTab("spielerruestungen",spielerruestungen_arr);
      //   getTable(handwerkstalente_arr,"handwerkstalente");
     });
