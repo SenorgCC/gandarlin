@@ -66,7 +66,7 @@ function bwbasis(){
 }
 
 function sekwerte(){
-  var kalkulation = [{"id"="",
+  var kalkulation = [{"id":"",
                       "lebenspunkte": "KK+KON+KON",
                       "ausdauer":"KON+GEW+KK",
                       "ee": "MUT+KL+KL",
