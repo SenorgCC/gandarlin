@@ -66,7 +66,8 @@ function bwbasis(){
 }
 
 function sekwerte(){
-  var kalkulation = [{"lebenspunkte": "KK+KON+KON",
+  var kalkulation = [{"id"="",
+                      "lebenspunkte": "KK+KON+KON",
                       "ausdauer":"KON+GEW+KK",
                       "ee": "MUT+KL+KL",
                       "ausweichen": "((GSK +2 * GEW) /4) - Ausrüstungsmalus",
