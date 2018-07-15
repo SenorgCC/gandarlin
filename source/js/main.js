@@ -522,7 +522,7 @@ function addEditable(tablename,colname){
   $('#'+tablename+' tr td:nth-child('+columnIndex+')').css("color","#F00");
 }
 
-$("#editColumn").on("click",function(){
+$("#editColumn").click(function(){
   var tablename = $(this).closest('table').attr('id');
   window.alert("Tabelle: "+tablename);
 });
