@@ -523,6 +523,7 @@ function addEditable(tablename,colname){
 }
 
 $("#editColumn").click(function(){
+  window.alert("TEST1");
   var tablename = $(this).closest('table').attr('id');
   window.alert("Tabelle: "+tablename);
 });
