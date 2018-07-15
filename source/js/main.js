@@ -521,6 +521,11 @@ function addEditable(tablename,colname){
   columnIndex = columnTh.index() +1;
   $('#'+tablename+' tr td:nth-child('+columnIndex+')').css("color","#F00");
 }
+
+$("#editColumn").on("click",function(){
+  var tablename = $(this).closest('table').attr('id');
+  window.alert("Tabelle: "+tablename);
+});
 //#######################################
 //plugins
 //#######################################
