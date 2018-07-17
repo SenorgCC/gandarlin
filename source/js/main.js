@@ -531,6 +531,7 @@ $("#editColumn").click(function(){
       $("#modalspielerbasiswerte").modal();
     }
   };
+  $("#modalspielerbasiswerte").modal();
   return tablemap[tablename];
 });
 //#######################################
