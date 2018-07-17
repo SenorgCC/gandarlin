@@ -526,12 +526,11 @@ $("#editColumn").click(function(){
   var tablename = $(this).closest('table').attr('id');
   window.alert("Tablename: "+tablename);
   var tablemap = {
-    'spielerbasiswerte':function(){
+    'spielerbasiswerte': function(){
       window.alert("TEST");
       $("#modalspielerbasiswerte").modal();
     }
   };
-  $("#modalspielerbasiswerte").modal();
   return tablemap[tablename];
 });
 //#######################################
