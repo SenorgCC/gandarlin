@@ -527,7 +527,6 @@ $("#editColumn").click(function(){
   window.alert("Tablename: "+tablename);
   var tablemap = {
     'spielerbasiswerte': function(){
-      window.alert("TEST");
       $("#modalspielerbasiswerte").modal();
     }
   };
