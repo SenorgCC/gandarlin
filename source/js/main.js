@@ -533,6 +533,14 @@ $("#editColumn").click(function(){
   var showmodal = tablemap[tablename];
   if (showmodal) showmodal();
 });
+
+$('#blussi').click(function(){
+  var counter = $(this).closest('tr').find("input");
+  var counterwert = counter.val();
+  counterwert ++;
+  counter.val(counterwert);
+
+});
 //#######################################
 //plugins
 //#######################################
