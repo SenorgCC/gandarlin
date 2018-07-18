@@ -5,4 +5,4 @@ table tr th::first-letter {
 .flexbox { display: flex; }
 .flexbox .stretch { flex: 1; }
 .flexbox .normal { flex: 0; margin: 0 0 0 1rem; }
-.flexbox div table input { padding: .5em 1em; width: 100%; }
+.flexbox input { padding: .5em 1em; width: 100%; }
