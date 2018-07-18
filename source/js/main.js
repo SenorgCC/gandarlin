@@ -524,7 +524,6 @@ function addEditable(tablename,colname){
 
 $("#editColumn").click(function(){
   var tablename = $(this).closest('table').attr('id');
-  window.alert("Tablename: "+tablename);
   var tablemap = {
     'spielerbasiswerte': function(){
       $("#modalspielerbasiswerte").modal();
@@ -539,7 +538,13 @@ $('#blussi').click(function(){
   var counterwert = counter.val();
   counterwert ++;
   counter.val(counterwert);
+});
 
+$('#minus').click(function(){
+  var counter = $(this).closest('tr').find("input");
+  var counterwert = counter.val();
+  counterwert --;
+  counter.val(counterwert);
 });
 //#######################################
 //plugins
