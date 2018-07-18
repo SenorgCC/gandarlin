@@ -534,14 +534,15 @@ $("#editColumn").click(function(){
 });
 
 $('#blussi').click(function(){
-  var counter = $(this).closest('td').find("input");
+  var counter = $(this).closest('tr').find("input");
   var counterwert = counter.val();
+  window.alert("Test:"+counterwert);
   counterwert ++;
   counter.val(counterwert);
 });
 
 $('#minus').click(function(){
-  var counter = $(this).closest('td').find("input");
+  var counter = $(this).closest('tr').find("input");
   var counterwert = counter.val();
   counterwert --;
   counter.val(counterwert);
