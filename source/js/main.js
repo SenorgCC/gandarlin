@@ -536,7 +536,6 @@ $("#editColumn").click(function(){
 $('.blussi').click(function(){
   var counter = $(this).closest('tr').find("input");
   var counterwert = counter.val();
-  window.alert("Test:"+counterwert);
   counterwert ++;
   counter.val(counterwert);
 });
