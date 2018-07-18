@@ -533,7 +533,7 @@ $("#editColumn").click(function(){
   if (showmodal) showmodal();
 });
 
-$('#blussi').click(function(){
+$('.blussi').click(function(){
   var counter = $(this).closest('tr').find("input");
   var counterwert = counter.val();
   window.alert("Test:"+counterwert);
@@ -541,7 +541,7 @@ $('#blussi').click(function(){
   counter.val(counterwert);
 });
 
-$('#minus').click(function(){
+$('.minus').click(function(){
   var counter = $(this).closest('tr').find("input");
   var counterwert = counter.val();
   counterwert --;
