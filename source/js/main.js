@@ -14,7 +14,7 @@ var spielerwaffen_ar = [[]];
 var spielerruestungen_arr = [[]];
 var SpielerID;
 $( document ).ready(function() {
-    $("#myClickBtn").click(function(){
+  function getAlldata(){
       SpielerID=$('#SpielerID').val();
       bwbasis();
       sekwerte();
@@ -22,22 +22,30 @@ $( document ).ready(function() {
       zweihandwaffen();
       fernkampfwaffen();
       anderewaffen();
+  }
+
+  function createAllTables(){
+      getTable(basiswert_arr,"spielerbasiswerte");
+      getTable(sekundarwert_arr,"spielersekundarwerte");
+      getTable(koerperttalente_arr,"körpertalente");
+      getTable(wissenstalente_arr,"wissenstalente");
+      getTable(naturtalente_arr,"naturtalente");
+      getTable(gesellschaftstalente_arr,"gesellschaftstalente");
+      getTable(spezialetalente_arr,"spezialetalente");
+      getTable(einhandwaffen_arr,"einhandwaffen");
+      getTable(zweihandwaffen_arr,"zweihandwaffen");
+      getTable(fernkampfwaffen_arr,"fernkampfwaffen");
+      getTable(anderewaffen_arr,"anderewaffen");
+      getrowTable(spielerwaffen_ar,"spielerwaffen");
+      getrowTable(spielerruestungen_arr,"spielerruestungen");
+  }
+
+    $("#myClickBtn").click(function(){
+      getAlldata();
     });
 
     $("#gobtn").click(function(){
-        getTable(basiswert_arr,"spielerbasiswerte");
-        getTable(sekundarwert_arr,"spielersekundarwerte");
-        getTable(koerperttalente_arr,"körpertalente");
-        getTable(wissenstalente_arr,"wissenstalente");
-        getTable(naturtalente_arr,"naturtalente");
-        getTable(gesellschaftstalente_arr,"gesellschaftstalente");
-        getTable(spezialetalente_arr,"spezialetalente");
-        getTable(einhandwaffen_arr,"einhandwaffen");
-        getTable(zweihandwaffen_arr,"zweihandwaffen");
-        getTable(fernkampfwaffen_arr,"fernkampfwaffen");
-        getTable(anderewaffen_arr,"anderewaffen");
-        getrowTable(spielerwaffen_ar,"spielerwaffen");
-        getrowTable(spielerruestungen_arr,"spielerruestungen");
+      createAllTables();
         //dataTab("spielerruestungen",spielerruestungen_arr);
      //   getTable(handwerkstalente_arr,"handwerkstalente");
     });
@@ -526,7 +534,6 @@ $("#editColumn").click(function(){
   var tablename = $(this).closest('table').attr('id');
   var tablemap = {
     'spielerbasiswerte': function(){
-
       $('#editKL').val(basiswert_arr[1]["kl"]);
       $('#editGEW').val(basiswert_arr[1]["gew"]);
       $('#editGES').val(basiswert_arr[1]["gsk"]);
@@ -536,6 +543,7 @@ $("#editColumn").click(function(){
       $('#editKK').val(basiswert_arr[1]["kk"]);
       $('#editIN').val(basiswert_arr[1]["int"]);
       $("#modalspielerbasiswerte").modal();
+
     }
   };
   var showmodal = tablemap[tablename];
@@ -554,6 +562,40 @@ $('.minus').click(function(){
   var counterwert = counter.val();
   counterwert --;
   counter.val(counterwert);
+});
+
+$('#TEMPsubmitBasiswerte').click(function(){
+      var kl=  $('#editKL').val();
+      var gew= $('#editGEW').val();
+      var ges= $('#editGES').val();
+      var cha= $('#editCHA').val();
+      var mut= $('#editMUT').val();
+      var kon= $('#editKON').val();
+      var kk=  $('#editKK').val();
+      var int= $('#editIN').val();
+  $.ajax({
+      type:'POST',
+      url:"source/php/updatebasismod.php",
+      //Daten an den Server in JSON
+      data: {ID:SpielerID,
+            KL:kl,
+            GEW:gew,
+            GES:ges,
+            CHA:cha,
+            MUT:mut,
+            KON:kon,
+            KK:kk,
+            INT:int},
+      datatype:"json",
+      //callback
+      success: function(data){
+      //daten[0]["id"];
+      basiswert_arr=JSON.parse(data);
+      $('#modal').modal('toggle');
+      getAlldata();
+      createAllTables();
+    }
+  });
 });
 //#######################################
 //plugins
