@@ -527,15 +527,14 @@ $("#editColumn").click(function(){
   var tablemap = {
     'spielerbasiswerte': function(){
 
-      window.alert("TEST: "+basiswert_arr[1]["kl"]);
       $('#editKL').val(basiswert_arr[1]["kl"]);
       $('#editGEW').val(basiswert_arr[1]["gew"]);
-      $('#editGES').val(basiswert_arr[1]["ges"]);
+      $('#editGES').val(basiswert_arr[1]["gsk"]);
       $('#editCHA').val(basiswert_arr[1]["cha"]);
       $('#editMUT').val(basiswert_arr[1]["mut"]);
       $('#editKON').val(basiswert_arr[1]["kon"]);
       $('#editKK').val(basiswert_arr[1]["kk"]);
-      $('#editIN').val(basiswert_arr[1]["in"]);
+      $('#editIN').val(basiswert_arr[1]["int"]);
       $("#modalspielerbasiswerte").modal();
     }
   };
