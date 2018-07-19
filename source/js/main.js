@@ -69,7 +69,7 @@ function sekwerte(){
   var kalkulation = [{"id":"",
                       "lebenspunkte": "KK+KON+KON",
                       "ausdauer":"KON+GEW+KK",
-                      "ee": "MUT+KL+KL",
+                      "ee": "MUT+KL+KL+CHA",
                       "ausweichen": "((GSK +2 * GEW) /4) - Ausrüstungsmalus",
                       "ruestung": "Rüstungswert + Boni",
                       "initiative": "((MUT+GEW+2*IN)/5)+Aufmerksamkeit",
@@ -526,6 +526,14 @@ $("#editColumn").click(function(){
   var tablename = $(this).closest('table').attr('id');
   var tablemap = {
     'spielerbasiswerte': function(){
+      $('#editKL').val(basiswert_arr[1]["kl"]);
+      $('#editGEW').val(basiswert_arr[1]["gew"]);
+      $('#editGES').val(basiswert_arr[1]["ges"]);
+      $('#editCHA').val(basiswert_arr[1]["cha"]);
+      $('#editMUT').val(basiswert_arr[1]["mut"]);
+      $('#editKON').val(basiswert_arr[1]["kon"]);
+      $('#editKK').val(basiswert_arr[1]["kk"]);
+      $('#editIN').val(basiswert_arr[1]["in"]);
       $("#modalspielerbasiswerte").modal();
     }
   };
