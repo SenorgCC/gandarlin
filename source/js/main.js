@@ -564,7 +564,7 @@ $('.minus').click(function(){
   counter.val(counterwert);
 });
 
-$('#TEMPsubmitBasiswerte').click(function(){
+$('#submitBasiswerte').click(function(){
       var kl=  $('#editKL').val();
       var gew= $('#editGEW').val();
       var ges= $('#editGES').val();
