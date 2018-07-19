@@ -526,6 +526,8 @@ $("#editColumn").click(function(){
   var tablename = $(this).closest('table').attr('id');
   var tablemap = {
     'spielerbasiswerte': function(){
+
+      window.aler("TEST: "+basiswert_arr[1]["kl"]);
       $('#editKL').val(basiswert_arr[1]["kl"]);
       $('#editGEW').val(basiswert_arr[1]["gew"]);
       $('#editGES').val(basiswert_arr[1]["ges"]);
