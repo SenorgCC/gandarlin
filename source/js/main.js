@@ -590,7 +590,6 @@ $('#submitBasiswerte').click(function(){
       //callback
       success: function(data){
       //daten[0]["id"];
-      basiswert_arr=JSON.parse(data);
       $('#modal').modal('toggle');
       getAlldata();
       createAllTables();
