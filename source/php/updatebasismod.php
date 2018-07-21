@@ -15,7 +15,7 @@ $data=$data_ar;
 //$stmt="select * from basiswerte.basis union all select * from basiswerte.modifikation union all select * from basiswerte.final";
 //$stmt="select * from basiswerte.basis where ID = $1";
 //$stmt="UPDATE basiswerte.modifikation SET KL = $1, GEW= $2, GSK= $3, CHA= $4, mut= $5, kon= $6, kk= $7, int= $8 where ID = $9";
-$stmt="UPDATE basiswerte.modifikation SET KL = 1, GEW= 2, GSK= 3, CHA= 4, mut= 5, kon= 6, kk= 7, int= 8 where ID = $1";
+$stmt="UPDATE basiswerte.modifikation SET KL = 1, GEW= 2, GSK= 3, CHA= 4, mut= 5, kon= 6, kk= 7, int= 8 where ID = 1";
 $result = pg_prepare($dbconn,"basiswert",$stmt);
 $result=pg_execute($dbconn,"basiswert",$data);
 pg_set_error_verbosity($dbconn, PGSQL_ERRORS_VERBOSE);
