@@ -572,22 +572,22 @@ $(".editColumn").click(function(){
       $("#modalspielerbasiswerte").modal();
     },
     'spielersekundarwerte': function(){
-      $('#editHP').val(spielerbasiswerte[2]["lebenspunkte"]);
-      $('#editAUSD').val(spielerbasiswerte[2]["ausdauer"]);
-      $('#editEE').val(spielerbasiswerte[2]["ee"]);
-      $('#editAUSW').val(spielerbasiswerte[2]["ausweichen"]);
-      $('#editRUE').val(spielerbasiswerte[2]["ruestung"]);
-      $('#editINIT').val(spielerbasiswerte[2]["initiative"]);
-      $('#editATKB').val(spielerbasiswerte[2]["attacke_basis"]);
-      $('#editPAB').val(spielerbasiswerte[2]["parade_basis"]);
-      $('#editLR').val(spielerbasiswerte[2]["luftresistenz"]);
-      $('#editWR').val(spielerbasiswerte[2]["wasserresistenz"]);
-      $('#editER').val(spielerbasiswerte[2]["erdresistenz"]);
-      $('#editLEBR').val(spielerbasiswerte[2]["das_lebenderesistenz"]);
-      $('#editFR').val(spielerbasiswerte[2]["feuerresistenz"]);
-      $('#editEISR').val(spielerbasiswerte[2]["eisresistenz"]);
-      $('#editMR').val(spielerbasiswerte[2]["metallresistenz"]);
-      $('#editDTR').val(spielerbasiswerte[2]["das_toteresistenz"]);
+      $('#editHP').val(sekundarwert_arr[2]["lebenspunkte"]);
+      $('#editAUSD').val(sekundarwert_arr[2]["ausdauer"]);
+      $('#editEE').val(sekundarwert_arr[2]["ee"]);
+      $('#editAUSW').val(sekundarwert_arr[2]["ausweichen"]);
+      $('#editRUE').val(sekundarwert_arr[2]["ruestung"]);
+      $('#editINIT').val(sekundarwert_arr[2]["initiative"]);
+      $('#editATKB').val(sekundarwert_arr[2]["attacke_basis"]);
+      $('#editPAB').val(sekundarwert_arr[2]["parade_basis"]);
+      $('#editLR').val(sekundarwert_arr[2]["luftresistenz"]);
+      $('#editWR').val(sekundarwert_arr[2]["wasserresistenz"]);
+      $('#editER').val(sekundarwert_arr[2]["erdresistenz"]);
+      $('#editLEBR').val(sekundarwert_arr[2]["das_lebenderesistenz"]);
+      $('#editFR').val(sekundarwert_arr[2]["feuerresistenz"]);
+      $('#editEISR').val(sekundarwert_arr[2]["eisresistenz"]);
+      $('#editMR').val(sekundarwert_arr[2]["metallresistenz"]);
+      $('#editDTR').val(sekundarwert_arr[2]["das_toteresistenz"]);
       $('#modalsekundaerwerte').modal();
     }
   };
