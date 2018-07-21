@@ -558,7 +558,6 @@ function addEditable(tablename,colname){
 
 $(".editColumn").click(function(){
   var tablename = $(this).closest('table').attr('id');
-  window.alert("Tabname: "+tablename);
   var tablemap = {
     'spielerbasiswerte': function(){
       $('#editKL').val(basiswert_arr[1]["kl"]);
