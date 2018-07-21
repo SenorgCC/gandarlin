@@ -70,6 +70,8 @@ function bwbasis(){
       spielerruestungen();
     //  handwerkstalente();
       }
+  }).done(function(){
+    getTable(basiswert_arr,"spielerbasiswerte");
   });
 }
 
