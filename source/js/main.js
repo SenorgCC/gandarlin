@@ -644,6 +644,7 @@ $('#submitBasiswerte').click(function(){
 });
 
 $('#submitSekwerte').click(function(){
+  window.alert("HIER!");
   var hp= $('#editHP').val();
   var ausdauer= $('#editAUSD').val();
   var ee= $('#editEE').val();
@@ -682,6 +683,7 @@ $('#submitSekwerte').click(function(){
           DTR:dtr},
     datatype:"json",
     success:function(data){
+      window.alert(JSON.stringify(data));
       $('#modalsekundaerwerte').toggle();
     }
   }).done(function(){
