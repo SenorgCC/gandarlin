@@ -599,7 +599,6 @@ $('#submitBasiswerte').click(function(){
       var kon= $('#editKON').val();
       var kk=  $('#editKK').val();
       var int= $('#editIN').val();
-      window.alert("Kl:"+kl+"gew "+gew+"gsk "+gsk+"cha "+cha+"mut "+mut+"kon "+kon+"kk "+kk+"int "+int);
   $.ajax({
       type:'POST',
       url:"source/php/updatebasismod.php",
@@ -617,10 +616,8 @@ $('#submitBasiswerte').click(function(){
       //callback
       success: function(data){
       //daten[0]["id"];
-      window.alert("DATA: "+JSON.stringify(data));
       $('#modal').modal('toggle');
       getAlldata();
-      createAllTables();
     }
   });
 });
