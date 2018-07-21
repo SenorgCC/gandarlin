@@ -316,7 +316,7 @@ var wuerfelwerte = [{ "id":"",
       //daten[0]["id"];
         naturtalente_arr=wuerfelwerte.concat(JSON.parse(data));
       }
-    }).donce(function(){
+    }).done(function(){
         getTable(naturtalente_arr,"naturtalente");
     });
 }
