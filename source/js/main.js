@@ -536,7 +536,7 @@ $("#editColumn").click(function(){
     'spielerbasiswerte': function(){
       $('#editKL').val(basiswert_arr[1]["kl"]);
       $('#editGEW').val(basiswert_arr[1]["gew"]);
-      $('#editGES').val(basiswert_arr[1]["gsk"]);
+      $('#editGSK').val(basiswert_arr[1]["gsk"]);
       $('#editCHA').val(basiswert_arr[1]["cha"]);
       $('#editMUT').val(basiswert_arr[1]["mut"]);
       $('#editKON').val(basiswert_arr[1]["kon"]);
