@@ -22,7 +22,7 @@ $data=array($HP,$AUSD,$EE,$AUSW,$RUE,$INIT,$LR,$WR,$ER,$LEBR,$FR,$EISR,$MR,$DTR,
 //$stmt="select * from basiswerte.basis union all select * from basiswerte.modifikation union all select * from basiswerte.final";
 //$stmt="select * from basiswerte.basis where ID = $1";
 //$stmt="UPDATE basiswerte.modifikation SET KL = $1, GEW= $2, GSK= $3, CHA= $4, mut= $5, kon= $6, kk= $7, int= $8 where ID = $9";
-$stmt="UPDATE sekundarwerte.aktuell SET lebenspunkte = $1,";
+$stmt="UPDATE sekundaerwerte.aktuell SET lebenspunkte = $1,";
 $stmt.="ausdauer= $2,";
 $stmt.="ee= $3,";
 $stmt.="ausweichen= $4,";
