@@ -104,6 +104,8 @@ function sekwerte(){
       //daten[0]["id"];
       sekundarwert_arr=kalkulation.concat(JSON.parse(data));
       }
+  }).done(function(){
+    getTable(sekundarwert_arr,"spielersekundarwerte");
   });
 }
 
@@ -226,6 +228,8 @@ var wuerfelwerte = [{ "id":"",
       //daten[0]["id"];
         koerperttalente_arr=wuerfelwerte.concat(JSON.parse(data));
       }
+    }).done(function(){
+      getTable(koerperttalente_arr,"körpertalente");
     });
 }
 
@@ -271,6 +275,8 @@ var wuerfelwerte = [{ "id":"",
       //daten[0]["id"];
         wissenstalente_arr=wuerfelwerte.concat(JSON.parse(data));
       }
+    }).done(function(){
+      getTable(wissenstalente_arr,"wissenstalente");
     });
 }
 
@@ -310,6 +316,8 @@ var wuerfelwerte = [{ "id":"",
       //daten[0]["id"];
         naturtalente_arr=wuerfelwerte.concat(JSON.parse(data));
       }
+    }).donce(function(){
+        getTable(naturtalente_arr,"naturtalente");
     });
 }
 
@@ -346,6 +354,8 @@ var wuerfelwerte =[{ "id":"",
       //daten[0]["id"];
         gesellschaftstalente_arr=wuerfelwerte.concat(JSON.parse(data));
       }
+    }).done(function(){
+      getTable(gesellschaftstalente_arr,"gesellschaftstalente");
     });
 }
 
@@ -382,6 +392,8 @@ var wuerfelwerte =[{ "id":"",
       //daten[0]["id"];
         spezialetalente_arr=wuerfelwerte.concat(JSON.parse(data));
       }
+    }).done(function(){
+        getTable(spezialetalente_arr,"spezialetalente");
     });
 }
 
@@ -397,6 +409,8 @@ function einhandwaffen(){
       //daten[0]["id"];
       einhandwaffen_arr=JSON.parse(data);
       }
+  }).done(function(){
+    getTable(einhandwaffen_arr,"einhandwaffen");
   });
 }
 
@@ -412,6 +426,8 @@ function zweihandwaffen(){
       //daten[0]["id"];
       zweihandwaffen_arr=JSON.parse(data);
       }
+  }).done(function(){
+    getTable(zweihandwaffen_arr,"zweihandwaffen");
   });
 }
 
@@ -427,6 +443,8 @@ function fernkampfwaffen(){
       //daten[0]["id"];
       fernkampfwaffen_arr=JSON.parse(data);
       }
+  }).done(function(){
+    getTable(fernkampfwaffen_arr,"fernkampfwaffen");
   });
 }
 
@@ -442,6 +460,8 @@ function anderewaffen(){
       //daten[0]["id"];
       anderewaffen_arr=JSON.parse(data);
       }
+  }).done(function(){
+    getTable(anderewaffen_arr,"anderewaffen");
   });
 }
 
@@ -496,6 +516,8 @@ function spielerwaffen(){
         }
         spielerwaffen_ar=waffen;
       }
+    }).done(function(){
+      getrowTable(spielerwaffen_ar,"spielerwaffen");
     });
   }
 
@@ -523,6 +545,8 @@ function spielerruestungen(){
         }
         spielerruestungen_arr=ruestung;
       }
+    }).done(function(){
+      getrowTable(spielerruestungen_arr,"spielerruestungen");
     });
   }
 
