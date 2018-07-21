@@ -567,12 +567,13 @@ $('.minus').click(function(){
 $('#submitBasiswerte').click(function(){
       var kl=  $('#editKL').val();
       var gew= $('#editGEW').val();
-      var ges= $('#editGES').val();
+      var gsk= $('#editGSK').val();
       var cha= $('#editCHA').val();
       var mut= $('#editMUT').val();
       var kon= $('#editKON').val();
       var kk=  $('#editKK').val();
       var int= $('#editIN').val();
+      window.alert("Kl:"+kl+"gew "+gew+"gsk "+gsk+"cha "+cha+"mut "+mut+"kon "+kon+"kk "+"int "+int);
   $.ajax({
       type:'POST',
       url:"source/php/updatebasismod.php",
@@ -580,7 +581,7 @@ $('#submitBasiswerte').click(function(){
       data: {ID:SpielerID,
             KL:kl,
             GEW:gew,
-            GES:ges,
+            GSK:gsk,
             CHA:cha,
             MUT:mut,
             KON:kon,
