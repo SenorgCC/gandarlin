@@ -22,23 +22,23 @@ $data=array($HP,$AUSD,$EE,$AUSW,$RUE,$INIT,$LR,$WR,$ER,$LEBR,$FR,$EISR,$MR,$DTR,
 //$stmt="select * from basiswerte.basis union all select * from basiswerte.modifikation union all select * from basiswerte.final";
 //$stmt="select * from basiswerte.basis where ID = $1";
 //$stmt="UPDATE basiswerte.modifikation SET KL = $1, GEW= $2, GSK= $3, CHA= $4, mut= $5, kon= $6, kk= $7, int= $8 where ID = $9";
-$stmt="UPDATE sekundarwerte.aktuell SET lebenspunkte = $1,
-              ausdauer= $2,
-              ee= $3,
-              ausweichen= $4,
-              ruestung = $5,
-              initiative= $6,
-              luftresistenz= $7,
-              wasserresistenz= $8,
-              erdresistenz =$9,
-              das_lebenderesistenz =$10,
-              feuerresistenz = $11,
-              eisresistenz= $12,
-              metallresistenz = $13,
-              das_toteresistenz =$14,
-              attacke_basis =$15,
-              parade_basis = 16
-              where ID = $17;";
+$stmt="UPDATE sekundarwerte.aktuell SET lebenspunkte = $1,";
+$stmt.="ausdauer= $2,";
+$stmt.="ee= $3,";
+$stmt.="ausweichen= $4,";
+$stmt.="ruestung = $5,";
+$stmt.="initiative= $6,";
+$stmt.="luftresistenz= $7,";
+$stmt.="wasserresistenz= $8,";
+$stmt.="erdresistenz =$9,";
+$stmt.="das_lebenderesistenz =$10,";
+$stmt.="feuerresistenz = $11,";
+$stmt.="eisresistenz= $12,";
+$stmt.="metallresistenz = $13,";
+$stmt.="das_toteresistenz =$14,";
+$stmt.="attacke_basis =$15,";
+$stmt.="parade_basis = 16";
+$stmt.=" where ID = $17;";
 $result = pg_prepare($dbconn,"sekundaraktuell",$stmt);
 $result=pg_execute($dbconn,"sekundaraktuell",$data);
 print json_encode(pg_result_error($result));
