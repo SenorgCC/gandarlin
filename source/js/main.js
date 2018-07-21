@@ -635,12 +635,58 @@ $('#submitBasiswerte').click(function(){
       //callback
       success: function(data){
       //daten[0]["id"];
-      $('#modal').modal('toggle');
+      $('#modalspielerbasiswert').modal('toggle');
     }
   }).done(function(){
-    getAlldata();
+    bwbasis();
   });
+
 });
 
+$('#submitSekwerte').click(function(){
+  var hp= $('#editHP').val();
+  var ausdauer= $('#editAUSD').val();
+  var ee= $('#editEE').val();
+  var ausweichen= $('#editAUSW').val();
+  var rue= $('#editRUE').val();
+  var init= $('#editINIT').val();
+  var atkb=$('#editATKB').val();
+  var pab= $('#editPAB').val();
+  var lr=  $('#editLR').val();
+  var wr=  $('#editWR').val();
+  var er=  $('#editER').val();
+  var lebr=$('#editLEBR').val();
+  var fr=  $('#editFR').val();
+  var eisr=$('#editEISR').val();
+  var mr=  $('#editMR').val();
+  var dtr= $('#editDTR').val();
+  $.ajax({
+    type:'POST',
+    url:"source/php/updatesekundaraktuell.php",
+    data:{ID:SpielerID,
+          HP:hp,
+          AUSD:ausdauer,
+          EE:ee,
+          AUSW:ausweichen,
+          RUE:rue,
+          INIT:init,
+          ATKB:atkb,
+          PAB:pab,
+          LR:lr,
+          WR:wr,
+          ER:er,
+          LEBR:lebr,
+          FR:fr,
+          EISR:eisr,
+          MR:mr,
+          DTR:dtr},
+    datatype:"json",
+    success:function(data){
+      $('#modalsekundaerwerte').toggle();
+    }
+  }).done(function(){
+  sekwerte();
+  });
+});
 
 });
