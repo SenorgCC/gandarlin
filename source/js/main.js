@@ -556,7 +556,7 @@ function addEditable(tablename,colname){
   $('#'+tablename+' tr td:nth-child('+columnIndex+')').css("color","#F00");
 }
 
-$("#editColumn").click(function(){
+$(".editColumn").click(function(){
   var tablename = $(this).closest('table').attr('id');
   var tablemap = {
     'spielerbasiswerte': function(){
@@ -569,7 +569,25 @@ $("#editColumn").click(function(){
       $('#editKK').val(basiswert_arr[1]["kk"]);
       $('#editIN').val(basiswert_arr[1]["int"]);
       $("#modalspielerbasiswerte").modal();
-
+    },
+    'spielersekundarwerte': function(){
+      $('#editHP').val(spielerbasiswerte[2]["lebenspunkte"]);
+      $('#editAUSD').val(spielerbasiswerte[2]["ausdauer"]);
+      $('#editEE').val(spielerbasiswerte[2]["ee"]);
+      $('#editAUSW').val(spielerbasiswerte[2]["ausweichen"]);
+      $('#editRUE').val(spielerbasiswerte[2]["ruestung"]);
+      $('#editINIT').val(spielerbasiswerte[2]["initiative"]);
+      $('#editATKB').val(spielerbasiswerte[2]["attacke_basis"]);
+      $('#editPAB').val(spielerbasiswerte[2]["parade_basis"]);
+      $('#editLR').val(spielerbasiswerte[2]["luftresistenz"]);
+      $('#editWR').val(spielerbasiswerte[2]["wasserresistenz"]);
+      $('#editER').val(spielerbasiswerte[2]["erdresistenz"]);
+      $('#editLEBR').val(spielerbasiswerte[2]["das_lebenderesistenz"]);
+      $('#editFR').val(spielerbasiswerte[2]["feuerresistenz"]);
+      $('#editEISR').val(spielerbasiswerte[2]["eisresistenz"]);
+      $('#editMR').val(spielerbasiswerte[2]["metallresistenz"]);
+      $('#editDTR').val(spielerbasiswerte[2]["das_toteresistenz"]);
+      $('#modalsekundaerwerte').modal();
     }
   };
   var showmodal = tablemap[tablename];
@@ -617,12 +635,11 @@ $('#submitBasiswerte').click(function(){
       success: function(data){
       //daten[0]["id"];
       $('#modal').modal('toggle');
-      getAlldata();
     }
+  }).done(function(){
+    getAlldata();
   });
 });
-//#######################################
-//plugins
-//#######################################
+
 
 });

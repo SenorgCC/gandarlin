@@ -32,7 +32,7 @@
           <tr>
             <th scope="col"></th>
             <th scope="col">Basis</th>
-            <th scope="col">Bonus/Malus <button id="editColumn">Edit</button></th>
+            <th scope="col">Bonus/Malus <button class="editColumn">Edit</button></th>
             <th scope="col">Final</th>
           </tr>
       </thead>
@@ -49,7 +49,7 @@
             <th scope="col"></th>
             <th scope="col">Kalkulation</th>
             <th scope="col">Normalwert</th>
-            <th scope="col">Aktuell</th>
+            <th scope="col">Aktuell <button id="editAktuell">Edit</button></th>
           </tr>
         </thead>
       <tbody>
@@ -67,7 +67,7 @@
             <th scope="col">Würfelwert 2</th>
             <th scope="col">Würfelwert 3</th>
             <th scope="col">Talentwert</th>
-            <th scope="col">Bonus-/Maluswert</th>
+            <th scope="col">Bonus-/Maluswert <button id="editKorpColumn">Edit</button></th>
           </tr>
         </thead>
         <tbody>
@@ -259,9 +259,9 @@
       </table>
     </div>
     </div>
+
     <div class="modal fade" id="modalspielerbasiswerte" role="dialog">
       <div class="modal-dialog">
-
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
@@ -328,9 +328,126 @@
             <button type="button" id="submitBasiswerte" class="btn btn-default" data-dismiss="modal">Save</button>
           </div>
         </div>
-
       </div>
     </div>
 
+  <div class="modal fade" id="modalsekundaerwerte" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Sekundärwerte Anpassungen <button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>Lebenspunkte</td>
+                  <td><input id="editHP" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                   </td>
+                </tr>
+                <tr>
+                  <td>Ausdauer</td><td><input id="editAUSD" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Elementar Essenz</td><td><input id="editEE" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ausweichen</td><td><input id="editAUSW" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Rüstung</td><td><input id="editRUE" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>initiative</td><td><input id="editINIT" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Attacke-Basiswert</td><td><input id="editATKB" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Parade-Basiswert</td><td><input id="editPAB" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </p>
+                </tr>
+                <tr>
+                  <td>Luftresistenz</td><td><input id="editLR" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </p>
+                </tr>
+                <tr>
+                  <td>Wasserresistenz</td><td><input id="editWR" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </p>
+                </tr>
+                <tr>
+                  <td>Erdresistenz</td><td><input id="editER" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </p>
+                </tr>
+                <tr>
+                  <td>Das Lebenderesistenz</td><td><input id="editLEBR" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </p>
+                </tr>
+                <tr>
+                  <td>Feuerresistenz</td><td><input id="editFR" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </p>
+                </tr>
+                <tr>
+                  <td>Eisresistenz</td><td><input id="editEISR" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </p>
+                </tr>
+                <tr>
+                  <td>Metallresistenz</td><td><input id="editMR" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </p>
+                </tr>
+                <tr>
+                  <td>Das Toteresistenz</td><td><input id="editDTR" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </p>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <!-- TODO: Clear der Inputs einbauen -->
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="submitBasiswerte" class="btn btn-default" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
