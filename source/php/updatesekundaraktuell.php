@@ -39,8 +39,8 @@ $stmt.="das_toteresistenz =$14,";
 $stmt.="attacke_basis =$15,";
 $stmt.="parade_basis = 16";
 $stmt.=" where ID = $17;";
-$result = pg_prepare($dbconn,"sekundaraktuell",$stmt);
-$result=pg_execute($dbconn,"sekundaraktuell",$data);
+$result = pg_prepare($dbconn,"aktuell",$stmt);
+$result=pg_execute($dbconn,"aktuell",$data);
 print json_encode(pg_result_error($result));
 pg_close($dbconn);
 ?>
