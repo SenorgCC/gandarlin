@@ -697,4 +697,14 @@ $('#submitSekwerte').click(function(){
   });
 });
 
+$('#submitKörpertalente').click(function(){
+var schleichen=  $('#editSchleichen').val();
+var aufmerksamkeit=  $('#editAufm').val();
+var robustheit=  $('#editRobustheit').val();
+var fingerfertigkeit=  $('#editFingerF').val();
+var zechen=  $('#editZechen').val();
+var taschendiebstahl= $('#editTaschenD').val();
+    $('#modalkoerpertalente').modal();
+  });
+  
 });
