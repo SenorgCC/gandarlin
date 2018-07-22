@@ -588,6 +588,15 @@ $(".editColumn").click(function(){
       $('#editMR').val(sekundarwert_arr[2]["metallresistenz"]);
       $('#editDTR').val(sekundarwert_arr[2]["das_toteresistenz"]);
       $('#modalsekundaerwerte').modal();
+    },
+    'körpertalente':function(){
+      $('#editSchleichen').val(koerperttalente_arr[5]["schleichen"]);
+      $('#editAufm').val(koerperttalente_arr[5]["aufmerksamkeit"]);
+      $('#editRobustheit').val(koerperttalente_arr[5]["robustheit"]);
+      $('#editFingerF').val(koerperttalente_arr[5]["fingerfertigkeit"]);
+      $('#editZechen').val(koerperttalente_arr[5]["zechen"]);
+      $('#editTaschenD').val(koerperttalente_arr[5]["taschendiebstahl"]);
+      $('#modalkoerpertalente').modal();
     }
   };
   var showmodal = tablemap[tablename];
