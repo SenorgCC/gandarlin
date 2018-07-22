@@ -682,7 +682,7 @@ $('#submitSekwerte').click(function(){
     datatype:"json",
     success:function(data){
       window.alert(JSON.stringify(data));
-      $('#modalsekundaerwerte').toggle();
+      $('#modalsekundaerwerte').modal('toggle';
     }
   }).done(function(){
   sekwerte();
