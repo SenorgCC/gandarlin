@@ -590,12 +590,12 @@ $(".editColumn").click(function(){
       $('#modalsekundaerwerte').modal();
     },
     'körpertalente':function(){
-      $('#editSchleichen').val(koerperttalente_arr[5]["schleichen"]);
-      $('#editAufm').val(koerperttalente_arr[5]["aufmerksamkeit"]);
-      $('#editRobustheit').val(koerperttalente_arr[5]["robustheit"]);
-      $('#editFingerF').val(koerperttalente_arr[5]["fingerfertigkeit"]);
-      $('#editZechen').val(koerperttalente_arr[5]["zechen"]);
-      $('#editTaschenD').val(koerperttalente_arr[5]["taschendiebstahl"]);
+      $('#editSchleichen').val(koerperttalente_arr[4]["schleichen"]);
+      $('#editAufm').val(koerperttalente_arr[4]["aufmerksamkeit"]);
+      $('#editRobustheit').val(koerperttalente_arr[4]["robustheit"]);
+      $('#editFingerF').val(koerperttalente_arr[4]["fingerfertigkeit"]);
+      $('#editZechen').val(koerperttalente_arr[4]["zechen"]);
+      $('#editTaschenD').val(koerperttalente_arr[4]["taschendiebstahl"]);
       $('#modalkoerpertalente').modal();
     }
   };
