@@ -643,7 +643,6 @@ $('#submitBasiswerte').click(function(){
 });
 
 $('#submitSekwerte').click(function(){
-  window.alert("HIER!");
   var hp= $('#editHP').val();
   var ausdauer= $('#editAUSD').val();
   var ee= $('#editEE').val();
