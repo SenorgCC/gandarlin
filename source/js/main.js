@@ -681,7 +681,6 @@ $('#submitSekwerte').click(function(){
           DTR:dtr},
     datatype:"json",
     success:function(data){
-      window.alert(JSON.stringify(data));
       $('#modalsekundaerwerte').modal('toggle');
     }
   }).done(function(){
