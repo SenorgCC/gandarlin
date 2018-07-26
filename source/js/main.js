@@ -261,7 +261,7 @@ var wuerfelwerte = [{ "id":"",
                       "magie": basiswert_arr[2]["int"]+" (IN)",
                       "gassenwissen": basiswert_arr[2]["kk"]+" (KK)",
                       "weltenkenntnis": basiswert_arr[2]["mut"]+" (MUT)",
-                      "sprachen": basiswert_arr[2]["in"]+" (INT)",
+                      "sprachen": basiswert_arr[2]["int"]+" (IN)",
                       "anatomie": basiswert_arr[2]["mut"]+" (MUT)"
                     }];
       $.ajax({
