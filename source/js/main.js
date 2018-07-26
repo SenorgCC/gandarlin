@@ -27,7 +27,7 @@ $( document ).ready(function() {
   function createAllTables(){
       getTable(basiswert_arr,"spielerbasiswerte");
       getTable(sekundarwert_arr,"spielersekundarwerte");
-      getTable(koerperttalente_arr,"körpertalente");
+      getTable(kperttalente_arr,"körpertalente");
       getTable(wissenstalente_arr,"wissenstalente");
       getTable(naturtalente_arr,"naturtalente");
       getTable(gesellschaftstalente_arr,"gesellschaftstalente");
@@ -728,6 +728,7 @@ $.ajax({
     datatype:"json",
     success:function(data){
       $('#modalkoerpertalente').modal();
+      }
     }).done(function(){
       korprtalente();
     })
@@ -758,6 +759,7 @@ $.ajax({
     datatype:"json",
     success:function(data){
       $('#modalwissenstalente').modal();
+    }
     }).done(function(){
       wissenstalente();
     })
