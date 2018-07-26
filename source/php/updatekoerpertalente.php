@@ -17,7 +17,7 @@ $stmt.="aufmerksamkeit= $2,";
 $stmt.="robustheit= $3,";
 $stmt.="fingerfertigkeit= $4,";
 $stmt.="zechen= $5,";
-$stmt.="taschendiebstahl= $6,";
+$stmt.="taschendiebstahl= $6";
 $stmt.=" where ID = $7;";
 $result = pg_prepare($dbconn,"koerpertalente",$stmt);
 $result=pg_execute($dbconn,"koerpertalente",$data);

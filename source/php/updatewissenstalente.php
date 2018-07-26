@@ -21,7 +21,7 @@ $stmt.="magie= $4,";
 $stmt.="gassenwissen= $5,";
 $stmt.="weltenkenntnis= $6,";
 $stmt.="sprachen= $7,";
-$stmt.="anatomie= $8,";
+$stmt.="anatomie= $8";
 $stmt.=" where ID = $9;";
 $result = pg_prepare($dbconn,"wissenstalente",$stmt);
 $result=pg_execute($dbconn,"wissenstalente",$data);
