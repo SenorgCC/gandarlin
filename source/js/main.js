@@ -597,6 +597,17 @@ $(".editColumn").click(function(){
       $('#editZechen').val(koerperttalente_arr[4]["zechen"]);
       $('#editTaschenD').val(koerperttalente_arr[4]["taschendiebstahl"]);
       $('#modalkoerpertalente').modal();
+    },
+    'wissenstalente':function(){
+      $('#editHeilung').val(wissenstalente_arr[4]["heilung"]);
+      $('#editGifte').val(wissenstalente_arr[4]["gifte"]);
+      $('#editSchriften').val(wissenstalente_arr[4]["schriften"]);
+      $('#editMagie').val(wissenstalente_arr[4]["maige"]);
+      $('#editGassenwissen').val(wissenstalente_arr[4]["gassenwissen"]);
+      $('#editWeltenkenntnis').val(wissenstalente_arr[4]["weltenkenntnis"]);
+      $('#editSprachen').val(wissenstalente_arr[4]["sprachen"]);
+      $('#editAnatomie').val(wissenstalente_arr[4]["anatomie"]);
+      $('#modalwissenstalente').modal();
     }
   };
   var showmodal = tablemap[tablename];
@@ -704,7 +715,52 @@ var robustheit=  $('#editRobustheit').val();
 var fingerfertigkeit=  $('#editFingerF').val();
 var zechen=  $('#editZechen').val();
 var taschendiebstahl= $('#editTaschenD').val();
-    $('#modalkoerpertalente').modal();
-  });
-  
+$.ajax({
+    type:'POST',
+    url:"source/php/updatekoerpertalente.php",
+    data:{ID:SpielerID,
+          SCHL:schleichen,
+          AUF:aufmerksamkeit,
+          ROB:robustheit,
+          FIN:fingerfertigkeit,
+          ZEC:zechen,
+          TAS:taschendiebstahl},
+    datatype:"json",
+    success:function(data){
+      $('#modalkoerpertalente').modal();
+    }).done(function(){
+      korprtalente();
+    })
+  })
+});
+
+$('#submitwissenstalente').click(function(){
+var heilung=  $('#editHeilung').val();
+var gifte=  $('#editGifte').val();
+var schriften=  $('#editSchriften').val();
+var magie=  $('#editMagie').val();
+var gassenwissen=  $('#editGassenwissen').val();
+var weltenkenntnis=  $('#editWeltenkenntnis').val();
+var sprachen=  $('#editSprachen').val();
+var anatomie= $('#editAnatomie').val();
+$.ajax({
+    type:'POST',
+    url:"source/php/updatewissenstalente.php",
+    data:{ID:SpielerID,
+          HEI:heilung,
+          GIF:gifte,
+          SCH:schriften,
+          MAG:magie,
+          GAS:gassenwissen,
+          WEL:weltenkenntnis,
+          SPR:sprachen,
+          ANA:anatomie},
+    datatype:"json",
+    success:function(data){
+      $('#modalwissenstalente').modal();
+    }).done(function(){
+      wissenstalente();
+    })
+  })
+});
 });

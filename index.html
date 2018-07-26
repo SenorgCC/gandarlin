@@ -76,7 +76,7 @@
     </div>
 
     <div id="wissenstalentediv">
-      <h1>wissenstalente</h1>
+      <h1>Wissenstalente</h1>
       <table id="wissenstalente" class="table">
         <thead>
           <tr>
@@ -260,7 +260,7 @@
     </div>
     </div>
 
-    <div class="modal fade" id="modalspielerbasiswerte" role="dialog">
+  <div class="modal fade" id="modalspielerbasiswerte" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
@@ -508,5 +508,77 @@
         </div>
       </div>
     </div>
+
+  <div class="modal fade" id="modalwissenstalente" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Wissenstalente Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>Heilung</td>
+                  <td><input id="editHeilung" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                   </td>
+                </tr>
+                <tr>
+                  <td>Gifte</td><td><input id="editGifte" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Schriften</td><td><input id="editSchriften" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Magie</td><td><input id="editMagie" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gassenwissen</td><td><input id="editGassenwissen" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Weltenkenntnis</td><td><input id="editWeltenkenntnis" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Sprachen</td><td><input id="editSprachen" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Anatomie</td><td><input id="editAnatomie" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <!-- TODO: Clear der Inputs einbauen -->
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="submitwissenstalente" class="btn btn-default" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
