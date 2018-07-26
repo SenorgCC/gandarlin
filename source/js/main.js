@@ -602,7 +602,7 @@ $(".editColumn").click(function(){
       $('#editHeilung').val(wissenstalente_arr[4]["heilung"]);
       $('#editGifte').val(wissenstalente_arr[4]["gifte"]);
       $('#editSchriften').val(wissenstalente_arr[4]["schriften"]);
-      $('#editMagie').val(wissenstalente_arr[4]["maige"]);
+      $('#editMagie').val(wissenstalente_arr[4]["magie"]);
       $('#editGassenwissen').val(wissenstalente_arr[4]["gassenwissen"]);
       $('#editWeltenkenntnis').val(wissenstalente_arr[4]["weltenkenntnis"]);
       $('#editSprachen').val(wissenstalente_arr[4]["sprachen"]);
