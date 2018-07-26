@@ -731,8 +731,7 @@ $.ajax({
       }
     }).done(function(){
       korprtalente();
-    })
-  })
+  });
 });
 
 $('#submitwissenstalente').click(function(){
@@ -762,7 +761,6 @@ $.ajax({
     }
     }).done(function(){
       wissenstalente();
-    })
-  })
-});
+    });
+  });
 });
