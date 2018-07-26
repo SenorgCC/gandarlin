@@ -727,7 +727,7 @@ $.ajax({
           TAS:taschendiebstahl},
     datatype:"json",
     success:function(data){
-      $('#modalkoerpertalente').modal();
+      $('#modalkoerpertalente').modal('toggle');
       }
     }).done(function(){
       korprtalente();
@@ -757,7 +757,7 @@ $.ajax({
           ANA:anatomie},
     datatype:"json",
     success:function(data){
-      $('#modalwissenstalente').modal();
+      $('#modalwissenstalente').modal('toggle');
     }
     }).done(function(){
       wissenstalente();
