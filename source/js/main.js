@@ -473,7 +473,6 @@ function handwerkstalente(){
                     "koch": (basiswert_arr[2]["kl"]+basiswert_arr[2]["gew"]+basiswert_arr[2]["kon"])/5+'<br>'+"(KL+GEW+KON)/5",
                     "lehren": " "
                   }];
-      alert("TEST1");
       $.ajax({
       type:'POST',
       url:"source/php/handwerkstalente.php",
@@ -484,9 +483,9 @@ function handwerkstalente(){
       success: function(data){
       //daten[0]["id"];
         handwerkstalente_arr=wuerfelwerte.concat(JSON.parse(data));
-        alert("TEST");
-        alert(JSON.stringify(handwerkstalente_arr));
       }
+    }).done(function(){
+      getrowTable(handwerkstalente_arr,"handwerkstalente");
     });
   }
 
