@@ -27,7 +27,7 @@ $( document ).ready(function() {
   function createAllTables(){
       getTable(basiswert_arr,"spielerbasiswerte");
       getTable(sekundarwert_arr,"spielersekundarwerte");
-      getTable(kperttalente_arr,"körpertalente");
+      getTable(koerperttalente_arr,"körpertalente");
       getTable(wissenstalente_arr,"wissenstalente");
       getTable(naturtalente_arr,"naturtalente");
       getTable(gesellschaftstalente_arr,"gesellschaftstalente");
