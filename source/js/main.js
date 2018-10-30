@@ -22,7 +22,6 @@ $( document ).ready(function() {
       zweihandwaffen();
       fernkampfwaffen();
       anderewaffen();
-      handwerkstalente();
   }
 
   function createAllTables(){
@@ -69,7 +68,7 @@ function bwbasis(){
       spezialetalente();
       spielerwaffen();
       spielerruestungen();
-    //  handwerkstalente();
+      handwerkstalente();
       }
   }).done(function(){
     getTable(basiswert_arr,"spielerbasiswerte");
