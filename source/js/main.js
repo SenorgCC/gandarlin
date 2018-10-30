@@ -467,10 +467,10 @@ function anderewaffen(){
 
 function handwerkstalente(){
       var wuerfelwerte =[{ "id":"",
-                    "schmieden": (basiswert_arr[2]["kk"]+basiswert_arr[2]["kk"]+basiswert_arr[2]["kon"])/5+'<br>'+"(KK+KK+KON)/5",
-                    "lederverarbeitung": (basiswert_arr[2]["gsk"]+basiswert_arr[2]["gsk"]+basiswert_arr[2]["kon"])/5+'<br>'+"(GSK+GSK+KON)/5",
-                    "holzverarbeitung": (basiswert_arr[2]["gsk"]+basiswert_arr[2]["kon"]+basiswert_arr[2]["kk"])/5+'<br>'+"(GSK+KON+KK)/5",
-                    "koch": (basiswert_arr[2]["kl"]+basiswert_arr[2]["gew"]+basiswert_arr[2]["kon"])/5+'<br>'+"(KL+GEW+KON)/5",
+                    "schmieden": (parseInt(basiswert_arr[2]["kk"])+parseInt(basiswert_arr[2]["kk"])+parseInt(basiswert_arr[2]["kon"]))/5+'<br>'+"(KK+KK+KON)/5",
+                    "lederverarbeitung": (parseInt(basiswert_arr[2]["gsk"])+parseInt(basiswert_arr[2]["gsk"])+parseInt(basiswert_arr[2]["kon"]))/5+'<br>'+"(GSK+GSK+KON)/5",
+                    "holzverarbeitung": (parseInt(basiswert_arr[2]["gsk"])+parseInt(basiswert_arr[2]["kon"])+parseInt(basiswert_arr[2]["kk"]))/5+'<br>'+"(GSK+KON+KK)/5",
+                    "koch": (parseInt(basiswert_arr[2]["kl"])+parseInt(basiswert_arr[2]["gew"])+parseInt(basiswert_arr[2]["kon"]))/5+'<br>'+"(KL+GEW+KON)/5",
                     "lehren": " "
                   }];
       $.ajax({
