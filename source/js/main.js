@@ -474,6 +474,7 @@ function handwerkstalente(){
                     "koch": (basiswert_arr[2]["kl"]+basiswert_arr[2]["gew"]+basiswert_arr[2]["kon"])/5+<br>+"(KL+GEW+KON)/5",
                     "lehren": " "
                   }];
+        alert("TEST1");
       $.ajax({
       type:'POST',
       url:"source/php/handwerkstalente.php",
@@ -488,7 +489,8 @@ function handwerkstalente(){
         alert(JSON.stringify(handwerkstalente_arr));
       }
     });
-}
+  }
+
 
 function spielerwaffen(){
       var tempwaffen= [];
