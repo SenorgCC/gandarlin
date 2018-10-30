@@ -22,6 +22,7 @@ $( document ).ready(function() {
       zweihandwaffen();
       fernkampfwaffen();
       anderewaffen();
+      handwerkstalente();
   }
 
   function createAllTables(){
