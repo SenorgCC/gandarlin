@@ -485,7 +485,7 @@ function handwerkstalente(){
         handwerkstalente_arr=wuerfelwerte.concat(JSON.parse(data));
       }
     }).done(function(){
-      getrowTable(handwerkstalente_arr,"handwerkstalente");
+      getTable(handwerkstalente_arr,"handwerkstalente");
     });
   }
 
