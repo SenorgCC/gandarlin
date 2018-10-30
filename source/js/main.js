@@ -484,7 +484,8 @@ function handwerkstalente(){
       success: function(data){
       //daten[0]["id"];
         handwerkstalente_arr=wuerfelwerte.concat(JSON.parse(data));
-        window.alert(JSON.stringify(handwerkstalente_arr));
+        alert("TEST");
+        alert(JSON.stringify(handwerkstalente_arr));
       }
     });
 }
