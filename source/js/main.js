@@ -611,11 +611,10 @@ $(".editColumn").click(function(){
       $('#modalwissenstalente').modal();
     },
     'einhandwaffen':function(){
-      alert("HIER");
-      $('#editEinhandschwerter').val(einhandwaffen_arr[2]["Schwerter"]);
-      $('#editBeile').val(einhandwaffen_arr[2]["Beile"]);
-      $('#editFlegel').val(einhandwaffen_arr[2]["Flegel"]);
-      $('#editDolche').val(einhandwaffen_arr[2]["Dolche"]);
+      $('#editEinhandschwerter').val(einhandwaffen_arr[2]["schwerter"]);
+      $('#editBeile').val(einhandwaffen_arr[2]["beile"]);
+      $('#editFlegel').val(einhandwaffen_arr[2]["flegel"]);
+      $('#editDolche').val(einhandwaffen_arr[2]["dolche"]);
       $('#modaleinhandwaffen').modal();
     }
   };
@@ -778,11 +777,12 @@ var schwerter=  $('#editEinhandschwerter').val();
 var beile = $('#editBeile').val();
 var flegel = $('#editFlegel').val();
 var dolche = $('#editDolche').val();
+alert(schwerter);
 $.ajax({
     type:'POST',
     url:"source/php/updateeinhandwaffen.php",
     data:{ID:SpielerID,
-          SCHW: schwerter,
+          SCHW:schwerter,
           BEI:beile,
           FLE:flegel,
           DOL:dolche
