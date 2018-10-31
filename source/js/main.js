@@ -609,6 +609,13 @@ $(".editColumn").click(function(){
       $('#editSprachen').val(wissenstalente_arr[4]["sprachen"]);
       $('#editAnatomie').val(wissenstalente_arr[4]["anatomie"]);
       $('#modalwissenstalente').modal();
+    },
+    'einhandwaffen':function(){
+      $('#editEinhandschwerter').val(einhandwaffen_arr[2]["Schwerter"]);
+      $('#editBeile').val(einhandwaffen_arr[2]["Beile"]);
+      $('#editFlegel').val(einhandwaffen_arr[2]["Flegel"]);
+      $('#editDolche').val(einhandwaffen_arr[2]["Dolche"]);
+      $('#modaleinhandwaffen').modal();
     }
   };
   var showmodal = tablemap[tablename];
@@ -762,6 +769,29 @@ $.ajax({
     }
     }).done(function(){
       wissenstalente();
+    });
+  });
+
+$('#submiteinhandwaffen').click(function(){
+var schwerter=  $('#editEinhandschwerter').val();
+var beile = $('#editBeile').val();
+var flegel = $('#editFlegel').val();
+var dolche = $('#editDolche').val();
+$.ajax({
+    type:'POST',
+    url:"source/php/updateeinhandwaffen.php",
+    data:{ID:SpielerID,
+          SCHW: schwerter,
+          BEI:beile,
+          FLE:flegel,
+          DOL:dolche
+        },
+    datatype:"json",
+    success:function(data){
+      $('#modaleinhandwaffen').modal('toggle');
+    }
+    }).done(function(){
+      einhandwaffen();
     });
   });
 });
