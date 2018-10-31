@@ -777,7 +777,6 @@ var schwerter=  $('#editEinhandschwerter').val();
 var beile = $('#editBeile').val();
 var flegel = $('#editFlegel').val();
 var dolche = $('#editDolche').val();
-alert(schwerter);
 $.ajax({
     type:'POST',
     url:"source/php/updateeinhandwaffen.php",

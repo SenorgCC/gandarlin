@@ -13,7 +13,7 @@ $data=array($SCH,$BEI,$FLE,$DOL,$ID);
 $stmt="UPDATE einhandwaffen.modifikation SET schwerter = $1,";
 $stmt.="Beile= $2,";
 $stmt.="flegel= $3,";
-$stmt.="dolche= $4,";
+$stmt.="dolche= $4";
 $stmt.=" where ID = $9;";
 $result = pg_prepare($dbconn,"einhandwaffen",$stmt);
 $result=pg_execute($dbconn,"einhandwaffen",$data);
