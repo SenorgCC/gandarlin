@@ -781,7 +781,7 @@ $.ajax({
     type:'POST',
     url:"source/php/updateeinhandwaffen.php",
     data:{ID:SpielerID,
-          SCHW:schwerter,
+          SCH:schwerter,
           BEI:beile,
           FLE:flegel,
           DOL:dolche
