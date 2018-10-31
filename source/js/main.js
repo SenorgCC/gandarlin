@@ -611,10 +611,10 @@ $(".editColumn").click(function(){
       $('#modalwissenstalente').modal();
     },
     'einhandwaffen':function(){
-      $('#editEinhandschwerter').val(einhandwaffen_arr[2]["schwerter"]);
-      $('#editBeile').val(einhandwaffen_arr[2]["beile"]);
-      $('#editFlegel').val(einhandwaffen_arr[2]["flegel"]);
-      $('#editDolche').val(einhandwaffen_arr[2]["dolche"]);
+      $('#editEinhandschwerter').val(einhandwaffen_arr[3]["schwerter"]);
+      $('#editBeile').val(einhandwaffen_arr[3]["beile"]);
+      $('#editFlegel').val(einhandwaffen_arr[3]["flegel"]);
+      $('#editDolche').val(einhandwaffen_arr[3]["dolche"]);
       $('#modaleinhandwaffen').modal();
     }
   };
