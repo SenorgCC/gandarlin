@@ -611,6 +611,7 @@ $(".editColumn").click(function(){
       $('#modalwissenstalente').modal();
     },
     'einhandwaffen':function(){
+      alert("HIER");
       $('#editEinhandschwerter').val(einhandwaffen_arr[2]["Schwerter"]);
       $('#editBeile').val(einhandwaffen_arr[2]["Beile"]);
       $('#editFlegel').val(einhandwaffen_arr[2]["Flegel"]);
