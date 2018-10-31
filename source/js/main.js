@@ -624,6 +624,7 @@ $(".editColumn").click(function(){
       $('#editueberleben').val(naturtalente_arr[4]["ueberleben"]);
       $('#editorientierung').val(naturtalente_arr[4]["orientierung"]);
       $('#editfaehrtenlesen').val(naturtalente_arr[4]["faehrtenlesen"]);
+      $('#modalnaturtalente').modal();
     }
   };
   var showmodal = tablemap[tablename];
