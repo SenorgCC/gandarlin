@@ -616,6 +616,14 @@ $(".editColumn").click(function(){
       $('#editFlegel').val(einhandwaffen_arr[1]["flegel"]);
       $('#editDolche').val(einhandwaffen_arr[1]["dolche"]);
       $('#modaleinhandwaffen').modal();
+    },
+    'naturtalente': function(){
+      $('#editkraeuter').val(naturtalente_arr[4]["kraeuterkunde"]);
+      $('#edittierkunde').val(naturtalente_arr[4]["tierkunde"]);
+      $('#editgeographie').val(naturtalente_arr[4]["geographie"]);
+      $('#editueberleben').val(naturtalente_arr[4]["ueberleben"]);
+      $('#editorientierung').val(naturtalente_arr[4]["orientierung"]);
+      $('#editfaehrtenlesen').val(naturtalente_arr[4]["faehrtenlesen"]);
     }
   };
   var showmodal = tablemap[tablename];
@@ -792,6 +800,31 @@ $.ajax({
     }
     }).done(function(){
       einhandwaffen();
+    });
+  });
+
+$('#submitnaturtalente').click(function(){
+var kraeuter=  $('#editkraeuter').val();
+var geographie=  $('#editgeographie').val();
+var ueberleben=  $('#editueberleben').val();
+var orientierung=  $('#editorientierung').val();
+var faehrtenlesen=  $('#editfaehrtenlesen').val();
+$.ajax({
+    type:'POST',
+    url:"source/php/updatenaturtalente.php",
+    data:{ID:SpielerID,
+          KRA:kraeuter,
+          GEO:geographie,
+          UEB:ueberleben,
+          ORI:orientierung,
+          FAE:faehrtenlesen
+        },
+    datatype:"json",
+    success:function(data){
+      $('#modalnaturtalente').modal('toggle');
+    }
+    }).done(function(){
+      naturtalente();
     });
   });
 });
