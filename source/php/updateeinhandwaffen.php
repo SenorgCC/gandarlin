@@ -14,7 +14,7 @@ $stmt="UPDATE einhandwaffen.modifikation SET schwerter = $1,";
 $stmt.="Beile= $2,";
 $stmt.="flegel= $3,";
 $stmt.="dolche= $4";
-$stmt.=" where ID = $9;";
+$stmt.=" where ID = $5;";
 $result = pg_prepare($dbconn,"einhandwaffen",$stmt);
 $result=pg_execute($dbconn,"einhandwaffen",$data);
 print json_encode(pg_result_error($result));
