@@ -1,10 +1,10 @@
 <?php
 include('../../../connect.php');
 $ID = $_POST['ID'];
-$GAS=$_POST['SCH'];
-$WEL=$_POST['BEI'];
-$SPR=$_POST['FLE'];
-$ANA=$_POST['DOL'];
+$SCH=$_POST['SCH'];
+$BEI=$_POST['BEI'];
+$FLE=$_POST['FLE'];
+$DOL=$_POST['DOL'];
 //$data_ar=array($KL,$GEW,$GSK,$CHA,$MUT,$KON,$KK,$INT,$ID);
 $data=array($SCH,$BEI,$FLE,$DOL,$ID);
 //$stmt="select * from basiswerte.basis union all select * from basiswerte.modifikation union all select * from basiswerte.final";
