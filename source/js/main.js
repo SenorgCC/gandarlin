@@ -636,10 +636,10 @@ $(".editColumn").click(function(){
     },
     'spezialetalente': function(){
       $('#editreiten').val(spezialetalente_arr[4]["reiten"]);
-      $('#editreiten').val(spezialetalente_arr[4]["schwimmen"]);
-      $('#editreiten').val(spezialetalente_arr[4]["klettern"]);
-      $('#editreiten').val(spezialetalente_arr[4]["gaukeleien"]);
-      $('#editreiten').val(spezialetalente_arr[4]["seefahrt"]);
+      $('#editschwimmen').val(spezialetalente_arr[4]["schwimmen"]);
+      $('#editklettern').val(spezialetalente_arr[4]["klettern"]);
+      $('#editgaukeleien').val(spezialetalente_arr[4]["gaukeleien"]);
+      $('#editseefahrt').val(spezialetalente_arr[4]["seefahrt"]);
       $('#modalspezialtalente').modal();
     }
   };
