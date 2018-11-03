@@ -633,7 +633,14 @@ $(".editColumn").click(function(){
       $('#editetikette').val(gesellschaftstalente_arr[4]["etikette"]);
       $('#editmenschenkentnis').val(gesellschaftstalente_arr[4]["menschenkenntnis"]);
       $('#modalgesellschaftstalente').modal();
-    }
+    },
+    'spezialetalente': function(){
+      $('#editreiten').val(spezialetalente_arr[4]["reiten"]);
+      $('#editreiten').val(spezialetalente_arr[4]["schwimmen"]);
+      $('#editreiten').val(spezialetalente_arr[4]["klettern"]);
+      $('#editreiten').val(spezialetalente_arr[4]["gaukeleien"]);
+      $('#editreiten').val(spezialetalente_arr[4]["seefahrt"]);
+      $('#modalspezialtalente').modal();
   };
   var showmodal = tablemap[tablename];
   if (showmodal) showmodal();
@@ -859,6 +866,31 @@ $.ajax({
     }
     }).done(function(){
       gesellschaftstalente();
+    });
+  });
+
+$('#submitspezialtalente').click(function(){
+var reiten=  $('#editreiten').val();
+var schwimmen=  $('#editschwimmen').val();
+var klettern=  $('#editklettern').val();
+var gaukeleien=  $('#editgaukeleien').val();
+var seefahrt=  $('#editseefahrt').val();
+$.ajax({
+    type:'POST',
+    url:"source/php/updatespezialtalente.php",
+    data:{ID:SpielerID,
+          REI:reiten,
+          SCH:schwimmen,
+          KLE:klettern,
+          GAU:gaukeleien,
+          SEE:seefahrt
+        },
+    datatype:"json",
+    success:function(data){
+      $('#modalspezialtalente').modal('toggle');
+    }
+    }).done(function(){
+      spezialetalente();
     });
   });
 

@@ -139,7 +139,7 @@
             <th scope="col">Würfelwert 3</th>
             <th scope="col">Würfelwert 3</th>
             <th scope="col">Talentwert</th>
-            <th scope="col">Bonus-/Maluswert</th>
+            <th scope="col">Bonus-/Maluswert <button class="editColumn">Edit</button></th>
           </tr>
         </thead>
         <tbody>
@@ -448,135 +448,135 @@
       </div>
     </div>
 
-  <div class="modal fade" id="modalkoerpertalente" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">körpertalente modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-          </div>
-          <div class="modal-body">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>Schleichen</td>
-                  <td><input id="editSchleichen" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                   </td>
-                </tr>
-                <tr>
-                  <td>Aufmerksamkeit</td><td><input id="editAufm" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Robustheit</td><td><input id="editRobustheit" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Fingerfertigkeit</td><td><input id="editFingerF" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Zechen</td><td><input id="editZechen" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Taschendiebstahl</td><td><input id="editTaschenD" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <!-- TODO: Clear der Inputs einbauen -->
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" id="submitKörpertalente" class="btn btn-default" data-dismiss="modal">Save</button>
-          </div>
+<div class="modal fade" id="modalkoerpertalente" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">körpertalente modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Schleichen</td>
+                <td><input id="editSchleichen" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                 </td>
+              </tr>
+              <tr>
+                <td>Aufmerksamkeit</td><td><input id="editAufm" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Robustheit</td><td><input id="editRobustheit" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Fingerfertigkeit</td><td><input id="editFingerF" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Zechen</td><td><input id="editZechen" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Taschendiebstahl</td><td><input id="editTaschenD" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <!-- TODO: Clear der Inputs einbauen -->
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="submitKörpertalente" class="btn btn-default" data-dismiss="modal">Save</button>
         </div>
       </div>
     </div>
+  </div>
 
-  <div class="modal fade" id="modalwissenstalente" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Wissenstalente Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-          </div>
-          <div class="modal-body">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>Heilung</td>
-                  <td><input id="editHeilung" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                   </td>
-                </tr>
-                <tr>
-                  <td>Gifte</td><td><input id="editGifte" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Schriften</td><td><input id="editSchriften" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Magie</td><td><input id="editMagie" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Gassenwissen</td><td><input id="editGassenwissen" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Weltenkenntnis</td><td><input id="editWeltenkenntnis" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Sprachen</td><td><input id="editSprachen" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Anatomie</td><td><input id="editAnatomie" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <!-- TODO: Clear der Inputs einbauen -->
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" id="submitwissenstalente" class="btn btn-default" data-dismiss="modal">Save</button>
-          </div>
+<div class="modal fade" id="modalwissenstalente" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Wissenstalente Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Heilung</td>
+                <td><input id="editHeilung" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                 </td>
+              </tr>
+              <tr>
+                <td>Gifte</td><td><input id="editGifte" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Schriften</td><td><input id="editSchriften" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Magie</td><td><input id="editMagie" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Gassenwissen</td><td><input id="editGassenwissen" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Weltenkenntnis</td><td><input id="editWeltenkenntnis" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Sprachen</td><td><input id="editSprachen" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Anatomie</td><td><input id="editAnatomie" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <!-- TODO: Clear der Inputs einbauen -->
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="submitwissenstalente" class="btn btn-default" data-dismiss="modal">Save</button>
         </div>
       </div>
     </div>
+  </div>
 
 <div class="modal fade" id="modaleinhandwaffen" role="dialog">
     <div class="modal-dialog">
@@ -734,6 +734,59 @@
           <!-- TODO: Clear der Inputs einbauen -->
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <button type="button" id="submitgesellschaftstalente" class="btn btn-default" data-dismiss="modal">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="modalspezialtalente" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Spezialtalente Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Reiten</td>
+                <td><input id="editreiten" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                 </td>
+              </tr>
+              <tr>
+                <td>Schwimmen</td><td><input id="editschwimmen" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Klettern</td><td><input id="editklettern" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Gaukeleien</td><td><input id="editegaukeleien" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+              <td>Seefahrt</td><td><input id="editseefahrt" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <!-- TODO: Clear der Inputs einbauen -->
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="submitspezialtalente" class="btn btn-default" data-dismiss="modal">Save</button>
         </div>
       </div>
     </div>
