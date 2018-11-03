@@ -628,8 +628,8 @@ $(".editColumn").click(function(){
     },
     'gesellschaftstalente': function(){
       $('#editfeilschen').val(gesellschaftstalente_arr[4]["feilschen"]);
-      $('#editueberreden').val(gesellschaftstalente_arr["ueberreden"]);
-      $('#editbetoeren').val(gesellschaftstalente_arr["betoeren"]);
+      $('#editueberreden').val(gesellschaftstalente_arr[4]["ueberreden"]);
+      $('#editbetoeren').val(gesellschaftstalente_arr[4]["betoeren"]);
       $('#editetikette').val(gesellschaftstalente_arr[4]["etikette"]);
       $('#editmenschenkentnis').val(gesellschaftstalente_arr[4]["menschenkenntnis"]);
       $('#modalgesellschaftstalente').modal();
@@ -861,5 +861,5 @@ $.ajax({
       gesellschaftstalente();
     });
   });
-  
+
 });
