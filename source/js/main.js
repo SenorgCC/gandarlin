@@ -861,5 +861,5 @@ $.ajax({
       gesellschaftstalente();
     });
   });
-});
+  
 });
