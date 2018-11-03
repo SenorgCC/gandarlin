@@ -625,6 +625,14 @@ $(".editColumn").click(function(){
       $('#editorientierung').val(naturtalente_arr[4]["orientierung"]);
       $('#editfaehrtenlesen').val(naturtalente_arr[4]["faehrtenlesen"]);
       $('#modalnaturtalente').modal();
+    },
+    'gesellschaftstalente': function(){
+      $('#editfeilschen').val(gesellschaftstalente_arr[4]["feilschen"]);
+      $('#editueberreden').val(gesellschaftstalente_arr["ueberreden"]);
+      $('#editbetoeren').val(gesellschaftstalente_arr["betoeren"]);
+      $('#editetikette').val(gesellschaftstalente_arr[4]["etikette"]);
+      $('#editmenschenkentnis').val(gesellschaftstalente_arr[4]["menschenkenntnis"]);
+      $('#modalgesellschaftstalente').modal();
     }
   };
   var showmodal = tablemap[tablename];
@@ -828,4 +836,30 @@ $.ajax({
       naturtalente();
     });
   });
+
+$('#submitgesellschaftstalente').click(function(){
+var feilschen=  $('#editfeilschen').val();
+var ueberreden=  $('#editueberreden').val();
+var betoeren=  $('#editbetoeren').val();
+var etikette=  $('#editetikette').val();
+var menschenkenntnis=  $('#editmenschenkenntnis').val();
+$.ajax({
+    type:'POST',
+    url:"source/php/updategesellschaftstalente.php",
+    data:{ID:SpielerID,
+          FEI:feilschen,
+          UEB:ueberreden,
+          BET:betoeren,
+          ETI:etikette,
+          MEN:menschenkenntnis
+        },
+    datatype:"json",
+    success:function(data){
+      $('#modalgesellschaftstalente').modal('toggle');
+    }
+    }).done(function(){
+      gesellschaftstalente();
+    });
+  });
+});
 });

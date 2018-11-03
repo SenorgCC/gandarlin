@@ -10,6 +10,7 @@ if (!$result){
     exit;
 }
 $row1=pg_fetch_object($result);
+//Test
 
 //$stmt="select * from basiswerte.modifikation where ID = $1";
 $result = pg_prepare($dbconn,"mod",'select * from basiswerte.modifikation where ID = $1');
