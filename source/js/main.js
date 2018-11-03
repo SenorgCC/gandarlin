@@ -641,6 +641,7 @@ $(".editColumn").click(function(){
       $('#editreiten').val(spezialetalente_arr[4]["gaukeleien"]);
       $('#editreiten').val(spezialetalente_arr[4]["seefahrt"]);
       $('#modalspezialtalente').modal();
+    }
   };
   var showmodal = tablemap[tablename];
   if (showmodal) showmodal();
