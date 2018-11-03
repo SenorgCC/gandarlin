@@ -842,7 +842,7 @@ var feilschen=  $('#editfeilschen').val();
 var ueberreden=  $('#editueberreden').val();
 var betoeren=  $('#editbetoeren').val();
 var etikette=  $('#editetikette').val();
-var menschenkenntnis=  $('#editmenschenkenntnis').val();
+var menschenkenntnis=  $('#editmenschenkentnis').val();
 $.ajax({
     type:'POST',
     url:"source/php/updategesellschaftstalente.php",
