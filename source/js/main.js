@@ -638,7 +638,7 @@ $(".editColumn").click(function(){
       $('#editreiten').val(spezialetalente_arr[4]["reiten"]);
       $('#editschwimmen').val(spezialetalente_arr[4]["schwimmen"]);
       $('#editklettern').val(spezialetalente_arr[4]["klettern"]);
-      $('#editgaukeleien').val(spezialetalente_arr[4]["gaukeleien"]);
+      $('#editegaukeleien').val(spezialetalente_arr[4]["gaukeleien"]);
       $('#editseefahrt').val(spezialetalente_arr[4]["seefahrt"]);
       $('#modalspezialtalente').modal();
     }
