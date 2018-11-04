@@ -918,4 +918,56 @@
 
   </body>
 
+  <div class="modal fade" id="modalhandwerkstalente" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Handwerkstalente Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>Schmieden</td> <td><input id="editschmieden" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                   </td>
+                </tr>
+                <tr>
+                  <td>Lederverarbeitung</td><td><input id="editlederverarbeitung" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Holzverarbeitung</td><td><input id="editholzverarbeitung" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Koch</td><td><input id="editkoch" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                <td>Lehren</td><td><input id="editlehren" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <!-- TODO: Clear der Inputs einbauen -->
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="submithandwerkstalente" class="btn btn-default" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 </html>

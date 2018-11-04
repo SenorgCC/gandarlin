@@ -635,6 +635,14 @@ $(".editColumn").click(function(){
       $('#editschilde').val(anderewaffen_arr[1]["schilde"]);
       $('#editexotische').val(anderewaffen_arr[1]["exotische_waffen"]);
       $('#modalanderewaffen').modal();
+    },
+    'handwerkstalente': function(){
+      $('#editschmieden').val(handwerkstalente_arr[3]["schmieden"]);
+      $('#editlederverarbeitung').val(handwerkstalente_arr[3]["lederverarbeitung"]);
+      $('#editholzverarbeitung').val(handwerkstalente_arr[3]["holzverarbeitung"]);
+      $('#editkoch').val(handwerkstalente_arr[3]["koch"]);
+      $('#editlehren').val(handwerkstalente_arr[3]["lehren"]);
+      $('#modalhandwerkstalente').modal();
     }
   };
   var showmodal = tablemap[tablename];
@@ -839,6 +847,31 @@ $.ajax({
     });
   });
 
+$('#submitzweihandwaffen').click(function(){
+var zweihandschwerter=  $('#editzweihandschwerter').val();
+var kolben = $('#editaexte').val();
+var aexte = $('#editaexte').val();
+var staebe = $('#editstaebe').val();
+var stangenwaffen = $('#editstangenwaffen').val();
+$.ajax({
+    type:'POST',
+    url:"source/php/updatezweihandwaffen.php",
+    data:{ID:SpielerID,
+          ZWS:zweihandschwerter,
+          KOL:kolben,
+          AEX:aexte,
+          STA:staebe,
+          SGN:stangenwaffen
+        },
+    datatype:"json",
+    success:function(data){
+      $('#modalzweihandwaffen').modal('toggle');
+    }
+    }).done(function(){
+      zweihandwaffen();
+    });
+  });
+
 $('#submitfernkampf').click(function(){
 var wurfwaffen=  $('#editwurfwaffen').val();
 var boegen=  $('#editboegen').val();
@@ -876,6 +909,31 @@ $.ajax({
     }
     }).done(function(){
       anderewaffen();
+    });
+  });
+
+$('#submithandwerkstalente').click(function(){
+var schmieden=  $('#editschmieden').val();
+var lederverarbeitung = $('#editlederverarbeitung').val();
+var holzverarbeitung = $('#editholzverarbeitung').val();
+var koch = $('#editkoch').val();
+var lehren = $('#editlehren').val();
+$.ajax({
+    type:'POST',
+    url:"source/php/updatehandwerkstalente.php",
+    data:{ID:SpielerID,
+          SCH:schmieden,
+          LED:lederverarbeitung,
+          HOL:holzverarbeitung,
+          KOC:koch,
+          LEH:lehren
+        },
+    datatype:"json",
+    success:function(data){
+      $('#modalhandwerkstalente').modal('toggle');
+    }
+    }).done(function(){
+      handwerkstalente();
     });
   });
 
