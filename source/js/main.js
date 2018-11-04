@@ -860,7 +860,7 @@ $.ajax({
     });
   });
 
-$('#submitfernkampf').click(function(){
+$('#submitanderewaffen').click(function(){
 var schilde=  $('#editschilde').val();
 var exotische=  $('#editexotische').val();
 $.ajax({
