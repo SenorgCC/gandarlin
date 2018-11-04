@@ -616,6 +616,14 @@ $(".editColumn").click(function(){
       $('#editDolche').val(einhandwaffen_arr[1]["dolche"]);
       $('#modaleinhandwaffen').modal();
     },
+    'zweihandwaffen':function(){
+      $('#editzweihandschwerter').val(zweihandwaffen_arr[1]["schwerter"]);
+      $('#editaexte').val(zweihandwaffen_arr[1]["aexte"]);
+      $('#editkolben').val(zweihandwaffen_arr[1]["kolben"]);
+      $('#editstaebe').val(zweihandwaffen_arr[1]["staebe"]);
+      $('#editstangenwaffen').val(zweihandwaffen_arr[1]["stangenwaffen"]);
+      $('#modalzweihandwaffen').modal();
+    },
     'naturtalente': function(){
       $('#editkraeuter').val(naturtalente_arr[4]["kraeuterkunde"]);
       $('#edittierkunde').val(naturtalente_arr[4]["tierkunde"]);
