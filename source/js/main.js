@@ -643,11 +643,11 @@ $(".editColumn").click(function(){
       $('#modalspezialtalente').modal();
     },
     'zweihandwaffen': function(){
-      $('#editzweihandschwerter').val(zweihandwaffen_arr[2]["schwerter"]);
-      $('#editaexte').val(zweihandwaffen_arr[2]["aexte"]);
-      $('#editkolben').val(zweihandwaffen_arr[2]["kolben"]);
-      $('#editstaebe').val(zweihandwaffen_arr[2]["staebe"]);
-      $('#editstangenwaffen').val(zweihandwaffen_arr[2]["Stangenwaffen"]);
+      $('#editzweihandschwerter').val(zweihandwaffen_arr[1]["schwerter"]);
+      $('#editaexte').val(zweihandwaffen_arr[1]["aexte"]);
+      $('#editkolben').val(zweihandwaffen_arr[1]["kolben"]);
+      $('#editstaebe').val(zweihandwaffen_arr[1]["staebe"]);
+      $('#editstangenwaffen').val(zweihandwaffen_arr[1]["Stangenwaffen"]);
       $('#modalzweihandwaffen').modal();
     }
   };
