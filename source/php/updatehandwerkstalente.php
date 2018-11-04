@@ -5,7 +5,7 @@ $SCH=$_POST['SCH'];
 $LED=$_POST['LED'];
 $HOL=$_POST['HOL'];
 $KOC=$_POST['KOC'];
-$LEh=$_POST['LEH'];
+$LEH=$_POST['LEH'];
 //$data_ar=array($KL,$GEW,$GSK,$CHA,$MUT,$KON,$KK,$INT,$ID);
 $data=array($SCH,$LED,$HOL,$KOC,$LEH,$ID);
 
