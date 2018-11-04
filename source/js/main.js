@@ -647,7 +647,7 @@ $(".editColumn").click(function(){
       $('#editaexte').val(zweihandwaffen_arr[1]["aexte"]);
       $('#editkolben').val(zweihandwaffen_arr[1]["kolben"]);
       $('#editstaebe').val(zweihandwaffen_arr[1]["staebe"]);
-      $('#editstangenwaffen').val(zweihandwaffen_arr[1]["Stangenwaffen"]);
+      $('#editstangenwaffen').val(zweihandwaffen_arr[1]["stangenwaffen"]);
       $('#modalzweihandwaffen').modal();
     }
   };
