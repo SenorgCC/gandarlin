@@ -12,7 +12,7 @@ $data=array($ZWS,$AEX,$KOL,$STA,$SGN,$ID);
 $stmt="UPDATE zweihandwaffen.modifikation SET schwerter = $1,";
 $stmt.="aexte= $2,";
 $stmt.="kolben= $3,";
-$stmt.="staeb= $4,";
+$stmt.="staebe= $4,";
 $stmt.="stangenwaffen= $5";
 $stmt.=" where ID = $6;";
 $result = pg_prepare($dbconn,"zweihandwaffen",$stmt);
