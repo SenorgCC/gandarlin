@@ -489,7 +489,6 @@ function handwerkstalente(){
     });
   }
 
-
 function spielerwaffen(){
       var tempwaffen= [];
       var waffen = [[]];
@@ -626,29 +625,16 @@ $(".editColumn").click(function(){
       $('#editfaehrtenlesen').val(naturtalente_arr[4]["faehrtenlesen"]);
       $('#modalnaturtalente').modal();
     },
-    'gesellschaftstalente': function(){
-      $('#editfeilschen').val(gesellschaftstalente_arr[4]["feilschen"]);
-      $('#editueberreden').val(gesellschaftstalente_arr[4]["ueberreden"]);
-      $('#editbetoeren').val(gesellschaftstalente_arr[4]["betoeren"]);
-      $('#editetikette').val(gesellschaftstalente_arr[4]["etikette"]);
-      $('#editmenschenkentnis').val(gesellschaftstalente_arr[4]["menschenkenntnis"]);
-      $('#modalgesellschaftstalente').modal();
+    'fernkampfwaffen': function(){
+      $('#editwurfwaffen').val(fernkampfwaffen_arr[1]["wurfwaffen"]);
+      $('#editboegen').val(fernkampfwaffen_arr[1]["boegen"]);
+      $('#editarmbrueste').val(fernkampfwaffen_arr[1]["armbrueste"]);
+      $('#modalfernkampf').modal();
     },
-    'spezialetalente': function(){
-      $('#editreiten').val(spezialetalente_arr[4]["reiten"]);
-      $('#editschwimmen').val(spezialetalente_arr[4]["schwimmen"]);
-      $('#editklettern').val(spezialetalente_arr[4]["klettern"]);
-      $('#editegaukeleien').val(spezialetalente_arr[4]["gaukeleien"]);
-      $('#editseefahrt').val(spezialetalente_arr[4]["seefahrt"]);
-      $('#modalspezialtalente').modal();
-    },
-    'zweihandwaffen': function(){
-      $('#editzweihandschwerter').val(zweihandwaffen_arr[1]["schwerter"]);
-      $('#editaexte').val(zweihandwaffen_arr[1]["aexte"]);
-      $('#editkolben').val(zweihandwaffen_arr[1]["kolben"]);
-      $('#editstaebe').val(zweihandwaffen_arr[1]["staebe"]);
-      $('#editstangenwaffen').val(zweihandwaffen_arr[1]["stangenwaffen"]);
-      $('#modalzweihandwaffen').modal();
+    'anderewaffen': function(){
+      $('#editschilde').val(anderewaffen_arr[1]["schilde"]);
+      $('#editexotische').val(anderewaffen_arr[1]["exotische_waffen"]);
+      $('#modalanderewaffen').modal();
     }
   };
   var showmodal = tablemap[tablename];
@@ -853,78 +839,43 @@ $.ajax({
     });
   });
 
-$('#submitgesellschaftstalente').click(function(){
-var feilschen=  $('#editfeilschen').val();
-var ueberreden=  $('#editueberreden').val();
-var betoeren=  $('#editbetoeren').val();
-var etikette=  $('#editetikette').val();
-var menschenkenntnis=  $('#editmenschenkentnis').val();
+$('#submitfernkampf').click(function(){
+var wurfwaffen=  $('#editwurfwaffen').val();
+var boegen=  $('#editboegen').val();
+var armbrueste=  $('#editarmbrueste').val();
 $.ajax({
     type:'POST',
-    url:"source/php/updategesellschaftstalente.php",
+    url:"source/php/updatefernkampf.php",
     data:{ID:SpielerID,
-          FEI:feilschen,
-          UEB:ueberreden,
-          BET:betoeren,
-          ETI:etikette,
-          MEN:menschenkenntnis
+          WUR:wurfwaffen,
+          BOE:boegen,
+          ARM:armbrueste
         },
     datatype:"json",
     success:function(data){
-      $('#modalgesellschaftstalente').modal('toggle');
+      $('#modalfernkampf').modal('toggle');
     }
     }).done(function(){
-      gesellschaftstalente();
+      fernkampfwaffen();
     });
   });
 
-$('#submitspezialtalente').click(function(){
-var reiten=  $('#editreiten').val();
-var schwimmen=  $('#editschwimmen').val();
-var klettern=  $('#editklettern').val();
-var gaukeleien=  $('#editgaukeleien').val();
-var seefahrt=  $('#editseefahrt').val();
+$('#submitfernkampf').click(function(){
+var schilde=  $('#editschilde').val();
+var exotische=  $('#editexotische').val();
 $.ajax({
     type:'POST',
-    url:"source/php/updatespezialtalente.php",
+    url:"source/php/updateanderewaffen.php",
     data:{ID:SpielerID,
-          REI:reiten,
-          SCH:schwimmen,
-          KLE:klettern,
-          GAU:gaukeleien,
-          SEE:seefahrt
+          SCH:schilde,
+          EXO:exotische
         },
     datatype:"json",
     success:function(data){
-      $('#modalspezialtalente').modal('toggle');
+      $('#modalanderewaffen').modal('toggle');
     }
     }).done(function(){
-      spezialetalente();
-    });
-  });
-
-$('#submitzweihandwaffen').click(function(){
-var zwschwerter=  $('#editzweihandschwerter').val();
-var aexte=  $('#editaexte').val();
-var kolben=  $('#editkolben').val();
-var staebe=  $('#editstaebe').val();
-var stangenwaffen=  $('#editstangenwaffen').val();
-$.ajax({
-    type:'POST',
-    url:"source/php/updatezweihandwaffen.php",
-    data:{ID:SpielerID,
-          ZWS:zwschwerter,
-          AEX:aexte,
-          KOL:kolben,
-          STA:staebe,
-          SGN:stangenwaffen
-        },
-    datatype:"json",
-    success:function(data){
-      $('#modalzweihandwaffen').modal('toggle');
-    }
-    }).done(function(){
-      zweihandwaffen();
+      anderewaffen();
     });
   });
 
