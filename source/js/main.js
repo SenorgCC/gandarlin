@@ -645,11 +645,11 @@ $(".editColumn").click(function(){
       $('#modalanderewaffen').modal();
     },
     'handwerkstalente': function(){
-      $('#editschmieden').val(handwerkstalente_arr[3]["schmieden"]);
-      $('#editlederverarbeitung').val(handwerkstalente_arr[3]["lederverarbeitung"]);
-      $('#editholzverarbeitung').val(handwerkstalente_arr[3]["holzverarbeitung"]);
-      $('#editkoch').val(handwerkstalente_arr[3]["koch"]);
-      $('#editlehren').val(handwerkstalente_arr[3]["lehren"]);
+      $('#editschmieden').val(handwerkstalente_arr[2]["schmieden"]);
+      $('#editlederverarbeitung').val(handwerkstalente_arr[2]["lederverarbeitung"]);
+      $('#editholzverarbeitung').val(handwerkstalente_arr[2]["holzverarbeitung"]);
+      $('#editkoch').val(handwerkstalente_arr[2]["koch"]);
+      $('#editlehren').val(handwerkstalente_arr[2]["lehren"]);
       $('#modalhandwerkstalente').modal();
     }
   };
