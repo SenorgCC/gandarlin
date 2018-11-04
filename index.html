@@ -169,7 +169,7 @@
           <tr>
             <th scope="col"></th>
             <th scope="col">Basis</th>
-            <th scope="col">Bonus/Malus</th>
+            <th scope="col">Bonus/Malus <button class="editColumn">Edit</button></th>
             <th scope="col">Final</th>
           </tr>
       </thead>
@@ -183,7 +183,7 @@
           <tr>
             <th scope="col"></th>
             <th scope="col">Basis</th>
-            <th scope="col">Bonus/Malus</th>
+            <th scope="col">Bonus/Malus <button class="editColumn">Edit</button></th>
             <th scope="col">Final</th>
           </tr>
       </thead>
@@ -787,6 +787,58 @@
           <!-- TODO: Clear der Inputs einbauen -->
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <button type="button" id="submitspezialtalente" class="btn btn-default" data-dismiss="modal">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="modalzweihandwaffen" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Zweihandwaffen Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Schwerter</td> <td><input id="editzweihandschwerter" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                 </td>
+              </tr>
+              <tr>
+                <td>Äxte</td><td><input id="editaexte" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Kolben</td><td><input id="editkolben" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Stäbe</td><td><input id="editstaebe" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+              <tr>
+              <td>Stangenwaffen</td><td><input id="editstangenwaffen" type="number">
+                  <button type="button" class="btn btn-success blussi">+</button>
+                  <button type="button" class="btn btn-danger minus">-</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <!-- TODO: Clear der Inputs einbauen -->
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="submitzweihandwaffen" class="btn btn-default" data-dismiss="modal">Save</button>
         </div>
       </div>
     </div>

@@ -641,6 +641,14 @@ $(".editColumn").click(function(){
       $('#editegaukeleien').val(spezialetalente_arr[4]["gaukeleien"]);
       $('#editseefahrt').val(spezialetalente_arr[4]["seefahrt"]);
       $('#modalspezialtalente').modal();
+    },
+    'zweihandwaffen': function(){
+      $('#editzweihandschwerter').val(zweihandwaffen_arr[2]["schwerter"]);
+      $('#editaexte').val(zweihandwaffen_arr[2]["aexte"]);
+      $('#editkolben').val(zweihandwaffen_arr[2]["kolben"]);
+      $('#editstaebe').val(zweihandwaffen_arr[2]["staebe"]);
+      $('#editstangenwaffen').val(zweihandwaffen_arr[2]["Stangenwaffen"]);
+      $('#modalzweihandwaffen').modal();
     }
   };
   var showmodal = tablemap[tablename];
@@ -892,6 +900,31 @@ $.ajax({
     }
     }).done(function(){
       spezialetalente();
+    });
+  });
+
+$('#submitzweihandwaffen').click(function(){
+var zwschwerter=  $('#editzweihandschwerter').val();
+var aexte=  $('#editaexte').val();
+var kolben=  $('#editkolben').val();
+var staebe=  $('#editstaebe').val();
+var stangenwaffen=  $('#editstangenwaffen').val();
+$.ajax({
+    type:'POST',
+    url:"source/php/updatezweihandwaffen.php",
+    data:{ID:SpielerID,
+          ZWS:zwschwerter,
+          AEX:aexte,
+          KOL:kolben,
+          STA:staebe,
+          SGN:stangenwaffen
+        },
+    datatype:"json",
+    success:function(data){
+      $('#modalzweihandwaffen').modal('toggle');
+    }
+    }).done(function(){
+      zweihandwaffen();
     });
   });
 
