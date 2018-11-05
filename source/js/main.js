@@ -950,9 +950,9 @@ $.ajax({
   });
 
 function getModaltab (modtabid,dataarray){
-  alert(dataarray[1]["name_beschreibung"]);
-  alert(dataarray[3]["name_beschreibung"]);
-  alert(dataarray[0]["name_beschreibung"]);
+  alert(dataarray[1][1]["name_beschreibung"]);
+  alert(dataarray[3][1]["name_beschreibung"]);
+  alert(dataarray[0][1]["name_beschreibung"]);
   var $tbody = $('#'+modtabid).find('tbody');
   $tbody.empty();
   var text;
