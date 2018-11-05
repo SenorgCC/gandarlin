@@ -661,7 +661,7 @@ $(".editColumn").click(function(){
   if (showmodal) showmodal();
 });
 
-$('.blussi').on('click', function(){
+$(document).on('click','.blussi', function(){
   alert("TEST");
   var counter = $(this).closest('tr').find("input");
   var counterwert = counter.val();
