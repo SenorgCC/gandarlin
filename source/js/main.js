@@ -651,6 +651,10 @@ $(".editColumn").click(function(){
       $('#editkoch').val(handwerkstalente_arr[2]["koch"]);
       $('#editlehren').val(handwerkstalente_arr[2]["lehren"]);
       $('#modalhandwerkstalente').modal();
+    },
+    'spielerruestungen': function(){
+      getModaltab("modaltabspielerruestung",spielerruestungen_arr);
+      $('#modalspielerruestungen').modal();
     }
   };
   var showmodal = tablemap[tablename];
@@ -944,5 +948,24 @@ $.ajax({
       handwerkstalente();
     });
   });
+
+function getModaltab (modtabid,dataarray){
+  var $tbody = $('#'+modtabid).find('tbody');
+  $tbody.empty();
+  var text;
+  for (i = 1; i < dataarray.length; i++){
+    rowtext +="<tr>";
+    rowtext +="<td>"+dataarray[i]["name_beschreibung"]+"</td>";
+    rowtext +="<td> <input type=\"number\">";
+    rowtext +="<button type=\"button\" class=\"btn btn-success blussi\">+</button>";
+    rowtext +="<button type=\"button\" class=\"btn btn-danger minus\">-</button>";
+    rowtext +="</td></tr>";
+  }
+  $tbody.append(rowtext);
+  rowtext = "";
+  }
+}
+
+}
 
 });
