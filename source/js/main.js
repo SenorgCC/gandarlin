@@ -954,14 +954,14 @@ function getModaltab (modtabid,dataarray){
   $tbody.empty();
   var text;
   for (i = 1; i < dataarray.length; i++){
-    rowtext +="<tr>";
-    rowtext +="<td>"+dataarray[i]["name_beschreibung"]+"</td>";
-    rowtext +="<td> <input type=\"number\">";
-    rowtext +="<button type=\"button\" class=\"btn btn-success blussi\">+</button>";
-    rowtext +="<button type=\"button\" class=\"btn btn-danger minus\">-</button>";
-    rowtext +="</td></tr>";
+    text +="<tr>";
+    text +="<td>"+dataarray[i]["name_beschreibung"]+"</td>";
+    text +="<td> <input type=\"number\">";
+    text +="<button type=\"button\" class=\"btn btn-success blussi\">+</button>";
+    text +="<button type=\"button\" class=\"btn btn-danger minus\">-</button>";
+    text +="</td></tr>";
   }
-  $tbody.append(rowtext);
+  $tbody.append(text);
   rowtext = "";
 }
 
