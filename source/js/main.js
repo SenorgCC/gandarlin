@@ -957,7 +957,7 @@ function getModaltab (modtabid,dataarray){
   var text;
   for (i = 0; i < dataarray.length; i++){
     text +="<tr>";
-    text +="<td>"+dataarray[i]["name_beschreibung"]+"</td>";
+    text +="<td>"+dataarray[i][0]+"</td>";
     text +="<td> <input type=\"number\">";
     text +="<button type=\"button\" class=\"btn btn-success blussi\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger minus\">-</button>";
