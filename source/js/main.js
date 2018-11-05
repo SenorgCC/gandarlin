@@ -963,9 +963,6 @@ function getModaltab (modtabid,dataarray){
   }
   $tbody.append(rowtext);
   rowtext = "";
-  }
-}
-
 }
 
 });
