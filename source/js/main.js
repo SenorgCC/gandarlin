@@ -662,6 +662,7 @@ $(".editColumn").click(function(){
 });
 
 $('.blussi').click(function(){
+  alert("TEST");
   var counter = $(this).closest('tr').find("input");
   var counterwert = counter.val();
   alert(counterwert);
