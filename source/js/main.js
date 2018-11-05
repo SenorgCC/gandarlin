@@ -653,7 +653,7 @@ $(".editColumn").click(function(){
       $('#modalhandwerkstalente').modal();
     },
     'spielerruestungen': function(){
-      getModaltab("modaltabspielerruestung",spielerruestungen_arr[0]);
+      getModaltab("modaltabspielerruestung",spielerruestungen_arr);
       $('#modalspielerruestungen').modal();
     }
   };
@@ -951,11 +951,11 @@ $.ajax({
 
 function getModaltab (modtabid,dataarray){
   alert(JSON.stringify(dataarray));
-  
+  alert(dataarray[0]);
   var $tbody = $('#'+modtabid).find('tbody');
   $tbody.empty();
   var text;
-  for (i = 1; i < dataarray.length; i++){
+  for (i = 0; i < dataarray.length; i++){
     text +="<tr>";
     text +="<td>"+dataarray[i]["name_beschreibung"]+"</td>";
     text +="<td> <input type=\"number\">";
