@@ -951,7 +951,7 @@ $.ajax({
 
 function getModaltab (modtabid,dataarray){
   alert(JSON.stringify(dataarray));
-  alert(dataarray[0]);
+  alert(dataarray[0][0]);
   var $tbody = $('#'+modtabid).find('tbody');
   $tbody.empty();
   var text;
