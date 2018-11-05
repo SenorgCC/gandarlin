@@ -662,15 +662,13 @@ $(".editColumn").click(function(){
 });
 
 $(document).on('click','.blussi', function(){
-  alert("TEST");
   var counter = $(this).closest('tr').find("input");
   var counterwert = counter.val();
-  alert(counterwert);
   counterwert ++;
   counter.val(counterwert);
 });
 
-$('.minus').click(function(){
+$(document).on('click','.minus', function(){
   var counter = $(this).closest('tr').find("input");
   var counterwert = counter.val();
   counterwert --;
@@ -952,8 +950,6 @@ $.ajax({
   });
 
 function getModaltab (modtabid,dataarray){
-  alert(JSON.stringify(dataarray));
-  alert(dataarray[0][0]);
   var $tbody = $('#'+modtabid).find('tbody');
   $tbody.empty();
   var text;
