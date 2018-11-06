@@ -965,4 +965,11 @@ function getModaltab (modtabid,dataarray){
   rowtext = "";
 }
 
+$('#submitspielerruesungen').click(function(){
+  var inputs= $('#modtabruestung').find("input").map(function(){
+    return $(this).val();
+  }).toArray();
+  alert(inputs);
+
+});
 });
