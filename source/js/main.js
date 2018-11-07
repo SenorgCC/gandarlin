@@ -990,4 +990,3 @@ $('#submitspielerruesungen').click(function(){
   });
 
 });
-});
