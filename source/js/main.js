@@ -966,10 +966,30 @@ function getModaltab (modtabid,dataarray){
 }
 
 $('#submitspielerruesungen').click(function(){
+  //Finde alle Inputs der ID und gebe die Werte durch die Map funktion wieder
   var inputs= $('#modtabruestung').find("input").map(function(){
     return $(this).val();
   }).toArray();
-  alert(inputs);
+  var ruestungsarray = $('#modtabruestung td:even').map(function(){
+    return $(this).text();
+  }).toArray();
+  alert(ruestungsarray);
+  /*
+  $.ajax({
+    type:'POST',
+    url:"source/php/updatespielerruestungen.php",
+    data:{INPUTARRAY:inputs,
+          ID:SpielerID
+        },
+    datatype:"json",
+    success:function(data){
+      $('#modalspielerruestungen').modal('toggle');
+    }
+    }).done(function(){
+      spielerruestungen();
+    });
+  */
+  });
 
 });
 });
