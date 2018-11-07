@@ -10,6 +10,6 @@ include('../../../connect.php');
   $result = pg_prepare($dbconn,$stmt);
   $result=pg_execute($dbconn,$data);
 //}
-print json_encode(pg_result_error($result));
+pg_last_error();
 pg_close($dbconn);
 ?>
