@@ -989,7 +989,7 @@ $('#submitspielerruesungen').click(function(){
       spielerruestungen();
     });
   */
-  });
+  //});
 
 });
 });
