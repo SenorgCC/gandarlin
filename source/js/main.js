@@ -976,7 +976,7 @@ $('#submitspielerruesungen').click(function(){
   $.ajax({
     type:'POST',
     url:"source/php/updatespielerruestungen.php",
-    data:{VALUEARRAY:inutsruestungsmod,
+    data:{VALUEARRAY:inputsruestungsmod,
           NAMEARRAY:ruestungname,
           ID:SpielerID
         },
