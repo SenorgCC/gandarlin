@@ -653,7 +653,7 @@ $(".editColumn").click(function(){
       $('#modalhandwerkstalente').modal();
     },
     'spielerruestungen': function(){
-      getModaltab("modtabruestung",spielerruestungen_arr);
+      getModaltab("modtabruestung",spielerruestungen_arr,2);
       $('#modalspielerruestungen').modal();
     }
   };
@@ -949,14 +949,14 @@ $.ajax({
     });
   });
 
-function getModaltab (modtabid,dataarray){
+function getModaltab (modtabid,dataarray,index){
   var $tbody = $('#'+modtabid).find('tbody');
   $tbody.empty();
   var text;
   for (i = 0; i < dataarray.length; i++){
     text +="<tr>";
     text +="<td>"+dataarray[i][0]+"</td>";
-    text +="<td> <input type=\"number\" value="+dataarray[i][2]+">";
+    text +="<td> <input type=\"number\" value="+dataarray[i][index]+">";
     text +="<button type=\"button\" class=\"btn btn-success blussi\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger minus\">-</button>";
     text +="</td></tr>";
@@ -986,8 +986,38 @@ $('#submitspielerruesungen').click(function(){
     }
     }).done(function(){
       spielerruestungen();
+      sekundarwerte();
     });
   });
-  
+
+$(document).on('click','#editRuestwert', function(){
+    getModaltab("modtabruestungwert",spielerruestungen_arr,1);
+    $('#modalspielerruestungenwert').modal();
+});
+
+$('#submitspielerruesungswert').click(function(){
+  //Finde alle Inputs der ID und gebe die Werte durch die Map funktion wieder
+  var inputsruestungswert= $('#modtabruestungwert').find("input").map(function(){
+    return $(this).val();
+  }).toArray();
+  var ruestungname = $('#modtabruestungwert td:even').map(function(){
+    return $(this).text();
+  }).toArray();
+  $.ajax({
+    type:'POST',
+    url:"source/php/updatespielerruestungenwert.php",
+    data:{VALUEARRAY:inputsruestungswert,
+          NAMEARRAY:ruestungname,
+          ID:SpielerID
+        },
+    datatype:"json",
+    success:function(data){
+      $('#modalspielerruestungen').modal('toggle');
+    }
+    }).done(function(){
+      spielerruestungen();
+      sekundarwerte();
+    });
+  });
 
 });

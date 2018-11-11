@@ -248,7 +248,7 @@
         <thead>
           <tr>
             <th scope="col">Name+Beschreibung</th>
-            <th scope="col">Rüstungswert</th>
+            <th scope="col">Rüstungswert <button id="editRuestwert">Edit</button></th>
             <th scope="col">Ausrüstungsmalus / Bonus <button class="editColumn">Edit</button></th>
           </tr>
         </thead>
@@ -975,7 +975,7 @@
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title">Spielerrüstungen Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+            <h4 class="modal-title">Spielerrüstungen Bonus/Malus Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
           </div>
           <div id="modtabruestung" class="modal-body">
             <table class="table">
@@ -987,6 +987,28 @@
             <!-- TODO: Clear der Inputs einbauen -->
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" id="submitspielerruesungen" class="btn btn-default" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalspielerruestungen" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Spielerrüstungswert Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+          </div>
+          <div id="modtabruestung" class="modal-body">
+            <table class="table">
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <!-- TODO: Clear der Inputs einbauen -->
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="submitspielerruesungswert" class="btn btn-default" data-dismiss="modal">Save</button>
           </div>
         </div>
       </div>
