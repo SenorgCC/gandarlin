@@ -6,7 +6,7 @@ include('../../../connect.php');
 //$stmt="UPDATE spieler.ruestung  SET reiten = $1,";
 //for ($i=0; $i < 2 ; $i++) {
 
-  $data=array(1,'Hakta',1);
+  $data=array(42,'Hakta',1);
   $stmt="UPDATE spieler.ruestung set ausruestungsmodifikation= $1";
   $stmt.="where name_beschreibung=$2";
   $stmt.="and id=$3";
