@@ -6,6 +6,7 @@ $Name=$_POST['NAMEARRAY'];
 //$stmt="UPDATE spieler.ruestung  SET reiten = $1,";
 for ($i=0; $i < count($MOD); $i++) {
   $data=array($MOD[$i],$Name[$i],$ID);
+  echo ($data);
   $stmt="UPDATE spieler.ruestung set ausruestungsmodifikation= $1";
   $stmt.="where name_beschreibung=$2";
   $stmt.="and id=$3";
