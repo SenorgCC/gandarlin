@@ -996,9 +996,6 @@ $('#submitspielerruesungen').click(function(){
     });
   });
 
-$(document).on('click','#editRuestwert', function(){
-});
-
 $('#submitspielerruesungswert').click(function(){
   //Finde alle Inputs der ID und gebe die Werte durch die Map funktion wieder
   var inputsruestungswert= $('#modtabruestungwert').find("input").map(function(){
