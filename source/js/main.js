@@ -653,7 +653,7 @@ $(".editColumn").click(function(){
       $('#modalhandwerkstalente').modal();
     },
     'spielerruestungen': function(){
-      var text=$(this).parent().text();
+      var text=$(this).closest('th').attr('id');
       alert(text);
       getModaltab("modtabruestung",spielerruestungen_arr,2);
       $('#modalspielerruestungen').modal();
