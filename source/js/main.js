@@ -1012,7 +1012,7 @@ $('#submitspielerruesungswert').click(function(){
         },
     datatype:"json",
     success:function(data){
-      $('#modalspielerruestungen').modal('toggle');
+      $('#modspielerruestwert').modal('toggle');
     }
     }).done(function(){
       spielerruestungen();
