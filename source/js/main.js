@@ -991,6 +991,7 @@ $('#submitspielerruesungen').click(function(){
   });
 
 $(document).on('click','#editRuestwert', function(){
+    alert("Hier!");
     getModaltab("modtabruestungwert",spielerruestungen_arr,1);
     $('#modalspielerruestungenwert').modal();
 });
