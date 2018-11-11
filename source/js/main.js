@@ -654,9 +654,13 @@ $(".editColumn").click(function(){
     },
     'spielerruestungen': function(){
       var text=$(event.target).closest("th").attr('id');
-      alert(text);
-      getModaltab("modtabruestung",spielerruestungen_arr,2);
-      $('#modalspielerruestungen').modal();
+      if(text == "Ruestwert"){
+        getModaltab("modtabruestungwert",spielerruestungen_arr,1);
+        $('#modspielerruestwert').modal();
+      }else{
+        getModaltab("modtabruestung",spielerruestungen_arr,2);
+        $('#modalspielerruestungen').modal();
+      }
     }
   };
   var showmodal = tablemap[tablename];
@@ -993,8 +997,6 @@ $('#submitspielerruesungen').click(function(){
   });
 
 $(document).on('click','#editRuestwert', function(){
-    getModaltab("modtabruestungwert",spielerruestungen_arr,1);
-    $('#modspielerruestwert').modal();
 });
 
 $('#submitspielerruesungswert').click(function(){
