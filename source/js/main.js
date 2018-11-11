@@ -973,7 +973,6 @@ $('#submitspielerruesungen').click(function(){
   var ruestungname = $('#modtabruestung td:even').map(function(){
     return $(this).text();
   }).toArray();
-  alert(ruestungname);
   $.ajax({
     type:'POST',
     url:"source/php/updatespielerruestungen.php",
@@ -989,5 +988,6 @@ $('#submitspielerruesungen').click(function(){
       spielerruestungen();
     });
   });
+  
 
 });
