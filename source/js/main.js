@@ -654,7 +654,7 @@ $(".editColumn").click(function(){
     },
     'spielerruestungen': function(){
       getModaltab("modtabruestung",spielerruestungen_arr,2);
-      $('#modalspielerruestungenwert').modal();
+      $('#modalspielerruestungen').modal();
     }
   };
   var showmodal = tablemap[tablename];
@@ -991,9 +991,8 @@ $('#submitspielerruesungen').click(function(){
   });
 
 $(document).on('click','#editRuestwert', function(){
-    alert("Hier!");
     getModaltab("modtabruestungwert",spielerruestungen_arr,1);
-    $('#modalspielerruestungenwert').modal();
+    $('#modspielerruestwert').modal();
 });
 
 $('#submitspielerruesungswert').click(function(){
