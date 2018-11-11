@@ -655,6 +655,8 @@ $(".editColumn").click(function(){
     'spielerruestungen': function(){
       getModaltab("modtabruestung",spielerruestungen_arr,2);
       $('#modalspielerruestungen').modal();
+      var text=$(this).closest('td').text();
+      alert(text);
     }
   };
   var showmodal = tablemap[tablename];
