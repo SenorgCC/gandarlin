@@ -683,6 +683,7 @@ $(document).on('click','.minus', function(){
 
 $(document).on('click','.editfinal', function(){
   var idtext = $(this).closest('tr').find("input");
+  alert(idtext);
   var idmap = {
     'Final_AT': function(){
       getModalATPAtab("modtabATPA",spielerwaffen_ar,3,"Final AT Modifikation");
