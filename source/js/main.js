@@ -675,12 +675,31 @@ $(document).on('click','.blussi', function(){
 });
 
 $(document).on('click','.minus', function(){
-  var counter = $(this).closest('tr').find("input");
+  var id=$(event.target).closest("th").attr('id');
   var counterwert = counter.val();
   counterwert --;
   counter.val(counterwert);
 });
 
+$(document).on('click','.editfinal', function(){
+  var idtext = $(this).closest('tr').find("input");
+  var idmap = {
+    'Final_AT': function(){
+      getModalATPAtab("modtabATPA",spielerwaffen_ar,3,"Final AT Modifikation");
+      $('#modalFinalATPA').modal();
+    },
+    'Final_PA': function(){
+      getModalATPAtab("modtabATPA",spielerwaffen_ar,4,"Final PA Modifikation");
+      $('#modalFinalATPA').modal();
+    }
+  }
+  var showmodal = idmap[idtext];
+  if(showmodal) showmodal();
+});
+
+//---------------------------------------------------
+//Modalsubmitfunktionen ab hier
+//---------------------------------------------------
 $('#submitBasiswerte').click(function(){
       var kl=  $('#editKL').val();
       var gew= $('#editGEW').val();
@@ -965,6 +984,24 @@ function getModaltab (modtabid,dataarray,index){
     text +="<td> <input type=\"number\" value="+dataarray[i][index]+">";
     text +="<button type=\"button\" class=\"btn btn-success blussi\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger minus\">-</button>";
+    text +="</td></tr>";
+  }
+  $tbody.append(text);
+  rowtext = "";
+}
+
+function getModalATPAtab(modtabid,dataarray,index,titel){
+  var titeltext = $(this).closest('h4').find(".modal-titel");
+  titeltext.text("titel")
+  var $tbody = $('#'+modtabid).find('tbody');
+  $tbody.empty();
+  var text;
+  for (i = 0; i < dataarray.length; i++){
+    text +="<tr>";
+    text +="<td>"+dataarray[i][0]+"</td>";
+    text +="<td> <input type=\"number\" value="+dataarray[i][index]+">";
+    text +="<button type=\"button\" class=\"btn btn-success checkup\">+</button>";
+    text +="<button type=\"button\" class=\"btn btn-danger checkdown\">-</button>";
     text +="</td></tr>";
   }
   $tbody.append(text);

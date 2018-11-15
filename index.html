@@ -234,8 +234,8 @@
             <th scope="col">KK-Bonus</th>
             <th scope="col">Attackebonus</th>
             <th scope="col">Paradebonus</th>
-            <th scope="col">Final AT</th>
-            <th scope="col">Final PA</th>
+            <th scope="col" id="Final_AT">Final AT <button class="editfinal">Change</button></th>
+            <th scope="col" id="Final_PA">Final PA <button class="editfinal">Change</button></th>
           </tr>
         </thead>
         <tbody>
@@ -1009,6 +1009,28 @@
             <!-- TODO: Clear der Inputs einbauen -->
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" id="submitspielerruesungswert" class="btn btn-default" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="modal fade" id="modalFinalATPA" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">TEST<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+          </div>
+          <div id="modtabATPA" class="modal-body">
+            <table class="table">
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <!-- TODO: Clear der Inputs einbauen -->
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="submitfinalATPA" class="btn btn-default" data-dismiss="modal">Save</button>
           </div>
         </div>
       </div>
