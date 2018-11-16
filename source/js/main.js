@@ -682,7 +682,7 @@ $(document).on('click','.minus', function(){
 });
 
 $(document).on('click','.editfinal', function(){
-  var idtext = $(this).closest('tr').find("input");
+  var idtext = $(this).closest('th').attr("id");
   alert(idtext);
   var idmap = {
     'Final_AT': function(){
