@@ -996,9 +996,9 @@ function getModalATPAtab(modtabid,dataarray,index,titel){
   var $tbody = $('#'+modtabid).find('tbody');
   var atpavalue;
   if (titel == "AT"){
-    atpavalue=sekundarwert_arr[3]["attacke_basis"];
+    atpavalue=sekundarwert_arr[2]["attacke_basis"];
   }else{
-    atpavalue=sekundarwert_arr[3]["parade_basis"];
+    atpavalue=sekundarwert_arr[2]["parade_basis"];
   }
   $tbody.empty();
   for (i = 0; i < dataarray.length; i++){
