@@ -79,7 +79,7 @@ function sekwerte(){
   var kalkulation = [{"id":"",
                       "lebenspunkte": "KK+KON+KON",
                       "ausdauer":"KON+GEW+KK",
-                      "ee": "MUT+KL+KL+CHA",
+                      "ee": "(KL + KL + CHA + MUT) * 1,5",
                       "ausweichen": "((GSK +2 * GEW) /4) - Ausrüstungsmalus",
                       "ruestung": "Rüstungswert + Boni",
                       "initiative": "((MUT+GEW+2*IN)/5)+Aufmerksamkeit",
@@ -686,11 +686,11 @@ $(document).on('click','.editfinal', function(){
   alert(idtext);
   var idmap = {
     'Final_AT': function(){
-      getModalATPAtab("modtabATPA",spielerwaffen_ar,3,"Final AT Modifikation");
+      getModalATPAtab("modtabATPA",spielerwaffen_ar,3,"AT");
       $('#modalFinalATPA').modal();
     },
     'Final_PA': function(){
-      getModalATPAtab("modtabATPA",spielerwaffen_ar,4,"Final PA Modifikation");
+      getModalATPAtab("modtabATPA",spielerwaffen_ar,4,"PA");
       $('#modalFinalATPA').modal();
     }
   }
@@ -992,14 +992,19 @@ function getModaltab (modtabid,dataarray,index){
 }
 
 function getModalATPAtab(modtabid,dataarray,index,titel){
-  $('#modalFinalATPA > .modal-titel').text(titel);
+  $('.titelATPA').text("Final "+titel+" Modifikation");
   var $tbody = $('#'+modtabid).find('tbody');
+  var atpavalue;
+  if (titel == "AT"){
+    atpavalue=sekundarwert_arr[3]["attacke_basis"];
+  }else{
+    atpavalue=sekundarwert_arr[3]["parade_basis"];
+  }
   $tbody.empty();
-  var text;
   for (i = 0; i < dataarray.length; i++){
     text +="<tr>";
     text +="<td>"+(dataarray[i][0]).split(',')[0]+"</td>";
-    text +="<td> <input type=\"number\" value="+dataarray[i][index]+">";
+    text +="<td> <input type=\"number\" value="+atpavalue+">";
     text +="<button type=\"button\" class=\"btn btn-success checkup\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger checkdown\">-</button>";
     text +="</td></tr>";
