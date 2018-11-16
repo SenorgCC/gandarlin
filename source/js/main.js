@@ -992,7 +992,7 @@ function getModaltab (modtabid,dataarray,index){
 }
 
 function getModalATPAtab(modtabid,dataarray,index,titel){
-  var titeltext = $(this).closest('h4').find(".modal-titel");
+  var titeltext = $('#modalFinalATPA').closest('h4').find(".modal-titel");
   titeltext.text("titel")
   var $tbody = $('#'+modtabid).find('tbody');
   $tbody.empty();
