@@ -995,6 +995,7 @@ function getModalATPAtab(modtabid,dataarray,index,titel){
   $('.titelATPA').text("Final "+titel+" Modifikation");
   var $tbody = $('#'+modtabid).find('tbody');
   var atpavalue;
+  var text;
   if (titel == "AT"){
     atpavalue=sekundarwert_arr[2]["attacke_basis"];
   }else{
