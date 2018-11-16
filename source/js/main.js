@@ -999,7 +999,7 @@ function getModalATPAtab(modtabid,dataarray,index,titel){
   var text;
   for (i = 0; i < dataarray.length; i++){
     text +="<tr>";
-    text +="<td>"+(dataarray[i][0]).splitt(",")[0]+"</td>";
+    text +="<td>"+(dataarray[i][0]).split(',')[0]+"</td>";
     text +="<td> <input type=\"number\" value="+dataarray[i][index]+">";
     text +="<button type=\"button\" class=\"btn btn-success checkup\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger checkdown\">-</button>";
