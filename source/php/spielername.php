@@ -4,8 +4,9 @@ include('../../../connect.php');
 $ID = $_POST['ID'];
 $data=array($ID);
 $stmt="select name from spieler.namen where id = $1;";
-$result = pg_prepare($dbconn,"spielernamen",$ID);
+$result = pg_prepare($dbconn,"spielernamen",array($ID));
 $result=pg_execute($dbconn,"spielernamen",$data);
-print json_encode(pg_result_error($result));
+$name=pg_fetch_object($result);
+print json_encode($name);
 pg_close($dbconn);
 ?>
