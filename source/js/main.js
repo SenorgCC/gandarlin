@@ -17,7 +17,7 @@ var Spielernamen;
 var modalid;
 $( document ).ready(function() {
   function getAlldata(){
-      SpielerID=parseInt($('#SpielerID').val());
+      SpielerID=$('#SpielerID').val();
       bwbasis();
       sekwerte();
       einhandwaffen();
@@ -77,7 +77,6 @@ function createNavbar(){
 }
 
 function bwbasis(){
-  alert("SpilerID "+SpielerID);
   $.ajax({
       type:'POST',
       url:"source/php/bwbasis.php",
@@ -88,7 +87,6 @@ function bwbasis(){
       success: function(data){
       //daten[0]["id"];
       basiswert_arr=JSON.parse(data);
-      alert("Hier1");
       korprtalente();
       wissenstalente();
       naturtalente();
