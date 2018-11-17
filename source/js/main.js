@@ -18,7 +18,6 @@ var modalid;
 $( document ).ready(function() {
   function getAlldata(){
       SpielerID=$('#SpielerID').val();
-      alert("SPielerID: "+SpielerID);
       bwbasis();
       sekwerte();
       einhandwaffen();
@@ -65,6 +64,7 @@ function getNamen(){
       success: function(data){
       //daten[0]["id"];
         Spielernamen=(JSON.parse(data))["name"];
+        alert("Name: "+Spielernamen);
       }
     }).done(function(){
       createNavbar();
