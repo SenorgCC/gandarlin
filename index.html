@@ -19,13 +19,7 @@
   <body>
     <nav class="navbar navbar-dark bg-dark">
       <a id="NavName" class="navbar-brand" href="#">NoName</a>
-    <div class="collapse navbar-collapse" id="Spielerdaten">
-      <div class="navbar-nav">
-        <p> Spieler id <input type="text" id="SpielerID" /><p>
-        <button type="button" id="myClickBtn" >go!</button>
-        <button type="button" id="gobtn" >tabelle!</button>
-      </div>
-    </div>
+        <!--<button type="button" id="gobtn" >tabelle!</button> -->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a id="NavLeben" class="nav-item nav-link active" href="#">Leben <span class="sr-only">(current)</span></a>
@@ -33,6 +27,10 @@
         <a id="NavEE" class="nav-item nav-link active" href="#">EE</a>
       </div>
     </div>
+    <form class="form-inline" id="Spielerdaten">
+      <input id="SpielerID" class="form-control mr-sm-2" type="search" placeholder="SpilerID" aria-label="SpielerID">
+      <button id="myClickBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Go!</button>
+    </form>
     </nav>
 
 

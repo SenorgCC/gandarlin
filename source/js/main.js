@@ -45,13 +45,13 @@ $( document ).ready(function() {
 
     $("#myClickBtn").click(function(){
       getAlldata();
+      $('#Spielerdaten').hide();
     });
 
     $("#gobtn").click(function(){
       createAllTables();
         //dataTab("spielerruestungen",spielerruestungen_arr);
      //   getTable(handwerkstalente_arr,"handwerkstalente");
-     $('#Spielerdaten').hide();
     });
 function getNamen(){
   $.ajax({
