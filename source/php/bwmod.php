@@ -6,6 +6,7 @@ $data=array($ID);
 $stmt="select * from basiswerte.modifikation where id=$1";
 $result = pg_prepare($dbconn,"bwmod",$stmt);
 $result=pg_execute($dbconn,"bwmod",$data);
-print json_encode(pg_result_error($result));
+$bw=pg_fetch_object($result);
+print json_encode($bw);
 pg_close($dbconn);
 ?>
