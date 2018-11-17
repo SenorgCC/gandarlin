@@ -55,7 +55,7 @@ $( document ).ready(function() {
 function getNamen(){
   $.ajax({
       type:'POST',
-      url:"source/php/spielernamen.php",
+      url:"source/php/spielername.php",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
       datatype:"json",
