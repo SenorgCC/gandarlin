@@ -17,7 +17,7 @@ var Spielernamen;
 var modalid;
 $( document ).ready(function() {
   function getAlldata(){
-      SpielerID=$('#SpielerID').val();
+      SpielerID=parseInt($('#SpielerID').val());
       bwbasis();
       sekwerte();
       einhandwaffen();
@@ -75,6 +75,7 @@ function createNavbar(){
   $('#NavEE').text("EE: "+sekundarwert_arr[2]["ee"]);
   $('#navbarNavAltMarkup').collapse('show');
 }
+
 function bwbasis(){
   $.ajax({
       type:'POST',
