@@ -4,3 +4,8 @@ table tr th::first-letter {
 .nav {
   display: inline-block;
 }
+.navbar-form .form-group input {
+  width: calc(100% - 50px);
+  display: inline-block;
+  vertical-align: top;
+}
