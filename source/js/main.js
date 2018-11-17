@@ -43,6 +43,7 @@ $( document ).ready(function() {
   }
 
     $("#myClickBtn").click(function(){
+      alert("Hier!");
       getAlldata();
       //createAllTables();
       $('#Spielerdaten').hide();
