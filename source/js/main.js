@@ -999,6 +999,7 @@ function getModalATPAtab(modtabid,dataarray,index,titel){
   var $tbody = $('#'+modtabid).find('tbody');
   var atpavalue;
   var text;
+  var wert;
   if (titel == "AT"){
     atpavalue=sekundarwert_arr[2]["attacke_basis"];
   }else{
@@ -1006,9 +1007,10 @@ function getModalATPAtab(modtabid,dataarray,index,titel){
   }
   $tbody.empty();
   for (i = 0; i < dataarray.length; i++){
+    wert=parseInt(atpavalue)+parseInt(dataarray[i][index]);
     text +="<tr>";
     text +="<td>"+(dataarray[i][0]).split(',')[0]+"</td>";
-    text +="<td> <input type=\"number\" value="+parseInt(atpavalue)+parseInt(dataarray[i][index])+">";
+    text +="<td> <input type=\"number\" value="+wert+">";
     text +="<button type=\"button\" class=\"btn btn-success checkup\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger checkdown\">-</button>";
     text +="</td></tr>";
