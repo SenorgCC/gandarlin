@@ -13,6 +13,7 @@ var handwerkstalente_arr = [];
 var spielerwaffen_ar = [[]];
 var spielerruestungen_arr = [[]];
 var SpielerID;
+var modalid;
 $( document ).ready(function() {
   function getAlldata(){
       SpielerID=$('#SpielerID').val();
@@ -667,11 +668,16 @@ $(".editColumn").click(function(){
   if (showmodal) showmodal();
 });
 
+$('div.modal.hide').on('shown', function(){
+    modalid = $(this).attr('id');
+});
+
 $(document).on('click','.blussi', function(){
   var counter = $(this).closest('tr').find("input");
   var counterwert = counter.val();
   counterwert ++;
   counter.val(counterwert);
+  alert("Modal: "+modalid);
 });
 
 $(document).on('click','.minus', function(){
@@ -696,9 +702,6 @@ $(document).on('click','.editfinal', function(){
   }
   var showmodal = idmap[idtext];
   if(showmodal) showmodal();
-});
-$(document).on('click','.checkup', function(){
-
 });
 
 //---------------------------------------------------
@@ -1011,8 +1014,8 @@ function getModalATPAtab(modtabid,dataarray,index,titel){
     text +="<tr>";
     text +="<td>"+(dataarray[i][0]).split(',')[0]+"</td>";
     text +="<td> <input type=\"number\" value="+wert+">";
-    text +="<button type=\"button\" class=\"btn btn-success checkup\">+</button>";
-    text +="<button type=\"button\" class=\"btn btn-danger checkdown\">-</button>";
+    text +="<button type=\"button\" class=\"btn btn-success blussi\">+</button>";
+    text +="<button type=\"button\" class=\"btn btn-danger minus\">-</button>";
     text +="</td></tr>";
   }
   $tbody.append(text);
