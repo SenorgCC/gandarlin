@@ -1,15 +1,11 @@
 <?php
 include('../../../connect.php');
-ini_set('display_errors', 1);
 //$stmt="select * from basiswerte.basis union all select * from basiswerte.modifikation union all select * from basiswerte.final";
-$stmt="select * from basiswerte.modifikation";
-$result=pg_query($dbconn,$stmt);
-if (!$result){
-    echo "Es ist ein Fehler aufgetreten\n";
-    exit;
-}
-$row=pg_fetch_all($result);
-
-print json_encode($row);
+$ID = $_POST['ID'];
+$data=array($ID);
+$stmt="select * from basiswerte.modifikation where id=$1";
+$result = pg_prepare($dbconn,"bwmod",$stmt);
+$result=pg_execute($dbconn,"bwmod",$data);
+print json_encode(pg_result_error($result));
 pg_close($dbconn);
 ?>

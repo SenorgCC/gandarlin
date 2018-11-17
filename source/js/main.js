@@ -13,6 +13,7 @@ var handwerkstalente_arr = [];
 var spielerwaffen_ar = [[]];
 var spielerruestungen_arr = [[]];
 var SpielerID;
+var Spielernamen;
 var modalid;
 $( document ).ready(function() {
   function getAlldata(){
@@ -23,6 +24,7 @@ $( document ).ready(function() {
       zweihandwaffen();
       fernkampfwaffen();
       anderewaffen();
+      getNamen();
   }
 
   function createAllTables(){
@@ -49,8 +51,30 @@ $( document ).ready(function() {
       createAllTables();
         //dataTab("spielerruestungen",spielerruestungen_arr);
      //   getTable(handwerkstalente_arr,"handwerkstalente");
+     $('#Spielerdaten').hide();
     });
-
+function getNamen(){
+  $.ajax({
+      type:'POST',
+      url:"source/php/spielernamen.php",
+      //Daten an den Server in JSON
+      data: {ID:SpielerID},
+      datatype:"json",
+      //callback
+      success: function(data){
+      //daten[0]["id"];
+        Spielernamen=(JSON.parse(data));
+      }
+    }).done(function(){
+      createNavbar();
+    });
+}
+function createNavbar(){
+  $('#NavName').text(Spielernamen);
+  $('NavLeben').text("HP: "+sekundarwert_arr[2]["lebenspunkte"])
+  $('NavAusdauer').text("Ausdauer: "+sekundarwert_arr[2]["ausdauer"])
+  $('NavEE').text("EE: "+sekundarwert_arr[2]["ee"])
+}
 function bwbasis(){
   $.ajax({
       type:'POST',

@@ -17,16 +17,27 @@
     <title>Hello, world!</title>
   </head>
   <body>
-
-    <div id="Spielerdaten">
-      <p> Spieler id <input type="text" id="SpielerID" /><p>
+    <nav class="navbar navbar-dark bg-dark">
+      <a id="NavName" class="navbar-brand" href="#">NoName</a>
+    <div class="collapse navbar-collapse" id="Spielerdaten">
+      <div class="navbar-nav">
+        <p> Spieler id <input type="text" id="SpielerID" /><p>
+        <button type="button" id="myClickBtn" >go!</button>
+        <button type="button" id="gobtn" >tabelle!</button>
+      </div>
     </div>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a id="NavLeben" class="nav-item nav-link active" href="#">Leben <span class="sr-only">(current)</span></a>
+        <a id="NavAusdauer" class="nav-item nav-link active" href="#">Ausdauer</a>
+        <a id="NavEE" class="nav-item nav-link active" href="#">EE</a>
+      </div>
+    </div>
+    </nav>
+
 
     <div id="Basiswertediv">
       <h1> Basiswerte </h1>
-      <button type="button" id="myClickBtn" >go!</button>
-      <button type="button" id="gobtn" >tabelle!</button>
-
       <table id="spielerbasiswerte" class="table">
         <thead>
           <tr>
