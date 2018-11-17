@@ -43,7 +43,6 @@ $( document ).ready(function() {
   }
 
     $("#myClickBtn").click(function(){
-      alert("Hier!");
       getAlldata();
       //createAllTables();
       $('#Spielerdaten').hide();
@@ -64,7 +63,6 @@ function getNamen(){
       success: function(data){
       //daten[0]["id"];
         Spielernamen=(JSON.parse(data))["name"];
-        alert("Name: "+Spielernamen);
       }
     }).done(function(){
       createNavbar();
@@ -88,6 +86,7 @@ function bwbasis(){
       success: function(data){
       //daten[0]["id"];
       basiswert_arr=JSON.parse(data);
+      alert("Hier1");
       korprtalente();
       wissenstalente();
       naturtalente();
