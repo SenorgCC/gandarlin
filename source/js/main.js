@@ -77,6 +77,7 @@ function createNavbar(){
 }
 
 function bwbasis(){
+  alert("SpilerID "+SpielerID);
   $.ajax({
       type:'POST',
       url:"source/php/bwbasis.php",
