@@ -69,7 +69,7 @@ function getNamen(){
     });
 }
 function createNavbar(){
-  $('#NavName').text("["+SpilerID+"]"+Spielernamen);
+  $('#NavName').text("["+SpielerID+"]"+Spielernamen);
   $('#NavLeben').text("HP: "+sekundarwert_arr[2]["lebenspunkte"]);
   $('#NavAusdauer').text("Ausdauer: "+sekundarwert_arr[2]["ausdauer"]);
   $('#NavEE').text("EE: "+sekundarwert_arr[2]["ee"]);
