@@ -1,6 +1,6 @@
 table tr th::first-letter {
     text-transform:capitalize;
 }
-.navbar-nav {
-    flex-direction: row;
+.nav.navbar-nav li {
+    float: left;
 }
