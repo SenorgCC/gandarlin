@@ -699,7 +699,7 @@ $(document).on('click','.editfinal', function(){
 });
 $(document).on('click','.checkup', function(){
 
-}
+});
 
 //---------------------------------------------------
 //Modalsubmitfunktionen ab hier
