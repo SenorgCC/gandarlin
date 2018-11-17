@@ -64,6 +64,7 @@ function getNamen(){
       //daten[0]["id"];
         Spielernamen=JSON.stringify(data);
         alert(Spielernamen);
+        
       }
     }).done(function(){
       createNavbar();
