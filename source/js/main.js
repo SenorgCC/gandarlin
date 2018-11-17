@@ -697,6 +697,9 @@ $(document).on('click','.editfinal', function(){
   var showmodal = idmap[idtext];
   if(showmodal) showmodal();
 });
+$(document).on('click','.checkup', function(){
+
+}
 
 //---------------------------------------------------
 //Modalsubmitfunktionen ab hier
@@ -1005,7 +1008,7 @@ function getModalATPAtab(modtabid,dataarray,index,titel){
   for (i = 0; i < dataarray.length; i++){
     text +="<tr>";
     text +="<td>"+(dataarray[i][0]).split(',')[0]+"</td>";
-    text +="<td> <input type=\"number\" value="+atpavalue+">";
+    text +="<td> <input type=\"number\" value="+atpavalue+dataarray[i][1]">";
     text +="<button type=\"button\" class=\"btn btn-success checkup\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger checkdown\">-</button>";
     text +="</td></tr>";
