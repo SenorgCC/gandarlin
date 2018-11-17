@@ -669,7 +669,7 @@ $(".editColumn").click(function(){
 });
 
 //Ermittelt die ID des offen modals
-$('div.modal.hide').on('shown.bs.modal', function(){
+$('.modal').on('shown.bs.modal', function(){
     modalid = $(this).attr('id');
 });
 
