@@ -63,7 +63,7 @@ function getNamen(){
       success: function(data){
       //daten[0]["id"];
         Spielernamen=JSON.stringify(JSON.parse(data));
-        alert(Spielernamen);
+        alert(JSON.stringify(data));
 
       }
     }).done(function(){
