@@ -18,6 +18,7 @@ var modalid;
 $( document ).ready(function() {
   function getAlldata(){
       SpielerID=$('#SpielerID').val();
+      alert("SPielerID: "+SpilerID);
       bwbasis();
       sekwerte();
       einhandwaffen();
