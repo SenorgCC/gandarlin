@@ -45,11 +45,11 @@ $( document ).ready(function() {
 
     $("#myClickBtn").click(function(){
       getAlldata();
+      //createAllTables();
       $('#Spielerdaten').hide();
     });
 
     $("#gobtn").click(function(){
-      createAllTables();
         //dataTab("spielerruestungen",spielerruestungen_arr);
      //   getTable(handwerkstalente_arr,"handwerkstalente");
     });
@@ -63,7 +63,7 @@ function getNamen(){
       //callback
       success: function(data){
       //daten[0]["id"];
-        Spielernamen=(JSON.parse(data));
+        Spielernamen=JSON.stringify(data);
       }
     }).done(function(){
       createNavbar();
