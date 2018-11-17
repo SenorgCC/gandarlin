@@ -995,7 +995,7 @@ function getModaltab (modtabid,dataarray,index){
 }
 
 function getModalATPAtab(modtabid,dataarray,index,titel){
-  $('.titelATPA').text("Final "+titel+" Modifikation");
+  $('#titelATPA').text("Final "+titel+" Modifikation");
   var $tbody = $('#'+modtabid).find('tbody');
   var atpavalue;
   var text;
