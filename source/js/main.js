@@ -69,11 +69,10 @@ function getNamen(){
     });
 }
 function createNavbar(){
-  alert(sekundarwert_arr[2]["lebenspunkte"]);
   $('#NavName').text(Spielernamen);
-  $('NavLeben').text("HP: "+sekundarwert_arr[2]["lebenspunkte"]);
-  $('NavAusdauer').text("Ausdauer: "+sekundarwert_arr[2]["ausdauer"]);
-  $('NavEE').text("EE: "+sekundarwert_arr[2]["ee"]);
+  $('#NavLeben').text("HP: "+sekundarwert_arr[2]["lebenspunkte"]);
+  $('#NavAusdauer').text("Ausdauer: "+sekundarwert_arr[2]["ausdauer"]);
+  $('#NavEE').text("EE: "+sekundarwert_arr[2]["ee"]);
   $('#navbarNavAltMarkup').collapse('show');
 }
 function bwbasis(){
