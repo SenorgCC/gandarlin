@@ -75,6 +75,7 @@ function createNavbar(){
   $('#NavEE').text("EE: "+sekundarwert_arr[2]["ee"]);
   $('#navbarNavAltMarkup').collapse('show');
 }
+
 function bwbasis(){
   $.ajax({
       type:'POST',
