@@ -1033,10 +1033,13 @@ function getModalATPAtab(modtabid,dataarray){
   var text;
   var atwert;
   var pawert;
+  var waffentalent;
   $tbody.empty();
   for (i = 0; i < dataarray.length; i++){
-    atwert=parseInt(atvalue)+parseInt(dataarray[i][3]);
-    pawert=parseInt(pavalue)+parseInt(dataarray[i][4]);
+    waffentalent= getwaffentalent(dataarray[i][1],dataarray[2]);
+    alert(waffentalent);
+    atwert=parseInt(atvalue)+parseInt(dataarray[i][5]);
+    pawert=parseInt(pavalue)+parseInt(dataarray[i][6]);
     text +="<tr>";
     text +="<td>"+(dataarray[i][0]).split(',')[0]+"</td>";
     text +="<td> <input type=\"number\" value="+atwert+">";
@@ -1050,6 +1053,50 @@ function getModalATPAtab(modtabid,dataarray){
   $tbody.append(text);
   rowtext = "";
 }
+
+function getwaffentalent(id,exotic){
+  if (exotic == 1){
+    return anderewaffen_arr[2]["exotische_waffen"];
+  }
+ var art = {
+  1: function(){
+    return einhandwaffen_arr[2]["schwerter"];
+  },
+  2: function(){
+    return einhandwaffen_arr[2]["beile"];
+  },
+  3: function(){
+    return einhandwaffen_arr[2]["flegel"];
+  },
+  4: function(){
+    return einhandwaffen_arr[2]["dolche"];
+  },
+  5: function(){
+    return zweihandwaffen_arr[2]["schwerter"];
+  },
+  6: function(){
+    return zweihandwaffen_arr[2]["aexte"];
+  },
+  7: function(){
+    return zweihandwaffen_arr[2]["kolben"];
+  },
+  8: function(){
+    return zweihandwaffen_arr[2]["staebe"];
+  },
+  9: function(){
+    return zweihandwaffen_arr[2]["stangenwaffen"];
+  },
+  10: function(){
+    return anderewaffen_arr[2]["schilde"];
+  },
+  11: function(){
+    return 0;
+  }
+ };
+
+  var getwert = art[id];
+  if(getwert) getwert();
+};
 
 $('#submitspielerruesungen').click(function(){
   //Finde alle Inputs der ID und gebe die Werte durch die Map funktion wieder
