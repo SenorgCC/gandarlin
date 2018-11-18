@@ -1036,7 +1036,7 @@ function getModalATPAtab(modtabid,dataarray){
   var waffentalent;
   $tbody.empty();
   for (i = 0; i < dataarray.length; i++){
-    waffentalent= getwaffentalent(dataarray[i][1],dataarray[2]);
+    waffentalent= getwaffentalent(dataarray[i][1],dataarray[i][2]);
     alert(waffentalent);
     atwert=parseInt(atvalue)+parseInt(dataarray[i][5]);
     pawert=parseInt(pavalue)+parseInt(dataarray[i][6]);
@@ -1055,42 +1055,41 @@ function getModalATPAtab(modtabid,dataarray){
 }
 
 function getwaffentalent(id,exotic){
-  alert(id,exotic);
   if (exotic == 1){
     return anderewaffen_arr[2]["exotische_waffen"];
   }
  var art = {
-  1: function(){
+  '1': function(){
     return einhandwaffen_arr[2]["schwerter"];
   },
-  2: function(){
+  '2': function(){
     return einhandwaffen_arr[2]["beile"];
   },
-  3: function(){
+  '3': function(){
     return einhandwaffen_arr[2]["flegel"];
   },
-  4: function(){
+  '4': function(){
     return einhandwaffen_arr[2]["dolche"];
   },
-  5: function(){
+  '5': function(){
     return zweihandwaffen_arr[2]["schwerter"];
   },
-  6: function(){
+  '6': function(){
     return zweihandwaffen_arr[2]["aexte"];
   },
-  7: function(){
+  '7': function(){
     return zweihandwaffen_arr[2]["kolben"];
   },
-  8: function(){
+  '8': function(){
     return zweihandwaffen_arr[2]["staebe"];
   },
-  9: function(){
+  '9': function(){
     return zweihandwaffen_arr[2]["stangenwaffen"];
   },
-  10: function(){
+  '10': function(){
     return anderewaffen_arr[2]["schilde"];
   },
-  11: function(){
+  '11': function(){
     return 0;
   }
  };
