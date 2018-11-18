@@ -533,14 +533,14 @@ function spielerwaffen(){
         for (i=0; i< tempdata.length; i++){
           tempwaffen = [];
           tempwaffen=([tempdata[i]["beschreibung"],
+                        tempdata[i]["art_id"],
+                        tempdata[i]["exotisch"],
                         tempdata[i]["schaden_wuerfel"]+"+"+tempdata[i]["schaden"],
                         tempdata[i]["kk_bonus"],
                         tempdata[i]["attackebonus"],
                         tempdata[i]["paradebonus"],
                         tempdata[i]["final_at"],
-                        tempdata[i]["final_pa"],
-                        tempdata[i]["art_id"],
-                        tempdata[i]["exotisch"]]);
+                        tempdata[i]["final_pa"]]);
           waffen[i] = tempwaffen;
         }
         spielerwaffen_ar=waffen;
