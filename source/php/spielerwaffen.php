@@ -5,7 +5,7 @@ $erg_array = array();
 //$stmt="select * from basiswerte.basis union all select * from basiswerte.modifikation union all select * from basiswerte.final";
 $stmt="select * from spieler.waffen a";
 $stmt.=" inner join spieler.waffen_final b on (a.id = b.waffen_id)";
-$stmt.=" inner join spieler.waffenart c on (a.waffenart_id = c.id)"
+$stmt.=" inner join spieler.waffenart c on (a.waffenart_id = c.id)";
 $stmt.=" where b.sp_id = $1";
 $result=pg_prepare($dbconn,"normalwerte",$stmt);
 $result=pg_execute($dbconn,"normalwerte",array($ID));
