@@ -1027,20 +1027,21 @@ function getModaltab (modtabid,dataarray,index){
 function getModalATPAtab(modtabid,dataarray,index,titel){
   $('#titelATPA').text("Final "+titel+" Modifikation");
   var $tbody = $('#'+modtabid).find('tbody');
-  var atpavalue;
+  var atvalue=sekundarwert_arr[2]["attacke_basis"];
+  var pavalue=sekundarwert_arr[2]["parade_basis"];
   var text;
-  var wert;
-  if (titel == "AT"){
-    atpavalue=sekundarwert_arr[2]["attacke_basis"];
-  }else{
-    atpavalue=sekundarwert_arr[2]["parade_basis"];
-  }
+  var atwert;
+  var pawert;
   $tbody.empty();
   for (i = 0; i < dataarray.length; i++){
-    wert=parseInt(atpavalue)+parseInt(dataarray[i][index]);
+    atwert=parseInt(atvalue)+parseInt(dataarray[i][3]);
+    pawert=parseInt(pavalue)+parseInt(dataarray[i][4]);
     text +="<tr>";
     text +="<td>"+(dataarray[i][0]).split(',')[0]+"</td>";
-    text +="<td> <input type=\"number\" value="+wert+">";
+    text +="<td> <input type=\"number\" value="+atwert+">";
+    text +="<button type=\"button\" class=\"btn btn-success blussi\">+</button>";
+    text +="<button type=\"button\" class=\"btn btn-danger minus\">-</button>";
+    text +="<td> <input type=\"number\" value="+pawert+">";
     text +="<button type=\"button\" class=\"btn btn-success blussi\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger minus\">-</button>";
     text +="</td></tr>";
