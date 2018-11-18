@@ -538,7 +538,9 @@ function spielerwaffen(){
                         tempdata[i]["attackebonus"],
                         tempdata[i]["paradebonus"],
                         tempdata[i]["final_at"],
-                        tempdata[i]["final_pa"]]);
+                        tempdata[i]["final_pa"],
+                        tempdata[i]["art_id"],
+                        tempdata[i]["exotisch"]]);
           waffen[i] = tempwaffen;
         }
         spielerwaffen_ar=waffen;
@@ -718,11 +720,11 @@ $(document).on('click','.editfinal', function(){
   var idtext = $(this).closest('th').attr("id");
   var idmap = {
     'Final_AT': function(){
-      getModalATPAtab("modtabATPA",spielerwaffen_ar,);
+      getModalATPAtab("modtabATPA",spielerwaffen_ar);
       $('#modalFinalATPA').modal();
     },
     'Final_PA': function(){
-      getModalATPAtab("modtabATPA",spielerwaffen_ar,);
+      getModalATPAtab("modtabATPA",spielerwaffen_ar);
       $('#modalFinalATPA').modal();
     }
   }
@@ -1023,8 +1025,8 @@ function getModaltab (modtabid,dataarray,index){
   rowtext = "";
 }
 
-function getModalATPAtab(modtabid,dataarray,){
-  $('#titelATPA').text("Final "+titel+" Modifikation");
+function getModalATPAtab(modtabid,dataarray){
+  $('#titelATPA').text("Final AT/PA Modifikation");
   var $tbody = $('#'+modtabid).find('tbody');
   var atvalue=sekundarwert_arr[2]["attacke_basis"];
   var pavalue=sekundarwert_arr[2]["parade_basis"];
