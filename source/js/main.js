@@ -69,7 +69,7 @@ function getNamen(){
     });
 }
 function createNavbar(){
-  $('#NavName').text("["+SpielerID+"]"+Spielernamen);
+  $('#NavName').text("["+SpielerID+"] "+Spielernamen);
   $('#NavLeben').text("HP: "+sekundarwert_arr[2]["lebenspunkte"]);
   $('#NavAusdauer').text("Ausdauer: "+sekundarwert_arr[2]["ausdauer"]);
   $('#NavEE').text("EE: "+sekundarwert_arr[2]["ee"]);
@@ -703,11 +703,11 @@ $(document).on('click','.blussi', function(){
   var counterwert = counter.val();
   counterwert ++;
   counter.val(counterwert);
-  alert("Modal: "+modalid);
 });
 
 $(document).on('click','.minus', function(){
-  var id=$(event.target).closest("th").attr('id');
+  //var id=$(event.target).closest("th").attr('id');
+  var counter = $(this).closest('tr').find("input");
   var counterwert = counter.val();
   counterwert --;
   counter.val(counterwert);
