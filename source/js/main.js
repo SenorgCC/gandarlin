@@ -716,14 +716,13 @@ $(document).on('click','.minus', function(){
 
 $(document).on('click','.editfinal', function(){
   var idtext = $(this).closest('th').attr("id");
-  alert(idtext);
   var idmap = {
     'Final_AT': function(){
-      getModalATPAtab("modtabATPA",spielerwaffen_ar,3,"AT");
+      getModalATPAtab("modtabATPA",spielerwaffen_ar,);
       $('#modalFinalATPA').modal();
     },
     'Final_PA': function(){
-      getModalATPAtab("modtabATPA",spielerwaffen_ar,4,"PA");
+      getModalATPAtab("modtabATPA",spielerwaffen_ar,);
       $('#modalFinalATPA').modal();
     }
   }
@@ -1024,7 +1023,7 @@ function getModaltab (modtabid,dataarray,index){
   rowtext = "";
 }
 
-function getModalATPAtab(modtabid,dataarray,index,titel){
+function getModalATPAtab(modtabid,dataarray,){
   $('#titelATPA').text("Final "+titel+" Modifikation");
   var $tbody = $('#'+modtabid).find('tbody');
   var atvalue=sekundarwert_arr[2]["attacke_basis"];
