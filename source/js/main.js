@@ -1055,6 +1055,7 @@ function getModalATPAtab(modtabid,dataarray){
 }
 
 function getwaffentalent(id,exotic){
+  alert(id,exotic);
   if (exotic == 1){
     return anderewaffen_arr[2]["exotische_waffen"];
   }
