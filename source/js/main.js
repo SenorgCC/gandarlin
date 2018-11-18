@@ -1094,7 +1094,7 @@ function getwaffentalent(id,exotic){
   }
  };
 
-  var getwert = art[id];
+  var getwert = art[JSON.stringify(id)];
   if(getwert) getwert();
 };
 
