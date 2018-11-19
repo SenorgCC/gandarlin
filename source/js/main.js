@@ -455,12 +455,12 @@ function getspielerwaffenkampftalent(){
     success: function(data){
         tempdata=JSON.parse(data);
         for (i=0; i< tempdata.length; i++){
-          temwk = [];
+          tempwk = [];
           tempwk =([tempdata[i]["beschreibung"],
                         tempdata[i]["kampftalent_attacke"],
                         tempdata[i]["kampftalent_parade"]
                         ]);
-          wk[i] = tempruestung;
+          wk[i] = tempwk;
         }
         spielerwaffenkampftalent_arr=wk;
       }
