@@ -721,7 +721,7 @@ $(document).on('click','.atminus', function(){
   //var id=$(event.target).closest("th").attr('id');
   var at = $(this).closest('tr').find("#atwert");
   var pa = $(this).closest('tr').find("#pawert");
-  var talentpunkte = $(this).closest('h4').find("#Waffentalent");
+  var talentpunkte = $(this).closest('#Waffentalent');
   var atwert = at.val();
   var pawert = pa.val();
   var talentpunktewert = talentpunkte.text();
