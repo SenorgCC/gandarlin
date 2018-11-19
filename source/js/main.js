@@ -1084,7 +1084,6 @@ function getwaffentalent(id,exotic){
 };
 
   return art[id];
-  });
 };
 
 $('#submitspielerruesungen').click(function(){
