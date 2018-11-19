@@ -1080,7 +1080,7 @@ function getwaffentalent(id,exotic){
   ,
   10: anderewaffen_arr[2]["schilde"]
   ,
-  11: anderewaffen_arr[2]["unbewaffnet"];
+  11: anderewaffen_arr[2]["unbewaffnet"]
 };
 
   return art[id];
