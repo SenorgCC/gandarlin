@@ -12,7 +12,7 @@ var anderewaffen_arr = [];
 var handwerkstalente_arr = [];
 var spielerwaffen_ar = [[]];
 var spielerruestungen_arr = [[]];
-var spielerwaffenkampftalent_arr=[];
+var spielerwaffenkampftalent_arr=[[]];
 var SpielerID;
 var Spielernamen;
 var modalid;
@@ -444,6 +444,9 @@ function einhandwaffen(){
 }
 
 function getspielerwaffenkampftalent(){
+  var tempwkt;
+  var tempdata;
+  var wk=[];
   $.ajax({
     type:'POST',
     url:"source/php/spielerwaffenkampftalent.php",
@@ -451,6 +454,17 @@ function getspielerwaffenkampftalent(){
     datatype:"json",
     success: function(data){
       spielerwaffenkampftalent_arr=JSON.parse(data);
+        tempdata=JSON.parse(data);
+        for (i=0; i< tempdata.length; i++){
+          temwk = [];
+          tempwk =([tempdata[i]["beschreibung"],
+                        tempdata[i]["kampftalent_attacke"],
+                        tempdata[i]["kampftalent_parade"]
+                        ]);
+          wk[i] = tempruestung;
+        }
+        spielerwaffenkampftalent_arr=wk;
+      }
     }
     });
 }
