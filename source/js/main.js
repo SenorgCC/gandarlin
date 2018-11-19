@@ -1059,44 +1059,30 @@ function getwaffentalent(id,exotic){
     return anderewaffen_arr[2]["exotische_waffen"];
   }
  var art = {
-  1: function(){
-    return einhandwaffen_arr[2]["schwerter"];
-  },
-  2: function(){
-    alert(einhandwaffen_arr[2]["beile"]);
-    return einhandwaffen_arr[2]["beile"];
-  },
-  3: function(){
-    return einhandwaffen_arr[2]["flegel"];
-  },
-  4: function(){
-    return einhandwaffen_arr[2]["dolche"];
-  },
-  5: function(){
-    return zweihandwaffen_arr[2]["schwerter"];
-  },
-  6: function(){
-    return zweihandwaffen_arr[2]["aexte"];
-  },
-  7: function(){
-    return zweihandwaffen_arr[2]["kolben"];
-  },
-  8: function(){
-    return zweihandwaffen_arr[2]["staebe"];
-  },
-  9: function(){
-    return zweihandwaffen_arr[2]["stangenwaffen"];
-  },
-  10: function(){
-    return anderewaffen_arr[2]["schilde"];
-  },
-  11: function(){
-    return 0;
-  }
- };
+  1: einhandwaffen_arr[2]["schwerter"]
+  ,
+  2: einhandwaffen_arr[2]["beile"]
+  ,
+  3: einhandwaffen_arr[2]["flegel"]
+  ,
+  4: einhandwaffen_arr[2]["dolche"]
+  ,
+  5: zweihandwaffen_arr[2]["schwerter"]
+  ,
+  6: zweihandwaffen_arr[2]["aexte"]
+  ,
+  7: zweihandwaffen_arr[2]["kolben"]
+  ,
+  8: zweihandwaffen_arr[2]["staebe"]
+  ,
+  9: zweihandwaffen_arr[2]["stangenwaffen"]
+  ,
+  10: anderewaffen_arr[2]["schilde"]
+  ,
+  11: 0
+};
 
-  var getwert = art[id];
-  if(getwert) getwert();
+  var getwert = $.map(art, function(value,key){ return value});
 };
 
 $('#submitspielerruesungen').click(function(){
