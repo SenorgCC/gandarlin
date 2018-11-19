@@ -12,6 +12,7 @@ var anderewaffen_arr = [];
 var handwerkstalente_arr = [];
 var spielerwaffen_ar = [[]];
 var spielerruestungen_arr = [[]];
+var spielerwaffenkampftalent_arr=[];
 var SpielerID;
 var Spielernamen;
 var modalid;
@@ -94,6 +95,7 @@ function bwbasis(){
       spezialetalente();
       spielerwaffen();
       spielerruestungen();
+      getspielerwaffenkampftalent();
       handwerkstalente();
       }
   }).done(function(){
@@ -441,6 +443,17 @@ function einhandwaffen(){
   });
 }
 
+function getspielerwaffenkampftalent(){
+  $.ajax({
+    type:'POST',
+    url:"source/php/spielerwaffenkampftalent.php",
+    data: {ID:SpielerID},
+    datatype:"json",
+    success: function(data){
+      spielerwaffenkampftalent_arr=JSON.parse(data);
+    });
+}
+
 function zweihandwaffen(){
   $.ajax({
       type:'POST',
@@ -725,7 +738,6 @@ $(document).on('click','.atminus', function(){
   var atwert = at.val();
   var pawert = pa.val();
   var talentpunktewert = talentpunkte.text();
-  alert("talentpunkte"+talentpunktewert);
   atwert --;
   //if (check)
   talentpunktewert --;
@@ -737,11 +749,11 @@ $(document).on('click','.editfinal', function(){
   var idtext = $(this).closest('th').attr("id");
   var idmap = {
     'Final_AT': function(){
-      getModalATPAtab("modtabATPA",spielerwaffen_ar);
+      getModalATPAtab("modtabATPA",spielerwaffen_ar,spielerwaffenkampftalent_arr);
       $('#modalFinalATPA').modal();
     },
     'Final_PA': function(){
-      getModalATPAtab("modtabATPA",spielerwaffen_ar);
+      getModalATPAtab("modtabATPA",spielerwaffen_ar,spielerwaffenkampftalent_arr);
       $('#modalFinalATPA').modal();
     }
   }
@@ -1042,7 +1054,7 @@ function getModaltab (modtabid,dataarray,index){
   rowtext = "";
 }
 
-function getModalATPAtab(modtabid,dataarray){
+function getModalATPAtab(modtabid,dataarray,kampftalentarray){
   $('#titelATPA').text("Final AT/PA Modifikation");
   var $tbody = $('#'+modtabid).find('tbody');
   var atvalue=sekundarwert_arr[2]["attacke_basis"];
@@ -1054,8 +1066,8 @@ function getModalATPAtab(modtabid,dataarray){
   $tbody.empty();
   for (i = 0; i < dataarray.length; i++){
     waffentalent= getwaffentalent(dataarray[i][1],dataarray[i][2]);
-    atwert=parseInt(atvalue)+parseInt(dataarray[i][5]);
-    pawert=parseInt(pavalue)+parseInt(dataarray[i][6]);
+    atwert=kampftalentarray[i][1];
+    pawert=kampftalentarray[i][2];
     text +="<tr>";
     text +="<td>"+(dataarray[i][0]).split(',')[0]+"<h4 id=\"Waffentalent\">"+waffentalent+"</h4></td>";
     text +="<td> <input id=\"atwert\" type=\"number\" value="+atwert+">";
