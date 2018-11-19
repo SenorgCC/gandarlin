@@ -451,6 +451,7 @@ function getspielerwaffenkampftalent(){
     datatype:"json",
     success: function(data){
       spielerwaffenkampftalent_arr=JSON.parse(data);
+    }
     });
 }
 
