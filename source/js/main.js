@@ -726,7 +726,7 @@ $(document).on('click','.atminus', function(){
   var pawert = pa.val();
   var talentpunktewert = talentpunkte.text();
   atwert --;
-  if (check)
+  //if (check)
   talentpunktewert --;
   at.val(atwert);
   talentpunkte.text(talentpunktewert);
