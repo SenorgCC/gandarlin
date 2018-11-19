@@ -453,7 +453,6 @@ function getspielerwaffenkampftalent(){
     data: {ID:SpielerID},
     datatype:"json",
     success: function(data){
-      spielerwaffenkampftalent_arr=JSON.parse(data);
         tempdata=JSON.parse(data);
         for (i=0; i< tempdata.length; i++){
           temwk = [];
