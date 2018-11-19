@@ -1038,11 +1038,10 @@ function getModalATPAtab(modtabid,dataarray){
   $tbody.empty();
   for (i = 0; i < dataarray.length; i++){
     waffentalent= getwaffentalent(dataarray[i][1],dataarray[i][2]);
-    alert(waffentalent);
     atwert=parseInt(atvalue)+parseInt(dataarray[i][5]);
     pawert=parseInt(pavalue)+parseInt(dataarray[i][6]);
     text +="<tr>";
-    text +="<td>"+(dataarray[i][0]).split(',')[0]+"</td>";
+    text +="<td>"+(dataarray[i][0]).split(',')[0]+"<h4 id=\"Waffentalent\">"+"["+waffentalent+"]"+"</h4></td>";
     text +="<td> <input type=\"number\" value="+atwert+">";
     text +="<button type=\"button\" class=\"btn btn-success blussi\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger minus\">-</button>";
