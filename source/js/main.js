@@ -717,6 +717,21 @@ $(document).on('click','.minus', function(){
   counter.val(counterwert);
 });
 
+$(document).on('click','.atminus', function(){
+  //var id=$(event.target).closest("th").attr('id');
+  var at = $(this).closest('tr').find("#atwert");
+  var pa = $(this).closest('tr').find("#pawert");
+  var talentpunkte = $(this).closest('h4').find("#Waffentalent");
+  var atwert = at.val();
+  var pawert = pa.val();
+  var talentpunktewert = talentpunkte.text();
+  atwert --;
+  if (check)
+  talentpunktewert --;
+  at.val(atwert);
+  talentpunkte.text(talentpunktewert);
+});
+
 $(document).on('click','.editfinal', function(){
   var idtext = $(this).closest('th').attr("id");
   var idmap = {
@@ -1041,13 +1056,13 @@ function getModalATPAtab(modtabid,dataarray){
     atwert=parseInt(atvalue)+parseInt(dataarray[i][5]);
     pawert=parseInt(pavalue)+parseInt(dataarray[i][6]);
     text +="<tr>";
-    text +="<td>"+(dataarray[i][0]).split(',')[0]+"<h4 id=\"Waffentalent\">"+"["+waffentalent+"]"+"</h4></td>";
+    text +="<td>"+(dataarray[i][0]).split(',')[0]+"<h4 id=\"Waffentalent\">"+waffentalent+"</h4></td>";
     text +="<td> <input id=\"atwert\" type=\"number\" value="+atwert+">";
-    text +="<button type=\"button\" class=\"btn btn-success atpablussi\">+</button>";
-    text +="<button type=\"button\" class=\"btn btn-danger atpaminus\">-</button>";
+    text +="<button type=\"button\" class=\"btn btn-success atblussi\">+</button>";
+    text +="<button type=\"button\" class=\"btn btn-danger atminus\">-</button>";
     text +="<td> <input id=\"pawert\" type=\"number\" value="+pawert+">";
-    text +="<button type=\"button\" class=\"btn btn-success atpablussi\">+</button>";
-    text +="<button type=\"button\" class=\"btn btn-danger atpaminus\">-</button>";
+    text +="<button type=\"button\" class=\"btn btn-success pablussi\">+</button>";
+    text +="<button type=\"button\" class=\"btn btn-danger paminus\">-</button>";
     text +="</td></tr>";
   }
   $tbody.append(text);
