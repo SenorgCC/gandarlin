@@ -1064,6 +1064,7 @@ function getwaffentalent(id,exotic){
     return einhandwaffen_arr[2]["schwerter"];
   },
   2: function(){
+    alert("Hier!");
     return einhandwaffen_arr[2]["beile"];
   },
   3: function(){
