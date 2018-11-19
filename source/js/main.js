@@ -1058,14 +1058,12 @@ function getwaffentalent(id,exotic){
   if (exotic == 1){
     return anderewaffen_arr[2]["exotische_waffen"];
   }
-  alert("ID: "+id);
  var art = {
   1: function(){
     return einhandwaffen_arr[2]["schwerter"];
   },
   2: function(){
-    alert("Hier!");
-    alert(einhandwaffen_arr[1]["beile"]);
+    alert(einhandwaffen_arr[2]["beile"]);
     return einhandwaffen_arr[2]["beile"];
   },
   3: function(){
