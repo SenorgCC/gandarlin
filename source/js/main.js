@@ -465,7 +465,6 @@ function getspielerwaffenkampftalent(){
         }
         spielerwaffenkampftalent_arr=wk;
       }
-    }
     });
 }
 
