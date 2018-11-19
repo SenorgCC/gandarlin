@@ -1082,7 +1082,10 @@ function getwaffentalent(id,exotic){
   11: 0
 };
 
-  var getwert = $.map(art, function(value,key){ return value});
+  var getwert = $.map(art, function(value,key){
+    alert("Value "+value);
+    return value
+  });
 };
 
 $('#submitspielerruesungen').click(function(){
