@@ -1042,12 +1042,12 @@ function getModalATPAtab(modtabid,dataarray){
     pawert=parseInt(pavalue)+parseInt(dataarray[i][6]);
     text +="<tr>";
     text +="<td>"+(dataarray[i][0]).split(',')[0]+"<h4 id=\"Waffentalent\">"+"["+waffentalent+"]"+"</h4></td>";
-    text +="<td> <input type=\"number\" value="+atwert+">";
-    text +="<button type=\"button\" class=\"btn btn-success blussi\">+</button>";
-    text +="<button type=\"button\" class=\"btn btn-danger minus\">-</button>";
-    text +="<td> <input type=\"number\" value="+pawert+">";
-    text +="<button type=\"button\" class=\"btn btn-success blussi\">+</button>";
-    text +="<button type=\"button\" class=\"btn btn-danger minus\">-</button>";
+    text +="<td> <input id=\"atwert\" type=\"number\" value="+atwert+">";
+    text +="<button type=\"button\" class=\"btn btn-success atpablussi\">+</button>";
+    text +="<button type=\"button\" class=\"btn btn-danger atpaminus\">-</button>";
+    text +="<td> <input id=\"pawert\" type=\"number\" value="+pawert+">";
+    text +="<button type=\"button\" class=\"btn btn-success atpablussi\">+</button>";
+    text +="<button type=\"button\" class=\"btn btn-danger atpaminus\">-</button>";
     text +="</td></tr>";
   }
   $tbody.append(text);
