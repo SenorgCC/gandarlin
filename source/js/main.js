@@ -671,6 +671,7 @@ $(".editColumn").click(function(){
     'anderewaffen': function(){
       $('#editschilde').val(anderewaffen_arr[1]["schilde"]);
       $('#editexotische').val(anderewaffen_arr[1]["exotische_waffen"]);
+      $('#editexotische').val(anderewaffen_arr[1]["unbewaffnet"]);
       $('#modalanderewaffen').modal();
     },
     'handwerkstalente': function(){
@@ -1079,12 +1080,10 @@ function getwaffentalent(id,exotic){
   ,
   10: anderewaffen_arr[2]["schilde"]
   ,
-  11: 0
+  11: anderewaffen_arr[2]["unbewaffnet"];
 };
 
-  var getwert = $.map(art, function(value,key){
-    alert("Value "+value);
-    return value
+  return art[id];
   });
 };
 
