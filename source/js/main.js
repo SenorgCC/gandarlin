@@ -805,20 +805,27 @@ $(document).on('click','#Waffentalent', function(){
   alert("TEST"+talentpunktewert);
   alert("ATPA"+atwert+""+pawert);
   if (talentpunktewert == 0){
-    alert("HIER");
-    at.prop("disabled",true);
-    pa.prop("disabled",true);
+    at.closest('.atblussi').prop("disabled",true);
+    at.closest('.atminus').prop("disabled",false);
+    pa.closest('.pablussi').prop("disabled",true);
+    pa.closest('.paminus').prop("disabled",false);
   //Wenn AT Kampftalent um 5 hoeher ist als PA, muss at+ geblockt werden
   }else if ((atwert - pawert)>=5) {
-    at.prop("disabled",true);
-    pa.prop("disabled",false);
+    at.closest('.atblussi').prop("disabled",true);
+    at.closest('.atminus').prop("disabled",false);
+    pa.closest('.pablussi').prop("disabled",false);
+    pa.closest('.paminus').prop("disabled",true);
   //Same fuer PA
 }else if ((pawert - atwert)>=5) {
-    at.prop("disabled",false);
-    pa.prop("disabled",true);
+    at.closest('.atblussi').prop("disabled",false);
+    at.closest('.atminus').prop("disabled",true);
+    pa.closest('.pablussi').prop("disabled",true);
+    pa.closest('.paminus').prop("disabled",false);
   }else{
-    at.prop("disabled",false);
-    pa.prop("disabled",false);
+    at.closest('.atblussi').prop("disabled",false);
+    at.closest('.atminus').prop("disabled",false);
+    pa.closest('.pablussi').prop("disabled",false);
+    pa.closest('.paminus').prop("disabled",false);
   }
 });
 
