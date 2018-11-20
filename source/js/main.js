@@ -802,6 +802,8 @@ $(document).on('update','#Waffentalent', function(){
   var pawert= pa.val();
   var atwert= at.val();
   var talentpunktewert = $(this).text();
+  alert("TEST"+talentpunktewert);
+  alert("ATPA"+atwert+""+pawert);
   if (talentpunktewert == 0){
     at.prop('disable');
     pa.prop('disable');
