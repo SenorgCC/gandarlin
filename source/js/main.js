@@ -806,19 +806,19 @@ $(document).on('click','#Waffentalent', function(){
   alert("ATPA"+atwert+""+pawert);
   if (talentpunktewert == 0){
     alert("HIER");
-    at.prop('disable');
-    pa.prop('disable');
+    at.prop("disabled",true);
+    pa.prop("disabled",true);
   //Wenn AT Kampftalent um 5 hoeher ist als PA, muss at+ geblockt werden
   }else if ((atwert - pawert)>=5) {
-    at.prop('disable');
-    pa.prop('enable');
+    at.prop("disabled",true);
+    pa.prop("disabled",false);
   //Same fuer PA
 }else if ((pawert - atwert)>=5) {
-    at.prop('enable');
-    pa.prop('disable');
+    at.prop("disabled",false);
+    pa.prop("disabled",true);
   }else{
-    at.prop('enable');
-    pa.prop('enable');
+    at.prop("disabled",false);
+    pa.prop("disabled",false);
   }
 });
 
