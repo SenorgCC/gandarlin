@@ -805,6 +805,7 @@ $(document).on('click','#Waffentalent', function(){
   alert("TEST"+talentpunktewert);
   alert("ATPA"+atwert+""+pawert);
   if (talentpunktewert == 0){
+    alert("HIER");
     at.prop('disable');
     pa.prop('disable');
   //Wenn AT Kampftalent um 5 hoeher ist als PA, muss at+ geblockt werden
