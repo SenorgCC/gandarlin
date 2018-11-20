@@ -796,7 +796,7 @@ $(document).on('click','.pablussi', function(){
   pa.val(pawert);
   talentpunkte.text(talentpunktewert);
 });
-$(document).on('change','#Waffentalent', function(){
+$(document).on('click','#Waffentalent', function(){
   var pa = $(this).closest('tr').find("#pawert");
   var at = $(this).closest('tr').find("#atwert");
   var pawert= pa.val();
