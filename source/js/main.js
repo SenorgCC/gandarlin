@@ -796,6 +796,28 @@ $(document).on('click','.pablussi', function(){
   pa.val(pawert);
   talentpunkte.text(talentpunktewert);
 });
+$(document).on('update','#Waffentalent', function(){
+  var pa = $(this).closest('tr').find("#pawert");
+  var at = $(this).closest('tr').find("#atwert");
+  var pawert= pa.val();
+  var atwert= at.val();
+  var talentpunktewert = $(this).text();
+  if (talentpunktewert == 0){
+    at.prop('disable');
+    pa.prop('disable');
+  //Wenn AT Kampftalent um 5 hoeher ist als PA, muss at+ geblockt werden
+  }else if ((atwert - pawert)>=5) {
+    at.prop('disable');
+    pa.prop('enable');
+  //Same fuer PA
+}else if ((pawert - atwert)>=5) {
+    at.prop('enable');
+    pa.prop('disable');
+  }else{
+    at.prop('enable');
+    pa.prop('enable');
+  }
+});
 
 $(document).on('click','.editfinal', function(){
   var idtext = $(this).closest('th').attr("id");
@@ -1114,20 +1136,28 @@ function getModalATPAtab(modtabid,dataarray,kampftalentarray){
   var text;
   var atwert;
   var pawert;
+  var wert;
+  var disable;
   var waffentalent;
   $tbody.empty();
   for (i = 0; i < dataarray.length; i++){
     waffentalent= getwaffentalent(dataarray[i][1],dataarray[i][2]);
     atwert=kampftalentarray[i][1];
     pawert=kampftalentarray[i][2];
+    wert = (waffentalent-atwert-pawert);
+    if (wert == 0){
+      disable = "disabled";
+    }else{
+      disable="";
+    }
     text +="<tr>";
-    text +="<td>"+(dataarray[i][0]).split(',')[0]+"<h4 id=\"Waffentalent\">"+waffentalent+"</h4></td>";
+    text +="<td>"+(dataarray[i][0]).split(',')[0]+"<h4 id=\"Waffentalent\">"+wert+"</h4></td>";
     text +="<td> <input id=\"atwert\" type=\"number\" value="+atwert+">";
-    text +="<button type=\"button\" class=\"btn btn-success atblussi\">+</button>";
-    text +="<button type=\"button\" class=\"btn btn-danger atminus\">-</button>";
+    text +="<button "+disable+" type=\"button\" class=\"btn btn-success atblussi\">+</button>";
+    text +="<button "+disable+" type=\"button\" class=\"btn btn-danger atminus\">-</button>";
     text +="<td> <input id=\"pawert\" type=\"number\" value="+pawert+">";
-    text +="<button type=\"button\" class=\"btn btn-success pablussi\">+</button>";
-    text +="<button type=\"button\" class=\"btn btn-danger paminus\">-</button>";
+    text +="<button "+disable+" type=\"button\" class=\"btn btn-success pablussi\">+</button>";
+    text +="<button "+disable+" type=\"button\" class=\"btn btn-danger paminus\">-</button>";
     text +="</td></tr>";
   }
   $tbody.append(text);
