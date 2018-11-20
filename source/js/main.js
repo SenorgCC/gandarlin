@@ -805,27 +805,27 @@ $(document).on('click','#Waffentalent', function(){
   alert("TEST"+talentpunktewert);
   alert("ATPA"+atwert+""+pawert);
   if (talentpunktewert == 0){
-    at.closest('.atblussi').prop("disabled",true);
-    at.closest('.atminus').prop("disabled",false);
-    pa.closest('.pablussi').prop("disabled",true);
-    pa.closest('.paminus').prop("disabled",false);
+    at.closest('tr').find('.atblussi').prop("disabled",true);
+    at.closest('tr').find('.atminus').prop("disabled",false);
+    pa.closest('tr').find('.pablussi').prop("disabled",true);
+    pa.closest('tr').find('.paminus').prop("disabled",false);
   //Wenn AT Kampftalent um 5 hoeher ist als PA, muss at+ geblockt werden
   }else if ((atwert - pawert)>=5) {
-    at.closest('.atblussi').prop("disabled",true);
-    at.closest('.atminus').prop("disabled",false);
-    pa.closest('.pablussi').prop("disabled",false);
-    pa.closest('.paminus').prop("disabled",true);
+    at.closest('tr').find('.atblussi').prop("disabled",true);
+    at.closest('tr').find('.atminus').prop("disabled",false);
+    pa.closest('tr').find('.pablussi').prop("disabled",false);
+    pa.closest('tr').find('.paminus').prop("disabled",true);
   //Same fuer PA
 }else if ((pawert - atwert)>=5) {
-    at.closest('.atblussi').prop("disabled",false);
-    at.closest('.atminus').prop("disabled",true);
-    pa.closest('.pablussi').prop("disabled",true);
-    pa.closest('.paminus').prop("disabled",false);
+    at.closest('tr').find('.atblussi').prop("disabled",false);
+    at.closest('tr').find('.atminus').prop("disabled",true);
+    pa.closest('tr').find('.pablussi').prop("disabled",true);
+    pa.closest('tr').find('.paminus').prop("disabled",false);
   }else{
-    at.closest('.atblussi').prop("disabled",false);
-    at.closest('.atminus').prop("disabled",false);
-    pa.closest('.pablussi').prop("disabled",false);
-    pa.closest('.paminus').prop("disabled",false);
+    at.closest('tr').find('.atblussi').prop("disabled",false);
+    at.closest('tr').find('.atminus').prop("disabled",false);
+    pa.closest('tr').find('.pablussi').prop("disabled",false);
+    pa.closest('tr').find('.paminus').prop("disabled",false);
   }
 });
 
@@ -1164,10 +1164,10 @@ function getModalATPAtab(modtabid,dataarray,kampftalentarray){
     text +="<td>"+(dataarray[i][0]).split(',')[0]+"<h4 id=\"Waffentalent\">"+wert+"</h4></td>";
     text +="<td> <input id=\"atwert\" type=\"number\" value="+atwert+">";
     text +="<button "+disable+" type=\"button\" class=\"btn btn-success atblussi\">+</button>";
-    text +="<button "+disable+" type=\"button\" class=\"btn btn-danger atminus\">-</button>";
+    text +="<button type=\"button\" class=\"btn btn-danger atminus\">-</button>";
     text +="<td> <input id=\"pawert\" type=\"number\" value="+pawert+">";
     text +="<button "+disable+" type=\"button\" class=\"btn btn-success pablussi\">+</button>";
-    text +="<button "+disable+" type=\"button\" class=\"btn btn-danger paminus\">-</button>";
+    text +="<button type=\"button\" class=\"btn btn-danger paminus\">-</button>";
     text +="</td></tr>";
   }
   $tbody.append(text);
