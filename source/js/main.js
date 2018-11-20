@@ -753,8 +753,47 @@ $(document).on('click','.atminus', function(){
   var talentpunktewert = talentpunkte.text();
   atwert --;
   //if (check)
+  talentpunktewert ++;
+  at.val(atwert);
+  talentpunkte.text(talentpunktewert);
+});
+
+$(document).on('click','.atblussi', function(){
+  //var id=$(event.target).closest("th").attr('id');
+  var at = $(this).closest('tr').find("#atwert");
+  var talentpunkte = $(this).closest('tr').find("#Waffentalent");
+  var atwert = at.val();
+  var talentpunktewert = talentpunkte.text();
+  atwert ++;
+  //if (check)
   talentpunktewert --;
   at.val(atwert);
+  talentpunkte.text(talentpunktewert);
+});
+
+$(document).on('click','.paminus', function(){
+  //var id=$(event.target).closest("th").attr('id');
+  var pa = $(this).closest('tr').find("#pawert");
+  var talentpunkte = $(this).closest('tr').find("#Waffentalent");
+  var pawert = pa.val();
+  var talentpunktewert = talentpunkte.text();
+  pawert --;
+  //if (check)
+  talentpunktewert --;
+  pa.val(pawert);
+  talentpunkte.text(talentpunktewert);
+});
+
+$(document).on('click','.pablussi', function(){
+  //var id=$(event.target).closest("th").attr('id');
+  var pa = $(this).closest('tr').find("#pawert");
+  var talentpunkte = $(this).closest('tr').find("#Waffentalent");
+  var pawert = pa.val();
+  var talentpunktewert = talentpunkte.text();
+  pawert ++;
+  //if (check)
+  talentpunktewert --;
+  pa.val(pawert);
   talentpunkte.text(talentpunktewert);
 });
 
