@@ -1164,10 +1164,10 @@ function getModalATPAtab(modtabid,dataarray,kampftalentarray){
     }
     text +="<tr>";
     text +="<td>"+(dataarray[i][0]).split(',')[0]+"<h4 id=\"Waffentalent\">"+wert+"</h4></td>";
-    text +="<td> <input id=\"atwert\" type=\"number\" value="+atwert+">";
+    text +="<td> <input id=\"atwert\" type=\"number\" value="+atwert+" min=\"0\">";
     text +="<button "+disable+" type=\"button\" class=\"btn btn-success atblussi\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger atminus\">-</button>";
-    text +="<td> <input id=\"pawert\" type=\"number\" value="+pawert+">";
+    text +="<td> <input id=\"pawert\" type=\"number\" value="+pawert+" min=\"0\">";
     text +="<button "+disable+" type=\"button\" class=\"btn btn-success pablussi\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger paminus\">-</button>";
     text +="</td></tr>";
