@@ -1269,6 +1269,7 @@ $('#submitfinalATPA').click(function(){
   for (i=0; i< spielerwaffenkampftalent_arr.length; i++){
     waffenids.push(spielerwaffenkampftalent_arr[i][3]);
   }
+  alert("PA:"+pawert+"AT "+atwert);
   alert("Waffenids: "+waffenids);
   $.ajax({
     type:'POST',
@@ -1284,6 +1285,7 @@ $('#submitfinalATPA').click(function(){
     }
     }).done(function(){
       spielerwaffen();
+      getspielerwaffenkampftalent();
     });
   });
 
