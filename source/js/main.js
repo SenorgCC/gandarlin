@@ -1260,10 +1260,10 @@ $('#submitspielerruesungswert').click(function(){
 $('#submitfinalATPA').click(function(){
   //Finde alle Inputs der ID und gebe die Werte durch die Map funktion wieder
   var atwert= $('#modtabATPA').find("#atwert").map(function(){
-    return $(this).val();
+    return $(this).text();
   }).toArray();
   var pawert= $('#modtabATPA').find("#pawert").map(function(){
-    return $(this).val();
+    return $(this).text();
   }).toArray();
   var waffenids=[];
   for (i=0; i< spielerwaffenkampftalent_arr.length; i++){
