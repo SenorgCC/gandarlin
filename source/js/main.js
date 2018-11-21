@@ -1265,13 +1265,9 @@ $('#submitfinalATPA').click(function(){
   var pawert= $('#modtabATPA').find("#pawert").map(function(){
     return $(this).val();
   }).toArray();
-  var waffenname = $('#modtabATPA td:even').map(function(){
-    return $(this).text();
-  }).toArray();
-  alert("Waffennamen: "+waffenname);
   var waffenids=[];
   for (i=0; i< spielerwaffenkampftalent_arr.length; i++){
-    waffenids.push(spielerwaffen_ar[i]["id"]);
+    waffenids.push(spielerwaffen_arr[i]["id"]);
   }
   alert("Waffenids: "+waffenids);
   $.ajax({
