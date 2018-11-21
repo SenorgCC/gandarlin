@@ -756,6 +756,7 @@ $(document).on('click','.atminus', function(){
   talentpunktewert ++;
   at.val(atwert);
   talentpunkte.text(talentpunktewert);
+  $('#Waffentalent').trigger("change");
 });
 
 $(document).on('click','.atblussi', function(){
@@ -769,6 +770,7 @@ $(document).on('click','.atblussi', function(){
   talentpunktewert --;
   at.val(atwert);
   talentpunkte.text(talentpunktewert);
+  $('#Waffentalent').trigger("change");
 });
 
 $(document).on('click','.paminus', function(){
@@ -782,6 +784,7 @@ $(document).on('click','.paminus', function(){
   talentpunktewert ++;
   pa.val(pawert);
   talentpunkte.text(talentpunktewert);
+  $('#Waffentalent').trigger("change");
 });
 
 $(document).on('click','.pablussi', function(){
@@ -795,8 +798,9 @@ $(document).on('click','.pablussi', function(){
   talentpunktewert --;
   pa.val(pawert);
   talentpunkte.text(talentpunktewert);
+  $('#Waffentalent').trigger("change");
 });
-$(document).on('update','#Waffentalent', function(){
+$(document).on('change','#Waffentalent', function(){
   var pa = $(this).closest('tr').find("#pawert");
   var at = $(this).closest('tr').find("#atwert");
   var pawert= pa.val();
