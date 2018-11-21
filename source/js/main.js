@@ -806,8 +806,6 @@ $(document).on('change','#Waffentalent', function(){
   var pawert= pa.val();
   var atwert= at.val();
   var talentpunktewert = $(this).text();
-  alert("TEST"+talentpunktewert);
-  alert("ATPA"+atwert+""+pawert);
   if (talentpunktewert == 0){
     at.closest('tr').find('.atblussi').prop("disabled",true);
     at.closest('tr').find('.atminus').prop("disabled",false);
@@ -815,16 +813,12 @@ $(document).on('change','#Waffentalent', function(){
     pa.closest('tr').find('.paminus').prop("disabled",false);
   //Wenn AT Kampftalent um 5 hoeher ist als PA, muss at+ geblockt werden
   }else if ((atwert - pawert)>=5) {
-    alert ("Wert: "+(atwert - pawert));
-    alert("Fall1");
     at.closest('tr').find('.atblussi').prop("disabled",true);
     at.closest('tr').find('.atminus').prop("disabled",false);
     pa.closest('tr').find('.pablussi').prop("disabled",false);
     pa.closest('tr').find('.paminus').prop("disabled",true);
   //Same fuer PA
 }else if ((pawert - atwert)>=5) {
-    alert ("Wert: "+(atwert - pawert));
-    alert("Fall2");
     at.closest('tr').find('.atblussi').prop("disabled",false);
     at.closest('tr').find('.atminus').prop("disabled",true);
     pa.closest('tr').find('.pablussi').prop("disabled",true);
