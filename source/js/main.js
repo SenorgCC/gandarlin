@@ -802,8 +802,8 @@ $(document).on('click','.pablussi', function(){
 $(document).on('change','#Waffentalent', function(){
   var pa = $(this).closest('tr').find("#pawert");
   var at = $(this).closest('tr').find("#atwert");
-  var pawert= pa.val();
-  var atwert= at.val();
+  var pawert= pa.text();
+  var atwert= at.text();
   var talentpunktewert = $(this).text();
   if (talentpunktewert == 0){
     at.closest('tr').find('.atblussi').prop("disabled",true);
