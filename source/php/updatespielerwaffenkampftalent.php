@@ -8,7 +8,7 @@ $PA=$_POST['PAARRAY'];
 for ($i=0; $i < count($WPID); $i++) {
   $data=array($AT[$i],$PA[$i],$WPID[$i],$ID);
   $stmt="UPDATE spieler.waffen_kampftalent set kampftalent_attacke= $1,";
-  $stmt.=" kampftalent_parade=$2"
+  $stmt.=" kampftalent_parade=$2";
   $stmt.=" where id=$3";
   $stmt.=" and sp_id=$4";
   $result = pg_prepare($dbconn,"UPDKT".$i,$stmt);
