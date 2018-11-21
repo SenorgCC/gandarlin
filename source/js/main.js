@@ -456,9 +456,10 @@ function getspielerwaffenkampftalent(){
         tempdata=JSON.parse(data);
         for (i=0; i< tempdata.length; i++){
           tempwk = [];
-          tempwk =([tempdata[i]["beschreibung"],
+          tempwk =(     [tempdata[i]["beschreibung"],
                         tempdata[i]["kampftalent_attacke"],
-                        tempdata[i]["kampftalent_parade"]
+                        tempdata[i]["kampftalent_parade"],
+                        tempdata[i]["id"]
                         ]);
           wk[i] = tempwk;
         }
@@ -1253,6 +1254,40 @@ $('#submitspielerruesungswert').click(function(){
     }).done(function(){
       spielerruestungen();
       sekundarwerte();
+    });
+  });
+
+$('#submitfinalATPA').click(function(){
+  //Finde alle Inputs der ID und gebe die Werte durch die Map funktion wieder
+  var atwert= $('#modtabATPA').find("#atwert").map(function(){
+    return $(this).val();
+  }).toArray();
+  var pawert= $('#modtabATPA').find("#pawert").map(function(){
+    return $(this).val();
+  }).toArray();
+  var waffenname = $('#modtabATPA td:even').map(function(){
+    return $(this).text();
+  }).toArray();
+  alert("Waffennamen: "+waffenname);
+  var waffenids=[];
+  for (i=0; i< spielerwaffenkampftalent_arr.length; i++){
+    waffenids.push(spielerwaffen_ar[i]["id"]);
+  }
+  alert("Waffenids: "+waffenids);
+  $.ajax({
+    type:'POST',
+    url:"source/php/updatespielerwaffenkampftalent.php",
+    data:{ATARRAY:atwert,
+          PAARRAY:pawert,
+          WIDARRAY:waffenids,
+          ID:SpielerID
+        },
+    datatype:"json",
+    success:function(data){
+      $('#modalFinalATPA').modal('toggle');
+    }
+    }).done(function(){
+      spielerwaffen();
     });
   });
 
