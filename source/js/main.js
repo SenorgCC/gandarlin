@@ -751,9 +751,10 @@ $(document).on('click','.atminus', function(){
   var atwert = at.val();
   var pawert = pa.val();
   var talentpunktewert = talentpunkte.text();
-  atwert --;
-  //if (check)
-  talentpunktewert ++;
+  if(atwert > 0){
+    atwert --;
+    talentpunktewert ++;
+  }
   at.val(atwert);
   talentpunkte.text(talentpunktewert);
   $('#Waffentalent').trigger("change");
@@ -766,7 +767,6 @@ $(document).on('click','.atblussi', function(){
   var atwert = at.val();
   var talentpunktewert = talentpunkte.text();
   atwert ++;
-  //if (check)
   talentpunktewert --;
   at.val(atwert);
   talentpunkte.text(talentpunktewert);
@@ -779,9 +779,10 @@ $(document).on('click','.paminus', function(){
   var talentpunkte = $(this).closest('tr').find("#Waffentalent");
   var pawert = pa.val();
   var talentpunktewert = talentpunkte.text();
-  pawert --;
-  //if (check)
-  talentpunktewert ++;
+  if(pawert >0){
+    pawert --;
+    talentpunktewert ++;
+  }
   pa.val(pawert);
   talentpunkte.text(talentpunktewert);
   $('#Waffentalent').trigger("change");
