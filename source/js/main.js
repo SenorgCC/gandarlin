@@ -1149,20 +1149,20 @@ function getModalATPAtab(modtabid,dataarray,kampftalentarray){
   var pawert;
   var wert;
   var disable;
-  var waffentalent;
+  var waffentalent=[];
   $tbody.empty();
   for (i = 0; i < dataarray.length; i++){
     waffentalent= getwaffentalent(dataarray[i][1],dataarray[i][2]);
     atwert=kampftalentarray[i][1];
     pawert=kampftalentarray[i][2];
-    wert = (waffentalent-atwert-pawert);
+    wert = (waffentalent[0]-atwert-pawert);
     if (wert == 0){
       disable = "disabled";
     }else{
       disable="";
     }
     text +="<tr>";
-    text +="<td>"+(dataarray[i][0]).split(',')[0]+"<h4 id=\"Waffentalent\">"+wert+"</h4></td>";
+    text +="<td>"+(dataarray[i][0]).split(',')[0]+"<h4>"+waffentalent[1]+"</h4><h4 id=\"Waffentalent\">"+wert+"</h4></td>";
     text +="<td> <span id=\"atwert\">"+atwert+"</span>";
     text +="<button "+disable+" type=\"button\" class=\"btn btn-success atblussi\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger atminus\">-</button>";
@@ -1177,30 +1177,30 @@ function getModalATPAtab(modtabid,dataarray,kampftalentarray){
 
 function getwaffentalent(id,exotic){
   if (exotic == 1){
-    return anderewaffen_arr[2]["exotische_waffen"];
+    return [anderewaffen_arr[2]["exotische_waffen"],"Exotische Waffe"];
   }
  var art = {
-  1: einhandwaffen_arr[2]["schwerter"]
+  1: [einhandwaffen_arr[2]["schwerter"],"Einhandschwerter"]
   ,
-  2: einhandwaffen_arr[2]["beile"]
+  2: [einhandwaffen_arr[2]["beile"],"Beile"]
   ,
-  3: einhandwaffen_arr[2]["flegel"]
+  3: [einhandwaffen_arr[2]["flegel"],"Flegel"]
   ,
-  4: einhandwaffen_arr[2]["dolche"]
+  4: [einhandwaffen_arr[2]["dolche"],"Dolche"]
   ,
-  5: zweihandwaffen_arr[2]["schwerter"]
+  5: [zweihandwaffen_arr[2]["schwerter"],"Schwerter"]
   ,
-  6: zweihandwaffen_arr[2]["aexte"]
+  6: [zweihandwaffen_arr[2]["aexte"],"Äxte"]
   ,
-  7: zweihandwaffen_arr[2]["kolben"]
+  7: [zweihandwaffen_arr[2]["kolben"],"Kolben"]
   ,
-  8: zweihandwaffen_arr[2]["staebe"]
+  8: [zweihandwaffen_arr[2]["staebe"],"Stäbe"]
   ,
-  9: zweihandwaffen_arr[2]["stangenwaffen"]
+  9: [zweihandwaffen_arr[2]["stangenwaffen"],"Stangenwaffen"]
   ,
-  10: anderewaffen_arr[2]["schilde"]
+  10: [anderewaffen_arr[2]["schilde"],"Schilde"]
   ,
-  11: anderewaffen_arr[2]["unbewaffnet"]
+  11: [anderewaffen_arr[2]["unbewaffnet"],"Unbewaffnet"]
 };
 
   return art[id];
