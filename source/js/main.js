@@ -746,16 +746,14 @@ $(document).on('click','.minus', function(){
 $(document).on('click','.atminus', function(){
   //var id=$(event.target).closest("th").attr('id');
   var at = $(this).closest('tr').find("#atwert");
-  var pa = $(this).closest('tr').find("#pawert");
   var talentpunkte = $(this).closest('tr').find("#Waffentalent");
-  var atwert = at.val();
-  var pawert = pa.val();
+  var atwert = at.text();
   var talentpunktewert = talentpunkte.text();
   if(atwert > 0){
     atwert --;
     talentpunktewert ++;
   }
-  at.val(atwert);
+  at.text(atwert);
   talentpunkte.text(talentpunktewert);
   $('#Waffentalent').trigger("change");
 });
@@ -764,11 +762,11 @@ $(document).on('click','.atblussi', function(){
   //var id=$(event.target).closest("th").attr('id');
   var at = $(this).closest('tr').find("#atwert");
   var talentpunkte = $(this).closest('tr').find("#Waffentalent");
-  var atwert = at.val();
+  var atwert = at.text();
   var talentpunktewert = talentpunkte.text();
   atwert ++;
   talentpunktewert --;
-  at.val(atwert);
+  at.text(atwert);
   talentpunkte.text(talentpunktewert);
   $('#Waffentalent').trigger("change");
 });
@@ -777,13 +775,13 @@ $(document).on('click','.paminus', function(){
   //var id=$(event.target).closest("th").attr('id');
   var pa = $(this).closest('tr').find("#pawert");
   var talentpunkte = $(this).closest('tr').find("#Waffentalent");
-  var pawert = pa.val();
+  var pawert = pa.text();
   var talentpunktewert = talentpunkte.text();
   if(pawert >0){
     pawert --;
     talentpunktewert ++;
   }
-  pa.val(pawert);
+  pa.text(pawert);
   talentpunkte.text(talentpunktewert);
   $('#Waffentalent').trigger("change");
 });
@@ -792,12 +790,12 @@ $(document).on('click','.pablussi', function(){
   //var id=$(event.target).closest("th").attr('id');
   var pa = $(this).closest('tr').find("#pawert");
   var talentpunkte = $(this).closest('tr').find("#Waffentalent");
-  var pawert = pa.val();
+  var pawert = pa.text();
   var talentpunktewert = talentpunkte.text();
   pawert ++;
   //if (check)
   talentpunktewert --;
-  pa.val(pawert);
+  pa.text(pawert);
   talentpunkte.text(talentpunktewert);
   $('#Waffentalent').trigger("change");
 });
@@ -1165,10 +1163,10 @@ function getModalATPAtab(modtabid,dataarray,kampftalentarray){
     }
     text +="<tr>";
     text +="<td>"+(dataarray[i][0]).split(',')[0]+"<h4 id=\"Waffentalent\">"+wert+"</h4></td>";
-    text +="<td> <input id=\"atwert\" type=\"number\" value="+atwert+" min=\"0\">";
+    text +="<td> <span id=\"atwert\">"+atwert+"</span>";
     text +="<button "+disable+" type=\"button\" class=\"btn btn-success atblussi\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger atminus\">-</button>";
-    text +="<td> <input id=\"pawert\" type=\"number\" value="+pawert+" min=\"0\">";
+    text +="<td> <span id=\"pawert\">"+pawert+"</span>";
     text +="<button "+disable+" type=\"button\" class=\"btn btn-success pablussi\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger paminus\">-</button>";
     text +="</td></tr>";
