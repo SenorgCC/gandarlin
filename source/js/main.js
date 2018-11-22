@@ -727,7 +727,7 @@ $(".editColumn").click(function(){
 $(document).on('click',"#fullrest", function(){
   $.ajax({
     type:'POST',
-    url:"source/php/sekundarwertefullreset.ph",
+    url:"source/php/sekundarwertefullreset.php",
     data:{ID:SpielerID},
     datatype:"json",
     success:function(data){
