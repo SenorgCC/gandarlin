@@ -10,7 +10,7 @@ $stmt="update sekundaerwerte.aktuell set (id,lebenspunkte,ausdauer,ee,";
 $stmt.="ausweichen,ruestung,initiative,luftresistenz,wasserresistenz,";
 $stmt.="erdresistenz,das_lebenderesistenz,feuerresistenz,eisresistenz,";
 $stmt.="metallresistenz,das_toteresistenz,attacke_basis,parade_basis) ";
-$stmt.=" =(select * from sekundaerwerte.normalwerte where id = 1) ";
+$stmt.=" =(select * from sekundaerwerte.normalwerte where id = $1) ";
 $stmt.="where id =$1;";
 $result = pg_prepare($dbconn,"fullreset",$stmt);
 $result=pg_execute($dbconn,"fullrest",$data);
