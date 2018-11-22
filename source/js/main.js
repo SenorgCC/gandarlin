@@ -546,7 +546,7 @@ function handwerkstalente(){
 function checkKKBonus(){
   var kk = basiswert_arr[2]["kk"];
   var kkbonus=0;
-  if( kk >= 10 && kk <13){
+  if( kk >= 10 && kk <14){
     kkbonus=1;
   }else if (kk >=14 && kk <18 ) {
     kkbonus=2
