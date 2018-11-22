@@ -543,6 +543,28 @@ function handwerkstalente(){
     });
   }
 
+function checkKKBonus(){
+  var kk = basiswert_arr[2]["kk"];
+  var kkbonus=0;
+  if( kk >= 10 && kk <13){
+    kkbonus=1;
+  }else if (kk >=14 && kk <18 ) {
+    kkbonus=2
+  }else if (kk >= 18){
+    kkbonus=3
+  }
+  $.ajax({
+    type:'POST',
+    url:"source/php/updatekkbonus.php",
+    data:{ID:SpielerID,
+          KKB:kkbonus},
+    datatype:"json",
+    success:function(data){
+    }
+  }).done(function(){
+    spielerwaffen();
+  });
+}
 function spielerwaffen(){
       var tempwaffen= [];
       var waffen = [[]];
@@ -887,6 +909,7 @@ $('#submitBasiswerte').click(function(){
     }
   }).done(function(){
     bwbasis();
+    checkKKBonus();
   });
 
 });
@@ -1237,7 +1260,7 @@ $('#submitspielerruesungen').click(function(){
     }
     }).done(function(){
       spielerruestungen();
-      sekundarwerte();
+      sekwerte();
     });
   });
 
@@ -1295,5 +1318,9 @@ $('#submitfinalATPA').click(function(){
       getspielerwaffenkampftalent();
     });
   });
+
+//---------------------------------------------------
+// Neue Ausruestung hinzufügen
+//---------------------------------------------------
 
 });
