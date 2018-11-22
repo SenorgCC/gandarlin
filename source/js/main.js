@@ -93,6 +93,7 @@ function bwbasis(){
       naturtalente();
       gesellschaftstalente();
       spezialetalente();
+      checkKKBonus();
       spielerwaffen();
       spielerruestungen();
       getspielerwaffenkampftalent();
@@ -545,7 +546,6 @@ function handwerkstalente(){
 
 function checkKKBonus(){
   var kk = basiswert_arr[2]["kk"];
-  alert("KK"+kk);
   var kkbonus=0;
   if( kk >= 10 && kk <14){
     kkbonus=1;
@@ -910,7 +910,6 @@ $('#submitBasiswerte').click(function(){
     }
   }).done(function(){
     bwbasis();
-    checkKKBonus();
   });
 
 });
