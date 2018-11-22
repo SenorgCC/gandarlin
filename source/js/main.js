@@ -723,19 +723,32 @@ $(".editColumn").click(function(){
   var showmodal = tablemap[tablename];
   if (showmodal) showmodal();
 });
-
+//Aktuelle Sekundärwerte werden auf die Normalwert zurückgesetzt
+$(document).on('click',"#fullrest", function(){
+  $.ajax({
+    type:'POST',
+    url:"source/php/sekundarwertefullreset.ph",
+    data:{ID:SpielerID},
+    datatype:"json",
+    success:function(data){
+    }
+  }).done(function(){
+    sekundarwerte();
+  });
+});
+//---------------------------------------------------
+// Skillinteraktion +/-
+//---------------------------------------------------
 //Ermittelt die ID des offen modals
 $('.modal').on('shown.bs.modal', function(){
     modalid = $(this).attr('id');
 });
-
 $(document).on('click','.blussi', function(){
   var counter = $(this).closest('tr').find("input");
   var counterwert = counter.val();
   counterwert ++;
   counter.val(counterwert);
 });
-
 $(document).on('click','.minus', function(){
   //var id=$(event.target).closest("th").attr('id');
   var counter = $(this).closest('tr').find("input");
@@ -743,7 +756,6 @@ $(document).on('click','.minus', function(){
   counterwert --;
   counter.val(counterwert);
 });
-
 $(document).on('click','.atminus', function(){
   //var id=$(event.target).closest("th").attr('id');
   var at = $(this).closest('tr').find(".atwert");
@@ -758,7 +770,6 @@ $(document).on('click','.atminus', function(){
   talentpunkte.text(talentpunktewert);
   $('.Waffentalent').trigger("change");
 });
-
 $(document).on('click','.atblussi', function(){
   //var id=$(event.target).closest("th").attr('id');
   var at = $(this).closest('tr').find(".atwert");
@@ -771,7 +782,6 @@ $(document).on('click','.atblussi', function(){
   talentpunkte.text(talentpunktewert);
   $('.Waffentalent').trigger("change");
 });
-
 $(document).on('click','.paminus', function(){
   //var id=$(event.target).closest("th").attr('id');
   var pa = $(this).closest('tr').find(".pawert");
@@ -786,7 +796,6 @@ $(document).on('click','.paminus', function(){
   talentpunkte.text(talentpunktewert);
   $('.Waffentalent').trigger("change");
 });
-
 $(document).on('click','.pablussi', function(){
   //var id=$(event.target).closest("th").attr('id');
   var pa = $(this).closest('tr').find(".pawert");
@@ -830,7 +839,6 @@ $(document).on('change','.Waffentalent', function(){
     pa.closest('tr').find('.paminus').prop("disabled",false);
   }
 });
-
 $(document).on('click','.editfinal', function(){
   var idtext = $(this).closest('th').attr("id");
   var idmap = {
@@ -846,7 +854,6 @@ $(document).on('click','.editfinal', function(){
   var showmodal = idmap[idtext];
   if(showmodal) showmodal();
 });
-
 //---------------------------------------------------
 //Modalsubmitfunktionen ab hier
 //---------------------------------------------------
