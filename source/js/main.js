@@ -698,7 +698,7 @@ $(".editColumn").click(function(){
     'anderewaffen': function(){
       $('#editschilde').val(anderewaffen_arr[1]["schilde"]);
       $('#editexotische').val(anderewaffen_arr[1]["exotische_waffen"]);
-      $('#editexotische').val(anderewaffen_arr[1]["unbewaffnet"]);
+      $('#editunbewaffnet').val(anderewaffen_arr[1]["unbewaffnet"]);
       $('#modalanderewaffen').modal();
     },
     'handwerkstalente': function(){
@@ -1083,11 +1083,13 @@ $.ajax({
 $('#submitanderewaffen').click(function(){
 var schilde=  $('#editschilde').val();
 var exotische=  $('#editexotische').val();
+var unbewaffnet=  $('#editunbewaffnet').val();
 $.ajax({
     type:'POST',
     url:"source/php/updateanderewaffen.php",
     data:{ID:SpielerID,
           SCH:schilde,
+          UNB:unbewaffnet,
           EXO:exotische
         },
     datatype:"json",
