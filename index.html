@@ -57,7 +57,7 @@
           <tr>
             <th scope="col"></th>
             <th scope="col">Kalkulation</th>
-            <th scope="col">Normalwert</th>
+            <th scope="col">Normalwert<button id="fullrest">Volle Regeneration</button></th>
             <th scope="col">Aktuell <button class="editColumn">Edit</button></th>
           </tr>
         </thead>
@@ -911,6 +911,12 @@
                 </tr>
                 <tr>
                   <td>Exotische Waffen</td><td><input id="editexotische" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Unbewaffnet</td><td><input id="editunbewaffnet" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
