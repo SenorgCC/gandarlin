@@ -13,7 +13,7 @@ $stmt.="metallresistenz,das_toteresistenz,attacke_basis,parade_basis) ";
 $stmt.=" =(select * from sekundaerwerte.normalwerte where id = $1) ";
 $stmt.="where id =$1;";
 $result = pg_prepare($dbconn,"fullreset",$stmt);
-$result=pg_execute($dbconn,"fullrest",$data);
+$result=pg_execute($dbconn,"fullreset",$data);
 print json_encode(pg_result_error($result));
 pg_close($dbconn);
 ?>
