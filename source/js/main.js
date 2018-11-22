@@ -798,7 +798,7 @@ $(document).on('click','.pablussi', function(){
   talentpunktewert --;
   pa.text(pawert);
   talentpunkte.text(talentpunktewert);
-  $('#Waffentalent').trigger("change");
+  $('.Waffentalent').trigger("change");
 });
 $(document).on('change','.Waffentalent', function(){
   var pa = $(this).closest('tr').find(".pawert");
@@ -1269,8 +1269,6 @@ $('#submitfinalATPA').click(function(){
   for (i=0; i< spielerwaffenkampftalent_arr.length; i++){
     waffenids.push(spielerwaffenkampftalent_arr[i][3]);
   }
-  alert("PA:"+pawert+"AT "+atwert);
-  alert("Waffenids: "+waffenids);
   $.ajax({
     type:'POST',
     url:"source/php/updatespielerwaffenkampftalent.php",
