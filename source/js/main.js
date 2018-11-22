@@ -733,7 +733,7 @@ $(document).on('click',"#fullrest", function(){
     success:function(data){
     }
   }).done(function(){
-    sekundarwerte();
+    sekwerte();
   });
 });
 //---------------------------------------------------
