@@ -1052,25 +1052,51 @@
   </div>
 
   <div class="modal fade" id="modaladdwaffe" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Neue Waffe hinzufügen<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-          </div>
-          <div class="modal-body">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>Waffenname</td> <td><input id="Waffenname" type="text" maxlength="100">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Neue Waffe hinzufügen<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Waffenname</td> <td><input id="Waffenname" type="text" maxlength="100">
+                </td>
+              </tr>
+              <tr>
+                <td>Waffenart</td> <td>
+                  <label> Waffenart1 <input name="Waffenart" class="WaffenartRadio" type="radio" value="1"></label>
+                  <label> Waffenart2 <input name="Waffenart" class="WaffenartRadio" type="radio" value="2"></label>
+                  <div class="dropdown show">
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Waffenauswahl
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item Waffendropdown" href="#">Einhandschwert</a>
+                      <a class="dropdown-item Waffendropdown" href="#">Beile</a>
+                      <a class="dropdown-item Waffendropdown" href="#">Flegel</a>
+                      <a class="dropdown-item Waffendropdown" href="#">Dolche</a>
+                      <a class="dropdown-item Waffendropdown" href="#">Zweihandschwert</a>
+                      <a class="dropdown-item Waffendropdown" href="#">Axt</a>
+                      <a class="dropdown-item Waffendropdown" href="#">Kolben</a>
+                      <a class="dropdown-item Waffendropdown" href="#">Stab</a>
+                      <a class="dropdown-item Waffendropdown" href="#">Stangenwaffe</a>
+                      <a class="dropdown-item Waffendropdown" href="#">Schild</a>
+                      <a class="dropdown-item Waffendropdown" href="#">Unbewaffnet</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item Waffendropdown" href="#">Bogen</a>
+                      <a class="dropdown-item Waffendropdown" href="#">Armbrust</a>
+                      <a class="dropdown-item Waffendropdown" href="#">Wurfwaffe</a>
+                    </div>
+                  </div>
                    </td>
                 </tr>
                 <tr>
-                  <td>Waffenart</td> <td>
-                    //DROPDOWN!
-                    <label> Waffenart1 <input name="Waffenart" class="WaffenartRadio" type="radio" value="1"></label>
-                    <label> Waffenart2 <input name="Waffenart" class="WaffenartRadio" type="radio" value="2"></label>
-                   </td>
+                <td>Exotisch</td> <td>
+                  <label>Ja   <input name="Waffenexo" class="WaffenexoRadio" type="radio" value="1"></label>
+                  <label>Nein <input name="Waffenexo" class="WaffenexoRadio" type="radio" value="0"></label>
                 </tr>
                 <tr>
                   <td>Beschreibung</td> <td><input id="Waffenbeschreibung" type="text" maxlength="100">
