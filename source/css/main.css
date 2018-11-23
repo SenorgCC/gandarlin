@@ -1,3 +1,5 @@
 table tr th::first-letter {
     text-transform:capitalize;
 }
+.modal { overflow: visible; }
+.modal-body { overflow-y: visible; }
