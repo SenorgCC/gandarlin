@@ -212,16 +212,6 @@ function translate (word){
   return kuerzel[word] || word;
   }
 
-/*var wuerfelwerte = [{ "id":"",
-                      "schleichen": basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["kon"]+"(KON)",
-                      "aufmerksamkeit": basiswert_arr[2]["mut"]+"(MUT), "+basiswert_arr[2]["int"]+"(IN), "+basiswert_arr[2]["gew"]+"(GEW)",
-                      "robustheit": basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["kon"]+"(KON), "+basiswert_arr[2]["kk"]+"(KK)",
-                      "fingerfertigkeit": basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["int"]+"(IN)",
-                      "zechen": basiswert_arr[2]["mut"]+"(MUT), "+basiswert_arr[2]["kon"]+"(KON), "+basiswert_arr[2]["kon"]+"(KON)",
-                      "taschendiebstahl": basiswert_arr[2]["gew"]+"(GEW), "+basiswert_arr[2]["gsk"]+"(GSK), "+basiswert_arr[2]["int"]+"(IN)"
-                    }];
-                    */
-
 function korprtalente(){
 var wuerfelwerte = [{ "id":"",
                       "schleichen": basiswert_arr[2]["gsk"]+" (GSK)",
@@ -1322,5 +1312,8 @@ $('#submitfinalATPA').click(function(){
 //---------------------------------------------------
 // Neue Ausruestung hinzufügen
 //---------------------------------------------------
+$(document).on('click',"#addWaffe",function(){
+  $('#modaladdwaffe').modal("toggle");
+});
 
 });

@@ -232,7 +232,7 @@
   <div id="Inventardiv">
     <h1>Inventar</h1>
     <div id="Spielerwaffendiv">
-      <h2>Waffen <button id="addWaffe">+</button></h2>
+      <h2>Waffen</h2><button id="addWaffe">+</button>
       <table id="spielerwaffen" class="table">
         <thead>
           <tr>
@@ -1029,26 +1029,77 @@
       </div>
     </div>
 
-<div class="modal fade" id="modalFinalATPA" role="dialog">
+  <div class="modal fade" id="modalFinalATPA" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="titelATPA">TEST<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+        </div>
+        <div id="modtabATPA" class="modal-body">
+          <table class="table">
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <!-- TODO: Clear der Inputs einbauen -->
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" id="submitfinalATPA" class="btn btn-default" data-dismiss="modal">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modaladdwaffe" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title" id="titelATPA">TEST<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+            <h4 class="modal-title">Neue Waffe hinzufügen<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
           </div>
-          <div id="modtabATPA" class="modal-body">
+          <div class="modal-body">
             <table class="table">
               <tbody>
+                <tr>
+                  <td>Waffenname</td> <td><input id="Waffenname" type="text" maxlength="100">
+                   </td>
+                </tr>
+                <tr>
+                  <td>Waffenart</td> <td>
+                    <label> Waffenart1 <input name="Waffenart" class="WaffenartRadio" type="radio" value="1"></label>
+                    <label> Waffenart2 <input name="Waffenart" class="WaffenartRadio" type="radio" value="2"></label>
+                   </td>
+                </tr>
+                <tr>
+                  <td>Beschreibung</td> <td><input id="Waffenbeschreibung" type="text" maxlength="100">
+                   </td>
+                </tr>
+                <tr>
+                  <td>Würfelschaden</td><td><input id="WaffenWürfel" type="text" maxlength="30">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Zusatzschaden</td><td><input id="WaffenZschaden" type="number" min="0">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Attackebonus</td><td><input id="WaffeATKBonus" type="number" min="0">
+                  </td>
+                </tr>
+                <tr>
+                <td>Paradebonus</td><td><input id="WaffePABonus" type="number" min="0">
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
           <div class="modal-footer">
             <!-- TODO: Clear der Inputs einbauen -->
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" id="submitfinalATPA" class="btn btn-default" data-dismiss="modal">Save</button>
+            <button type="button" id="submitzweihandwaffen" class="btn btn-default" data-dismiss="modal">Save</button>
           </div>
         </div>
       </div>
     </div>
-
 </html>
