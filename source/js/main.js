@@ -16,9 +16,6 @@ var spielerwaffenkampftalent_arr=[[]];
 var SpielerID;
 var Spielernamen;
 var modalid;
-window.Popper = require('popper.js');
-
-require('bootstrap');
 
 $( document ).ready(function() {
   function getAlldata(){
