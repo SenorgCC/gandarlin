@@ -1317,6 +1317,7 @@ $(document).on('click',"#addWaffe",function(){
   $('#modaladdwaffe').modal("toggle");
 });
 $(document).on('click',"#submitNeueWaffe",function(){
+  var newwaffenid;
   var waffenname=$('#Waffenname').val();
   var waffenart=$('#Waffenartauswahl').val();
   var waffenexo=$('.WaffenexoRadio').val();
@@ -1334,6 +1335,54 @@ $(document).on('click',"#submitNeueWaffe",function(){
   }else if (kk >= 18){
     kkbonus=3
   }
-  alert("2"+waffenart);
+  var artname = {
+  1: "Einhandschwerter" ,
+  2: "Beil" ,
+  3: "Flegel" ,
+  4: "Dolch" ,
+  5: "Schwerter" ,
+  6: "Axt" ,
+  7: "Kolben" ,
+  8: "Stab" ,
+  9: "Stangenwaffe" ,
+  10: "Schild" ,
+  11: "Unbewaffnet",
+  12: "Bogen",
+  13: "Armbrust",
+  14: "Wurfwaffe"
+};
+
+
+  $.ajax({
+    type:"POST",
+    url:"source/php/getmaxwaffenid.php",
+    datatype:"json",
+    success:function(data){
+      newwaffenid=JSON.parse(data);
+    }
+  }).done(function(){
+    $.ajax({
+      type:"POST",
+      url:"source/php/addnewwaffe.php",
+      data:{SP_ID:SpielerID,
+            WP_ID:newwaffenid,
+            WNAME:waffenname,
+            WAFRT: waffenart,
+            WARTNAME:artname[waffenart],
+            WAFEXO:waffenexo,
+            BESCH:beschreibung,
+            WUESCHADEN:wuerfelschaden,
+            ZSCHADEN:zusatzschaden,
+            ATBONUS:atbonus,
+            PABONUS:pabonus,
+            KKBONUS:kk_bonus},
+      datatype:"json",
+      success:function(data){
+      }
+    }).done(function(){
+      spielerwaffen();
+    });
+  });
+
 });
 });
