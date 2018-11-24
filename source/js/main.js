@@ -1351,7 +1351,7 @@ $(document).on('click',"#submitNeueWaffe",function(){
   13: "Armbrust",
   14: "Wurfwaffe"
 };
-
+alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
   $.ajax({
     type:"POST",
     url:"source/php/getmaxwaffenid.php",

@@ -13,7 +13,7 @@ $PABONUS=$_POST['PABONUS'];
 $KKBONUS=$_POST['KKBONUS'];
 $WARTNAME=$_POST['WARTNAME'];
 
-$data=array($WP_ID,$SP_ID,$BESCH,$WUESCHADEN,$ZSCHADEN,$KKBONUS,$ATBONUS,$PABONUS);
+$data=array($WP_ID,$SP_ID,$WAFRT,$BESCH,$WUESCHADEN,$ZSCHADEN,$KKBONUS,$ATBONUS,$PABONUS);
 $stmt="insert into spieler.waffen values($1,$2,$3,$4,$5,$6,$7,$8,$9)";
 $result = pg_prepare($dbconn,"spielerwaffe",$stmt);
 $result=pg_execute($dbconn,"spielerwaffe",$data);
