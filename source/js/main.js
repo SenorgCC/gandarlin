@@ -1357,7 +1357,7 @@ $(document).on('click',"#submitNeueWaffe",function(){
     url:"source/php/getmaxwaffenid.php",
     datatype:"json",
     success:function(data){
-      newwaffenid=JSON.parse(data);
+      newwaffenid=parseInt(JSON.parse(data));
     }
   }).done(function(){
     $.ajax({
