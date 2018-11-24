@@ -3,3 +3,6 @@ table tr th::first-letter {
 }
 .modal { overflow: visible; }
 .modal-body { overflow-y: visible; }
+.selectwidthauto{
+  width:auto !important;
+}
