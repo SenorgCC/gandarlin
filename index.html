@@ -1090,8 +1090,16 @@
                 </tr>
                 <tr>
                 <td>Exotisch</td> <td>
-                  <label>Ja   <input class="form-control" name="Waffenexo" class="WaffenexoRadio" type="radio" value="1"></label>
-                  <label>Nein <input class="form-control" name="Waffenexo" class="WaffenexoRadio" type="radio" value="0"></label>
+                  <div class="form-check-inline">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input WaffenexoRadio" value="1" name="optradio">Ja
+                    </label>
+                  </div>
+                  <div class="form-check-inline">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input WaffenexoRadio" value="0" name="optradio">Nein
+                    </label>
+                  </div>
                 </tr>
                 <tr>
                   <td>Beschreibung</td> <td><input class="form-control" id="Waffenbeschreibung" type="text" maxlength="100">
