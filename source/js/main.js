@@ -1318,7 +1318,7 @@ $(document).on('click',"#addWaffe",function(){
 });
 $(document).on('click',"#submitNeueWaffe",function(){
   var waffenname=$('#Waffenname').val();
-  var waffenart=$('#Waffenartauswahl').val();
+  var waffenart=$('#Waffenartauswahl option:selected').val();
   var waffenexo=$('.WaffenexoRadio').val();
   var beschreibung=$('#Waffenbeschreibung').val();
   var wuerfelschaden=$('#WaffenWuerfel').val();
@@ -1334,6 +1334,6 @@ $(document).on('click',"#submitNeueWaffe",function(){
   }else if (kk >= 18){
     kkbonus=3
   }
-  alert("2"+waffenart+"3"+waffenexo+"4"+atbonus+"7"+atbonus+"8"+pabonus);
+  alert("2"+waffenart);
 });
 });
