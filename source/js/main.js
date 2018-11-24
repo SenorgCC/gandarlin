@@ -1352,7 +1352,6 @@ $(document).on('click',"#submitNeueWaffe",function(){
   14: "Wurfwaffe"
 };
 
-
   $.ajax({
     type:"POST",
     url:"source/php/getmaxwaffenid.php",
@@ -1375,7 +1374,7 @@ $(document).on('click',"#submitNeueWaffe",function(){
             ZSCHADEN:zusatzschaden,
             ATBONUS:atbonus,
             PABONUS:pabonus,
-            KKBONUS:kk_bonus},
+            KKBONUS:kkbonus},
       datatype:"json",
       success:function(data){
       }
