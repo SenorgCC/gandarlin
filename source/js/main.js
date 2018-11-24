@@ -1175,7 +1175,6 @@ function getModalATPAtab(modtabid,dataarray,kampftalentarray){
   var disable;
   var waffentalent=[];
   $tbody.empty();
-  alert("Kampftalent:"+JSON.stringify(kampftalentarray));
   for (i = 0; i < dataarray.length; i++){
     waffentalent= getwaffentalent(dataarray[i][1],dataarray[i][2]);
     atwert=kampftalentarray[i][1];
@@ -1359,7 +1358,6 @@ alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
     datatype:"json",
     success:function(data){
       newwaffenid=parseInt(JSON.parse(data));
-      alert("newwaffenid "+newwaffenid);
     }
   }).done(function(){
     $.ajax({
@@ -1382,6 +1380,7 @@ alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
       }
     }).done(function(){
       spielerwaffen();
+      getspielerwaffenkampftalent();
     });
   });
 
