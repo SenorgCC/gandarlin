@@ -1334,6 +1334,6 @@ $(document).on('click',"#submitNeueWaffe",function(){
   }else if (kk >= 18){
     kkbonus=3
   }
-  //alert("1:"+Waffenname"2:"+waffenart+"3"+waffenexo+"4"+beschreibung+"5"+zusatzschaden+"6"+atbonus+"7"+atbonus+"8"+pabonus);
+  alert("1:"+waffenname"2:"+waffenart+"3"+waffenexo+"4"+beschreibung+"5"+zusatzschaden+"6"+atbonus+"7"+atbonus+"8"+pabonus);
 });
 });
