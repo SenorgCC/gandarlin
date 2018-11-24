@@ -1318,13 +1318,13 @@ $(document).on('click',"#addWaffe",function(){
 });
 $(document).on('click',"#submitNeueWaffe",function(){
   var waffenname=$('#Waffenname').val();
-  var waffenart=$('#Waffenartauswahl:selected').val();
-  var waffenexo=$('.WaffenexoRadio:selected').val();
+  var waffenart=$('#Waffenartauswahl').val();
+  var waffenexo=$('.WaffenexoRadio').val();
   var beschreibung=$('#Waffenbeschreibung').val();
   var wuerfelschaden=$('#WaffenWuerfel').val();
   var zusatzschaden=$('#WaffenZschaden').val();
-  var atbonus = $('#WaffenATKBonus').val();
-  var pabonus = $('#WaffenPABonus').val();
+  var atbonus = $('#WaffeATKBonus').val();
+  var pabonus = $('#WaffePABonus').val();
   var kk = basiswert_arr[2]["kk"];
   var kkbonus=0;
   if( kk >= 10 && kk <14){
@@ -1334,6 +1334,6 @@ $(document).on('click',"#submitNeueWaffe",function(){
   }else if (kk >= 18){
     kkbonus=3
   }
-  alert("1:"+waffenname+"2:"+waffenart+"3"+waffenexo+"4"+beschreibung+"5"+zusatzschaden+"6"+atbonus+"7"+atbonus+"8"+pabonus);
+  alert("2"+waffenart+"3"+waffenexo+"4"+atbonus+"7"+atbonus+"8"+pabonus);
 });
 });
