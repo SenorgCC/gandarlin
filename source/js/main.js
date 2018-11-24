@@ -1316,5 +1316,24 @@ $('#submitfinalATPA').click(function(){
 $(document).on('click',"#addWaffe",function(){
   $('#modaladdwaffe').modal("toggle");
 });
-
+$(document).on('click',"#submitNeueWaffe",function(){
+  var waffenname=$('#Waffenname').val();
+  var waffenart=$('#Waffenartauswahl:selected').val();
+  var waffenexo=$('.WaffenexoRadio:selected').val();
+  var beschreibung=$('#Waffenbeschreibung').val();
+  var wuerfelschaden=$('#WaffenWuerfel').val();
+  var zusatzschaden=$('#WaffenZschaden').val();
+  var atbonus = $('#WaffenATKBonus').val();
+  var pabonus = $('#WaffenPABonus').val();
+  var kk = basiswert_arr[2]["kk"];
+  var kkbonus=0;
+  if( kk >= 10 && kk <14){
+    kkbonus=1;
+  }else if (kk >=14 && kk <18 ) {
+    kkbonus=2
+  }else if (kk >= 18){
+    kkbonus=3
+  }
+  alert("1:"+Waffenname"2:"+waffenart+"3"+waffenexo+"4"+beschreibung+"5"+zusatzschaden+"6"+atbonus+"7"+atbonus+"8"+pabonus);
+});
 });
