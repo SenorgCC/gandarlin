@@ -19,7 +19,7 @@ $result = pg_prepare($dbconn,"spielerwaffe",$stmt);
 $result=pg_execute($dbconn,"spielerwaffe",$data);
 
 $stmt3="insert into spieler.waffenart values($1,$2,$3,$4,$5)";
-$data3=array($WP_ID,$WNAME,$WAFRT,$WARTNAME,$WAFEXO);
+$data3=array($WP_ID,$WNAME,$WARTNAME,$WAFRT,$WAFEXO);
 $result=pg_prepare($dbconn,"spielerwaffart",$stmt3);
 $result=pg_execute($dbconn,"spielerwaffart",$data3);
 
