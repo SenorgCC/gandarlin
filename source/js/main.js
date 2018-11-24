@@ -1358,6 +1358,7 @@ $(document).on('click',"#submitNeueWaffe",function(){
     datatype:"json",
     success:function(data){
       newwaffenid=parseInt(JSON.parse(data));
+      alert("newwaffenid "+newwaffenid);
     }
   }).done(function(){
     $.ajax({
