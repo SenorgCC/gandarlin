@@ -1051,7 +1051,7 @@
     </div>
   </div>
 
-  <div class="modal fade" id="modaladdwaffe" role="dialog">
+  <div class="modal fade input-group mb-3" id="modaladdwaffe" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
@@ -1062,11 +1062,12 @@
           <table class="table">
             <tbody>
               <tr>
-                <td>Waffenname</td> <td><input id="Waffenname" type="text" maxlength="100">
+                <td>Waffenname</td> <td><input id="Waffenname" class="form-control" type="text" maxlength="100">
                 </td>
               </tr>
               <tr>
                 <td>Waffenart</td> <td>
+                    <div class="input-group mb-3">
                         <select class="custom-select" id="Waffemartauswahl">
                           <option selected>Waffenartauswahl</option>
                           <option value="1">Einhandschwer</option>
@@ -1082,33 +1083,34 @@
                           <option value="11">Unbewaffnet</option>
                           <option value="12">Bogen</option>
                           <option value="13">Armbrust</option>
-                        <option value="14">Wurfwaffe</option>
+                          <option value="14">Wurfwaffe</option>
                         </select>
+                    </div>
                    </td>
                 </tr>
                 <tr>
                 <td>Exotisch</td> <td>
-                  <label>Ja   <input name="Waffenexo" class="WaffenexoRadio" type="radio" value="1"></label>
-                  <label>Nein <input name="Waffenexo" class="WaffenexoRadio" type="radio" value="0"></label>
+                  <label>Ja   <input class="form-control" name="Waffenexo" class="WaffenexoRadio" type="radio" value="1"></label>
+                  <label>Nein <input class="form-control" name="Waffenexo" class="WaffenexoRadio" type="radio" value="0"></label>
                 </tr>
                 <tr>
-                  <td>Beschreibung</td> <td><input id="Waffenbeschreibung" type="text" maxlength="100">
+                  <td>Beschreibung</td> <td><input class="form-control" id="Waffenbeschreibung" type="text" maxlength="100">
                    </td>
                 </tr>
                 <tr>
-                  <td>Würfelschaden</td><td><input id="WaffenWürfel" type="text" maxlength="30">
+                  <td>Würfelschaden</td><td><input class="form-control" id="WaffenWürfel" type="text" maxlength="30">
                   </td>
                 </tr>
                 <tr>
-                  <td>Zusatzschaden</td><td><input id="WaffenZschaden" type="number" min="0">
+                  <td>Zusatzschaden</td><td><input class="form-control" id="WaffenZschaden" type="number" min="0">
                   </td>
                 </tr>
                 <tr>
-                  <td>Attackebonus</td><td><input id="WaffeATKBonus" type="number" min="0">
+                  <td>Attackebonus</td><td><input class="form-control" id="WaffeATKBonus" type="number" min="0">
                   </td>
                 </tr>
                 <tr>
-                <td>Paradebonus</td><td><input id="WaffePABonus" type="number" min="0">
+                <td>Paradebonus</td><td><input class="form-control" id="WaffePABonus" type="number" min="0">
                   </td>
                 </tr>
               </tbody>
