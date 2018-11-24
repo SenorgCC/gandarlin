@@ -1318,7 +1318,7 @@ $(document).on('click',"#addWaffe",function(){
 });
 $(document).on('click',"#submitNeueWaffe",function(){
   var waffenname=$('#Waffenname').val();
-  var waffenart=$('#Waffenartauswahl option:selected').val();
+  var waffenart=$('#Waffenartauswahl').val();
   var waffenexo=$('.WaffenexoRadio').val();
   var beschreibung=$('#Waffenbeschreibung').val();
   var wuerfelschaden=$('#WaffenWuerfel').val();
