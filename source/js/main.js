@@ -1422,7 +1422,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
     }else{
       disable="";
     }
-    if(typeof rowdata[i] == "number"){
+    if(typeof rowdata[i] === "number"){
       type="number";
     }else{
       type="text";
