@@ -1400,8 +1400,8 @@ $('#spielerwaffen').on('click','tbody td', function(e){
       });
 
   alert("TEST "+$(this).parent('table').text());
-  });
 });
+
  $(document).on('click','#editWaffe',function(event){
    $('#modaleditwaffe').modal("toggle");
 
