@@ -1414,6 +1414,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
   var $tbody = $('#modtabInventar').find('tbody');
   var type="text";
   var text;
+  var reg= /^\d+$/;
   $tbody.empty();
   //Erstes Element ist die id... Die soll nicht veränderbar sein
   for (i = 0; i < header.length; i++){
@@ -1422,8 +1423,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
     }else{
       disable="";
     }
-    alert("Type:"+typeof rowdata[i]);
-    if(typeof rowdata[i] === "number"){
+    if(reg.test(rowdata[i])){
       type="number";
     }else{
       type="text";
