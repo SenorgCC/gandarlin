@@ -1390,9 +1390,10 @@ alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
 });
 // Waffe Modifikation
 //FUNKTIONIERT NOCH NICHT!
-$(document).on('click','#spielerwaffen tbody td', function(e){
+$('#spielerwaffen').on('click','tbody td', function(e){
   var rowdata=[];
   var header=[];
+  var titel=$(this).closest('h2').text();
   var $row=$(e.target).closest('tr'),
       $tds =$row.find('td');
       $.each($tds,function(){
@@ -1402,11 +1403,37 @@ $(document).on('click','#spielerwaffen tbody td', function(e){
   $.each($(this).closest('table').find('.eqheader th'),function(){
     header.push($(this).text());
   });
-
+  createInventarmodal("Waffen",header,rowdata);
+  $('#modalInventaredit').modal("toggle");
 });
 
  $(document).on('click','#editWaffe',function(event){
-   $('#modaleditwaffe').modal("toggle");
-
  });
+
+ function createInventarmodal(title,header,rowdata){
+  $('#titelInventar').text(titel+" Modifikation");
+  var $tbody = $('#modtabInventar').find('tbody');
+  var type="text";
+  $tbody.empty();
+  //Erstes Element ist die id... Die soll nicht veränderbar sein
+  for (i = 0; i < header.length; i++){
+    if (i == 0){
+      disable = "disabled";
+    }else{
+      disable="";
+    }
+    if(typeof rowdata[i] == "number"){
+      type="number";
+    }else{
+      type="text";
+    }
+    text +="<tr>";
+    text +="<td>"+header[i]+"</td>";
+    text +="<td>";
+    text +="<input "+disable+" type=\""+type+"\" class=\"inventarinput form-control\" value=\""+rowdata[i]+"\">";
+    text +="</td></tr>";
+    $tbody.append(text);
+    rowtext = "";
+  }
+ }
 });
