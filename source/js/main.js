@@ -573,10 +573,13 @@ function spielerwaffen(){
         tempdata=JSON.parse(data);
         for (i=0; i< tempdata.length; i++){
           tempwaffen = [];
-          tempwaffen=([tempdata[i]["beschreibung"],
+          tempwaffen=([tempdata[i]["id"],
+                        tempdata[i]["name"],
+                        tempdata[i]["beschreibung"],
                         tempdata[i]["art_id"],
                         tempdata[i]["exotisch"],
-                        tempdata[i]["schaden_wuerfel"]+"+"+tempdata[i]["schaden"],
+                        tempdata[i]["schaden_wuerfel"],
+                        tempdata[i]["schaden"],
                         tempdata[i]["kk_bonus"],
                         tempdata[i]["attackebonus"],
                         tempdata[i]["paradebonus"],
@@ -1153,7 +1156,7 @@ function getModaltab (modtabid,dataarray,index){
   var text;
   for (i = 0; i < dataarray.length; i++){
     text +="<tr>";
-    text +="<td>"+dataarray[i][0]+"</td>";
+    text +="<td>"+dataarray[i][1]+"</td>";
     text +="<td> <input type=\"number\" value="+dataarray[i][index]+">";
     text +="<button type=\"button\" class=\"btn btn-success blussi\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger minus\">-</button>";
@@ -1176,7 +1179,7 @@ function getModalATPAtab(modtabid,dataarray,kampftalentarray){
   var waffentalent=[];
   $tbody.empty();
   for (i = 0; i < dataarray.length; i++){
-    waffentalent= getwaffentalent(dataarray[i][1],dataarray[i][2]);
+    waffentalent= getwaffentalent(dataarray[i][3],dataarray[i][4]);
     atwert=kampftalentarray[i][1];
     pawert=kampftalentarray[i][2];
     wert = (waffentalent[0]-atwert-pawert);
@@ -1186,7 +1189,7 @@ function getModalATPAtab(modtabid,dataarray,kampftalentarray){
       disable="";
     }
     text +="<tr>";
-    text +="<td>"+(dataarray[i][0]).split(',')[0]+"<h6>Talent: "+waffentalent[1]+"</h6><h6 class=\"Waffentalent\">"+wert+"</h6></td>";
+    text +="<td>"+dataarray[i][1]+"<h6>Talent: "+waffentalent[1]+"</h6><h6 class=\"Waffentalent\">"+wert+"</h6></td>";
     text +="<td><span>AT: <h5 class=\"atwert\">"+atwert+"</h5></span>";
     text +="<button "+disable+" type=\"button\" class=\"btn btn-success atblussi\">+</button>";
     text +="<button type=\"button\" class=\"btn btn-danger atminus\">-</button>";
@@ -1387,5 +1390,8 @@ alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
 
 });
 // Waffe Modifikation
+ $(document).on('click','#editWaffe',function(event){
+   $('#modaleditwaffe').modal("toggle");
 
+ });
 });
