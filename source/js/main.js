@@ -1391,7 +1391,7 @@ alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
 // Waffe Modifikation
 //FUNKTIONIERT NOCH NICHT!
 $('#spielerwaffen').on('click','tbody td', function(e){
-  var testtext=$(e.target).closest('tr td').each(function(){
+  var testtext=$(e.target).closest('tr').find('td').each(function(){
     return $(this).text();
   }).toArray();
   alert (testtext[0]);
