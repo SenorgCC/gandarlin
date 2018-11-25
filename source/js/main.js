@@ -1390,7 +1390,7 @@ alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
 });
 // Waffe Modifikation
 //FUNKTIONIERT NOCH NICHT!
-$('#spielerwaffen').on('click','tbody td', function(e){
+$(document).on('click','#spielerwaffen tbody td', function(e){
   var rowdata=[];
   var header=[];
   var $row=$(e.target).closest('tr'),
@@ -1402,7 +1402,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
   $.each($(this).closest('table').find('.eqheader th'),function(){
     header.push($(this).text());
   });
-  alert("header: "+header[0]);
+
 });
 
  $(document).on('click','#editWaffe',function(event){
