@@ -1198,7 +1198,6 @@ function getModalATPAtab(modtabid,dataarray,kampftalentarray){
     text +="</td></tr>";
   }
   $tbody.append(text);
-  rowtext = "";
 }
 
 function getwaffentalent(id,exotic){
@@ -1414,6 +1413,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
   $('#titelInventar').text(title+" Modifikation");
   var $tbody = $('#modtabInventar').find('tbody');
   var type="text";
+  var text;
   $tbody.empty();
   //Erstes Element ist die id... Die soll nicht veränderbar sein
   for (i = 0; i < header.length; i++){
@@ -1432,8 +1432,8 @@ $('#spielerwaffen').on('click','tbody td', function(e){
     text +="<td>";
     text +="<input "+disable+" type=\""+type+"\" class=\"inventarinput form-control\" value=\""+rowdata[i]+"\">";
     text +="</td></tr>";
-    $tbody.append(text);
-    rowtext = "";
   }
+  $tbody.append(text);
  }
+
 });
