@@ -1395,7 +1395,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
                     return $(this).text();
                 }).get();
   var props = $('#spielerwaffen thead > tr th');
-  alert("Props:"+props);
+  alert("Props:"+JSON.stringify(props));
   var array = [];
   props.each(function () { array.push($(this).text()) });
   //keys
