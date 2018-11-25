@@ -1399,8 +1399,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
         rowdata.push($(this).text());
       });
 
-  $(this).parent('tbody').parent('table').closest('.eqheader').find('th').map(function(){
-    alert("HIER");
+  alert("TEST "+$(this).parent('table').text());
   });
 });
  $(document).on('click','#editWaffe',function(event){
