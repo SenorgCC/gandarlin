@@ -1394,7 +1394,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
   var testtext=$(e.target).closest('tr').find('td').each(function(){
     return $(this).text();
   }).toArray();
-  alert (JSON.stringify(testtext[0]));
+  alert (JSON.stringify(testtext));
 });
  $(document).on('click','#editWaffe',function(event){
    $('#modaleditwaffe').modal("toggle");
