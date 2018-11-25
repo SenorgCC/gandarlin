@@ -723,7 +723,7 @@ $(".editColumn").click(function(){
       $('#editlehren').val(handwerkstalente_arr[2]["lehren"]);
       $('#modalhandwerkstalente').modal();
     },
-    'spielerruestungen': function(){
+    'spielerruestungen': function(event){
       var text=$(event.target).closest("th").attr('id');
       if(text == "Ruestwert"){
         getModaltab("modtabruestungwert",spielerruestungen_arr,1);
@@ -1311,8 +1311,9 @@ $('#submitfinalATPA').click(function(){
   });
 
 //---------------------------------------------------
-// Neue Ausruestung hinzufügen
+// Neue Ausruestung hinzufügen /Modifizieren
 //---------------------------------------------------
+// Waffen hinzufügen
 $(document).on('click',"#addWaffe",function(){
   $('#modaladdwaffe').modal("toggle");
 });
@@ -1385,4 +1386,6 @@ alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
   });
 
 });
+// Waffe Modifikation
+
 });
