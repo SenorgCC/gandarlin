@@ -1398,8 +1398,9 @@ $('#spielerwaffen').on('click','tbody td', function(e){
       $.each($tds,function(){
         rowdata.push($(this).text());
       });
-  var fullheader = $(e.target).closest('.eqheader').find('th');
-  $.each(fullheader,function(){
+  var fullheader = $(e.target).closest('.eqheader'),
+      tdh=fullheader.find('th');
+  $.each(tdh,function(){
     header.push(($this).text());
   });
 
