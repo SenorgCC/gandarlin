@@ -1399,7 +1399,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
         rowdata.push($(this).text());
       });
 
-  var $head=$(e.target).closest('thead'),
+  var $head=$(e.target).find('thead'),
       $tdr =$head.find('.eqheader th');
       $.each($tdr,function(){
         alert ("TEST"+$(this).text());
