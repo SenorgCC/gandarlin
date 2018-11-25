@@ -1399,13 +1399,9 @@ $('#spielerwaffen').on('click','tbody td', function(e){
         rowdata.push($(this).text());
       });
 
-  var $rowhead=$(this).closest('.eqheader'),
-      $tdr =$rowhead.find('th');
-      $.each($tdr,function(){
-        header.push($(this).text());
-      });
-
-      alert("HEADER"+header);
+  $(this).parent('tbody').parent('table').closest('.eqheader').find('th').map(function,(){
+    alert("HIER");
+  });
 });
  $(document).on('click','#editWaffe',function(event){
    $('#modaleditwaffe').modal("toggle");
