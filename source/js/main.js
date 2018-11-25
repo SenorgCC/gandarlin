@@ -1400,7 +1400,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
       });
 
   var $head=$(e.target).closest('table'),
-      $tdr =$head.find('thead .eqheader');
+      $tdr =$head.find('thead .eqheader tr');
       $.each($tdr,function(){
         header.push($(this).text());
       });
