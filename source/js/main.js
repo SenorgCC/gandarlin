@@ -1398,10 +1398,11 @@ $('#spielerwaffen').on('click','tbody td', function(e){
       $.each($tds,function(){
         rowdata.push($(this).text());
       });
-  header = $(e.target).closest('thead').find('.eqheader th').map(function(){
-    return $(this).text();
-  }).toArray();
-  var dataobj={};
+  var fullheader = $(e.target).closest('.eqheader').find('th');
+  $.each(fullheader,function(){
+    header.push($this).text());
+  });
+
   alert(header);
 
 });
