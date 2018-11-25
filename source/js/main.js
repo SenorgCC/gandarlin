@@ -1391,11 +1391,13 @@ alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
 // Waffe Modifikation
 //FUNKTIONIERT NOCH NICHT!
 $('#spielerwaffen').on('click','tbody td', function(e){
+  var rowdata=[];
   var $row=$(e.target).closest('tr'),
       $tds =$row.find('td');
       $.each($tds,function(){
-        console.log($(this).text());
+        rowdata.push($(this).text());
       });
+  alert("ID: "+rowdata[0]);
 });
  $(document).on('click','#editWaffe',function(event){
    $('#modaleditwaffe').modal("toggle");
