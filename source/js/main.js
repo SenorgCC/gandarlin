@@ -1405,6 +1405,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
         header.push($(this).text());
       });
 
+      alert("HEADER"+header);
 });
  $(document).on('click','#editWaffe',function(event){
    $('#modaleditwaffe').modal("toggle");
