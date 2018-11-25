@@ -1398,8 +1398,14 @@ $('#spielerwaffen').on('click','tbody td', function(e){
       $.each($tds,function(){
         rowdata.push($(this).text());
       });
-  var test=$(this).closest('.eqheader').children('th').text();
-  alert ("TEST"+test);
+
+  var $head=$(e.target).closest('.eqheader'),
+      $tdr =$head.find('th');
+      $.each($tdr,function(){
+        header.push($(this).text());
+      });
+  alert(header);
+
 });
  $(document).on('click','#editWaffe',function(event){
    $('#modaleditwaffe').modal("toggle");
