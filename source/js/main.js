@@ -1411,7 +1411,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
  });
 
  function createInventarmodal(title,header,rowdata){
-  $('#titelInventar').text(titel+" Modifikation");
+  $('#titelInventar').text(title+" Modifikation");
   var $tbody = $('#modtabInventar').find('tbody');
   var type="text";
   $tbody.empty();
