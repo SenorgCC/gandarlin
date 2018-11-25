@@ -1395,7 +1395,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
       $tds =$row.find('td');
       $.each($tds,function(){
         console.log($(this).text());
-      }
+      });
 });
  $(document).on('click','#editWaffe',function(event){
    $('#modaleditwaffe').modal("toggle");
