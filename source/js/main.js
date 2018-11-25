@@ -626,7 +626,7 @@ function addEditable(tablename,colname){
   $('#'+tablename+' tr td:nth-child('+columnIndex+')').css("color","#F00");
 }
 
-$(".editColumn").click(function(){
+$(".editColumn").click(function(event){
   var tablename = $(this).closest('table').attr('id');
   var tablemap = {
     'spielerbasiswerte': function(){
@@ -723,7 +723,7 @@ $(".editColumn").click(function(){
       $('#editlehren').val(handwerkstalente_arr[2]["lehren"]);
       $('#modalhandwerkstalente').modal();
     },
-    'spielerruestungen': function(event){
+    'spielerruestungen': function(){
       var text=$(event.target).closest("th").attr('id');
       if(text == "Ruestwert"){
         getModaltab("modtabruestungwert",spielerruestungen_arr,1);
