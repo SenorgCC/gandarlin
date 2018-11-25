@@ -1399,7 +1399,10 @@ $('#spielerwaffen').on('click','tbody td', function(e){
         rowdata.push($(this).text());
       });
 
-  alert("TEST "+$(this).closest('table').find('.eqheader').text());
+  $.each($(this).closest('table').find('.eqheader'),function(){
+    header.push($(this).text());
+  });
+  alert("header: "+header);
 });
 
  $(document).on('click','#editWaffe',function(event){
