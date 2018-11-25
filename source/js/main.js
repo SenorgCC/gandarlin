@@ -1392,19 +1392,17 @@ alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
 //FUNKTIONIERT NOCH NICHT!
 $('#spielerwaffen').on('click','tbody td', function(e){
   var rowdata=[];
-  var headdata=[];
+  var header=[];
   var $row=$(e.target).closest('tr'),
       $tds =$row.find('td');
       $.each($tds,function(){
         rowdata.push($(this).text());
       });
-  var table=$(e.target).closest('table');
-  var header = table.find('.eqheader th');
-  $.each(header, function(){
-    headdata.push($(this).text());
-  });
+  header = $(e.target).closest('thead').find('.eqheader th').map(function(){
+    return $(this).text();
+  }).toArray();
   var dataobj={};
-  alert(headdata);
+  alert(header);
 
 });
  $(document).on('click','#editWaffe',function(event){
