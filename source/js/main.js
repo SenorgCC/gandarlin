@@ -1392,7 +1392,7 @@ alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
 //FUNKTIONIERT NOCH NICHT!
 $('#spielerwaffen').on('click','tbody td', function(e){
   var tableData = $(e.target).parent('tr').map(function () {
-                    rdeturn $(this).text();
+                    return $(this).text();
                 }).get();
   var props = $('#spielerwaffen thead > tr th');
   var array = [];
