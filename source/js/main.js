@@ -609,7 +609,8 @@ function spielerruestungen(){
         tempdata=JSON.parse(data);
         for (i=0; i< tempdata.length; i++){
           tempruestung = [];
-          tempruestung =([tempdata[i]["name_beschreibung"],
+          tempruestung =([tempdata[i]["id"],
+                        tempdata[i]["name_beschreibung"],
                         tempdata[i]["ruestungswert"],
                         tempdata[i]["ausruestungsmodifikation"]
                         ]);
