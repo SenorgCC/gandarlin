@@ -1434,8 +1434,20 @@ $('#spielerwaffen').on('click','tbody td', function(e){
     text +="<tr>";
     text +="<td>"+header[i]+"</td>";
     text +="<td>";
-    text +="<input "+disable+" type=\""+type+"\" class=\"inventarinput form-control\" value=\""+rowdata[i]+"\">";
-    text +="</td></tr>";
+    if(header[i]=="Exotisch"){
+      text +="div class=\"form-check-inline\"";
+      text +="<label class=\"form-check-label\">";
+      text +="<input type=\"radio\" class=\"form-check-input inventarinput\" value=\"1\" name=\"optradio\">Ja";
+      text +="</label>";
+      text +="</div>";
+      text +="<div class=\"form-check-inline\">";
+      text +="<label class=\"form-check-label\">";
+      text +="<input type=\"radio\" class=\"form-check-input inventarinput\" value=\"0\" name=\"optradio\">Nein";
+      text +="</label></div>";
+    }else{
+      text +="<input "+disable+" type=\""+type+"\" class=\"inventarinput form-control\" value=\""+rowdata[i]+"\">";
+      text +="</td></tr>";
+    }
   }
   $tbody.append(text);
  }
