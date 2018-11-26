@@ -1435,7 +1435,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
     text +="<td>"+header[i]+"</td>";
     text +="<td>";
     if(header[i]=="Exotisch"){
-      text +="div class=\"form-check-inline\"";
+      text +="<div class=\"form-check-inline\"";
       text +="<label class=\"form-check-label\">";
       text +="<input type=\"radio\" class=\"form-check-input inventarinput\" value=\"1\" name=\"optradio\">Ja";
       text +="</label>";
