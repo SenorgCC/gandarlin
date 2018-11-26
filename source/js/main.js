@@ -1465,7 +1465,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
 
  $(document).on('click','#submitInventaredit',function(){
    var attributarr=$('#modtabInventar tr').find('td:first').map(function(){
-     return $(this).text();
+     return $(this:checked).text();
    }).get();
    var valuearr=$('#modtabInventar').find('.inventarinput').map(function(){
      return $(this).val();
