@@ -1414,6 +1414,8 @@ $('#spielerwaffen').on('click','tbody td', function(e){
   var $tbody = $('#modtabInventar').find('tbody');
   var type="text";
   var text;
+  var checked;
+  var unchecked;
   var reg= /^\d+$/;
   $tbody.empty();
   //Erstes Element ist die id... Die soll nicht veränderbar sein
@@ -1435,14 +1437,21 @@ $('#spielerwaffen').on('click','tbody td', function(e){
     text +="<td>"+header[i]+"</td>";
     text +="<td>";
     if(header[i]=="Exotisch"){
+      if(rowdata[i]=="1"){
+        checked="checked";
+        unchecked="";
+      }else{
+        checked="";
+        unchecked="unchecked";
+      }
       text +="<div class=\"form-check-inline\"";
       text +="<label class=\"form-check-label\">";
-      text +="<input type=\"radio\" class=\"form-check-input inventarinput\" value=\"1\" name=\"optradio\">Ja";
+      text +="<input type=\"radio\" class=\"form-check-input inventarinput\" value=\"1\" name=\"optradio\" "+checked+">Ja";
       text +="</label>";
       text +="</div>";
       text +="<div class=\"form-check-inline\">";
       text +="<label class=\"form-check-label\">";
-      text +="<input type=\"radio\" class=\"form-check-input inventarinput\" value=\"0\" name=\"optradio\">Nein";
+      text +="<input type=\"radio\" class=\"form-check-input inventarinput\" value=\"0\" name=\"optradio\" "+unchecked+">Nein";
       text +="</label></div>";
     }else{
       text +="<input "+disable+" type=\""+type+"\" class=\"inventarinput form-control\" value=\""+rowdata[i]+"\">";
