@@ -729,10 +729,10 @@ $(".editColumn").click(function(event){
     'spielerruestungen': function(){
       var text=$(event.target).closest("th").attr('id');
       if(text == "Ruestwert"){
-        getModaltab("modtabruestungwert",spielerruestungen_arr,1);
+        getModaltab("modtabruestungwert",spielerruestungen_arr,2);
         $('#modspielerruestwert').modal();
       }else{
-        getModaltab("modtabruestung",spielerruestungen_arr,2);
+        getModaltab("modtabruestung",spielerruestungen_arr,3);
         $('#modalspielerruestungen').modal();
       }
     }
