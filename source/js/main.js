@@ -1393,7 +1393,8 @@ $('#spielerwaffen').on('click','tbody td', function(e){
   var rowdata=[];
   var header=[];
   //TODO: Titel finden
-  var title=$(this).closest('h2').text();
+  var title=$(this).closest('div').find('h2').text();
+  alert ("Titel:"+title);
   var $row=$(e.target).closest('tr'),
       $tds =$row.find('td');
       $.each($tds,function(){
