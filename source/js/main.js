@@ -1423,7 +1423,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
   $tbody.empty();
   //Erstes Element ist die id... Die soll nicht veränderbar sein
   for (i = 0; i < header.length; i++){
-    if(header[i].includes("Final AT")  || header[i].includes("Final PA")){
+    if(header[i].includes("Final AT")  || header[i].includes("Final PA") || header[i].includes("KK-Bonus")){
       continue;
     }
     if (i == 0){
@@ -1464,4 +1464,14 @@ $('.spielerinventar').on('click','tbody td', function(e){
   $tbody.append(text);
  }
 
+ $(document).on('click','#submitInventaredit',function(){
+   var attributarr=$('#modtabInventar tr').find('td:first').map(function(){
+     return $(this).text();
+   }).get();
+   var valuearr=$('#modtabInventar tr').find('td:second').map(function(){
+     return $(this).val();
+   }).get();
+   alert("ARR1"+attributarr);
+   alert("ARR2"+valuearr);
+ });
 });
