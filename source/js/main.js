@@ -1442,7 +1442,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
         unchecked="";
       }else{
         checked="";
-        unchecked="unchecked";
+        unchecked="checked";
       }
       text +="<div class=\"form-check-inline\"";
       text +="<label class=\"form-check-label\">";
