@@ -1389,7 +1389,7 @@ alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
 });
 // Waffe Modifikation
 //FUNKTIONIERT NOCH NICHT!
-$('.spielerwaffen').on('click','tbody td', function(e){
+$('.spielerinventar').on('click','tbody td', function(e){
   var rowdata=[];
   var header=[];
   //TODO: Titel finden
