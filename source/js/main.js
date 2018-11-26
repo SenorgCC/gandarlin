@@ -1392,7 +1392,7 @@ alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
 $('#spielerwaffen').on('click','tbody td', function(e){
   var rowdata=[];
   var header=[];
-  var titel=$(this).closest('h2').text();
+  var title=$(this).closest('h2').text();
   var $row=$(e.target).closest('tr'),
       $tds =$row.find('td');
       $.each($tds,function(){
@@ -1402,7 +1402,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
   $.each($(this).closest('table').find('.eqheader th'),function(){
     header.push($(this).text());
   });
-  createInventarmodal("Waffen",header,rowdata);
+  createInventarmodal(title,header,rowdata);
   $('#modalInventaredit').modal("toggle");
 });
 
