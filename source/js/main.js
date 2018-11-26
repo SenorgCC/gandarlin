@@ -1395,7 +1395,6 @@ $('.spielerinventar').on('click','tbody td', function(e){
   var header=[];
   //TODO: Titel finden
   var title=$(this).closest('div').find('h2').text();
-  alert ("Titel:"+title);
   var $row=$(e.target).closest('tr'),
       $tds =$row.find('td');
       $.each($tds,function(){
@@ -1468,7 +1467,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
    var attributarr=$('#modtabInventar tr').find('td:first').map(function(){
      return $(this).text();
    }).get();
-   var valuearr=$('#modtabInventar tr').find('td:nt-child(2)').map(function(){
+   var valuearr=$('#modtabInventar tr').find('td:nth-child(2)').map(function(){
      return $(this).val();
    }).get();
    alert("ARR1"+attributarr);
