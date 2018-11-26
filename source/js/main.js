@@ -1418,7 +1418,7 @@ $('#spielerwaffen').on('click','tbody td', function(e){
   $tbody.empty();
   //Erstes Element ist die id... Die soll nicht veränderbar sein
   for (i = 0; i < header.length; i++){
-    if(header[i] == "Final AT" || header == "Final PA"){
+    if(header[i].includes("Final AT")  || header.includes("Final PA")){
       continue;
     }
     if (i == 0){
