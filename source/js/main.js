@@ -1471,10 +1471,10 @@ $('.spielerinventar').on('click','tbody td', function(e){
    var attributarr=$('#modtabInventar tr').find('td:first').map(function(){
      key=$(this).text();
      if(key == "Exotisch"){
-        value=$(this).find('.inventarinput option:selected').val();
+        value=$(this).parent('tr').find('.inventarinput option:selected').val();
         alert("VAL:"+value);
      }else{
-        value=$(this).closest('td').next().val();
+        value=$(this).next().val();
      }
      dataobj.type=key;
      dataobj.value=value;
