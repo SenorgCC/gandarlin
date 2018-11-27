@@ -1470,11 +1470,11 @@ $('.spielerinventar').on('click','tbody td', function(e){
    var value;
 //   var attributarr=$('#modtabInventar tr').find('td:first').map(function(){
    var attributarr=$('#modtabInventar').find('tr').each(function(){
-     key=$(this).text();
+     key=$(this).find("td:eq(0)").text();
      alert("KEY:"+key);
 
      if(key == "Exotisch"){
-        value=$(this).find(".inventarinput input[type='ratio']:checked").val();
+        value=$(this).find(".inventarinput input[name='optradio']:checked").val();
         alert("VAL:"+value);
      }else{
         value=$(this).next('td').val();
