@@ -1468,15 +1468,15 @@ $('.spielerinventar').on('click','tbody td', function(e){
    var dataobj={};
    var key;
    var value;
-   var attributarr=$('#modtabInventar tr').find('td:first').map(function(){
-     alert(JSON.stringify($(this).parent('td').html()));
-     key=$(this).text();
+//   var attributarr=$('#modtabInventar tr').find('td:first').map(function(){
+   var attributarr=$('#modtabInventar').find('tr').each(function(){
+     key=$(this).next('td').text();
 
      if(key == "Exotisch"){
         value=$(".inventarinput input[type='ratio']:checked").val();
         alert("VAL:"+value);
      }else{
-        value=$(this).parent('td').next().val();
+        value=$(this).next('td').next('td').val();
         alert("VAL2:"+value);
      }
      dataobj.type=key;
