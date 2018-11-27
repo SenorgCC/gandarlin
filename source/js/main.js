@@ -1480,8 +1480,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
         value=$(this).find("td:nth-child(2) input").val();
         alert("VAL2:"+value);
      }
-     dataobj.type=key;
-     dataobj.value=value;
+     dataobj[key]=value;
    });
    alert("ARR1"+JSON.stringify(dataobj));
  });
