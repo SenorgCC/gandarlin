@@ -1477,7 +1477,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
         value=$(".inventarinput input[name='optradio']:checked").val();
         alert("VAL:"+value);
      }else{
-        value=$(this).find("td:nth-child(2)").val();
+        value=$(this).parent().find("td:nth-child(2)").val();
         alert("VAL2:"+value);
      }
      dataobj.type=key;
