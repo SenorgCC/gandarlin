@@ -1466,13 +1466,18 @@ $('.spielerinventar').on('click','tbody td', function(e){
  $(document).on('click','#submitInventaredit',function(){
    //MUss als Objekt angelegt werden! sonst wird exotisch nicht richtig aufgeloest
    var dataobj={};
+   var key;
+   var value;
    var attributarr=$('#modtabInventar tr').find('td:first').map(function(){
-     return $(this).text();
-   }).get();
-   var valuearr=$('#modtabInventar').find('.inventarinput').map(function(){
-     return $(this).val();
-   }).get();
-   alert("ARR1"+attributarr);
-   alert("ARR2"+valuearr);
+     key=$(this).text();
+     if(key == "Exotisch"){
+        value=$(this).next('td').find('.inventarinput:selected').val();
+     }else{
+        value=$(this).next('td').val();
+     }
+     dataobj.type=key;
+     dataobj.value=value;
+   });
+   alert("ARR1"+JSON.stringify(dataobj));
  });
 });
