@@ -1474,10 +1474,10 @@ $('.spielerinventar').on('click','tbody td', function(e){
      alert("KEY:"+key);
 
      if(key == "Exotisch"){
-        value=$(".inventarinput input[type='ratio']:checked").val();
+        value=$(this).find(".inventarinput input[type='ratio']:checked").val();
         alert("VAL:"+value);
      }else{
-        value=$(this).next('td').next('td').val();
+        value=$(this).next('td').val();
         alert("VAL2:"+value);
      }
      dataobj.type=key;
