@@ -1495,8 +1495,8 @@ $('.spielerinventar').on('click','tbody td', function(e){
    //Der Waffenschaden wird in der Gesamtsumme dargestellt
    gesschaden=dataobj["Schaden (mit KK)"].split('+');
    wschaden=gesschaden[0];
+   //KK-Bonus wird in der DB bereits verrechnet ... Muss abgezogen werden
    zschaden=parseInt(gesschaden[1])-parseInt(spielerwaffen_ar[0][6]);
-   alert("Wschaden:"+wschaden+" Z:"+zschaden);
 
  });
 
