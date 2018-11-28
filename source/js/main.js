@@ -1443,7 +1443,6 @@ $('.spielerinventar').on('click','tbody td', function(e){
     }else if(header[i]=="Art"){
       text +="<div class=\"input-group mb-3\">";
         text+="<select class=\"custom-select\" id=\"Changewaffenartauswahl\">";
-          text+="<option selected>Waffenartauswahl</option>";
           text+="<option value=\"1\">Einhandschwer</option>";
           text+="<option value=\"2\">Beil</option>";
           text+="<option value=\"3\">Flegel</option>";
@@ -1460,6 +1459,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
           text+="<option value=\"14\">Wurfwaffe</option>";
       text+="</select>";
     text+="</div>";
+    //QOL setzt "selected" bei der richtigen Waffenartid
     text = text.replace("<option value=\""+rowdata[i]+"\">","<option selected value=\""+rowdata[i]+"\">");
     }else{
       text +="<input "+disable+" type=\""+type+"\" class=\"inventarinput form-control\" value=\""+rowdata[i]+"\">";
@@ -1475,6 +1475,9 @@ $('.spielerinventar').on('click','tbody td', function(e){
    var key;
    var value;
    var artname;
+   var gesschaden=[];
+   var wschaden;
+   var zschaden;
    var attributarr=$('#modtabInventar').find('tr').each(function(){
      key=$(this).find("td:eq(0)").text();
      if(key == "Exotisch"){
@@ -1489,7 +1492,11 @@ $('.spielerinventar').on('click','tbody td', function(e){
      dataobj[key]=value;
    });
    artname=getWaffenartname(dataobj["Art"]);
-   alert("Artname: "+artname);
+   //Der Waffenschaden wird in der Gesamtsumme dargestellt
+   gesschaden=dataobj["Schaden (mit KK)"].split('+');
+   wschaden=gesschaden[0];
+   zschaden=gesschaden[1]-spielerwaffen_ar[0]["kk_bonus"];
+   alert("Wschaden:"+wschaden+" Z:"+zschaden);
  });
 
  function getWaffenartname(nummer){
