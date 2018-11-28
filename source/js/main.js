@@ -1455,6 +1455,26 @@ $('.spielerinventar').on('click','tbody td', function(e){
       text +="<label class=\"form-check-label\">";
       text +="<input type=\"radio\" class=\"form-check-input inventarinput\" value=\"0\" name=\"optradio\" "+unchecked+">Nein";
       text +="</label></div>";
+    }else if(header[i]=="Art"){
+      text +="<div class=\"input-group mb-3\">";
+        text+="<select class=\"custom-select\" id=\"Changewaffenartauswahl\">";
+          text+="<option selected>Waffenartauswahl</option>";
+          text+="<option value=\"1\">Einhandschwer</option>";
+          text+="<option value=\"2\">Beil</option>";
+          text+="<option value=\"3\">Flegel</option>";
+          text+="<option value=\"4\">Dolch</option>";
+          text+="<option value=\"5\">Zweihandschwert</option>";
+          text+="<option value=\"6\">Axt</option>";
+          text+="<option value=\"7\">Kolben</option>";
+          text+="<option value=\"8\">Stab</option>";
+          text+="<option value=\"9\">Stangenwaffe</option>";
+          text+="<option value=\"10\">Schild</option>";
+          text+="<option value=\"11\">Unbewaffnet</option>";
+          text+="<option value=\"12\">Bogen</option>";
+          text+="<option value=\"13\">Armbrust</option>";
+          text+="<option value=\"14\">Wurfwaffe</option>";
+      text+="</select>";
+    text+="</div>";
     }else{
       text +="<input "+disable+" type=\""+type+"\" class=\"inventarinput form-control\" value=\""+rowdata[i]+"\">";
       text +="</td></tr>";
@@ -1468,17 +1488,17 @@ $('.spielerinventar').on('click','tbody td', function(e){
    var dataobj={};
    var key;
    var value;
-//   var attributarr=$('#modtabInventar tr').find('td:first').map(function(){
    var attributarr=$('#modtabInventar').find('tr').each(function(){
      key=$(this).find("td:eq(0)").text();
      alert("KEY:"+key);
 
      if(key == "Exotisch"){
         value=$("input[name='optradio']:checked").val();
-        alert("VAL:"+value);
-     }else{
+     }else if(key=="Art"){}
+        value=$("#Changewaffenartauswahl").val();
+     else{
+       //selector für die zweite Spalte in der Tabellenreie
         value=$(this).find("td:nth-child(2) input").val();
-        alert("VAL2:"+value);
      }
      dataobj[key]=value;
    });
