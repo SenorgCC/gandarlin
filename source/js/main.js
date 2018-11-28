@@ -1338,23 +1338,8 @@ $(document).on('click',"#submitNeueWaffe",function(){
   }else if (kk >= 18){
     kkbonus=3
   }
-  var artname = {
-  1: "Einhandschwerter" ,
-  2: "Beil" ,
-  3: "Flegel" ,
-  4: "Dolch" ,
-  5: "Schwerter" ,
-  6: "Axt" ,
-  7: "Kolben" ,
-  8: "Stab" ,
-  9: "Stangenwaffe" ,
-  10: "Schild" ,
-  11: "Unbewaffnet",
-  12: "Bogen",
-  13: "Armbrust",
-  14: "Wurfwaffe"
-};
-alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
+  var artname = getWaffenartname(waffenart);
+
   $.ajax({
     type:"POST",
     url:"source/php/getmaxwaffenid.php",
@@ -1370,7 +1355,7 @@ alert("Waffenart:"+waffenart+"Name:"+artname[waffenart]);
             WP_ID:newwaffenid,
             WNAME:waffenname,
             WAFRT: waffenart,
-            WARTNAME:artname[waffenart],
+            WARTNAME:artname,
             WAFEXO:waffenexo,
             BESCH:beschreibung,
             WUESCHADEN:wuerfelschaden,
@@ -1488,10 +1473,9 @@ $('.spielerinventar').on('click','tbody td', function(e){
    var dataobj={};
    var key;
    var value;
+   var artname;
    var attributarr=$('#modtabInventar').find('tr').each(function(){
      key=$(this).find("td:eq(0)").text();
-     alert("KEY:"+key);
-
      if(key == "Exotisch"){
         value=$("input[name='optradio']:checked").val();
      }else if(key=="Art"){
@@ -1503,6 +1487,26 @@ $('.spielerinventar').on('click','tbody td', function(e){
      }
      dataobj[key]=value;
    });
-   alert("ARR1"+JSON.stringify(dataobj));
+   artname=getWaffenartname(dataobj["Art"]);
+   alert("Artname: "+artname);
  });
+ function getWaffenartname(nummer){
+  var artname = {
+  1: "Einhandschwerter" ,
+  2: "Beil" ,
+  3: "Flegel" ,
+  4: "Dolch" ,
+  5: "Schwerter" ,
+  6: "Axt" ,
+  7: "Kolben" ,
+  8: "Stab" ,
+  9: "Stangenwaffe" ,
+  10: "Schild" ,
+  11: "Unbewaffnet",
+  12: "Bogen",
+  13: "Armbrust",
+  14: "Wurfwaffe"
+  };
+  return artname[nummer];
+ }
 });
