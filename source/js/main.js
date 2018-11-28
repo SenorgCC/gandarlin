@@ -1460,6 +1460,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
           text+="<option value=\"14\">Wurfwaffe</option>";
       text+="</select>";
     text+="</div>";
+    text = text.replace("<option value=\""+rowdata[i]+"\">","<option selected value=\""+rowdata[i]+"\">");
     }else{
       text +="<input "+disable+" type=\""+type+"\" class=\"inventarinput form-control\" value=\""+rowdata[i]+"\">";
       text +="</td></tr>";
@@ -1490,6 +1491,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
    artname=getWaffenartname(dataobj["Art"]);
    alert("Artname: "+artname);
  });
+
  function getWaffenartname(nummer){
   var artname = {
   1: "Einhandschwerter" ,
