@@ -1494,8 +1494,9 @@ $('.spielerinventar').on('click','tbody td', function(e){
 
      if(key == "Exotisch"){
         value=$("input[name='optradio']:checked").val();
-     }else if(key=="Art"){}
+     }else if(key=="Art"){
         value=$("#Changewaffenartauswahl").val();
+     }
      else{
        //selector für die zweite Spalte in der Tabellenreie
         value=$(this).find("td:nth-child(2) input").val();
