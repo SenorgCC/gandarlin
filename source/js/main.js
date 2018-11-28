@@ -1495,8 +1495,9 @@ $('.spielerinventar').on('click','tbody td', function(e){
    //Der Waffenschaden wird in der Gesamtsumme dargestellt
    gesschaden=dataobj["Schaden (mit KK)"].split('+');
    wschaden=gesschaden[0];
-   zschaden=gesschaden[1]-spielerwaffen_ar[0]["kk_bonus"];
+   zschaden=parseInt(gesschaden[1])-parseInt(spielerwaffen_ar[0][6]);
    alert("Wschaden:"+wschaden+" Z:"+zschaden);
+
  });
 
  function getWaffenartname(nummer){
