@@ -1528,6 +1528,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
   }
   var submitinv = inventarsub[titel];
   if (submitinv) submitinv();
+  
   });
 
  function getWaffenartname(nummer){
