@@ -1497,6 +1497,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
    wschaden=gesschaden[0];
    //KK-Bonus wird in der DB bereits verrechnet ... Muss abgezogen werden
    zschaden=parseInt(gesschaden[1])-parseInt(spielerwaffen_ar[0][6]);
+   alert(dataobj["id"],dataobj["Name"],dataobj["Art"],artname,dataobj["Exotisch"],dataobj["Beschreibung]");
    $.ajax({
       type:"POST",
       url:"source/php/updatespielerwaffen.php",
@@ -1514,6 +1515,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
           },
       datatype:"json",
       success:function(data){
+        alert("HIER");
       }
     }).done(function(){
     spielerwaffen();
