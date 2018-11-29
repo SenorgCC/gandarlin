@@ -19,7 +19,7 @@ $stmt+=" schaden_wuerfel=$2,";
 $stmt+=" schaden=$3,";
 $stmt+=" attackebonus=$4,";
 $stmt+=" paradebonus=$5";
-$stmt+=" where id=$6 and sp_id=$7;"
+$stmt+=" where id=$6 and sp_id=$7;";
 $result=pg_prepare($dbconn,"upspielerwaffe",$stmt);
 $result=pg_execute($dbconn,"upspielerwaffe",$data);
 
