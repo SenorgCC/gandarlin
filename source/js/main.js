@@ -1523,13 +1523,26 @@ $('.spielerinventar').on('click','tbody td', function(e){
     });
   },
   'Rüstungen':function(){
-
+   $.ajax({
+      type:"POST",
+      url:"source/php/updatespielerruestung.php",
+      data:{SP_ID:SpielerID,
+            WP_ID:dataobj["id"],
+            WNAME:dataobj["Name+Beschreibung"],
+            RWERT: dataobj["Rüstungswert"],
+            MOD:dataobj["Ausrüstungsmalus / Bonus"]
+          },
+      datatype:"json",
+      success:function(data){
+      }
+    }).done(function(){
+      spielerruestungen();
+      sekundarwerte();
+    });
   }
   }
   var submitinv = inventarsub[titel];
   if (submitinv) submitinv();
-
-  
   });
 
  function getWaffenartname(nummer){

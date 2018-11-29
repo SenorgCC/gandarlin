@@ -3,7 +3,7 @@ include('../../../connect.php');
 $ID = $_POST['ID'];
 $erg_array = array();
 //$stmt="select * from basiswerte.basis union all select * from basiswerte.modifikation union all select * from basiswerte.final";
-$result=pg_prepare($dbconn,"normalwerte",'select * from spieler.ruestung where id = $1');
+$result=pg_prepare($dbconn,"normalwerte",'select * from spieler.ruestung where sp_id = $1 order by id');
 $result=pg_execute($dbconn,"normalwerte",array($ID));
 if (!$result){
     echo "Es ist ein Fehler aufgetreten\n";
