@@ -1524,7 +1524,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
     });
   },
   'Rüstungen':function(){
-    alert(dataobj["Name+Beschreibung"],dataobj["Rüstungswert"],dataobj["Ausrüstungsmalus / Bonus"]);
+    alert(dataobj["Name+Beschreibung"]+" "+dataobj["Rüstungswert"]+" "+dataobj["Ausrüstungsmalus / Bonus"]);
    $.ajax({
       type:"POST",
       url:"source/php/updatespielerruestung.php",
