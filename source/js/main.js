@@ -1319,7 +1319,7 @@ $('#submitfinalATPA').click(function(){
 $(document).on('click',"#addWaffe",function(){
   $('#modaladdwaffe').modal("toggle");
 });
-$(document).on('click',"addRuestung",function(){
+$(document).on('click',"#addRuestung",function(){
   $('#modaladdrues').modal("toggle");
 });
 $(document).on('click',"#submitNeueWaffe",function(){
@@ -1564,6 +1564,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
      type:"POST",
      url:"source/php/addruest.php",
      data:{SP_ID:SpielerID,
+           RUESN:ruesname,
            RUESW:rueswert,
            MOD:mod,
            ID:newruestid
