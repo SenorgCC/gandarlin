@@ -1514,7 +1514,6 @@ $('.spielerinventar').on('click','tbody td', function(e){
           },
       datatype:"json",
       success:function(data){
-        alert("HIER");
       }
     }).done(function(){
     spielerwaffen();
