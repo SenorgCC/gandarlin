@@ -1388,7 +1388,6 @@ $('.spielerinventar').on('click','tbody td', function(e){
 
   $.each($(this).closest('table').find('.eqheader th'),function(){
     header.push($(this).text());
-    alert($(this).text());
   });
   createInventarmodal(title,header,rowdata);
   $('#modalInventaredit').modal("toggle");
