@@ -1472,6 +1472,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
  $(document).on('click','#submitInventaredit',function(){
    var titel=$('#titelInventar').text().split(" ")[0];
    //MUss als Objekt angelegt werden! sonst wird exotisch nicht richtig aufgeloest
+   alert(titel);
    var dataobj={};
    var key;
    var value;
