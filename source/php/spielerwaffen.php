@@ -6,7 +6,7 @@ $erg_array = array();
 $stmt="select * from spieler.waffen a";
 $stmt.=" inner join spieler.waffen_final b on (a.id = b.waffen_id)";
 $stmt.=" inner join spieler.waffenart c on (a.id = c.id)";
-$stmt.=" where b.sp_id = $1";
+$stmt.=" where b.sp_id = $1 order by a.id";
 $result=pg_prepare($dbconn,"normalwerte",$stmt);
 $result=pg_execute($dbconn,"normalwerte",array($ID));
 if (!$result){
