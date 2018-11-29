@@ -1278,7 +1278,7 @@ $('#submitspielerruesungswert').click(function(){
     }
     }).done(function(){
       spielerruestungen();
-      sekundarwerte();
+      sekwerte();
     });
   });
 
@@ -1524,6 +1524,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
     });
   },
   'Rüstungen':function(){
+    alert(dataobj["Name+Beschreibung"],dataobj["Rüstungswert"],dataobj["Ausrüstungsmalus / Bonus"]);
    $.ajax({
       type:"POST",
       url:"source/php/updatespielerruestung.php",
@@ -1538,7 +1539,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
       }
     }).done(function(){
       spielerruestungen();
-      sekundarwerte();
+      sekwerte();
     });
   }
   }
