@@ -7,7 +7,7 @@ $MOD=$_POST["MOD"];
 $RUESN=$_POST["RUESN"];
 
 $data=array($ID,$SP_ID,$RUESN,$RUESW,$MOD);
-$stmt="insert into spieler.ruestung values($1,$2,$3,$4)";
+$stmt="insert into spieler.ruestung values($1,$2,$3,$4,$5)";
 $result = pg_prepare($dbconn,"addrues",$stmt);
 $result=pg_execute($dbconn,"addrues",$data);
 
