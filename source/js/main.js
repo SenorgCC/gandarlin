@@ -1470,6 +1470,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
  }
 
  $(document).on('click','#submitInventaredit',function(){
+   var titel=$('#titelInventar').text().split(" ")[0];
    //MUss als Objekt angelegt werden! sonst wird exotisch nicht richtig aufgeloest
    var dataobj={};
    var key;
@@ -1491,6 +1492,8 @@ $('.spielerinventar').on('click','tbody td', function(e){
      }
      dataobj[key]=value;
    });
+   var inventarsub = {
+        'Waffen': function(){
    artname=getWaffenartname(dataobj["Art"]);
    //Der Waffenschaden wird in der Gesamtsumme dargestellt
    gesschaden=dataobj["Schaden (mit KK)"].split('+');
@@ -1518,7 +1521,13 @@ $('.spielerinventar').on('click','tbody td', function(e){
     }).done(function(){
     spielerwaffen();
     });
+  },
+  'Rüstungen':function(){
 
+  }
+  }
+  var submitinv = inventarsub[titel];
+  if (submitinv) submitinv();
   });
 
  function getWaffenartname(nummer){
