@@ -254,7 +254,7 @@
       </table>
     </div>
     <div id="spielerruestungendiv">
-      <h2>Rüstungen</h2>
+      <h2>Rüstungen</h2><button id="addWaffe">+</button>
       <table id="spielerruestungen" class="table spielerinventar">
         <thead>
           <tr class="eqheader">
@@ -1157,5 +1157,39 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade input-group mb-3" id="modaladdrues" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Neue Rüstung hinzufügen<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td>Rüstungsname+Beschreibung</td> <td><input id="ADDruestungsname" class="form-control" type="text" maxlength="100">
+                </td>
+              </tr>
+                <tr>
+                  <td>Rüstungswert</td><td><input class="form-control" id="Addruestwert" type="number" min="0">
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ausrüstungsmodifikation</td><td><input class="form-control" id="AddruestAM" type="number">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <!-- TODO: Clear der Inputs einbauen -->
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="submitNeueRues" class="btn btn-default" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </html>

@@ -1319,6 +1319,9 @@ $('#submitfinalATPA').click(function(){
 $(document).on('click',"#addWaffe",function(){
   $('#modaladdwaffe').modal("toggle");
 });
+$(document).on('click',"addRuestung",function(){
+  $('#modaladdrues').modal("toggle");
+});
 $(document).on('click',"#submitNeueWaffe",function(){
   var newwaffenid;
   var waffenname=$('#Waffenname').val();
@@ -1339,7 +1342,6 @@ $(document).on('click',"#submitNeueWaffe",function(){
     kkbonus=3
   }
   var artname = getWaffenartname(waffenart);
-
   $.ajax({
     type:"POST",
     url:"source/php/getmaxwaffenid.php",
@@ -1385,16 +1387,12 @@ $('.spielerinventar').on('click','tbody td', function(e){
       $.each($tds,function(){
         rowdata.push($(this).text());
       });
-
   $.each($(this).closest('table').find('.eqheader th'),function(){
     header.push($(this).text());
   });
   createInventarmodal(title,header,rowdata);
   $('#modalInventaredit').modal("toggle");
 });
-
- $(document).on('click','#editWaffe',function(event){
- });
 
  function createInventarmodal(title,header,rowdata){
   $('#titelInventar').text(title+" Modifikation");
@@ -1497,37 +1495,36 @@ $('.spielerinventar').on('click','tbody td', function(e){
      dataobj[key]=value;
    });
    var inventarsub = {
-        'Waffen': function(){
-   artname=getWaffenartname(dataobj["Art"]);
-   //Der Waffenschaden wird in der Gesamtsumme dargestellt
-   gesschaden=dataobj["Schaden (mit KK)"].split('+');
-   wschaden=gesschaden[0];
-   //KK-Bonus wird in der DB bereits verrechnet ... Muss abgezogen werden
-   zschaden=parseInt(gesschaden[1])-parseInt(spielerwaffen_ar[0][6]);
-   $.ajax({
-      type:"POST",
-      url:"source/php/updatespielerwaffen.php",
-      data:{SP_ID:SpielerID,
-            WP_ID:dataobj["id"],
-            WNAME:dataobj["Name"],
-            WAFRT: dataobj["Art"],
-            WARTNAME:artname,
-            WAFEXO:dataobj["Exotisch"],
-            BESCH:dataobj["Beschreibung"],
-            WUESCHADEN:wschaden,
-            ZSCHADEN:zschaden,
-            ATBONUS:dataobj["Attackebonus"],
-            PABONUS:dataobj["Paradebonus"]
-          },
-      datatype:"json",
-      success:function(data){
-      }
-    }).done(function(){
-    spielerwaffen();
-    });
-  },
+  'Waffen': function(){
+ artname=getWaffenartname(dataobj["Art"]);
+ //Der Waffenschaden wird in der Gesamtsumme dargestellt
+ gesschaden=dataobj["Schaden (mit KK)"].split('+');
+ wschaden=gesschaden[0];
+ //KK-Bonus wird in der DB bereits verrechnet ... Muss abgezogen werden
+ zschaden=parseInt(gesschaden[1])-parseInt(spielerwaffen_ar[0][6]);
+ $.ajax({
+    type:"POST",
+    url:"source/php/updatespielerwaffen.php",
+    data:{SP_ID:SpielerID,
+          WP_ID:dataobj["id"],
+          WNAME:dataobj["Name"],
+          WAFRT: dataobj["Art"],
+          WARTNAME:artname,
+          WAFEXO:dataobj["Exotisch"],
+          BESCH:dataobj["Beschreibung"],
+          WUESCHADEN:wschaden,
+          ZSCHADEN:zschaden,
+          ATBONUS:dataobj["Attackebonus"],
+          PABONUS:dataobj["Paradebonus"]
+        },
+    datatype:"json",
+    success:function(data){
+    }
+  }).done(function(){
+  spielerwaffen();
+  });
+},
   'Rüstungen':function(){
-    alert(dataobj["Name+Beschreibung"]+" "+dataobj["Rüstungswert"]+" "+dataobj["Ausrüstungsmalus / Bonus"]);
    $.ajax({
       type:"POST",
       url:"source/php/updatespielerruestung.php",
@@ -1550,6 +1547,36 @@ $('.spielerinventar').on('click','tbody td', function(e){
   if (submitinv) submitinv();
   });
 
+ $(document).on('click',"#submitNeueRues",function(){
+   var ruesname = $('#ADDruestungsname').val();
+   var rueswert = $('#Addruestwert').val();
+   var mod = $('#AddruestAM').val();
+   var newruestid;
+   $.ajax({
+    type:"POST",
+    url:"source/php/getmaxruestid.php",
+    datatype:"json",
+    success:function(data){
+      newruestid=parseInt(JSON.parse(data));
+    }
+  }).done(function(){
+   $.ajax({
+     type:"POST",
+     url:"source/php/addruest.php",
+     data:{SP_ID:SpielerID,
+           RUESW:rueswert,
+           MOD:mod,
+           ID:newruestid
+         },
+     datatype:"json",
+     success:function(data){
+     }
+   }).done(function(){
+      spielerruestungen();
+      sekwerte();
+    });
+ });
+ });
  function getWaffenartname(nummer){
   var artname = {
   1: "Einhandschwerter" ,
