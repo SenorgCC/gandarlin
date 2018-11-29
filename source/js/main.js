@@ -1497,8 +1497,29 @@ $('.spielerinventar').on('click','tbody td', function(e){
    wschaden=gesschaden[0];
    //KK-Bonus wird in der DB bereits verrechnet ... Muss abgezogen werden
    zschaden=parseInt(gesschaden[1])-parseInt(spielerwaffen_ar[0][6]);
+   $.ajax({
+      type:"POST",
+      url:"source/php/updatespielerwaffen.php",
+      data:{SP_ID:SpielerID,
+            WP_ID:dataobj["id"],
+            WNAME:dataobj["Name"],
+            WAFRT: dataobj["Art"],
+            WARTNAME:artname,
+            WAFEXO:dataobj["Exotisch"],
+            BESCH:dataobj["Beschreibung"],
+            WUESCHADEN:wschaden,
+            ZSCHADEN:zschaden,
+            ATBONUS:dataobj["Attackebonus"],
+            PABONUS:dataobj["Paradebonus"]
+          },
+      datatype:"json",
+      success:function(data){
+      }
+    }).done(function(){
+    spielerwaffen();  
+    });
 
- });
+  });
 
  function getWaffenartname(nummer){
   var artname = {
