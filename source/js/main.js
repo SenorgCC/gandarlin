@@ -1482,6 +1482,9 @@ $('.spielerinventar').on('click','tbody td', function(e){
    var zschaden;
    var attributarr=$('#modtabInventar').find('tr').each(function(){
      key=$(this).find("td:eq(0)").text();
+     //Das Wort EDIT hängt noch in der Zeile ... kommt später weg
+     //TODO HIER
+     key = key.replace(' Edit',"");
      if(key == "Exotisch"){
         value=$("input[name='optradio']:checked").val();
      }else if(key=="Art"){
