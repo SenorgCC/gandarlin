@@ -363,24 +363,30 @@ var wuerfelwerte = [{ "id":"",
 function gesellschaftstalente(){
 var wuerfelwerte =[{ "id":"",
                     "feilschen": basiswert_arr[2]["mut"]+" (MUT)",
-                    "ueberreden": basiswert_arr[2]["mut"]+" (MUT)",
+                    "einschüchtern": basiswert_arr[2]["mut"]+" (MUT)",
+                    "lügen_täuschen": basiswert_arr[2]["cha"]+" (CHA)",
                     "betoeren": basiswert_arr[2]["cha"]+" (CHA)",
+                    "Anführen_Überreden": basiswert_arr[2]["cha"]+" (CHA)",
                     "etikette": basiswert_arr[2]["cha"]+" (CHA)",
-                    "menschenkenntnis": basiswert_arr[2]["cha"]+" (CHA)"
+                    "menschenkenntnis": basiswert_arr[2]["kl"]+" (KL)"
                     },
                   { "id":"",
                     "feilschen": basiswert_arr[2]["int"]+" (IN)",
-                    "ueberreden": basiswert_arr[2]["cha"]+" (CHA)",
+                    "einschüchtern": basiswert_arr[2]["kk"]+" (KK)",
+                    "lügen_täuschen": basiswert_arr[2]["mut"]+" (MUT)",
                     "betoeren": basiswert_arr[2]["cha"]+" (CHA)",
+                    "Anführen_Überreden": basiswert_arr[2]["mut"]+" (MUT)",
                     "etikette": basiswert_arr[2]["mut"]+" (MUT)",
-                    "menschenkenntnis": basiswert_arr[2]["int"]+" (IN)"
+                    "menschenkenntnis": basiswert_arr[2]["cha"]+" (CHA)"
                   },
                   { "id":"",
                     "feilschen": basiswert_arr[2]["cha"]+" (CHA)",
-                    "ueberreden": basiswert_arr[2]["kl"]+" (KL)",
+                    "einschüchtern": basiswert_arr[2]["kk"]+" (KK)",
+                    "lügen_täuschen": basiswert_arr[2]["int"]+" (IN)",
                     "betoeren": basiswert_arr[2]["mut"]+" (MUT)",
+                    "Anführen_Überreden": basiswert_arr[2]["kk"]+" (KK)",
                     "etikette": basiswert_arr[2]["kl"]+" (KL)",
-                    "menschenkenntnis": basiswert_arr[2]["kl"]+" (KL)"
+                    "menschenkenntnis": basiswert_arr[2]["int"]+" (IN)"
                   }];
       $.ajax({
       type:'POST',
