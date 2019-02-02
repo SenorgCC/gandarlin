@@ -1500,7 +1500,6 @@ $('.spielerinventar').on('click','tbody td', function(e){
  $(document).on('click','#submitInventaredit',function(){
    var titel=$('#titelInventar').text().split(" ")[0];
    //MUss als Objekt angelegt werden! sonst wird exotisch nicht richtig aufgeloest
-   alert(titel);
    var dataobj={};
    var key;
    var value;
@@ -1627,4 +1626,13 @@ $('.spielerinventar').on('click','tbody td', function(e){
   };
   return artname[nummer];
  }
+
+  //
+ //VISUALS
+ //
+$(document).on('click','.toggletablespan', function(e){
+  $('.toggletablespan').toggle();
+  var table=$(this).closest('table');
+  table.toggle();
+});
 });
