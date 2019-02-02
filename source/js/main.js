@@ -1632,7 +1632,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
  //
 $(document).on('click','.toggletablespan', function(e){
   $('.toggletablespan').toggle();
-  var table=$(this).closest('table');
+  var table=$(this).next('table');
   table.toggle();
 });
 });
