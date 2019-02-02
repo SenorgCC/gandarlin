@@ -1632,6 +1632,7 @@ $('.spielerinventar').on('click','tbody td', function(e){
 
  // Tabelle verstecken oder anzeige)n
 $(document).on('click','.toggletablespan', function(e){
+  
   $(this).parent('h1').find('.toggletablespan').toggle();
   var table=$(this).next('table');
   var table=$(this).parent('h1').next('.table');
