@@ -923,8 +923,7 @@ app.post('/updatekoerpertalente',function(req,res){
   	let talentname=req.body.Talentname;
   	let talentwert=req.body.Talentwert;
   	let stmt="update koerpertalente.talentwert set "+talentname+"=$1 where ID = $2";
-  	console.log("stmt: "+stmt);
-  	const uptkoerpertar={
+  	const uptkoerpertal={
   		name: 'uptkoerpertal',
   		text: stmt,
   		values: [talentwert,sp_id]
