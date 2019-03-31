@@ -920,16 +920,16 @@ app.post('/deletespielerruestung',function(req,res){
 
 app.post('/updatekoerpertalente',function(req,res){
     let sp_id=req.body.SP_ID;
-	let talentname=req.body.Talentname;
-	let talentwert=req.body.Talentwert;
-	let stmt="update koerpertalente.talentwert set "+talentname+"=$1 where ID = $2";
-	console.log("stmt: "+stmt);
-	const uptkoerpertar={
-		name: 'uptkoerpertal',
-		text: stmt,
-		values: [talentwert,sp_id]
-	}
-	uidtyp1(uptkoerpertal,function(err,result){
-		res.send(result);
-	});
+  	let talentname=req.body.Talentname;
+  	let talentwert=req.body.Talentwert;
+  	let stmt="update koerpertalente.talentwert set "+talentname+"=$1 where ID = $2";
+  	console.log("stmt: "+stmt);
+  	const uptkoerpertar={
+  		name: 'uptkoerpertal',
+  		text: stmt,
+  		values: [talentwert,sp_id]
+  	}
+  	uidtyp1(uptkoerpertal,function(err,result){
+  		res.send(result);
+  	});
 });

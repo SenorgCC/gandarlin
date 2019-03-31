@@ -224,7 +224,7 @@ function translate (word:string):string{
       "dörfer_siedlungen":"Dörfer/Siedlungen",
       "anführen_Überreden":"Anführen/Überreden",
       "musik_poesie":"Musik/Poesie"
-      
+
   };
   return kuerzel[word] || word;
   }
@@ -1587,26 +1587,27 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
     });
   },
   //TODO: Funktioniert noch nicht
-  'AAAKörper':function():void{
-	let talentname:string;
-	let talentwert:number;
-	talentname=Object.keys(dataobj);
-	talentwert=dataobj[talentname];
+  'Körper':function():void{
+  	let talentname:string;
+  	let talentwert:number;
+  	talentname=Object.keys(dataobj);
+  	talentwert=dataobj[talentname];
 	//window.alert("DATA: "+JSON.stringify(dataobj));
 	//window.alert("Keys: "+Object.keys(dataobj));
 	//window.alert("Talentname: "+talentname+"Talentwert: "+talentwert);
-	$.ajax({
-	type:"POST",
-	url:"/updatekoerpertalente",
-	data:{SP_ID:SpielerID,
-		  Talentname:talentname,
-		  Talentwert:talentwert},
-	datatype:"json",
-	success:function(data:any){
-	}
+  	$.ajax({
+  	type:"POST",
+  	url:"/updatekoerpertalente",
+  	data:{SP_ID:SpielerID,
+  		  Talentname:talentname,
+  		  Talentwert:talentwert
+      },
+    	datatype:"json",
+  	success:function(data:any){
+  	}
    }).done(function():void{
-	korprtalente();
-	sekwerte();
+    	korprtalente();
+    	sekwerte();
    });
   }
   }
@@ -1763,4 +1764,3 @@ function createTalentmodal(title:string,talent:string,wert:any){
   $tbody.append(text);
 }
 });
-
