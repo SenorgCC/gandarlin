@@ -1734,7 +1734,7 @@ $(document).on('click','.toggletablespan', function(e:JQueryEventObject):void{
 });
 
 //TODO: Abgeklemmpt... da noch nicht fertig
-$('.tablenttable > td:nth-last-child(2)').on('click','tbody td', function(e:JQueryEventObject):void{
+$('.tablenttable > tbody > tr > td:nth-last-child(2)').on('click','tbody td', function(e:JQueryEventObject):void{
   let rowdata=[];
   let header=[];
   let title:string=$(this).closest('div').find('h1').text();
