@@ -48,7 +48,8 @@ $( document ).ready(function():void {
   }
 
   $("#myClickBtn").click(function():void{
-      SpielerID=$('#SpielerID').val();
+      let SpielerID:number;
+      SpielerID=Number($('#SpielerID').val());
       //IsNaN= Is not a number ist. Test, ob eine Zahl
       if($.isNumeric(SpielerID)){
           getAlldata();
@@ -69,7 +70,7 @@ function getNamen():void{
       url:"/spielername",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -93,7 +94,7 @@ function bwbasis():void{
       url:"/bwbasis",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -137,7 +138,7 @@ function sekwerte():void{
       url:"/sekundaerwerte",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -161,7 +162,7 @@ function getTable(data:any,htmlobject:string):void{
     var classtext:string;
     //Dient zur erkennung ob eine Reihe "Nicht erlernt enthällt"
     let classflag:boolean;
-    let classflag=false;
+    classflag=false;
     for (let i:number = 1; i < tabledef.length; i++){
       rowtext +="<tr class=\"PLACEHOLDclasstext\"><th scope=\"row\">"+translate(tabledef[i])+"</th>";
       for (let j:number = 0; j < data.length; j++){
@@ -262,7 +263,7 @@ var wuerfelwerte = [{ "id":"",
       url:"/koerpertalente",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -330,7 +331,7 @@ var wuerfelwerte = [{ "id":"",
       url:"/wissenstalente",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -371,7 +372,7 @@ var wuerfelwerte = [{ "id":"",
       url:"/naturtalente",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -415,7 +416,7 @@ var wuerfelwerte =[{ "id":"",
       url:"/gesellschaftstalente",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -462,7 +463,7 @@ var wuerfelwerte =[{ "id":"",
       url:"/spezialetalente",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -479,7 +480,7 @@ function einhandwaffen():void{
       url:"/einhandwaffen",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -498,7 +499,7 @@ function getspielerwaffenkampftalent():void{
     type:'POST',
     url:"/spielerwaffenkampftalent",
     data: {ID:SpielerID},
-    datatype:"json",
+    dataType:"json",
     success: function(data:any){
         tempdata=data;
         for (let i:number=0; i< tempdata.length; i++){
@@ -521,7 +522,7 @@ function zweihandwaffen():void{
       url:"/zweihandwaffen",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -538,7 +539,7 @@ function fernkampfwaffen():void{
       url:"/fernkampfwaffen",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -555,7 +556,7 @@ function anderewaffen():void{
       url:"/anderewaffen",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -579,7 +580,7 @@ function handwerkstalente():any{
       url:"/handwerkstalente",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -605,7 +606,7 @@ function checkKKBonus():void{
     url:"/updatekkbonus",
     data:{ID:SpielerID,
           KKB:kkbonus},
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
     }
   }).done(function():void{
@@ -622,7 +623,7 @@ function spielerwaffen():void{
       url:"/spielerwaffen",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -658,7 +659,7 @@ function spielerruestungen():void{
       url:"/spielerruestungen",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -802,7 +803,7 @@ $(document).on('click',"#fullrest", function():void{
     type:'POST',
     url:"/sekundarwertefullreset",
     data:{ID:SpielerID},
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
     }
   }).done(function():void{
@@ -814,6 +815,7 @@ $(document).on('click',"#fullrest", function():void{
 //---------------------------------------------------
 //Ermittelt die ID des offen modals
 $('.modal').on('shown.bs.modal', function():void{
+    let modalid:any;
     modalid = $(this).attr('id');
 });
 $(document).on('click','.blussi', function():void{
@@ -952,7 +954,7 @@ $('#submitBasiswerte').click(function():void{
             KON:kon,
             KK:kk,
             INT:int},
-      datatype:"json",
+      dataType:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -964,22 +966,22 @@ $('#submitBasiswerte').click(function():void{
 });
 
 $('#submitSekwerte').click(function():void{
-  let hp:number         = $('#editHP').val();
-  let ausdauer:number   = $('#editAUSD').val();
-  let ee:number         = $('#editEE').val();
-  let ausweichen:number = $('#editAUSW').val();
-  let rue:number        = $('#editRUE').val();
-  let init:number       = $('#editINIT').val();
-  let atkb:number       = $('#editATKB').val();
-  let pab:number        = $('#editPAB').val();
-  let lr:number         = $('#editLR').val();
-  let wr:number         = $('#editWR').val();
-  let er:number         = $('#editER').val();
-  let lebr:number       = $('#editLEBR').val();
-  let fr:number         = $('#editFR').val();
-  let eisr:number       = $('#editEISR').val();
-  let mr:number         = $('#editMR').val();
-  let dtr:number        = $('#editDTR').val();
+  let hp:number         = Number($('#editHP').val());
+  let ausdauer:number   = Number($('#editAUSD').val());
+  let ee:number         = Number($('#editEE').val());
+  let ausweichen:number = Number($('#editAUSW').val());
+  let rue:number        = Number($('#editRUE').val());
+  let init:number       = Number($('#editINIT').val());
+  let atkb:number       = Number($('#editATKB').val());
+  let pab:number        = Number($('#editPAB').val());
+  let lr:number         = Number($('#editLR').val());
+  let wr:number         = Number($('#editWR').val());
+  let er:number         = Number($('#editER').val());
+  let lebr:number       = Number($('#editLEBR').val());
+  let fr:number         = Number($('#editFR').val());
+  let eisr:number       = Number($('#editEISR').val());
+  let mr:number         = Number($('#editMR').val());
+  let dtr:number        = Number($('#editDTR').val());
   $.ajax({
     type:'POST',
     url:"/updatesekundaraktuell",
@@ -1000,7 +1002,7 @@ $('#submitSekwerte').click(function():void{
           EISR:eisr,
           MR:mr,
           DTR:dtr},
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
       $('#modalsekundaerwerte').modal('toggle');
     }
@@ -1010,12 +1012,12 @@ $('#submitSekwerte').click(function():void{
 });
 
 $('#submitKörpertalente').click(function():void{
-let schleichen:number       = $('#editSchleichen').val();
-let aufmerksamkeit:number   = $('#editAufm').val();
-let robustheit:number       = $('#editRobustheit').val();
-let fingerfertigkeit:number = $('#editFingerF').val();
-let zechen:number           = $('#editZechen').val();
-let taschendiebstahl:number = $('#editTaschenD').val();
+let schleichen:number       = Number($('#editSchleichen').val());
+let aufmerksamkeit:number   = Number($('#editAufm').val());
+let robustheit:number       = Number($('#editRobustheit').val());
+let fingerfertigkeit:number = Number($('#editFingerF').val());
+let zechen:number           = Number($('#editZechen').val());
+let taschendiebstahl:number = Number($('#editTaschenD').val());
 $.ajax({
     type:'POST',
     url:"/updatekoerpertalente",
@@ -1026,7 +1028,7 @@ $.ajax({
           FIN:fingerfertigkeit,
           ZEC:zechen,
           TAS:taschendiebstahl},
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
       $('#modalkoerpertalente').modal('toggle');
       }
@@ -1036,14 +1038,14 @@ $.ajax({
 });
 
 $('#submitwissenstalente').click(function():void{
-let heilung:number        =  $('#editHeilung').val();
-let gifte:number          =  $('#editGifte').val();
-let schriften:number      =  $('#editSchriften').val();
-let magie:number          =  $('#editMagie').val();
-let gassenwissen:number   =  $('#editGassenwissen').val();
-let weltenkenntnis:number =  $('#editWeltenkenntnis').val();
-let sprachen:number       =  $('#editSprachen').val();
-let anatomie:number       = $('#editAnatomie').val();
+let heilung:number        =  Number($('#editHeilung').val());
+let gifte:number          =  Number($('#editGifte').val());
+let schriften:number      =  Number($('#editSchriften').val());
+let magie:number          =  Number($('#editMagie').val());
+let gassenwissen:number   =  Number($('#editGassenwissen').val());
+let weltenkenntnis:number =  Number($('#editWeltenkenntnis').val());
+let sprachen:number       =  Number($('#editSprachen').val());
+let anatomie:number       =  Number($('#editAnatomie').val());
 $.ajax({
     type:'POST',
     url:"/updatewissenstalente",
@@ -1056,7 +1058,7 @@ $.ajax({
           WEL:weltenkenntnis,
           SPR:sprachen,
           ANA:anatomie},
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
       $('#modalwissenstalente').modal('toggle');
     }
@@ -1066,10 +1068,10 @@ $.ajax({
   });
 
 $('#submiteinhandwaffen').click(function():void{
-let schwerter:number = $('#editEinhandschwerter').val();
-let beile:number     = $('#editBeile').val();
-let flegel:number    = $('#editFlegel').val();
-let dolche:number    = $('#editDolche').val();
+let schwerter:number = Number($('#editEinhandschwerter').val());
+let beile:number     = Number($('#editBeile').val());
+let flegel:number    = Number($('#editFlegel').val());
+let dolche:number    = Number($('#editDolche').val());
 $.ajax({
     type:'POST',
     url:"/updateeinhandwaffen",
@@ -1079,7 +1081,7 @@ $.ajax({
           FLE:flegel,
           DOL:dolche
         },
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
       $('#modaleinhandwaffen').modal('toggle');
     }
@@ -1089,11 +1091,11 @@ $.ajax({
   });
 
 $('#submitnaturtalente').click(function():void{
-let kraeuter:number      = $('#editkraeuter').val();
-let geographie:number    = $('#editgeographie').val();
-let ueberleben:number    = $('#editueberleben').val();
-let orientierung:number  = $('#editorientierung').val();
-let faehrtenlesen:number = $('#editfaehrtenlesen').val();
+let kraeuter:number      = Number($('#editkraeuter').val());
+let geographie:number    = Number($('#editgeographie').val());
+let ueberleben:number    = Number($('#editueberleben').val());
+let orientierung:number  = Number($('#editorientierung').val());
+let faehrtenlesen:number = Number($('#editfaehrtenlesen').val());
 $.ajax({
     type:'POST',
     url:"/updatenaturtalente",
@@ -1104,7 +1106,7 @@ $.ajax({
           ORI:orientierung,
           FAE:faehrtenlesen
         },
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
       $('#modalnaturtalente').modal('toggle');
     }
@@ -1114,11 +1116,11 @@ $.ajax({
   });
 
 $('#submitzweihandwaffen').click(function():void{
-let zweihandschwerter:number= $('#editzweihandschwerter').val();
-let kolben:number           = $('#editaexte').val();
-let aexte:number            = $('#editaexte').val();
-let staebe:number           = $('#editstaebe').val();
-let stangenwaffen:number    = $('#editstangenwaffen').val();
+let zweihandschwerter:number= Number($('#editzweihandschwerter').val());
+let kolben:number           = Number($('#editaexte').val());
+let aexte:number            = Number($('#editaexte').val());
+let staebe:number           = Number($('#editstaebe').val());
+let stangenwaffen:number    = Number($('#editstangenwaffen').val());
 $.ajax({
     type:'POST',
     url:"/updatezweihandwaffen",
@@ -1129,7 +1131,7 @@ $.ajax({
           STA:staebe,
           SGN:stangenwaffen
         },
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
       $('#modalzweihandwaffen').modal('toggle');
     }
@@ -1139,9 +1141,9 @@ $.ajax({
   });
 
 $('#submitfernkampf').click(function():void{
-let wurfwaffen:number= $('#editwurfwaffen').val();
-let boegen:number    = $('#editboegen').val();
-let armbrueste:number= $('#editarmbrueste').val();
+let wurfwaffen:number= Number($('#editwurfwaffen').val());
+let boegen:number    = Number($('#editboegen').val());
+let armbrueste:number= Number($('#editarmbrueste').val());
 $.ajax({
     type:'POST',
     url:"/updatefernkampf",
@@ -1150,7 +1152,7 @@ $.ajax({
           BOE:boegen,
           ARM:armbrueste
         },
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
       $('#modalfernkampf').modal('toggle');
     }
@@ -1160,9 +1162,9 @@ $.ajax({
   });
 
 $('#submitanderewaffen').click(function():void{
-let schilde:number     = $('#editschilde').val();
-let exotische:number   = $('#editexotische').val();
-let unbewaffnet:number = $('#editunbewaffnet').val();
+let schilde:number     = Number($('#editschilde').val());
+let exotische:number   = Number($('#editexotische').val());
+let unbewaffnet:number = Number($('#editunbewaffnet').val());
 $.ajax({
     type:'POST',
     url:"/updateanderewaffen",
@@ -1171,7 +1173,7 @@ $.ajax({
           UNB:unbewaffnet,
           EXO:exotische
         },
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
       $('#modalanderewaffen').modal('toggle');
     }
@@ -1181,11 +1183,11 @@ $.ajax({
   });
 
 $('#submithandwerkstalente').click(function():void{
-let schmieden:number         = $('#editschmieden').val();
-let lederverarbeitung:number = $('#editlederverarbeitung').val();
-let holzverarbeitung:number  = $('#editholzverarbeitung').val();
-let koch:number              = $('#editkoch').val();
-let lehren:number            = $('#editlehren').val();
+let schmieden:number         = Number($('#editschmieden').val());
+let lederverarbeitung:number = Number($('#editlederverarbeitung').val());
+let holzverarbeitung:number  = Number($('#editholzverarbeitung').val());
+let koch:number              = Number($('#editkoch').val());
+let lehren:number            = Number($('#editlehren').val());
 $.ajax({
     type:'POST',
     url:"/updatehandwerkstalente",
@@ -1196,7 +1198,7 @@ $.ajax({
           KOC:koch,
           LEH:lehren
         },
-    datatype:"json",
+    dataType:"json",
     success:function(data){
       $('#modalhandwerkstalente').modal('toggle');
     }
@@ -1277,7 +1279,7 @@ function getwaffentalent(id:number,exotic:number):any[]{
 $('#submitspielerruesungen').click(function():void{
   //Finde alle Inputs der ID und gebe die Werte durch die Map funktion wieder
   let inputsruestungsmod = $('#modtabruestung').find("input").map(function():number{
-    return $(this).val();
+    return Number($(this).val());
   }).toArray();
   let ruestungname = $('#modtabruestung td:even').map(function():string{
     return $(this).text();
@@ -1289,7 +1291,7 @@ $('#submitspielerruesungen').click(function():void{
           NAMEARRAY:ruestungname,
           ID:SpielerID
         },
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
       $('#modalspielerruestungen').modal('toggle');
     }
@@ -1302,7 +1304,7 @@ $('#submitspielerruesungen').click(function():void{
 $('#submitspielerruesungswert').click(function():void{
   //Finde alle Inputs der ID und gebe die Werte durch die Map funktion wieder
   let inputsruestungswert= $('#modtabruestungwert').find("input").map(function():number{
-    return $(this).val();
+    return Number($(this).val());
   }).toArray();
   let ruestungname = $('#modtabruestungwert td:even').map(function():string{
     return $(this).text();
@@ -1314,7 +1316,7 @@ $('#submitspielerruesungswert').click(function():void{
           NAMEARRAY:ruestungname,
           ID:SpielerID
         },
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
       $('#modspielerruestwert').modal('toggle');
     }
@@ -1327,7 +1329,7 @@ $('#submitspielerruesungswert').click(function():void{
 $('#submitfinalATPA').click(function():void{
   //Finde alle Inputs der ID und gebe die Werte durch die Map funktion wieder
   let atwert= $('#modtabATPA').find(".atwert").map(function():number{
-    return $(this).text();
+    return Number($(this).text());
   }).toArray();
   let pawert= $('#modtabATPA').find(".pawert").map(function():string{
     return $(this).text();
@@ -1344,7 +1346,7 @@ $('#submitfinalATPA').click(function():void{
           WIDARRAY:waffenids,
           ID:SpielerID
         },
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
       $('#modalFinalATPA').modal('toggle');
     }
@@ -1366,14 +1368,14 @@ $(document).on('click',"#addRuestung",function():void{
 });
 $(document).on('click',"#submitNeueWaffe",function():void{
   let newwaffenid:number;
-  let waffenname:string=$('#Waffenname').val();
-  let waffenart:number=$('#Waffenartauswahl').val();
-  let waffenexo:number=$('.WaffenexoRadio').val();
-  let beschreibung:string=$('#Waffenbeschreibung').val();
-  let wuerfelschaden:string=$('#WaffenWuerfel').val();
-  let zusatzschaden:number=$('#WaffenZschaden').val();
-  let atbonus:number = $('#WaffeATKBonus').val();
-  let pabonus:number = $('#WaffePABonus').val();
+  let waffenname:string=String($('#Waffenname').val());
+  let waffenart:number=Number($('#Waffenartauswahl').val());
+  let waffenexo:number=Number($('.WaffenexoRadio').val());
+  let beschreibung:string=String($('#Waffenbeschreibung').val());
+  let wuerfelschaden:string=String($('#WaffenWuerfel').val());
+  let zusatzschaden:number=Number($('#WaffenZschaden').val());
+  let atbonus:number = Number($('#WaffeATKBonus').val());
+  let pabonus:number = Number($('#WaffePABonus').val());
   let kk:number = basiswert_arr[2]["kk"];
   let kkbonus=0;
   if( kk >= 10 && kk <14){
@@ -1387,7 +1389,7 @@ $(document).on('click',"#submitNeueWaffe",function():void{
   $.ajax({
     type:"POST",
     url:"/getmaxwaffenid",
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
         newwaffenid=parseInt(data[0]["id"]);
     }
@@ -1407,7 +1409,7 @@ $(document).on('click',"#submitNeueWaffe",function():void{
             ATBONUS:atbonus,
             PABONUS:pabonus,
             KKBONUS:kkbonus},
-      datatype:"json",
+      dataType:"json",
       success:function(data:any){
       }
     }).done(function():void{
@@ -1561,7 +1563,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
           ATBONUS:dataobj["Attackebonus"],
           PABONUS:dataobj["Paradebonus"]
         },
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
     }
   }).done(function():void{
@@ -1578,7 +1580,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
             RWERT: dataobj["Rüstungswert"],
             MOD:dataobj["Ausrüstungsmalus / Bonus"]
           },
-      datatype:"json",
+      dataType:"json",
       success:function(data:any){
       }
     }).done(function():void{
@@ -1589,9 +1591,12 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
   //TODO: Funktioniert noch nicht
   'Körper':function():void{
   	let talentname:string;
-  	let talentwert:number;
-  	talentname=Object.keys(dataobj);
+  	let talentwert:any;
+  	talentname=JSON.stringify(Object.keys(dataobj));
   	talentwert=dataobj[talentname];
+    if (talentwert!==1){
+      talentwert="null";
+    }
   	$.ajax({
   	type:"POST",
   	url:"/updezkoerper",
@@ -1599,7 +1604,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
   		  TAN:talentname,
   		  TAW:talentwert
       },
-  	datatype:"json",
+  	dataType:"json",
   	success:function(data:any){
   	}
    }).done(function():void{
@@ -1644,7 +1649,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
      data:{SP_ID:SpielerID,
            WP_ID:dataobj["id"]
          },
-     datatype:"json",
+     dataType:"json",
      success:function(data:any){
      }
    }).done(function():void{
@@ -1658,7 +1663,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
        data:{SP_ID:SpielerID,
              WP_ID:dataobj["id"]
            },
-       datatype:"json",
+       dataType:"json",
        success:function(data:any){
        }
      }).done(function():void{
@@ -1673,14 +1678,14 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
 
 
  $(document).on('click',"#submitNeueRues",function():void{
-   let ruesname:string = $('#ADDruestungsname').val();
-   let rueswert:number = $('#Addruestwert').val();
-   let mod:string      = $('#AddruestAM').val();
+   let ruesname:string = String($('#ADDruestungsname').val());
+   let rueswert:number = Number($('#Addruestwert').val());
+   let mod:string      = String($('#AddruestAM').val());
    let newruestid:number;
    $.ajax({
     type:"POST",
     url:"/getmaxruestid",
-    datatype:"json",
+    dataType:"json",
     success:function(data:any){
         newruestid=parseInt(data[0]["id"]);
     }
@@ -1694,7 +1699,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
            MOD:mod,
            ID:newruestid
          },
-     datatype:"json",
+     dataType:"json",
      success:function(data:any){
      }
    }).done(function():void{
