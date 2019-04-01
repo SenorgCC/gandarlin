@@ -48,8 +48,7 @@ $( document ).ready(function():void {
   }
 
   $("#myClickBtn").click(function():void{
-      let SpielerID:number;
-      SpielerID=Number($('#SpielerID').val());
+      SpielerID=$('#SpielerID').val();
       //IsNaN= Is not a number ist. Test, ob eine Zahl
       if($.isNumeric(SpielerID)){
           getAlldata();
@@ -162,7 +161,7 @@ function getTable(data:any,htmlobject:string):void{
     var classtext:string;
     //Dient zur erkennung ob eine Reihe "Nicht erlernt enthällt"
     let classflag:boolean;
-    classflag=false;
+    let classflag=false;
     for (let i:number = 1; i < tabledef.length; i++){
       rowtext +="<tr class=\"PLACEHOLDclasstext\"><th scope=\"row\">"+translate(tabledef[i])+"</th>";
       for (let j:number = 0; j < data.length; j++){
@@ -815,7 +814,6 @@ $(document).on('click',"#fullrest", function():void{
 //---------------------------------------------------
 //Ermittelt die ID des offen modals
 $('.modal').on('shown.bs.modal', function():void{
-    let modalid:any;
     modalid = $(this).attr('id');
 });
 $(document).on('click','.blussi', function():void{
@@ -966,22 +964,22 @@ $('#submitBasiswerte').click(function():void{
 });
 
 $('#submitSekwerte').click(function():void{
-  let hp:number         = Number($('#editHP').val());
-  let ausdauer:number   = Number($('#editAUSD').val());
-  let ee:number         = Number($('#editEE').val());
-  let ausweichen:number = Number($('#editAUSW').val());
-  let rue:number        = Number($('#editRUE').val());
-  let init:number       = Number($('#editINIT').val());
-  let atkb:number       = Number($('#editATKB').val());
-  let pab:number        = Number($('#editPAB').val());
-  let lr:number         = Number($('#editLR').val());
-  let wr:number         = Number($('#editWR').val());
-  let er:number         = Number($('#editER').val());
-  let lebr:number       = Number($('#editLEBR').val());
-  let fr:number         = Number($('#editFR').val());
-  let eisr:number       = Number($('#editEISR').val());
-  let mr:number         = Number($('#editMR').val());
-  let dtr:number        = Number($('#editDTR').val());
+  let hp:number         = $('#editHP').val();
+  let ausdauer:number   = $('#editAUSD').val();
+  let ee:number         = $('#editEE').val();
+  let ausweichen:number = $('#editAUSW').val();
+  let rue:number        = $('#editRUE').val();
+  let init:number       = $('#editINIT').val();
+  let atkb:number       = $('#editATKB').val();
+  let pab:number        = $('#editPAB').val();
+  let lr:number         = $('#editLR').val();
+  let wr:number         = $('#editWR').val();
+  let er:number         = $('#editER').val();
+  let lebr:number       = $('#editLEBR').val();
+  let fr:number         = $('#editFR').val();
+  let eisr:number       = $('#editEISR').val();
+  let mr:number         = $('#editMR').val();
+  let dtr:number        = $('#editDTR').val();
   $.ajax({
     type:'POST',
     url:"/updatesekundaraktuell",
@@ -1012,12 +1010,12 @@ $('#submitSekwerte').click(function():void{
 });
 
 $('#submitKörpertalente').click(function():void{
-let schleichen:number       = Number($('#editSchleichen').val());
-let aufmerksamkeit:number   = Number($('#editAufm').val());
-let robustheit:number       = Number($('#editRobustheit').val());
-let fingerfertigkeit:number = Number($('#editFingerF').val());
-let zechen:number           = Number($('#editZechen').val());
-let taschendiebstahl:number = Number($('#editTaschenD').val());
+let schleichen:number       = $('#editSchleichen').val();
+let aufmerksamkeit:number   = $('#editAufm').val();
+let robustheit:number       = $('#editRobustheit').val();
+let fingerfertigkeit:number = $('#editFingerF').val();
+let zechen:number           = $('#editZechen').val();
+let taschendiebstahl:number = $('#editTaschenD').val();
 $.ajax({
     type:'POST',
     url:"/updatekoerpertalente",
@@ -1038,14 +1036,14 @@ $.ajax({
 });
 
 $('#submitwissenstalente').click(function():void{
-let heilung:number        =  Number($('#editHeilung').val());
-let gifte:number          =  Number($('#editGifte').val());
-let schriften:number      =  Number($('#editSchriften').val());
-let magie:number          =  Number($('#editMagie').val());
-let gassenwissen:number   =  Number($('#editGassenwissen').val());
-let weltenkenntnis:number =  Number($('#editWeltenkenntnis').val());
-let sprachen:number       =  Number($('#editSprachen').val());
-let anatomie:number       =  Number($('#editAnatomie').val());
+let heilung:number        =  $('#editHeilung').val();
+let gifte:number          =  $('#editGifte').val();
+let schriften:number      =  $('#editSchriften').val();
+let magie:number          =  $('#editMagie').val();
+let gassenwissen:number   =  $('#editGassenwissen').val();
+let weltenkenntnis:number =  $('#editWeltenkenntnis').val();
+let sprachen:number       =  $('#editSprachen').val();
+let anatomie:number       = $('#editAnatomie').val();
 $.ajax({
     type:'POST',
     url:"/updatewissenstalente",
@@ -1068,10 +1066,10 @@ $.ajax({
   });
 
 $('#submiteinhandwaffen').click(function():void{
-let schwerter:number = Number($('#editEinhandschwerter').val());
-let beile:number     = Number($('#editBeile').val());
-let flegel:number    = Number($('#editFlegel').val());
-let dolche:number    = Number($('#editDolche').val());
+let schwerter:number = $('#editEinhandschwerter').val();
+let beile:number     = $('#editBeile').val();
+let flegel:number    = $('#editFlegel').val();
+let dolche:number    = $('#editDolche').val();
 $.ajax({
     type:'POST',
     url:"/updateeinhandwaffen",
@@ -1091,11 +1089,11 @@ $.ajax({
   });
 
 $('#submitnaturtalente').click(function():void{
-let kraeuter:number      = Number($('#editkraeuter').val());
-let geographie:number    = Number($('#editgeographie').val());
-let ueberleben:number    = Number($('#editueberleben').val());
-let orientierung:number  = Number($('#editorientierung').val());
-let faehrtenlesen:number = Number($('#editfaehrtenlesen').val());
+let kraeuter:number      = $('#editkraeuter').val();
+let geographie:number    = $('#editgeographie').val();
+let ueberleben:number    = $('#editueberleben').val();
+let orientierung:number  = $('#editorientierung').val();
+let faehrtenlesen:number = $('#editfaehrtenlesen').val();
 $.ajax({
     type:'POST',
     url:"/updatenaturtalente",
@@ -1116,11 +1114,11 @@ $.ajax({
   });
 
 $('#submitzweihandwaffen').click(function():void{
-let zweihandschwerter:number= Number($('#editzweihandschwerter').val());
-let kolben:number           = Number($('#editaexte').val());
-let aexte:number            = Number($('#editaexte').val());
-let staebe:number           = Number($('#editstaebe').val());
-let stangenwaffen:number    = Number($('#editstangenwaffen').val());
+let zweihandschwerter:number= $('#editzweihandschwerter').val();
+let kolben:number           = $('#editaexte').val();
+let aexte:number            = $('#editaexte').val();
+let staebe:number           = $('#editstaebe').val();
+let stangenwaffen:number    = $('#editstangenwaffen').val();
 $.ajax({
     type:'POST',
     url:"/updatezweihandwaffen",
@@ -1141,9 +1139,9 @@ $.ajax({
   });
 
 $('#submitfernkampf').click(function():void{
-let wurfwaffen:number= Number($('#editwurfwaffen').val());
-let boegen:number    = Number($('#editboegen').val());
-let armbrueste:number= Number($('#editarmbrueste').val());
+let wurfwaffen:number= $('#editwurfwaffen').val();
+let boegen:number    = $('#editboegen').val();
+let armbrueste:number= $('#editarmbrueste').val();
 $.ajax({
     type:'POST',
     url:"/updatefernkampf",
@@ -1162,9 +1160,9 @@ $.ajax({
   });
 
 $('#submitanderewaffen').click(function():void{
-let schilde:number     = Number($('#editschilde').val());
-let exotische:number   = Number($('#editexotische').val());
-let unbewaffnet:number = Number($('#editunbewaffnet').val());
+let schilde:number     = $('#editschilde').val();
+let exotische:number   = $('#editexotische').val();
+let unbewaffnet:number = $('#editunbewaffnet').val();
 $.ajax({
     type:'POST',
     url:"/updateanderewaffen",
@@ -1183,11 +1181,11 @@ $.ajax({
   });
 
 $('#submithandwerkstalente').click(function():void{
-let schmieden:number         = Number($('#editschmieden').val());
-let lederverarbeitung:number = Number($('#editlederverarbeitung').val());
-let holzverarbeitung:number  = Number($('#editholzverarbeitung').val());
-let koch:number              = Number($('#editkoch').val());
-let lehren:number            = Number($('#editlehren').val());
+let schmieden:number         = $('#editschmieden').val();
+let lederverarbeitung:number = $('#editlederverarbeitung').val();
+let holzverarbeitung:number  = $('#editholzverarbeitung').val();
+let koch:number              = $('#editkoch').val();
+let lehren:number            = $('#editlehren').val();
 $.ajax({
     type:'POST',
     url:"/updatehandwerkstalente",
@@ -1279,7 +1277,7 @@ function getwaffentalent(id:number,exotic:number):any[]{
 $('#submitspielerruesungen').click(function():void{
   //Finde alle Inputs der ID und gebe die Werte durch die Map funktion wieder
   let inputsruestungsmod = $('#modtabruestung').find("input").map(function():number{
-    return Number($(this).val());
+    return $(this).val();
   }).toArray();
   let ruestungname = $('#modtabruestung td:even').map(function():string{
     return $(this).text();
@@ -1304,7 +1302,7 @@ $('#submitspielerruesungen').click(function():void{
 $('#submitspielerruesungswert').click(function():void{
   //Finde alle Inputs der ID und gebe die Werte durch die Map funktion wieder
   let inputsruestungswert= $('#modtabruestungwert').find("input").map(function():number{
-    return Number($(this).val());
+    return $(this).val();
   }).toArray();
   let ruestungname = $('#modtabruestungwert td:even').map(function():string{
     return $(this).text();
@@ -1329,7 +1327,7 @@ $('#submitspielerruesungswert').click(function():void{
 $('#submitfinalATPA').click(function():void{
   //Finde alle Inputs der ID und gebe die Werte durch die Map funktion wieder
   let atwert= $('#modtabATPA').find(".atwert").map(function():number{
-    return Number($(this).text());
+    return $(this).text();
   }).toArray();
   let pawert= $('#modtabATPA').find(".pawert").map(function():string{
     return $(this).text();
@@ -1368,14 +1366,14 @@ $(document).on('click',"#addRuestung",function():void{
 });
 $(document).on('click',"#submitNeueWaffe",function():void{
   let newwaffenid:number;
-  let waffenname:string=String($('#Waffenname').val());
-  let waffenart:number=Number($('#Waffenartauswahl').val());
-  let waffenexo:number=Number($('.WaffenexoRadio').val());
-  let beschreibung:string=String($('#Waffenbeschreibung').val());
-  let wuerfelschaden:string=String($('#WaffenWuerfel').val());
-  let zusatzschaden:number=Number($('#WaffenZschaden').val());
-  let atbonus:number = Number($('#WaffeATKBonus').val());
-  let pabonus:number = Number($('#WaffePABonus').val());
+  let waffenname:string=$('#Waffenname').val();
+  let waffenart:number=$('#Waffenartauswahl').val();
+  let waffenexo:number=$('.WaffenexoRadio').val();
+  let beschreibung:string=$('#Waffenbeschreibung').val();
+  let wuerfelschaden:string=$('#WaffenWuerfel').val();
+  let zusatzschaden:number=$('#WaffenZschaden').val();
+  let atbonus:number = $('#WaffeATKBonus').val();
+  let pabonus:number = $('#WaffePABonus').val();
   let kk:number = basiswert_arr[2]["kk"];
   let kkbonus=0;
   if( kk >= 10 && kk <14){
@@ -1591,12 +1589,9 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
   //TODO: Funktioniert noch nicht
   'Körper':function():void{
   	let talentname:string;
-  	let talentwert:any;
-  	talentname=JSON.stringify(Object.keys(dataobj));
+  	let talentwert:number;
+  	talentname=Object.keys(dataobj);
   	talentwert=dataobj[talentname];
-    if (talentwert!==1){
-      talentwert="null";
-    }
   	$.ajax({
   	type:"POST",
   	url:"/updezkoerper",
@@ -1678,9 +1673,9 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
 
 
  $(document).on('click',"#submitNeueRues",function():void{
-   let ruesname:string = String($('#ADDruestungsname').val());
-   let rueswert:number = Number($('#Addruestwert').val());
-   let mod:string      = String($('#AddruestAM').val());
+   let ruesname:string = $('#ADDruestungsname').val();
+   let rueswert:number = $('#Addruestwert').val();
+   let mod:string      = $('#AddruestAM').val();
    let newruestid:number;
    $.ajax({
     type:"POST",
