@@ -70,7 +70,7 @@ function getNamen():void{
       url:"/spielername",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -94,7 +94,7 @@ function bwbasis():void{
       url:"/bwbasis",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -138,7 +138,7 @@ function sekwerte():void{
       url:"/sekundaerwerte",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -263,7 +263,7 @@ var wuerfelwerte = [{ "id":"",
       url:"/koerpertalente",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -331,7 +331,7 @@ var wuerfelwerte = [{ "id":"",
       url:"/wissenstalente",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -372,7 +372,7 @@ var wuerfelwerte = [{ "id":"",
       url:"/naturtalente",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -416,7 +416,7 @@ var wuerfelwerte =[{ "id":"",
       url:"/gesellschaftstalente",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -463,7 +463,7 @@ var wuerfelwerte =[{ "id":"",
       url:"/spezialetalente",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -480,7 +480,7 @@ function einhandwaffen():void{
       url:"/einhandwaffen",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -499,7 +499,7 @@ function getspielerwaffenkampftalent():void{
     type:'POST',
     url:"/spielerwaffenkampftalent",
     data: {ID:SpielerID},
-    dataType:"json",
+    datatype:"json",
     success: function(data:any){
         tempdata=data;
         for (let i:number=0; i< tempdata.length; i++){
@@ -522,7 +522,7 @@ function zweihandwaffen():void{
       url:"/zweihandwaffen",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -539,7 +539,7 @@ function fernkampfwaffen():void{
       url:"/fernkampfwaffen",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -556,7 +556,7 @@ function anderewaffen():void{
       url:"/anderewaffen",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -580,7 +580,7 @@ function handwerkstalente():any{
       url:"/handwerkstalente",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -606,7 +606,7 @@ function checkKKBonus():void{
     url:"/updatekkbonus",
     data:{ID:SpielerID,
           KKB:kkbonus},
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
     }
   }).done(function():void{
@@ -623,7 +623,7 @@ function spielerwaffen():void{
       url:"/spielerwaffen",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -659,7 +659,7 @@ function spielerruestungen():void{
       url:"/spielerruestungen",
       //Daten an den Server in JSON
       data: {ID:SpielerID},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -803,7 +803,7 @@ $(document).on('click',"#fullrest", function():void{
     type:'POST',
     url:"/sekundarwertefullreset",
     data:{ID:SpielerID},
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
     }
   }).done(function():void{
@@ -954,7 +954,7 @@ $('#submitBasiswerte').click(function():void{
             KON:kon,
             KK:kk,
             INT:int},
-      dataType:"json",
+      datatype:"json",
       //callback
       success: function(data:any){
       //daten[0]["id"];
@@ -1002,7 +1002,7 @@ $('#submitSekwerte').click(function():void{
           EISR:eisr,
           MR:mr,
           DTR:dtr},
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
       $('#modalsekundaerwerte').modal('toggle');
     }
@@ -1028,7 +1028,7 @@ $.ajax({
           FIN:fingerfertigkeit,
           ZEC:zechen,
           TAS:taschendiebstahl},
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
       $('#modalkoerpertalente').modal('toggle');
       }
@@ -1058,7 +1058,7 @@ $.ajax({
           WEL:weltenkenntnis,
           SPR:sprachen,
           ANA:anatomie},
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
       $('#modalwissenstalente').modal('toggle');
     }
@@ -1081,7 +1081,7 @@ $.ajax({
           FLE:flegel,
           DOL:dolche
         },
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
       $('#modaleinhandwaffen').modal('toggle');
     }
@@ -1106,7 +1106,7 @@ $.ajax({
           ORI:orientierung,
           FAE:faehrtenlesen
         },
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
       $('#modalnaturtalente').modal('toggle');
     }
@@ -1131,7 +1131,7 @@ $.ajax({
           STA:staebe,
           SGN:stangenwaffen
         },
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
       $('#modalzweihandwaffen').modal('toggle');
     }
@@ -1152,7 +1152,7 @@ $.ajax({
           BOE:boegen,
           ARM:armbrueste
         },
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
       $('#modalfernkampf').modal('toggle');
     }
@@ -1173,7 +1173,7 @@ $.ajax({
           UNB:unbewaffnet,
           EXO:exotische
         },
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
       $('#modalanderewaffen').modal('toggle');
     }
@@ -1198,7 +1198,7 @@ $.ajax({
           KOC:koch,
           LEH:lehren
         },
-    dataType:"json",
+    datatype:"json",
     success:function(data){
       $('#modalhandwerkstalente').modal('toggle');
     }
@@ -1291,7 +1291,7 @@ $('#submitspielerruesungen').click(function():void{
           NAMEARRAY:ruestungname,
           ID:SpielerID
         },
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
       $('#modalspielerruestungen').modal('toggle');
     }
@@ -1316,7 +1316,7 @@ $('#submitspielerruesungswert').click(function():void{
           NAMEARRAY:ruestungname,
           ID:SpielerID
         },
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
       $('#modspielerruestwert').modal('toggle');
     }
@@ -1346,7 +1346,7 @@ $('#submitfinalATPA').click(function():void{
           WIDARRAY:waffenids,
           ID:SpielerID
         },
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
       $('#modalFinalATPA').modal('toggle');
     }
@@ -1389,7 +1389,7 @@ $(document).on('click',"#submitNeueWaffe",function():void{
   $.ajax({
     type:"POST",
     url:"/getmaxwaffenid",
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
         newwaffenid=parseInt(data[0]["id"]);
     }
@@ -1409,7 +1409,7 @@ $(document).on('click',"#submitNeueWaffe",function():void{
             ATBONUS:atbonus,
             PABONUS:pabonus,
             KKBONUS:kkbonus},
-      dataType:"json",
+      datatype:"json",
       success:function(data:any){
       }
     }).done(function():void{
@@ -1563,7 +1563,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
           ATBONUS:dataobj["Attackebonus"],
           PABONUS:dataobj["Paradebonus"]
         },
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
     }
   }).done(function():void{
@@ -1580,7 +1580,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
             RWERT: dataobj["Rüstungswert"],
             MOD:dataobj["Ausrüstungsmalus / Bonus"]
           },
-      dataType:"json",
+      datatype:"json",
       success:function(data:any){
       }
     }).done(function():void{
@@ -1604,7 +1604,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
   		  TAN:talentname,
   		  TAW:talentwert
       },
-  	dataType:"json",
+  	datatype:"json",
   	success:function(data:any){
   	}
    }).done(function():void{
@@ -1649,7 +1649,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
      data:{SP_ID:SpielerID,
            WP_ID:dataobj["id"]
          },
-     dataType:"json",
+     datatype:"json",
      success:function(data:any){
      }
    }).done(function():void{
@@ -1663,7 +1663,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
        data:{SP_ID:SpielerID,
              WP_ID:dataobj["id"]
            },
-       dataType:"json",
+       datatype:"json",
        success:function(data:any){
        }
      }).done(function():void{
@@ -1685,7 +1685,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
    $.ajax({
     type:"POST",
     url:"/getmaxruestid",
-    dataType:"json",
+    datatype:"json",
     success:function(data:any){
         newruestid=parseInt(data[0]["id"]);
     }
@@ -1699,7 +1699,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
            MOD:mod,
            ID:newruestid
          },
-     dataType:"json",
+     datatype:"json",
      success:function(data:any){
      }
    }).done(function():void{
