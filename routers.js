@@ -883,7 +883,6 @@ app.post('/sekundarwertefullreset',function(req,res){
 });
 
 app.post('/deletespielerwaffe',function(req,res){
-  console.log("HIER!");
     let sp_id=req.body.SP_ID;
     let wp_id=req.body.WP_ID;
     const delspwaffen={
@@ -919,7 +918,8 @@ app.post('/deletespielerruestung',function(req,res){
     });
 });
 
-app.post('/updatekoerpertalente',function(req,res){
+app.post('/updezkoerper',function(req,res){
+  console.log("Hier!");
     let sp_id=req.body.SP_ID;
   	let talentname=req.body.TAN;
   	let talentwert=req.body.TAW;
