@@ -1594,7 +1594,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
   	talentwert=dataobj[talentname];
   	$.ajax({
   	type:"POST",
-  	url:"/updatekoerpertalente",
+  	url:"/updezkoerper",
   	data:{SP_ID:SpielerID,
   		  TAN:talentname,
   		  TAW:talentwert
