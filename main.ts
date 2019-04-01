@@ -1592,20 +1592,18 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
   	let talentwert:number;
   	talentname=Object.keys(dataobj);
   	talentwert=dataobj[talentname];
-	//window.alert("DATA: "+JSON.stringify(dataobj));
-	//window.alert("Keys: "+Object.keys(dataobj));
-	//window.alert("Talentname: "+talentname+"Talentwert: "+talentwert);
   	$.ajax({
   	type:"POST",
   	url:"/updatekoerpertalente",
   	data:{SP_ID:SpielerID,
-  		  Talentname:talentname,
-  		  Talentwert:talentwert
+  		  TAN:talentname,
+  		  TAW:talentwert
       },
-    	datatype:"json",
+  	datatype:"json",
   	success:function(data:any){
   	}
    }).done(function():void{
+      console.log("Koerper done");
     	korprtalente();
     	sekwerte();
    });
