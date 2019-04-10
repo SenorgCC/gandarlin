@@ -1586,9 +1586,9 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
       sekwerte();
     });
   },
-  //TODO: Funktioniert noch nicht
+  //TODO: Musik/Poesie kontrollieren
   'Körper':function():void{
-  	let talentname:string;
+  	let talentname:any;
   	let talentwert:number;
   	talentname=Object.keys(dataobj);
   	talentwert=dataobj[talentname];
@@ -1603,9 +1603,65 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
   	success:function(data:any){
   	}
    }).done(function():void{
-      console.log("Koerper done");
     	korprtalente();
     	sekwerte();
+   });
+  },
+  'Natur':function():void{
+  	let talentname:any;
+  	let talentwert:number;
+  	talentname=Object.keys(dataobj);
+  	talentwert=dataobj[talentname];
+  	$.ajax({
+  	type:"POST",
+  	url:"/updeznatur",
+  	data:{SP_ID:SpielerID,
+  		  TAN:talentname,
+  		  TAW:talentwert
+      },
+  	datatype:"json",
+  	success:function(data:any){
+  	}
+   }).done(function():void{
+    	naturtalente();
+   });
+   },
+   'Gesellschafts':function():void{
+  	let talentname:any;
+  	let talentwert:number;
+  	talentname=Object.keys(dataobj);
+  	talentwert=dataobj[talentname];
+  	$.ajax({
+  	type:"POST",
+  	url:"/updezgesell",
+  	data:{SP_ID:SpielerID,
+  		  TAN:talentname,
+  		  TAW:talentwert
+      },
+  	datatype:"json",
+  	success:function(data:any){
+  	}
+   }).done(function():void{
+    	gesellschaftstalente();
+   });
+   },
+  'Speziale':function():void{
+  	let talentname:any;
+  	let talentwert:number;
+  	talentname=Object.keys(dataobj);
+  	talentwert=dataobj[talentname];
+  	$.ajax({
+  	type:"POST",
+  	url:"/updezspeziale",
+  	data:{SP_ID:SpielerID,
+  		  TAN:talentname,
+  		  TAW:talentwert
+      },
+  	datatype:"json",
+  	success:function(data:any){
+  	}
+   }).done(function():void{
+    	gesellschaftstalente();
    });
   }
   }

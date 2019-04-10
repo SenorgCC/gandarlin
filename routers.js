@@ -932,3 +932,48 @@ app.post('/updezkoerper',function(req,res){
   		res.send(result);
   	});
 });
+
+app.post('/updeznatur',function(req,res){
+    let sp_id=req.body.SP_ID;
+  	let talentname=req.body.TAN;
+  	let talentwert=req.body.TAW;
+  	let stmt="update naturtalente.talentwert set "+talentname+"=$1 where ID = $2";
+  	const uptnaturtal={
+  		name: 'uptnaturtal',
+  		text: stmt,
+  		values: [talentwert,sp_id]
+  	}
+  	uidtyp1(uptnaturtal,function(err,result){
+  		res.send(result);
+  	});
+});
+
+app.post('/updezgesell',function(req,res){
+    let sp_id=req.body.SP_ID;
+  	let talentname=req.body.TAN;
+  	let talentwert=req.body.TAW;
+  	let stmt="update gesellschaftstalente.talentwert set "+talentname+"=$1 where ID = $2";
+  	const uptgesell={
+  		name: 'uptgesell',
+  		text: stmt,
+  		values: [talentwert,sp_id]
+  	}
+  	uidtyp1(uptgesell,function(err,result){
+  		res.send(result);
+  	});
+});
+
+app.post('/updezspeziale',function(req,res){
+    let sp_id=req.body.SP_ID;
+  	let talentname=req.body.TAN;
+  	let talentwert=req.body.TAW;
+  	let stmt="update spezialtalente.talentwert set "+talentname+"=$1 where ID = $2";
+  	const uptspeziale={
+  		name: 'uptspeziale',
+  		text: stmt,
+  		values: [talentwert,sp_id]
+  	}
+  	uidtyp1(uptspeziale,function(err,result){
+  		res.send(result);
+  	});
+});
