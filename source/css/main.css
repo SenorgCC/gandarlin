@@ -1,3 +1,6 @@
 table tr th::first-letter {
     text-transform:capitalize;
 }
+canvas {
+  border: 1px solid black;
+}
