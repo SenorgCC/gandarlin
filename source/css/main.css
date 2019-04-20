@@ -1,7 +1,15 @@
 table tr th::first-letter {
     text-transform:capitalize;
 }
-span > h1 { display: inline-block; }
+h1 {
+  display: inline;
+}
+h2 {
+  display: inline;
+}
+span {
+  float: left;
+}
 canvas {
   border: 1px solid black;
 }
