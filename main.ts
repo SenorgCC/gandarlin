@@ -1829,7 +1829,7 @@ $(document).on('click', "#navSheetbtn", function () {
   $('#Spielersheet').show();
   $('#Kampfsheet').hide();
 });
-
+var context = document.getElementById('canvasInAPerfectWorld').getContext("2d");
 $('#canvas').mousedown(function(e){
   let mouseX = e.pageX - this.offsetLeft;
   let mouseY = e.pageY - this.offsetTop;
