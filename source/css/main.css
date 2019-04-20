@@ -4,3 +4,8 @@ table tr th::first-letter {
 canvas {
   border: 1px solid black;
 }
+
+.toggletablespan {
+  width: 2%;
+  height: auto;
+}
