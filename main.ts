@@ -1826,7 +1826,7 @@ function createTalentmodal(title:string,talent:string,wert:any){
   });
 //Blende Charaktersheet aus
 $(document).on('click', "#navSheetbtn", function () {
-  ('#Spielersheet').show();
+  $('#Spielersheet').show();
   $('#Kampfsheet').hide();
 });
 });
