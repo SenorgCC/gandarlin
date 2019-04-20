@@ -1,13 +1,12 @@
 table tr th::first-letter {
     text-transform:capitalize;
 }
-h1 { display: inline-block; }
+span { display: inline-block; }
 canvas {
   border: 1px solid black;
 }
 
 .toggletablespan {
-  display: inline-block;
   width: 2%;
   height: auto;
 }
