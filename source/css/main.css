@@ -7,9 +7,6 @@ table tr th::first-letter {
 .toggletablespan + h2 {
   display: inline-block;
 }
-span {
-  float: left;
-}
 canvas {
   border: 1px solid black;
 }
