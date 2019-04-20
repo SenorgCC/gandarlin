@@ -2032,7 +2032,7 @@ CanvasState.prototype.getMouse = function(e) {
 init();
 
 function init() {
-  var s = new CanvasState(document.getElementById('canvas1'));
+  var s = new CanvasState(document.getElementById('canvas'));
   s.addShape(new Shape(40,40,50,50)); // The default is gray
   s.addShape(new Shape(60,140,40,60, 'lightskyblue'));
   // Lets make some partially transparent
