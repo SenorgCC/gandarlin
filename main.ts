@@ -1838,11 +1838,15 @@ function Shape(x, y, w, h, fill) {
   // This is a very simple and unsafe constructor. All we're doing is checking if the values exist.
   // "x || 0" just means "if there is a value for x, use that. Otherwise use 0."
   // But we aren't checking anything else! We could put "Lalala" for the value of x
+  let img=new Image();
+  img.src="source/images/ArrowDown.svg";
   this.x = x || 0;
   this.y = y || 0;
   this.w = w || 1;
   this.h = h || 1;
-  this.fill = fill || '#AAAAAA';
+  this.fill=img;
+//  this.fill = fill || '#AAAAAA';
+
 }
 
 // Draws this shape to a given context
@@ -2040,5 +2044,11 @@ function init() {
   s.addShape(new Shape(125,80,30,80, 'rgba(245, 222, 179, .7)'));
 }
 
-
+$(document).on('click', "#saveKObj", function () {
+  //canvas objekt ins kampffeld uebertragen
+});
+$(document).on('click', "#resetObjCanvas", function () {
+  //canvas objekt ins kampffeld uebertragen
+});
+objcontext = document.getElementById('objektcanvas').getContext("2d");
 });
