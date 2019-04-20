@@ -1838,14 +1838,11 @@ function Shape(x, y, w, h, fill) {
   // This is a very simple and unsafe constructor. All we're doing is checking if the values exist.
   // "x || 0" just means "if there is a value for x, use that. Otherwise use 0."
   // But we aren't checking anything else! We could put "Lalala" for the value of x
-  let img=new Image();
-  img.src="source/images/ArrowDown.svg";
   this.x = x || 0;
   this.y = y || 0;
   this.w = w || 1;
   this.h = h || 1;
-  this.fill=img;
-//  this.fill = fill || '#AAAAAA';
+  this.fill = fill || '#AAAAAA';
 
 }
 
@@ -2028,7 +2025,7 @@ CanvasState.prototype.getMouse = function(e) {
   my = e.pageY - offsetY;
 
   // We return a simple javascript object (a hash) with x and y defined
-  return {x: mx, y: my};
+  return {x: mx, y: my};/
 }
 
 // If you dont want to use <body onLoad='init()'>
@@ -2042,6 +2039,9 @@ function init() {
   // Lets make some partially transparent
   s.addShape(new Shape(80,150,60,30, 'rgba(127, 255, 212, .5)'));
   s.addShape(new Shape(125,80,30,80, 'rgba(245, 222, 179, .7)'));
+  let img=new Image();
+  img.src="source/images/ArrowDown.svg";
+  s.drawImage(img, 100, 0, 200, 200);
 }
 
 $(document).on('click', "#saveKObj", function () {
