@@ -1817,4 +1817,16 @@ function createTalentmodal(title:string,talent:string,wert:any){
 	text+="</td></tr>";
   $tbody.append(text);
 }
+// Funktionsteil Kampfsheet beginnt hier
+// Kontrolle ob Charaktersheet oder Kampfsheet
+// Blende Kampfsheet aus
+  $(document).on('click', "#navFightbtn", function () {
+    $('#Spielersheet').hide();
+    $('#Kampfsheet').show();
+  });
+//Blende Charaktersheet aus
+$(document).on('click', "#navSheetbtn", function () {
+  ('#Spielersheet').show();
+  $('#Kampfsheet').hide();
+});
 });
