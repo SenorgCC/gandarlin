@@ -2,10 +2,10 @@ table tr th::first-letter {
     text-transform:capitalize;
 }
 .toggletablespan + h1 {
-  display: inline;
+  display: inline-block;
 }
 .toggletablespan + h2 {
-  display: inline;
+  display: inline-block;
 }
 span {
   float: left;
