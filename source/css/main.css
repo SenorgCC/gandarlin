@@ -1,10 +1,10 @@
 table tr th::first-letter {
     text-transform:capitalize;
 }
-h1 {
+.h15 {
   display: inline;
 }
-h2 {
+.h24 {
   display: inline;
 }
 span {
@@ -15,6 +15,7 @@ canvas {
 }
 
 .toggletablespan {
-  width: 2%;
+  width: 5%;
   height: auto;
+  margin-bottom: 3px;
 }
