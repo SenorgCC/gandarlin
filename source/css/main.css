@@ -1,6 +1,7 @@
 table tr th::first-letter {
     text-transform:capitalize;
 }
+/*
 span > .toggletablespan + h1 {
   display: inline-block;
 }
@@ -17,12 +18,14 @@ h2:after{
 span > h2 {
   display: inline-block;
 }
+*/
 canvas {
   border: 1px solid black;
 }
 
 .toggletablespan {
+  float:left;
   width: 2%;
   height: auto;
-  margin-bottom: 2px;
+  margin-bottom: 1px;
 }
