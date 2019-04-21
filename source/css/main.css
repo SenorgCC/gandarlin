@@ -5,12 +5,12 @@ span > .toggletablespan + h1 {
   display: inline-block;
 }
 
-h1::after{
+h1:after{
   content: '\A';
   white-space: pre;
 }
 
-h2::after{
+h2:after{
   content: '\A';
   white-space: pre;
 }
