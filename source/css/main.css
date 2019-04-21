@@ -5,7 +5,7 @@ span > .toggletablespan + h1 {
   display: inline-block;
 }
 span > h2 {
-  display: inline;
+  display: inline-block;
 }
 canvas {
   border: 1px solid black;
