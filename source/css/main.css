@@ -4,7 +4,7 @@ table tr th::first-letter {
 span > .toggletablespan + h1 {
   display: inline-block;
 }
-span > .toggletablespan + h2 {
+.toggletablespan + h2 {
   display: inline-block;
 }
 canvas {
@@ -12,7 +12,7 @@ canvas {
 }
 
 .toggletablespan {
-  width: 3%;
+  width: 2%;
   height: auto;
-  margin-bottom: 1%;
+  margin-bottom: 2px;
 }
