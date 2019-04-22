@@ -2090,7 +2090,7 @@ function getImageurl(nummer:number):string{
     return url[nummer];
  }
  // Canvas Responsive machen
-    context var c = $('#canvas');
+    var c = $('#canvas');
     var ct = c.get(0).getContext('2d');
     var container = $(c).parent();
 
