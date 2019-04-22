@@ -2070,7 +2070,6 @@ $(document).on('click', "#resetObjCanvas", function () {
     width: 50, height: 50
   });
 });
-//objcontext = document.getElementById('objektcanvas').getContext("2d");
 
 $(document).on('change',"#Schlachtfeldselect",function(){
   let backgroundval:any = $('#Schlachtfeldselect').val();
@@ -2090,4 +2089,5 @@ function getImageurl(nummer:number):string{
     };
     return url[nummer];
  }
+ 
 });
