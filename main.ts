@@ -2059,6 +2059,7 @@ $(document).on('click', "#saveKObjCanvas", function (){
   });
 });
 
+
 $(document).on('click', "#resetObjCanvas", function () {
   //canvas objekt ins kampffeld uebertragen
   $('#objektcanvas').drawRect({
