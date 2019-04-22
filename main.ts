@@ -2075,19 +2075,18 @@ $(document).on('click', "#resetObjCanvas", function () {
 $(document).on('change',"#Schlachtfeldselect",function(){
   let backgroundval:any = $('#Schlachtfeldselect').val();
   let imageUrl:string=getImageurl(backgroundval);
-  alert("Url:"+imageUrl);
-  $('#canvas').css("background:url('"+imageUrl+"')");
+  $('#canvas').css("background", "url('"+imageUrl+"')");
 });
 
 function getImageurl(nummer:number):string{
     var url = {
-    1: "./source/kampffeld/hintergrund/Brucke.jpg" ,
-    2: "./source/kampffeld/hintergrund/Dorf.jpg" ,
-    3: "./source/kampffeld/hintergrund/Sand.jpg" ,
-    4: "./source/kampffeld/hintergrund/Schnee.jpg" ,
-    5: "./source/kampffeld/hintergrund/Stadt.jpg" ,
-    6: "./source/kampffeld/hintergrund/Stein.jpg" ,
-    7: "./source/kampffeld/hintergrund/Wiese.jpg"
+    1: "/source/kampffeld/hintergrund/Brucke.jpg" ,
+    2: "/source/kampffeld/hintergrund/Dorf.jpg" ,
+    3: "/source/kampffeld/hintergrund/Sand.jpg" ,
+    4: "/source/kampffeld/hintergrund/Schnee.jpg" ,
+    5: "/source/kampffeld/hintergrund/Stadt.jpg" ,
+    6: "/source/kampffeld/hintergrund/Stein.jpg" ,
+    7: "/source/kampffeld/hintergrund/Wiese.jpg"
     };
     return url[nummer];
  }
