@@ -1829,6 +1829,7 @@ $(document).on('click', "#navSheetbtn", function () {
   $('#Spielersheet').show();
   $('#Kampfsheet').hide();
 });
+/*
 // -----------------------------------------------------------------------------
 // --- Framework Teil
 // -----------------------------------------------------------------------------
@@ -2044,11 +2045,27 @@ function init() {
   s.drawImage(img, 100, 0, 200, 200);
 }
 
+*/
 $(document).on('click', "#saveKObj", function () {
   //canvas objekt ins kampffeld uebertragen
+  let canvasbild:String = $('#objektcanvas').getCanvasImage();
+  $('#canvas').drawImage({
+    layer: true,
+    draggable: true,
+    bringToFront: true,
+    source:canvasbild,
+    x:150,y:150
+  });
 });
+
 $(document).on('click', "#resetObjCanvas", function () {
   //canvas objekt ins kampffeld uebertragen
+  $('#objektcanvas').drawRect({
+    fillStyle: '#6c1',
+    x: 100, y: 100,
+    width: 50, height: 50
+  });
 });
-objcontext = document.getElementById('objektcanvas').getContext("2d");
+//objcontext = document.getElementById('objektcanvas').getContext("2d");
+
 });
