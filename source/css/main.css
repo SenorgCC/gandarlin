@@ -21,7 +21,7 @@ span > h2 {
 */
 canvas {
   border: 1px solid black;
-  background: url('./source/kampffeld/hintergrund/Brucke.jpg');
+  background: url('/source/kampffeld/hintergrund/Brucke.jpg');
 }
 
 .toggletablespan {
