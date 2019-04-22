@@ -1250,8 +1250,10 @@
     </div>
 
   </div>
-  <div id="Kampfsheet">
+  <div id="Kampfsheet" class="container-fluid">
     <h1>Kampffeld</h1>
+<div id="kampfobjekts">
+     <h2>Kampfopbjekte<h1>
     <select id="Schlachtfeldselect" class="custom-select">
       <option selected disabled>Schlaftfeld</option>
       <option value="1">Brücke</option>
@@ -1262,6 +1264,9 @@
       <option value="6">Stein</option>
       <option value="7">Wiese</option>
     </select>
+       <button type="button" id="saveKObjCanvas">Save</button>
+       <button type="button" id="resetObjCanvas">Reset</button>
+ </div>
 
     <div id="kampfcanvas">
       <canvas id="canvas" width="100%" height="100%">
@@ -1269,10 +1274,6 @@
    </canvas>
  </div>
 
-   <div id="kampfobjekts">
-     <h1>Kampfopbjekte<h1>
-       <button type="button" id="saveKObjCanvas">Save</button>
-       <button type="button" id="resetObjCanvas">Reset</button>
- </div>
+
   </div>
 </html>
