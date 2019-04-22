@@ -2046,7 +2046,7 @@ function init() {
 }
 
 */
-$(document).on('click', "#saveKObj", function (){
+$(document).on('click', "#saveKObjCanvas", function (){
   //canvas objekt ins kampffeld uebertragen
   let canvasbild:String = $('#objektcanvas').getCanvasImage();
   console.log("Test: "+canvasbild);
