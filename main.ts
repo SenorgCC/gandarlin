@@ -1836,7 +1836,7 @@ $(document).on('click', "#navSheetbtn", function () {
 // -----------------------------------------------------------------------------
 // Registrierungsmodal anzeigen
 $(document).on('click','#myRegisterBtn',function(){
-  $('#modalregister').show();
+  $('#modalregister').modal('toggle');
   $('#myRegisterBtn').hide();
 });
 
