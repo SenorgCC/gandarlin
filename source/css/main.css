@@ -23,9 +23,6 @@ canvas {
   border: 1px solid black;
   background: url('/source/kampffeld/hintergrund/Brucke.jpg');
 }
-#myRegisterBtn{
-  margin-right: 1%
-}
 .toggletablespan {
   float:left;
   width: 2%;
@@ -61,4 +58,66 @@ canvas {
     display: table-cell;
     text-align: center;
     position: relative;
+}
+::-moz-selection {
+    background: #26A69A;
+    ;
+    color: #fff;
+    text-shadow: none;
+}
+
+::selection {
+    background: #26A69A;
+    ;
+    color: #fff;
+    text-shadow: none;
+}
+
+.btn-link-1 {
+    display: inline-block;
+    height: 50px;
+    margin: 0 5px;
+    padding: 16px 20px 0 20px;
+    background: #26A69A;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.btn-link-1:hover,
+.btn-link-1:focus,
+.btn-link-1:active {
+    outline: 0;
+    opacity: 0.6;
+    color: #fff;
+}
+
+.btn-link-2 {
+    display: inline-block;
+    height: 50px;
+    margin: 0 5px;
+    padding: 15px 20px 0 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #fff;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.btn-link-2:hover,
+.btn-link-2:focus,
+.btn-link-2:active,
+.btn-link-2:active:focus {
+    outline: 0;
+    opacity: 0.6;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
 }
