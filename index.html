@@ -40,6 +40,7 @@
         </span>
       </div>
       <form class="form-inline" id="Spielerdaten">
+      <button id="myRegisterBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Register</button>
       <input id="SpielerID" class="form-control mr-sm-2" type="search" placeholder="SpilerID" aria-label="SpielerID">
       <button id="myClickBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Go!</button>
     </form>
@@ -1248,6 +1249,263 @@
         </div>
       </div>
     </div>
+
+    <div class="modal fade input-group mb-3" id="modalregister" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Neue Charakter registrieren<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+        </div>
+        <div class="modal-body">
+
+          <div class="container">
+            <!--Verschiedenen Talentwerteingaben-->
+            <div class="stepwizard col-md-offset-3">
+                <div class="stepwizard-row setup-panel">
+                  <div class="stepwizard-step">
+                    <a href="#step-Allgemein" type="button" class="btn btn-primary btn-circle">1</a>
+                    <p>Allgemein</p>
+                  </div>
+
+                  <div class="stepwizard-step">
+                    <a href="#step-Basiswerte" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                    <p>Basiswerte</p>
+                  </div>
+
+                  <div class="stepwizard-step">
+                    <a href="#step-Koerper" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Körper Talente</p>
+                  </div>
+
+                  <div class="stepwizard-step">
+                    <a href="#step-Natur " type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Natur Talente</p>
+                  </div>
+
+                  <div class="stepwizard-step">
+                    <a href="#step-Wissenstalente" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Wissenstalente</p>
+                  </div>
+
+                  <div class="stepwizard-step">
+                    <a href="#step-Gesellschafts " type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Gesellschafts Talente</p>
+                  </div>
+
+                  <div class="stepwizard-step">
+                    <a href="#step-Speziale " type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Speziale Talente</p>
+                  </div>
+
+                  <div class="stepwizard-step">
+                    <a href="#step-Einhand " type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Einhand Kampftalente</p>
+                  </div>
+
+                  <div class="stepwizard-step">
+                    <a href="#step-Zweihand " type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Zweihand Kampftalente</p>
+                  </div>
+
+                  <div class="stepwizard-step">
+                    <a href="#step-Fern " type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Fern Kampftalente</p>
+                  </div>
+
+                  <div class="stepwizard-step">
+                    <a href="#step-Andere " type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Andere Kampftalente</p>
+                  </div>
+
+                  <div class="stepwizard-step">
+                    <a href="#step-Handwerkstalente" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Handwerkstalente</p>
+                  </div>
+
+                  <div class="stepwizard-step">
+                    <a href="#step-Magietalente" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Magietalente</p>
+                  </div>
+
+                </div>
+              </div>
+
+              <form role="form" action="" method="post">
+              <div class="row setup-content" id="step-Allgemein">
+                <div class="col-xs-6 col-md-offset-3">
+                  <div class="col-md-12">
+                    <h3>Allgemein</h3>
+                    <div class="form-group">
+                      <label class="control-label">Name</label>
+                      <input id="reg_Name" maxlength="100" type="text" class="form-control" placeholder="Enter Name"  />
+                    </div>
+                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row setup-content" id="step-Basiswerte">
+                <div class="col-xs-6 col-md-offset-3">
+                  <div class="col-md-12">
+                    <h3>Basiswerte</h3>
+
+                    <div class="form-group">
+                      <label class="control-label">Klugheit (KL) Basis</label>
+                      <input id="reg_klb" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Klugheit Bonus/Malus</label>
+                      <input id="reg_klmod" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Gewandtheit (GEW) Basis</label>
+                      <input id="reg_gewb" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Gewandtheit Bonus/Malus</label>
+                      <input id="reg_gewmod" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Geschicklichkeit (GSK) Basis</label>
+                      <input id="reg_gskb" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Geschicklichkeit Bonus/Malus</label>
+                      <input id="reg_gskmod" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Charisma (CHA) Basis</label>
+                      <input id="reg_chab" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Charisma Bonus/Malus</label>
+                      <input id="reg_chamod" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Mut (MUT) Basis</label>
+                      <input id="reg_mutb" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Mut Bonus/Malus</label>
+                      <input id="reg_mutmod" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Konstitution (KON) Basis</label>
+                      <input id="reg_konb" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Konstitution Bonus/Malus</label>
+                      <input id="reg_konmod" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Körperkraft (KK) Basis</label>
+                      <input id="reg_kkb" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Körperkraft Bonus/Malus</label>
+                      <input id="reg_kkmod" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Intuition (IN) Basis</label>
+                      <input id="reg_intb" type="number" required="required" class="form-control" max="20" />
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Intuition Bonus/Malus</label>
+                      <input id="reg_intmod" type="number" required="required" class="form-control" max="20" />
+                    </div>
+
+                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+                  </div>
+                </div>
+              </div>
+
+                <div class="row setup-content" id="step-Magietalente">
+                  <div class="col-xs-6 col-md-offset-3">
+                    <div class="col-md-12">
+                      <h3>Magietalente</h3>
+                        <div class="form-group">
+                          <label class="control-label">Luft (KL) Basis</label>
+                          <input id="reg_magluftb" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Luft Bonus/Malus</label>
+                          <input id="reg_magluftmod" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Wasser (GEW) Basis</label>
+                          <input id="reg_magwasserb" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Wasser Bonus/Malus</label>
+                          <input id="reg_magwassermod" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Erde (GSK) Basis</label>
+                          <input id="reg_magerdeb" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Erde Bonus/Malus</label>
+                          <input id="reg_magerdemod" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Das Lebende (CHA) Basis</label>
+                          <input id="reg_magdaslebendeb" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Das Lebende Bonus/Malus</label>
+                          <input id="reg_magdaslebendeb" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Feuer (MUT) Basis</label>
+                          <input id="reg_magfeuerb" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Feuer Bonus/Malus</label>
+                          <input id="reg_magfeuermod" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Eis (KON) Basis</label>
+                          <input id="reg_mageisb" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Eis Bonus/Malus</label>
+                          <input id="reg_mageismod" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Metall (KK) Basis</label>
+                          <input id="reg_magmetallb" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Metall Bonus/Malus</label>
+                          <input id="reg_magmetallmod" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Das Tote (IN) Basis</label>
+                          <input id="reg_magdastoteb" type="number" required="required" class="form-control" max="20" />
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Das Tote Bonus/Malus</label>
+                          <input id="reg_magdastotemod" type="number" required="required" class="form-control" max="20" />
+                        </div>
+
+                      <button class="btn btn-success btn-lg pull-right" type="submit">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="submitNeueRues" class="btn btn-default" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
   </div>
   <div id="Kampfsheet" class="container-fluid">
