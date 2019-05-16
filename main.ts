@@ -1863,7 +1863,7 @@ $('.registration-form input[type="number"]').on('focus', function () {
 
 function createRegistermodal(talentname:string,inputtag:string){
    let htmltext:string="";
-   htmltext='<div class="row setup-content" id="step-'+talentname+'" style="display:none;">';
+   htmltext='<div class="row setup-content talentcontent" id="step-'+talentname+'" style="display:none;">';
    htmltext+='<div class="col-xs-6 col-md-offset-3">';
    htmltext+='<div class="col-md-12">';
    htmltext+='<h3>'+talentname+'</h3>';
@@ -1900,13 +1900,24 @@ function createRegistermodal(talentname:string,inputtag:string){
 }
 
 $(document).on('click','.nextBtn',function(){
-      let curStep:any = $(this).closest(".setup-content");
-      let curStepBtn:string = curStep.attr("id");
-      let nextStep:any=$(this).closest(".setup-content").next(".setup-content");
-      if (nextStep){
-        curStep.hide();
-        nextStep.fadeIn();
-      }
+    let curStep:any = $(this).closest(".setup-content");
+    let curStepBtn:string = curStep.attr("id");
+    let nextStep:any=$(this).closest(".setup-content").next(".setup-content");
+    if (nextStep){
+      curStep.hide();
+      nextStep.fadeIn();
+    }
+});
+
+$(document).on('click','#req_submit',function(){
+  let regname:string=$('#reg_Name').val();
+  let talentname:string="";
+  //Iteration über alle Talentteile
+  $('.talentcontent').each(function(intex,element){
+    talentname=$(this).attr('id');
+    talentname=talentname.replace('step-','');
+    console.log("Talentname:"+talentname);
+  });
 });
 
 /*
