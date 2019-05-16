@@ -1841,10 +1841,9 @@ $(document).on('click','#myRegisterBtn',function(){
 });
 
 $('.registration-form fieldset:first-child').fadeIn('slow');
-    $('.registration-form input[type="number"]').on('focus', function () {
-        $(this).removeClass('input-error');
-    });
-});
+$('.registration-form input[type="number"]').on('focus', function () {
+      $(this).removeClass('input-error');
+  });
 
 function createRegistermodal(talentname:string,inputtag:string){
    let htmltext:string="";
@@ -2141,4 +2140,5 @@ function getImageurl(nummer:number):string{
     }
 
     //Initial call
-    respondCanvas();});
+    respondCanvas();
+});
