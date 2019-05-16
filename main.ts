@@ -1854,11 +1854,13 @@ function createRegistermodal(talentname:string,inputtag:string){
     url:"/gettalentable",
     data:{TAN:talentname},
     datatype:"json",
-    success:function(data:string){
+    success:function(data:any){
         alert("DATA:"+JSON.stringify(data));
-        if (data[0]["column_name"] != "id"){
-          talentcols.push(data[0]["column_name"]);
-        }
+        data.forEach(function(col){
+          if (data.column_name != "id"){
+            talentcols.push(data.column_name);
+          }
+        })
     }
   }).done(function():void{
     alert(JSON.stringify(talentcols));
