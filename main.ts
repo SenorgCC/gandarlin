@@ -1862,7 +1862,7 @@ $('.registration-form input[type="number"]').on('focus', function () {
 
 function createRegistermodal(talentname:string,inputtag:string){
    let htmltext:string="";
-   htmltext='<div class="row setup-content" id="step-'+talentname+'" style="visibility:hidden">';
+   htmltext='<div class="row setup-content" id="step-'+talentname+'" style="visibility:hidden;">';
    htmltext+='<div class="col-xs-6 col-md-offset-3">';
    htmltext+='<div class="col-md-12">';
    htmltext+='<h3>'+talentname+'</h3>';
