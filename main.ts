@@ -1890,6 +1890,11 @@ function createRegistermodal(talentname:string,inputtag:string){
     htmltext+='<input id="reg_'+talent+'mod" type="number" required="required" class="form-control '+inputtag+'" max="20" />';
     htmltext+='</div>';
     });
+    htmltext+='<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>';
+    htmltext+='</div>';
+    htmltext+='</div>';
+    htmltext+='</div>';
+
     $('#step-Magietalente').before(htmltext);
   });
 }
