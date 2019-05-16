@@ -49,6 +49,7 @@ $( document ).ready(function():void {
 
   $("#myClickBtn").click(function():void{
       SpielerID=$('#SpielerID').val();
+      $('#myRegisterBtn').hide();
       //IsNaN= Is not a number ist. Test, ob eine Zahl
       if($.isNumeric(SpielerID)){
           getAlldata();
@@ -1837,7 +1838,7 @@ $(document).on('click', "#navSheetbtn", function () {
 // Registrierungsmodal anzeigen
 $(document).on('click','#myRegisterBtn',function(){
   $('#modalregister').modal('toggle');
-  $('#myRegisterBtn').hide();
+
   createRegistermodal("koerpertalente","krp");
   createRegistermodal("naturtalente","ntr");
 
@@ -1881,20 +1882,19 @@ function createRegistermodal(talentname:string,inputtag:string){
     }
   }).done(function():void{
     talentcols.forEach(function(talent) {
-    htmltext+='<div class="form-group">'
-    htmltext+='<label class="control-label">'+talent+' Talentwert</label>'
-    htmltext+='<input id="reg_'+talent+'b" type="number" required="required" class="form-control '+inputtag+'" max="20" />';
-    htmltext+='</div>';
-    htmltext+='<div class="form-group">';
-    htmltext+='<label class="control-label">'+talent+' Bonus/Malus</label>'
-    htmltext+='<input id="reg_'+talent+'mod" type="number" required="required" class="form-control '+inputtag+'" max="20" />';
-    htmltext+='</div>';
+      htmltext+='<div class="form-group">'
+      htmltext+='<label class="control-label">'+talent+' Talentwert</label>'
+      htmltext+='<input id="reg_'+talent+'b" type="number" required="required" class="form-control '+inputtag+'" max="20" />';
+      htmltext+='</div>';
+      htmltext+='<div class="form-group">';
+      htmltext+='<label class="control-label">'+talent+' Bonus/Malus</label>'
+      htmltext+='<input id="reg_'+talent+'mod" type="number" required="required" class="form-control '+inputtag+'" max="20" />';
+      htmltext+='</div>';
     });
     htmltext+='<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>';
     htmltext+='</div>';
     htmltext+='</div>';
     htmltext+='</div>';
-
     $('#step-Magietalente').before(htmltext);
   });
 }
@@ -1905,7 +1905,7 @@ $(document).on('click','.nextBtn',function(){
       let nextStep:any=$(this).closest(".setup-content").next(".setup-content");
       if (nextStep){
         curStep.hide();
-        nextStep.show();
+        nextStep.fadeIn();
       }
 });
 
