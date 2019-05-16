@@ -1838,7 +1838,7 @@ $(document).on('click', "#navSheetbtn", function () {
 $(document).on('click','#myRegisterBtn',function(){
   $('#modalregister').modal('toggle');
   $('#myRegisterBtn').hide();
-  createRegistermodal("koerpertalente","krp");
+  createRegistermodal("'koerpertalente'","krp");
 });
 
 $('.registration-form fieldset:first-child').fadeIn('slow');
