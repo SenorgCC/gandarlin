@@ -1851,7 +1851,7 @@ $(document).on('click','#myRegisterBtn',function(){
   createRegistermodal("anderekampftalente","akt");
 
   createRegistermodal("handwerkstalente","hdw");
-  createRegistermodal("magietalente","mag");
+//  createRegistermodal("magietalente","mag");
 });
 
 $('.registration-form fieldset:first-child').fadeIn('slow');
@@ -1865,7 +1865,6 @@ function createRegistermodal(talentname:string,inputtag:string){
    htmltext+='<div class="col-xs-6 col-md-offset-3">';
    htmltext+='<div class="col-md-12">';
    htmltext+='<h3>'+talentname+'</h3>';
-
    let talentcols:string[]=[];
    $.ajax({
     type:"POST",
@@ -1894,6 +1893,24 @@ function createRegistermodal(talentname:string,inputtag:string){
   });
 }
 
+$(document).on('click','.allNextBtn',function(){
+      var curStep = $(this).closest(".setup-content"),
+          curStepBtn = curStep.attr("id"),
+          nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+          curInputs = curStep.find("input[type='text'],input[type='url']"),
+          isValid = true;
+
+      $(".form-group").removeClass("has-error");
+      for(var i=0; i<curInputs.length; i++){
+          if (!curInputs[i].validity.valid){
+              isValid = false;
+              $(curInputs[i]).closest(".form-group").addClass("has-error");
+          }
+      }
+
+      if (isValid)
+          nextStepWizard.removeAttr('disabled').trigger('click');
+});
 
 /*
 // -----------------------------------------------------------------------------
