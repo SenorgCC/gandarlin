@@ -1854,14 +1854,15 @@ $(document).on('click','#myRegisterBtn',function(){
 //  createRegistermodal("magietalente","mag");
 });
 
-$('.registration-form fieldset:first-child').fadeIn('slow');
+/*$('.registration-form fieldset:first-child').fadeIn('slow');
+*/
 $('.registration-form input[type="number"]').on('focus', function () {
       $(this).removeClass('input-error');
   });
 
 function createRegistermodal(talentname:string,inputtag:string){
    let htmltext:string="";
-   htmltext='<div class="row setup-content" id="step-Basiswerte">';
+   htmltext='<div class="row setup-content" id="step-'+talentname+'">';
    htmltext+='<div class="col-xs-6 col-md-offset-3">';
    htmltext+='<div class="col-md-12">';
    htmltext+='<h3>'+talentname+'</h3>';
@@ -1894,22 +1895,10 @@ function createRegistermodal(talentname:string,inputtag:string){
 }
 
 $(document).on('click','.nextBtn',function(){
-      var curStep = $(this).closest(".setup-content"),
-          curStepBtn = curStep.attr("id"),
-          nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-          curInputs = curStep.find("input[type='text'],input[type='url']"),
-          isValid = true;
+      let curStep:any = $(this).closest(".setup-content");
+      let curStepBtn:string = curStep.attr("id");
+      window.alert("Currstep: "+curStep);
 
-      $(".form-group").removeClass("has-error");
-      for(var i=0; i<curInputs.length; i++){
-          if (!curInputs[i].validity.valid){
-              isValid = false;
-              $(curInputs[i]).closest(".form-group").addClass("has-error");
-          }
-      }
-
-      if (isValid)
-          nextStepWizard.removeAttr('disabled').trigger('click');
 });
 
 /*
