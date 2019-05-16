@@ -1855,8 +1855,8 @@ function createRegistermodal(talentname:string,inputtag:string){
     data:{TAN:talentname},
     datatype:"json",
     success:function(data:any){
-        alert("DATA:"+JSON.stringify(data));
         data.forEach(function(col){
+          alert("col:"+col["column_name"]);
           if (col["column_name"] != "id"){
             talentcols.push(col["column_name"]);
           }
