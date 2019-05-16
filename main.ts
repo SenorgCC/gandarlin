@@ -1839,6 +1839,19 @@ $(document).on('click','#myRegisterBtn',function(){
   $('#modalregister').modal('toggle');
   $('#myRegisterBtn').hide();
   createRegistermodal("koerpertalente","krp");
+  createRegistermodal("naturtalente","ntr");
+
+  createRegistermodal("wissenstalente","wis");
+  createRegistermodal("gesellschaftstalente","gsl");
+  createRegistermodal("spezialtalente","spz");
+
+  createRegistermodal("einhandwaffen","eih");
+  createRegistermodal("zweihandwaffen","zwh");
+  createRegistermodal("fernkampf","frk");
+  createRegistermodal("anderekampftalente","akt");
+
+  createRegistermodal("handwerkstalente","hdw");
+  createRegistermodal("magietalente","mag");
 });
 
 $('.registration-form fieldset:first-child').fadeIn('slow');
@@ -1870,11 +1883,11 @@ function createRegistermodal(talentname:string,inputtag:string){
     talentcols.forEach(function(talent) {
     htmltext+='<div class="form-group">'
     htmltext+='<label class="control-label">'+talent+' Talentwert</label>'
-    htmltext+='<input id="reg_'+talent+'b" type="number" required="required" class="form-control '+talentname+'" max="20" />';
+    htmltext+='<input id="reg_'+talent+'b" type="number" required="required" class="form-control '+inputtag+'" max="20" />';
     htmltext+='</div>';
     htmltext+='<div class="form-group">';
     htmltext+='<label class="control-label">'+talent+' Bonus/Malus</label>'
-    htmltext+='<input id="reg_'+talent+'mod" type="number" required="required" class="form-control '+talentname+'" max="20" />';
+    htmltext+='<input id="reg_'+talent+'mod" type="number" required="required" class="form-control '+inputtag+'" max="20" />';
     htmltext+='</div>';
     });
     $('#step-Magietalente').before(htmltext);
