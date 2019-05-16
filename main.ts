@@ -1884,11 +1884,11 @@ function createRegistermodal(talentname:string,inputtag:string){
     talentcols.forEach(function(talent) {
       htmltext+='<div class="form-group">'
       htmltext+='<label class="control-label">'+talent+' Talentwert</label>'
-      htmltext+='<input id="reg_'+talent+'b" type="number" required="required" class="form-control '+inputtag+'" max="20" />';
+      htmltext+='<input id="reg_'+talent+'b" type="number" required="required" class="form-control basist '+inputtag+'" max="20" />';
       htmltext+='</div>';
       htmltext+='<div class="form-group">';
       htmltext+='<label class="control-label">'+talent+' Bonus/Malus</label>'
-      htmltext+='<input id="reg_'+talent+'mod" type="number" required="required" class="form-control '+inputtag+'" max="20" />';
+      htmltext+='<input id="reg_'+talent+'mod" type="number" required="required" class="form-control modt '+inputtag+'" max="20" />';
       htmltext+='</div>';
     });
     htmltext+='<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>';
@@ -1912,11 +1912,20 @@ $(document).on('click','.nextBtn',function(){
 $(document).on('click','#req_submit',function(){
   let regname:string=$('#reg_Name').val();
   let talentname:string="";
+  let basiswerte:any[]=[];
+  let modwerte:any[]=[];
   //Iteration über alle Talentteile
-  $('.talentcontent').each(function(intex,element){
+  $('.talentcontent').each(function(){
     talentname=$(this).attr('id');
     talentname=talentname.replace('step-','');
     console.log("Talentname:"+talentname);
+    $('.basist').each(function(){
+      basiswerte.push($(this).val());
+    });
+    console.log("Basiswerte:"+JSON.stringify(basiswerte));
+    $('.modt').each(function(){
+      modwerte.push($(this).val());
+    });
   });
 });
 
