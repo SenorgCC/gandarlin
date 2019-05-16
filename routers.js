@@ -980,7 +980,7 @@ app.post('/updezspeziale',function(req,res){
 
 app.post('/gettalentable',function(req,res){
     let talenttablename=req.body.TAN;
-    let stmt="select column_name from information_schema.columns where table_schema ='"+"$1"+"' and table_name='talentwert';"
+    let stmt="select column_name from information_schema.columns where table_schema =\'$1\' and table_name='talentwert';"
     const getcolnames={
       name:'getcolnames',
       text:stmt,
