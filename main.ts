@@ -1857,8 +1857,8 @@ function createRegistermodal(talentname:string,inputtag:string){
     success:function(data:any){
         alert("DATA:"+JSON.stringify(data));
         data.forEach(function(col){
-          if (data["column_name"] != "id"){
-            talentcols.push(data["column_name"]);
+          if (col["column_name"] != "id"){
+            talentcols.push(col["column_name"]);
           }
         })
     }
