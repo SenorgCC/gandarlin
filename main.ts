@@ -1902,7 +1902,6 @@ function createRegistermodal(talentname:string,inputtag:string){
 $(document).on('click','.nextBtn',function(){
       let curStep:any = $(this).closest(".setup-content");
       let curStepBtn:string = curStep.attr("id");
-      window.alert("Currstep: "+curStep);
       let nextStep:any=$(this).closest(".setup-content").next(".setup-content");
       if (nextStep){
         curStep.hide();
