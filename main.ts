@@ -1884,11 +1884,11 @@ function createRegistermodal(talentname:string,inputtag:string){
     talentcols.forEach(function(talent) {
       htmltext+='<div class="form-group">'
       htmltext+='<label class="control-label">'+talent+' Talentwert</label>'
-      htmltext+='<input id="reg_'+talent+'b" type="number" required="required" class="form-control basist '+inputtag+'" max="20" />';
+      htmltext+='<input id="reg_'+talent+'b" type="number" class="form-control basist '+inputtag+'" max="20" />';
       htmltext+='</div>';
       htmltext+='<div class="form-group">';
       htmltext+='<label class="control-label">'+talent+' Bonus/Malus</label>'
-      htmltext+='<input id="reg_'+talent+'mod" type="number" required="required" class="form-control modt '+inputtag+'" max="20" />';
+      htmltext+='<input id="reg_'+talent+'mod" type="number" class="form-control modt '+inputtag+'" max="20" />';
       htmltext+='</div>';
     });
     htmltext+='<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>';
@@ -1916,6 +1916,8 @@ $(document).on('click','#req_submit',function(){
   let modwerte:any[]=[];
   //Iteration über alle Talentteile
   $('.talentcontent').each(function(){
+    basiswerte=[];
+    modwerte=[];
     talentname=$(this).attr('id');
     talentname=talentname.replace('step-','');
     console.log("Talentname:"+talentname);
