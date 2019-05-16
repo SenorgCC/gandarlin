@@ -1919,13 +1919,14 @@ $(document).on('click','#req_submit',function(){
     talentname=$(this).attr('id');
     talentname=talentname.replace('step-','');
     console.log("Talentname:"+talentname);
-    $('.basist').each(function(){
+    $(this).find('.basist').each(function(){
       basiswerte.push($(this).val());
     });
     console.log("Basiswerte:"+JSON.stringify(basiswerte));
-    $('.modt').each(function(){
+    $(this).find('.modt').each(function(){
       modwerte.push($(this).val());
     });
+    console.log("Mod:"+JSON.stringify(modwerte));
   });
 });
 
