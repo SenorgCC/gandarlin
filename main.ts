@@ -1848,6 +1848,11 @@ $('.registration-form input[type="number"]').on('focus', function () {
 
 function createRegistermodal(talentname:string,inputtag:string){
    let htmltext:string="";
+   htmltext='<div class="row setup-content" id="step-Basiswerte">';
+   htmltext+='<div class="col-xs-6 col-md-offset-3">';
+   htmltext+='<div class="col-md-12">';
+   htmltext+='<h3>'+talentname+'</h3>';
+
    let talentcols:string[]=[];
    $.ajax({
     type:"POST",
@@ -1856,14 +1861,23 @@ function createRegistermodal(talentname:string,inputtag:string){
     datatype:"json",
     success:function(data:any){
         data.forEach(function(col){
-          alert("col:"+col["column_name"]);
           if (col["column_name"] != "id"){
             talentcols.push(col["column_name"]);
           }
         })
     }
   }).done(function():void{
-    alert(JSON.stringify(talentcols));
+    talentcols.forEach(function(talent) {
+    htmltext+='<div class="form-group">'
+    htmltext+='<label class="control-label">'+talent+' Talentwert</label>'
+    htmltext+='<input id="reg_'+talent+'b" type="number" required="required" class="form-control '+talentname+'" max="20" />';
+    htmltext+='</div>';
+    htmltext+='<div class="form-group">';
+    htmltext+='<label class="control-label">'+talent+' Bonus/Malus</label>'
+    htmltext+='<input id="reg_'+talent+'mod" type="number" required="required" class="form-control '+talentname+'" max="20" />';
+    htmltext+='</div>';
+    });
+    $('#step-Magietalente').before(htmltext);
   });
 }
 
