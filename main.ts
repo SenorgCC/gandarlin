@@ -1888,7 +1888,7 @@ function createRegistermodal(talentname:string,inputtag:string){
       htmltext+='</div>';
       htmltext+='<div class="form-group">';
       htmltext+='<label class="control-label">'+talent+' Bonus/Malus</label>'
-      htmltext+='<input id="reg_'+talent+'mod" type="number" class="form-control modt '+inputtag+'" max="20" />';
+      htmltext+='<input id="reg_'+talent+'mod" value="0" type="number" class="form-control modt '+inputtag+'" max="20" />';
       htmltext+='</div>';
     });
     htmltext+='<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>';
