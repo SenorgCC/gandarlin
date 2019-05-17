@@ -1912,6 +1912,7 @@ $(document).on('click','.nextBtn',function(){
 $(document).on('click','#req_submit',function(){
   let regname:string=$('#reg_Name').val();
   let talentname:string="";
+  let newSPID:number;
   let basiswerte:any[]=[];
   let modwerte:any[]=[];
   //Iteration über alle Talentteile
@@ -1928,7 +1929,6 @@ $(document).on('click','#req_submit',function(){
     $(this).find('.modt').each(function(){
       modwerte.push($(this).val());
     });
-    console.log("Mod:"+JSON.stringify(modwerte));
   });
 });
 
