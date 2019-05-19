@@ -1098,7 +1098,7 @@ app.post('/addnewtalente',function(req,res){
 
 app.post('/addnewspname',function(req,res){
     let sp_name=req.body.NAME;
-    let stmt="insert into spieler.namen values ($1) RETURNING id";
+    let stmt="insert into spieler.namen(name) values ($1) RETURNING id";
     const addnewname={
       name:'addnewname',
       text:stmt,
