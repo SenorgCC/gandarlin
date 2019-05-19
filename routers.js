@@ -1098,11 +1098,11 @@ app.post('/addnewtalente',function(req,res){
 
 app.post('/addnewspname',function(req,res){
     let sp_name=req.body.NAME;
-    let stmt="insert into spieler.namen values ($2) RETURNING id";
+    let stmt="insert into spieler.namen values ($1) RETURNING id";
     const addnewname={
       name:'addnewname',
       text:stmt,
-      values:[sp_id,sp_name]
+      values:[sp_name]
     }
     //durch den RETURNING id gibts einen Rueckgabewert => kein uidtyp1
     selecttyp1(addnewname,function(err,result){
