@@ -1086,7 +1086,7 @@ app.post('/addnewtalente',function(req,res){
     } else{
       return;
     }
-    const inserttalent={
+    var inserttalent={
       name:'inserttalent',
       text:stmt,
       values:values
