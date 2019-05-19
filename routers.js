@@ -1087,7 +1087,7 @@ app.post('/addnewtalente',function(req,res){
       return;
     }
     var inserttalent={
-      name:'inserttalent',
+      name:'inserttalent'+talentname,
       text:stmt,
       values:values
     }
