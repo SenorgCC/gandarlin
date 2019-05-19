@@ -990,3 +990,123 @@ app.post('/gettalentable',function(req,res){
       res.send(result);
     });
 });
+
+app.post('/getmaxspid',function(req,res){
+    let stmt="select max(id)+1 as id from basiswerte.basis;"
+    const getmaxspid={
+      name:'getmaxspid',
+      text:stmt,
+      values:[]
+    }
+    selecttyp1(getmaxspid,function(err,result){
+      res.send(result);
+    });
+});
+
+app.post('/addnewtalente',function(req,res){
+    let sp_id=req.body.SP_ID;
+    let talentname=req.body.TALN;
+    let values=req.body.VAL;
+    //alternative: arr = [34, ...arr];
+    values.unshift(sp_id);
+	for (var i=0; i<=values.length; i++){
+		if (values[i]==""){
+			values[i]=null;
+		}
+	}
+
+  	let art=req.body.ART;
+   	let stmt=""
+  	if (talentname=='spezialtalente'){
+      if(art=='basis'){
+        stmt="insert into spezialtalente.talentwert values ($1,$2,$3,$4,$5,$6,$7,$8,$9)";
+      }else{
+        stmt="insert into spezialtalente.modifikation values ($1,$2,$3,$4,$5,$6,$7,$8,$9)";
+      }
+    } else if (talentname=='naturtalente'){
+      if(art=='basis'){
+        stmt="insert into naturtalente.talentwert values ($1,$2,$3,$4,$5,$6,$7)";
+      }else{
+        stmt="insert into naturtalente.modifikation values ($1,$2,$3,$4,$5,$6,$7)";
+      }
+    } else if (talentname=='gesellschaftstalente'){
+      if(art=='basis'){
+        stmt="insert into gesellschaftstalente.talentwert values ($1,$2,$3,$4,$5,$6,$7,$8)";
+      }else{
+        stmt="insert into gesellschaftstalente.modifikation values ($1,$2,$3,$4,$5,$6,$7,$8)";
+      }
+    } else if (talentname=='fernkampf'){
+      if(art=='basis'){
+        stmt="insert into fernkampf.talentwert values ($1,$2,$3,$4)";
+      }else{
+        stmt="insert into fernkampf.modifikation values ($1,$2,$3,$4)";
+      }
+    } else if (talentname=='zweihandwaffen'){
+      if(art=='basis'){
+        stmt="insert into zweihandwaffen.talentwert values ($1,$2,$3,$4,$5,$6)";
+      }else{
+        stmt="insert into zweihandwaffen.modifikation values ($1,$2,$3,$4,$5,$6)";
+      }
+    } else if (talentname=='koerpertalente'){
+      if(art=='basis'){
+        stmt="insert into koerpertalente.talentwert values ($1,$2,$3,$4,$5,$6,$7,$8)";
+      }else{
+        stmt="insert into koerpertalente.modifikation values ($1,$2,$3,$4,$5,$6,$7,$8)";
+      }
+    } else if (talentname=='anderekampftalente'){
+      if(art=='basis'){
+        stmt="insert into anderekampftalente.talentwert values ($1,$2,$3,$4)";
+      }else{
+        stmt="insert into anderekampftalente.modifikation values ($1,$2,$3,$4)";
+      }
+    } else if (talentname=='magietalente'){
+      if(art=='basis'){
+        stmt="insert into magietalente.talentwert values ($1,$2,$3,$4,$5,$6,$7,$8,$9)";
+      }else{
+        stmt="insert into magietalente.modifikation values ($1,$2,$3,$4,$5,$6,$7,$8,$9)";
+      }
+    } else if (talentname=='basiswerte'){
+      if(art=='basis'){
+        stmt="insert into basiswerte.basis values ($1,$2,$3,$4,$5,$6,$7,$8,$9)";
+      }else{
+        stmt="insert into basiswerte.modifikation values ($1,$2,$3,$4,$5,$6,$7,$8,$9)";
+      }
+    } else if (talentname=='handwerkstalente'){
+      if(art=='basis'){
+        stmt="insert into handwerkstalente.talentwert values ($1,$2,$3,$4,$5,$6)";
+      }else{
+        stmt="insert into handwerkstalente.modifikation values ($1,$2,$3,$4,$5,$6)";
+      }
+    } else if (talentname=='wissenstalente'){
+      if(art=='basis'){
+        stmt="insert into wissenstalente.talentwert values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20)";
+      }else{
+        stmt="insert into wissenstalente.modifikation values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20)";
+      }
+    } else{
+      return;
+    }
+    const inserttalent={
+      name:'inserttalent',
+      text:stmt,
+      values:values
+    }
+    uidtyp1(inserttalent,function(err,result){
+      res.send(result);
+    });
+});
+
+app.post('/addnewspname',function(req,res){
+    let sp_id=req.body.SP_ID;
+    let sp_name=req.body.NAME;
+    let stmt="insert into spieler.namen values ($1,$2)";
+    const addnewname={
+      name:'addnewname',
+      text:stmt,
+      values:[sp_id,sp_name]
+    }
+    uidtyp1(addnewname,function(err,result){
+      res.send(result);
+    });
+});
+//

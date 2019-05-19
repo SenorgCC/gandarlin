@@ -1912,24 +1912,111 @@ $(document).on('click','.nextBtn',function(){
 $(document).on('click','#req_submit',function(){
   let regname:string=$('#reg_Name').val();
   let talentname:string="";
-  let newSPID:number;
   let basiswerte:any[]=[];
   let modwerte:any[]=[];
+  let newmaxid:number;
+  let spielername:any=$('#reg_Name').val();
   //Iteration über alle Talentteile
-  $('.talentcontent').each(function(){
+  $.ajax({
+  type:"POST",
+  url:"/getmaxspid",
+  datatype:"json",
+  success:function(data:any){
+    newmaxid=parseInt(data[0]["id"]);
+  }
+  }).done(function():void{
+
+    basiswerte=[];
+    modwerte=[];
+
+    $('.basistalent').each(function(){
+    talentname=$(this).attr('id');
+    talentname=talentname.replace('step-','');
+    $(this).find('.basist').each(function(){
+		basiswerte.push($(this).val());
+		console.log("Basis: "+$(this).val());
+    });
+    $(this).find('.modt').each(function(){
+        modwerte.push($(this).val());
+    });
+    $.ajax({
+      type:"POST",
+      url:"/addnewtalente",
+      data:{SP_ID:newmaxid,
+      TALN:talentname,
+      VAL:basiswerte,
+      ART:"basis"
+    },
+    datatype:"json",
+    success:function(data:any){
+    }
+	}).done(function():void{
+	$.ajax({
+		type="POST",
+		url="/addnewtalente",
+		data:{SP_ID:newmaxid,
+		TALN:talentname,
+		VAL:modwerte,
+		art:"mod"},
+		datatype:"json",
+		success:function(data:any){
+		}
+		}).done(function():void{
+
+    $('.talentcontent').each(function(){
     basiswerte=[];
     modwerte=[];
     talentname=$(this).attr('id');
     talentname=talentname.replace('step-','');
-    console.log("Talentname:"+talentname);
     $(this).find('.basist').each(function(){
-      basiswerte.push($(this).val());
+		basiswerte.push($(this).val());
     });
-    console.log("Basiswerte:"+JSON.stringify(basiswerte));
     $(this).find('.modt').each(function(){
-      modwerte.push($(this).val());
+        modwerte.push($(this).val());
     });
+
+    $.ajax({
+      type:"POST",
+      url:"/addnewtalente",
+      data:{SP_ID:newmaxid,
+      TALN:talentname,
+      VAL:basiswerte,
+      ART:"basis"
+    },
+    datatype:"json",
+    success:function(data:any){
+    }
+  }).done(function():void{
+      $.ajax({
+        type:"POST",
+        url:"/addnewtalente",
+        data:{SP_ID:newmaxid,
+          TALN:talentname,
+          VAL:modwerte,
+          ART:"mod" },
+        datatype:"json",
+        success:function(data:any){
+        }
+      });
   });
+  });
+    $.ajax({
+      type:"POST",
+      url:"/addnewspname",
+      data:{SP_ID:newmaxid,
+            NAME:spielername },
+    datatype:"json",
+    success:function(data:any){
+    }
+  }).done(function():void{
+    $('#modalregister').modal('toggle');
+    SpielerID=newmaxid;
+    getAlldata();
+  });
+  });
+  });
+  });
+});
 });
 
 /*
@@ -2210,3 +2297,4 @@ function getImageurl(nummer:number):string{
     //Initial call
     respondCanvas();
 });
+//

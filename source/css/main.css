@@ -19,6 +19,14 @@ span > h2 {
   display: inline-block;
 }
 */
+.nichterlernt{
+  /* Ist noch buggy! */
+  /* background-color: #f9c7c7; */
+}
+.fullrestbtn{
+  background-color: #379627;
+}
+
 canvas {
   border: 1px solid black;
   background: url('/source/kampffeld/hintergrund/Brucke.jpg');
@@ -49,3 +57,5 @@ canvas {
 .step.finish {
   background-color: #4CAF50;
 }
+
+/***/
