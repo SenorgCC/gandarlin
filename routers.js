@@ -1097,15 +1097,15 @@ app.post('/addnewtalente',function(req,res){
 });
 
 app.post('/addnewspname',function(req,res){
-    let sp_id=req.body.SP_ID;
     let sp_name=req.body.NAME;
-    let stmt="insert into spieler.namen values ($1,$2)";
+    let stmt="insert into spieler.namen values ($2) RETURNING id";
     const addnewname={
       name:'addnewname',
       text:stmt,
       values:[sp_id,sp_name]
     }
-    uidtyp1(addnewname,function(err,result){
+    //durch den RETURNING id gibts einen Rueckgabewert => kein uidtyp1
+    selecttyp1(addnewname,function(err,result){
       res.send(result);
     });
 });
