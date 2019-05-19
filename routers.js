@@ -1007,6 +1007,8 @@ app.post('/addnewtalente',function(req,res){
     let sp_id=req.body.SP_ID;
     let talentname=req.body.TALN;
     let values=req.body.VAL;
+    let art=req.body.ART;
+    let insertname="insrtal"+talentname+art;
     //alternative: arr = [34, ...arr];
     values.unshift(sp_id);
 	for (var i=0; i<=values.length; i++){
@@ -1014,7 +1016,6 @@ app.post('/addnewtalente',function(req,res){
 			values[i]=null;
 		}
 	}
-
   	let art=req.body.ART;
    	let stmt=""
   	if (talentname=='spezialtalente'){
@@ -1087,10 +1088,12 @@ app.post('/addnewtalente',function(req,res){
       return;
     }
     var inserttalent={
-      name:'inserttalent'+talentname,
+      name:insertname,
       text:stmt,
       values:values
     }
+    console.log("aufuhrung:"+insertname);
+    console.log("Vals:"+values);
     uidtyp1(inserttalent,function(err,result){
       res.send(result);
     });
