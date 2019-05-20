@@ -1926,6 +1926,8 @@ $(document).on('click','#req_submit',function(){
       newmaxid=parseInt(data[0]["id"]);
   }
   }).done(function():void{
+    console.log("HIER!");
+    conosle.log("Talent:"+talentname);
     $('.talentcontent').each(function(){
     basiswerte=[];
     modwerte=[];
@@ -1949,6 +1951,8 @@ $(document).on('click','#req_submit',function(){
     success:function(data:any){
     }
   }).done(function():void{
+    console.log("HIER2");
+    console.log("talentname"+talentname);
       $.ajax({
         type:"POST",
         url:"/addnewtalente",
@@ -1961,8 +1965,8 @@ $(document).on('click','#req_submit',function(){
         }
     }).done(function():void{
     $('#modalregister').modal('toggle');
-    SpielerID=newmaxid;
-    getAlldata();
+    //SpielerID=newmaxid;
+    //getAlldata();
   });
   });
 });
