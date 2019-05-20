@@ -1047,6 +1047,12 @@ app.post('/addnewtalente',function(req,res){
       }else{
         stmt="insert into zweihandwaffen.modifikation values ($1,$2,$3,$4,$5,$6)";
       }
+    } else if (talentname=='einhandwaffen'){
+      if(art=='basis'){
+        stmt="insert into einhandwaffen.talentwert values ($1,$2,$3,$4,$5)";
+      }else{
+        stmt="insert into einhandwaffen.modifikation values ($1,$2,$3,$4,$5)";
+      }
     } else if (talentname=='koerpertalente'){
       if(art=='basis'){
         stmt="insert into koerpertalente.talentwert values ($1,$2,$3,$4,$5,$6,$7,$8)";
@@ -1063,7 +1069,7 @@ app.post('/addnewtalente',function(req,res){
       if(art=='basis'){
         stmt="insert into magietalente.talentwert values ($1,$2,$3,$4,$5,$6,$7,$8,$9)";
       }else{
-        stmt="insert into magietalente.modifikation values ($1,$2,$3,$4,$5,$6,$7,$8,$9)";
+        stmt="insert into magietalente.modifikator values ($1,$2,$3,$4,$5,$6,$7,$8,$9)";
       }
     } else if (talentname=='Basiswerte'){
       if(art=='basis'){
@@ -1077,6 +1083,7 @@ app.post('/addnewtalente',function(req,res){
       }else{
         stmt="insert into handwerkstalente.modifikation values ($1,$2,$3,$4,$5,$6)";
       }
+
     } else if (talentname=='wissenstalente'){
       if(art=='basis'){
         stmt="insert into wissenstalente.talentwert values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20)";
