@@ -1007,7 +1007,6 @@ app.post('/addnewtalente',function(req,res){
     let sp_id=req.body.SP_ID;
     let talentname=req.body.TALN;
     let values=req.body.VAL;
-    let art=req.body.ART;
     let insertname="insrtal"+talentname+art;
     //alternative: arr = [34, ...arr];
     values.unshift(sp_id);
