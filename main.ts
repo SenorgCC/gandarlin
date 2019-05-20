@@ -1927,7 +1927,7 @@ $(document).on('click','#req_submit',function(){
   }
   }).done(function():void{
     console.log("HIER!");
-    conosle.log("Talent:"+talentname);
+    console.log("Talent:"+talentname);
     $('.talentcontent').each(function(){
     basiswerte=[];
     modwerte=[];
