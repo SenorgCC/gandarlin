@@ -1059,13 +1059,13 @@ app.post('/addnewtalente',function(req,res){
       }else{
         stmt="insert into anderekampftalente.modifikation values ($1,$2,$3,$4)";
       }
-    } else if (talentname=='magietalente'){
+    } else if (talentname=='Magietalente'){
       if(art=='basis'){
         stmt="insert into magietalente.talentwert values ($1,$2,$3,$4,$5,$6,$7,$8,$9)";
       }else{
         stmt="insert into magietalente.modifikation values ($1,$2,$3,$4,$5,$6,$7,$8,$9)";
       }
-    } else if (talentname=='basiswerte'){
+    } else if (talentname=='Basiswerte'){
       if(art=='basis'){
         stmt="insert into basiswerte.basis values ($1,$2,$3,$4,$5,$6,$7,$8,$9)";
       }else{
