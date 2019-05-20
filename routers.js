@@ -1118,4 +1118,17 @@ app.post('/addnewspname',function(req,res){
       res.send(result);
     });
 });
+
+app.post('/addnewsekaktuell',function(req,res){
+    let sp_id=req.body.SP_ID;
+    let stmt="insert into sekundaerwerte.aktuell(id) values ($1)";
+    const addseknew={
+      name:'addseknew',
+      text:stmt,
+      values:[sp_id]
+    }
+    uidtyp1(addnewname,function(err,result){
+      res.send(result);
+    });
+});
 //

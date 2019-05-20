@@ -1926,13 +1926,12 @@ $(document).on('click','#req_submit',function(){
       newmaxid=parseInt(data[0]["id"]);
   }
   }).done(function():void{
-    $('.talentcontent').each(function(){
+    let talentarr:any=$('.talentcontent')
+    talentarr.each(function(index:number,element:any){
     basiswerte=[];
     modwerte=[];
     talentname=$(this).attr('id');
     talentname=talentname.replace('step-','');
-    console.log("HIER1");
-    console.log("talentname "+talentname);
     $(this).find('.basist').each(function(){
   		basiswerte.push($(this).val());
     });
@@ -1950,8 +1949,14 @@ $(document).on('click','#req_submit',function(){
       success:function(data:any){
       }
     });
-    console.log("HIER2");
-    console.log("talentname "+talentname);
+    $.ajax({
+      type:"POST",
+      url:"/addnewsekaktuell",
+      data:{SP_ID:newmaxid },
+      datatype:"json",
+      success:function(data:any){
+      }
+    });
     $.ajax({
       type:"POST",
       url:"/addnewtalente",
@@ -1962,11 +1967,14 @@ $(document).on('click','#req_submit',function(){
       datatype:"json",
       success:function(data:any){
         }
+    }).done(function(){
+      if(index == (talentarr.length-1)){
+        $('#modalregister').modal('toggle');
+        SpielerID=newmaxid;
+        getAlldata();
+      }
     });
-    });
-    $('#modalregister').modal('toggle');
-    //SpielerID=newmaxid;
-    //getAlldata();
+  });
   });
 });
 
