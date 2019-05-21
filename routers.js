@@ -1011,11 +1011,11 @@ app.post('/addnewtalente',function(req,res){
     let insertname="insrtal"+talentname+art;
     //alternative: arr = [34, ...arr];
     values.unshift(sp_id);
-	for (var i=0; i<=values.length; i++){
-		if (values[i]==""){
-			values[i]=null;
-		}
-	}
+    for (var i=0; i<=values.length; i++){
+    	if (values[i]==""){
+    		values[i]=null;
+    	}
+    }
    	let stmt=""
   	if (talentname=='spezialtalente'){
       if(art=='basis'){
@@ -1083,7 +1083,6 @@ app.post('/addnewtalente',function(req,res){
       }else{
         stmt="insert into handwerkstalente.modifikation values ($1,$2,$3,$4,$5,$6)";
       }
-
     } else if (talentname=='wissenstalente'){
       if(art=='basis'){
         stmt="insert into wissenstalente.talentwert values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18,$19,$20)";

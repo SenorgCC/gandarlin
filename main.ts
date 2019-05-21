@@ -1515,7 +1515,6 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
      titel=titel.replace("+","");
      titel=titel.replace("-","");
      titel = titel.replace(/\s+/g, "");
-	console.log("Titel: "+titel);
    //MUss als Objekt angelegt werden! sonst wird exotisch nicht richtig aufgeloest
    var dataobj={};
    var key:string;
@@ -1972,6 +1971,7 @@ $(document).on('click','#req_submit',function(){
       $('#modalregister').modal('toggle');
       SpielerID=newmaxid;
       getAlldata();
+      $('#Spielerdaten').hide();
   });
   });
 });
@@ -1983,7 +1983,6 @@ $(document).on('click','#req_submit',function(){
 $(document).on('click', "#saveKObjCanvas", function (){
   //canvas objekt ins kampffeld uebertragen
   let canvasbild:String = $('#objektcanvas').getCanvasImage('png');
-  console.log("Test: "+canvasbild);
   $('#canvas').drawImage({
     layer: true,
     draggable: true,
@@ -1994,7 +1993,6 @@ $(document).on('click', "#saveKObjCanvas", function (){
     x:150,y:150
   });
 });
-
 
 $(document).on('click', "#resetObjCanvas", function () {
   //canvas objekt ins kampffeld uebertragen
