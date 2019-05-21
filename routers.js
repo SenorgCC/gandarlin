@@ -1127,7 +1127,7 @@ app.post('/addnewsekaktuell',function(req,res){
       text:stmt,
       values:[sp_id]
     }
-    uidtyp1(addnewname,function(err,result){
+    uidtyp1(addseknew,function(err,result){
       res.send(result);
     });
 });
