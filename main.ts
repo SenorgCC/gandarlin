@@ -1951,14 +1951,6 @@ $(document).on('click','#req_submit',function(){
     });
     $.ajax({
       type:"POST",
-      url:"/addnewsekaktuell",
-      data:{SP_ID:newmaxid },
-      datatype:"json",
-      success:function(data:any){
-      }
-    });
-    $.ajax({
-      type:"POST",
       url:"/addnewtalente",
       data:{SP_ID:newmaxid,
         TALN:talentname,
@@ -1967,13 +1959,19 @@ $(document).on('click','#req_submit',function(){
       datatype:"json",
       success:function(data:any){
         }
-    }).done(function(){
-      if(index == (talentarr.length-1)){
-        $('#modalregister').modal('toggle');
-        SpielerID=newmaxid;
-        getAlldata();
-      }
     });
+  });
+  $.ajax({
+    type:"POST",
+    url:"/addnewsekaktuell",
+    data:{SP_ID:newmaxid },
+    datatype:"json",
+    success:function(data:any){
+    }
+  }).done(function(){
+      $('#modalregister').modal('toggle');
+      SpielerID=newmaxid;
+      getAlldata();
   });
   });
 });
