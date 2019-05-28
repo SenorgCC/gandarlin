@@ -2001,8 +2001,8 @@ $(document).on('click', "#resetObjCanvas", function () {
       layer: true,
       draggable: true,
       bringToFront: true,
-      width:300,
-      height:200,
+      width:200,
+      height:300,
       source:"source/kampffeld/Symbole/lexys.png",
       x:150,y:150
     });
