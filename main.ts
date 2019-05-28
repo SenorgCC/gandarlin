@@ -1982,7 +1982,7 @@ $(document).on('click','#req_submit',function(){
 
 $(document).on('click', "#saveKObjCanvas", function (){
   //canvas objekt ins kampffeld uebertragen
-  let canvasbild:String = $('#objektcanvas').getCanvasImage('png');
+  //let canvasbild:String = $('#objektcanvas').getCanvasImage('png');
   $('#canvas').drawImage({
     layer: true,
     draggable: true,
@@ -1992,15 +1992,20 @@ $(document).on('click', "#saveKObjCanvas", function (){
     source:"source/kampffeld/Symbole/frendlyMeele.png",
     x:150,y:150
   });
+
 });
 
 $(document).on('click', "#resetObjCanvas", function () {
   //canvas objekt ins kampffeld uebertragen
-  $('#objektcanvas').drawRect({
-    fillStyle: '#6c1',
-    x: 100, y: 100,
-    width: 50, height: 50
-  });
+  $('#canvas').drawImage({
+      layer: true,
+      draggable: true,
+      bringToFront: true,
+      width:300,
+      height:200,
+      source:"source/kampffeld/Symbole/lexys.png",
+      x:150,y:150
+    });
 });
 
 $(document).on('change',"#Schlachtfeldselect",function(){
