@@ -2006,6 +2006,16 @@ $(document).on('click', "#resetObjCanvas", function () {
       source:"source/kampffeld/Symbole/lexys.png",
       x:150,y:150
     });
+
+    $('#canvas').drawImage({
+          layer: true,
+          draggable: true,
+          bringToFront: true,
+          width:200,
+          height:300,
+          source:"source/kampffeld/Symbole/ahros.png",
+          x:150,y:150
+    });
 });
 
 $(document).on('change',"#Schlachtfeldselect",function(){
