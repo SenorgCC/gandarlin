@@ -2018,6 +2018,33 @@ $(document).on('click', "#resetObjCanvas", function () {
     });
 });
 
+$(document).on('click', "#charsymbolbtn", function () {
+  let charsymbolval:any = $('#SymbolSelect').val();
+  let charsymbolUrl:string=getSymbolurl(charsymbolval);
+  //Die Values vor 9 sind die generischen Symbole, die Darauffolgenden sind Chars
+  if(charsymbolval>8){
+    $('#canvas').drawImage({
+      layer: true,
+      draggable: true,
+      bringToFront: true,
+      width:100,
+      height:100,
+      source:charsymbolUrl,
+      x:150,y:150
+    });
+  }else{
+    $('#canvas').drawImage({
+          layer: true,
+          draggable: true,
+          bringToFront: true,
+          width:200,
+          height:300,
+          source:charsymbolUrl,
+          x:150,y:150
+        });
+  }
+});
+
 $(document).on('change',"#Schlachtfeldselect",function(){
   let backgroundval:any = $('#Schlachtfeldselect').val();
   let imageUrl:string=getImageurl(backgroundval);
@@ -2033,6 +2060,22 @@ function getImageurl(nummer:number):string{
     5: "/source/kampffeld/hintergrund/Stadt.jpg" ,
     6: "/source/kampffeld/hintergrund/Stein.jpg" ,
     7: "/source/kampffeld/hintergrund/Wiese.jpg"
+    };
+    return url[nummer];
+ }
+
+function getSymbolurl(nummer:number):string{
+    var url = {
+    1: "/source/kampffeld/Symbole/enemyHeal.png" ,
+    2: "/source/kampffeld/Symbole/enemyMage.png" ,
+    3: "/source/kampffeld/Symbole/enemyMeele.png" ,
+    4: "/source/kampffeld/Symbole/enemyRanged.png" ,
+    5: "/source/kampffeld/Symbole/frendlyHeal.png" ,
+    6: "/source/kampffeld/Symbole/frendlyMage.png" ,
+    7: "/source/kampffeld/Symbole/frendlyMeele.png" ,
+    8: "/source/kampffeld/Symbole/frendlyRanged.png" ,
+    9: "/source/kampffeld/Symbole/ahros.png" ,
+    10: "/source/kampffeld/Symbole/lexys.png" ,
     };
     return url[nummer];
  }
