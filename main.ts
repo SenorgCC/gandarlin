@@ -2037,8 +2037,8 @@ $(document).on('click', "#charsymbolbtn", function () {
           layer: true,
           draggable: true,
           bringToFront: true,
-          width:200,
-          height:300,
+          width:100,
+          height:100,
           source:charsymbolUrl,
           x:150,y:150
         });
