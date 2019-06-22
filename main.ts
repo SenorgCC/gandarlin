@@ -2041,9 +2041,8 @@ $(document).on('click', "#charsymbolbtn", function () {
           height:100,
           source:charsymbolUrl,
           x:150,y:150,
-          dblclick:function(event){
-              console.log("Layer"+JSON.stringify($(this)));
-              $(this).removeLayer();
+          dblclick:function(layer){
+              $(this).removeLayer(layer);
           }
         });
   }
