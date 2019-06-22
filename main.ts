@@ -2042,7 +2042,7 @@ $(document).on('click', "#charsymbolbtn", function () {
           source:charsymbolUrl,
           x:150,y:150,
           dblclick:function(event){
-              console.log("Layer"+JSON.stringify($(this));
+              console.log("Layer"+JSON.stringify($(this)));
               $(this).removeLayer();
           }
         });
