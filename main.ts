@@ -2050,7 +2050,9 @@ $(document).on('click', "#charsymbolbtn", function () {
 
 $(document).on('click','.togglenavspan', function(e:JQueryEventObject):void{
   $(this).parent().find('.togglenavspan').toggle();
-  $('#kampfnav').toggle();
+  $('#kampfnav').slideToggle( "slow", function() {
+    //placeholder wenn was gemacht werden soll nach der animation
+  });
 });
 
 $(document).on('change',"#Schlachtfeldselect",function(){
