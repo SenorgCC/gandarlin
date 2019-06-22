@@ -38,6 +38,12 @@ canvas {
   margin-bottom: 1px;
 }
 
+.togglenavspan {
+  float:left;
+  width: 2%;
+  height: auto;
+  margin-bottom: 1px;
+}
 .step {
   height: 15px;
   width: 15px;

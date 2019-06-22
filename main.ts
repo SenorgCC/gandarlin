@@ -2048,6 +2048,11 @@ $(document).on('click', "#charsymbolbtn", function () {
   }
 });
 
+$(document).on('click','.togglenavspan', function(e:JQueryEventObject):void{
+  $(this).parent().find('.togglenavspan').toggle();
+  $('#kampfnav').toggle();
+});
+
 $(document).on('change',"#Schlachtfeldselect",function(){
   let backgroundval:any = $('#Schlachtfeldselect').val();
   let imageUrl:string=getImageurl(backgroundval);

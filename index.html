@@ -1519,12 +1519,14 @@
 
   </div>
   <div id="Kampfsheet" class="container-fluid">
-    <h1>Kampffeld</h1>
+		<span> <input class="togglenavspan" type="image" src="source/images/ArrowDown.svg">
+      	<input class="togglenavspan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+        <h1>Kampffeld</h1>
+		</span>
+
 <div id="kampfobjekts">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav id="kampfnav" style="display:hidden;" class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-       <button type="button" id="saveKObjCanvas">Save</button>
-       <button type="button" id="resetObjCanvas">Reset</button>
        <!-- <button type="button" id="charsymbolbtn">Figursymbol</button> -->
     <select id="Schlachtfeldselect" class="custom-select">
       <option selected disabled>Schlaftfeld</option>
@@ -1536,21 +1538,6 @@
       <option value="6">Stein</option>
       <option value="7">Wiese</option>
     </select>
-    <!--
-    <select id="SymbolSelect" class="custom-select">
-      <option selected disabled>Figursymbol</option>
-      <option value="1">Gegner Priester</option>
-      <option value="2">Gegner Magier</option>
-      <option value="3">Gegner Nahkämpfer</option>
-      <option value="4">Gegner Fernkämpfer</option>
-      <option value="5">Verbündeter Priester</option>
-      <option value="6">Verbündeter Magier</option>
-      <option value="7">Verbündeter Nahkämpfer</option>
-      <option value="8">Verbündeter Fernkämpfer</option>
-      <option value="9">Ahros</option>
-      <option value="10">Lexys</option>
-    </select>
-  -->
     <div class="input-group">
       <select class="custom-select" id="SymbolSelect">
         <option selected disabled>Figursymbol</option>
