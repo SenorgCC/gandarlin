@@ -1996,6 +1996,12 @@ $(document).on('click', "#saveKObjCanvas", function (){
   });
 
 });
+$(document).on('click','#canvasinzoom',function(){
+    $('#canvas').css("zoom","5%");
+});
+$(document).on('click','#canvasoutzoom',function(){
+    $('#canvas').css("zoom","-5%");
+});
 
 $(document).on('click', "#resetObjCanvas", function () {
   //canvas objekt ins kampffeld uebertragen
