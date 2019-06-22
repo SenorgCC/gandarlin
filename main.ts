@@ -1784,7 +1784,9 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
 $(document).on('click','.toggletablespan', function(e:JQueryEventObject):void{
   $(this).parent().find('.toggletablespan').toggle();
   var table=$(this).parent().next('.table');
-  table.toggle();
+  //table.toggle();
+  table.slideToggle(450,function() {
+  });
 });
 
 //TODO: Abgeklemmpt... da noch nicht fertig
@@ -2050,7 +2052,8 @@ $(document).on('click', "#charsymbolbtn", function () {
 
 $(document).on('click','.togglenavspan', function(e:JQueryEventObject):void{
   $(this).parent().find('.togglenavspan').toggle();
-  $('#kampfnav').slideToggle( "slow", function() {
+  //"slow"=200; fast = 600, default=400
+  $('#kampfnav').slideToggle( 450, function() {
     //placeholder wenn was gemacht werden soll nach der animation
   });
 });
