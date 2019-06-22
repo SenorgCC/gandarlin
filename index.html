@@ -1526,7 +1526,7 @@
       <span>
        <button type="button" id="saveKObjCanvas">Save</button>
        <button type="button" id="resetObjCanvas">Reset</button>
-       <button type="button" id="charsymbolbtn">Figursymbol</button>
+       <!-- <button type="button" id="charsymbolbtn">Figursymbol</button> -->
     <select id="Schlachtfeldselect" class="custom-select">
       <option selected disabled>Schlaftfeld</option>
       <option value="1">Brücke</option>
@@ -1537,6 +1537,7 @@
       <option value="6">Stein</option>
       <option value="7">Wiese</option>
     </select>
+    <!--
     <select id="SymbolSelect" class="custom-select">
       <option selected disabled>Figursymbol</option>
       <option value="1">Gegner Priester</option>
@@ -1550,6 +1551,25 @@
       <option value="9">Ahros</option>
       <option value="10">Lexys</option>
     </select>
+  -->
+    <div class="input-group">
+      <select class="custom-select" id="SymbolSelect">
+        <option selected disabled>Figursymbol</option>
+        <option value="1">Gegner Priester</option>
+        <option value="2">Gegner Magier</option>
+        <option value="3">Gegner Nahkämpfer</option>
+        <option value="4">Gegner Fernkämpfer</option>
+        <option value="5">Verbündeter Priester</option>
+        <option value="6">Verbündeter Magier</option>
+        <option value="7">Verbündeter Nahkämpfer</option>
+        <option value="8">Verbündeter Fernkämpfer</option>
+        <option value="9">Ahros</option>
+        <option value="10">Lexys</option>
+      </select>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" id="charsymbolbtn" type="button">Erzeugen</button>
+      </div>
+    </div>
   </span>
     </div>
   </nav>
