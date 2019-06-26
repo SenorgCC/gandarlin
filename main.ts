@@ -2032,7 +2032,8 @@ $(document).on('click', "#charsymbolbtn", function () {
   let charsymbolval:any = $('#SymbolSelect').val();
   let charsymbolUrl:string=getSymbolurl(charsymbolval);
   //Die Values vor 9 sind die generischen Symbole, die Darauffolgenden sind Chars
-  let imgInstance = new fabric.Image.fromURL(charsymbolUrl, function(oImg){
+  let imgInstance = new fabric.Image.fromURL("'"+charsymbolUrl+"'", function(oImg){
+      console.log("test");
       oImg.scale(0.5).set('flipX',true);
       canvas.add(oImg);
   });
@@ -2110,6 +2111,7 @@ function getSymbolurl(nummer:number):string{
  }
  // Canvas Responsive machen
     var c = $('#canvas');
+    var c2=$('#canvas2');
     var ct = c.get(0).getContext('2d');
     var container = $(c).parent();
 
@@ -2120,6 +2122,8 @@ function getSymbolurl(nummer:number):string{
         c.attr('width', $(container).width() ); //max width
         c.attr('height', $(container).height() ); //max height
 
+        c2.attr('width', $(container).width() ); //max width
+        c2.attr('height', $(container).height() ); //max height
         //Call a function to redraw other content (texts, images etc)
     }
 
