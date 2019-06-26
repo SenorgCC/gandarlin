@@ -2052,6 +2052,7 @@ $(document).on('click', "#charsymbolbtn", function () {
           height:100,
           source:charsymbolUrl,
           x:150,y:150,
+
           dblclick:function(layer){
               $(this).removeLayer(layer);
           },
@@ -2088,16 +2089,16 @@ function getImageurl(nummer:number):string{
 
 function getSymbolurl(nummer:number):string{
     var url = {
-    1: "source/kampffeld/Symbole/enemyHeal.png" ,
-    2: "source/kampffeld/Symbole/enemyMage.png" ,
-    3: "source/kampffeld/Symbole/enemyMeele.png" ,
-    4: "source/kampffeld/Symbole/enemyRanged.png" ,
-    5: "source/kampffeld/Symbole/frendlyHeal.png" ,
-    6: "source/kampffeld/Symbole/frendlyMage.png" ,
-    7: "source/kampffeld/Symbole/frendlyMeele.png" ,
-    8: "source/kampffeld/Symbole/frendlyRanged.png" ,
-    9: "source/kampffeld/Symbole/ahros.png" ,
-    10: "source/kampffeld/Symbole/lexys.png"
+    1: "/source/kampffeld/Symbole/enemyHeal.png" ,
+    2: "/source/kampffeld/Symbole/enemyMage.png" ,
+    3: "/source/kampffeld/Symbole/enemyMeele.png" ,
+    4: "/source/kampffeld/Symbole/enemyRanged.png" ,
+    5: "/source/kampffeld/Symbole/frendlyHeal.png" ,
+    6: "/source/kampffeld/Symbole/frendlyMage.png" ,
+    7: "/source/kampffeld/Symbole/frendlyMeele.png" ,
+    8: "/source/kampffeld/Symbole/frendlyRanged.png" ,
+    9: "/source/kampffeld/Symbole/ahros.png" ,
+    10: "/source/kampffeld/Symbole/lexys.png"
     };
     return url[nummer];
  }
@@ -2119,8 +2120,23 @@ function getSymbolurl(nummer:number):string{
     //Initial call
     respondCanvas();
 
-    //FABRIC Canvas
-
+    //Konva
+    var stage = new Konva.Stage({
+      container:'konva',
+      width:500,
+      height:500
+    });
+    var layer= new Konva.Layer();
+    var image = new Konva.Image({
+            draggable: true,
+            width:100,
+            height:100,
+            src:"/source/kampffeld/Symbole/enemyHeal.png",
+            x:150,y:150
+        });
+        stage.add(layer);
+        layer.add(image);
+        layer.draw();
 
 });
 //
