@@ -1981,6 +1981,7 @@ $(document).on('click','#req_submit',function(){
 //------------------------------------------------------------------------------
 // Kampffeld ab hier
 //------------------------------------------------------------------------------
+var canvas = new fabric.Canvas('c');
 
 $(document).on('click', "#saveKObjCanvas", function (){
   //canvas objekt ins kampffeld uebertragen
@@ -1996,6 +1997,7 @@ $(document).on('click', "#saveKObjCanvas", function (){
   });
 
 });
+
 $(document).on('click','#canvasinzoom',function(){
     $('#canvas').css("zoom","5%");
 });
@@ -2030,6 +2032,10 @@ $(document).on('click', "#charsymbolbtn", function () {
   let charsymbolval:any = $('#SymbolSelect').val();
   let charsymbolUrl:string=getSymbolurl(charsymbolval);
   //Die Values vor 9 sind die generischen Symbole, die Darauffolgenden sind Chars
+  let imgInstance = new fabric.Image.fromURL(charsymbolUrl, function(oImg){
+      oImg.scale(0.5).set('flipX',true);
+      canvas.add(oImg);
+  });
   if(charsymbolval>8){
     $('#canvas').drawImage({
       layer: true,
@@ -2038,7 +2044,10 @@ $(document).on('click', "#charsymbolbtn", function () {
       width:100,
       height:100,
       source:charsymbolUrl,
-      x:150,y:150
+      x:150,y:150,
+      dblclick:function(layer){
+          $(this).removeLayer(layer);
+      }
     });
   }else{
     $('#canvas').drawImage({
@@ -2051,7 +2060,7 @@ $(document).on('click', "#charsymbolbtn", function () {
           x:150,y:150,
           dblclick:function(layer){
               $(this).removeLayer(layer);
-          }
+          },
         });
   }
 });
@@ -2068,6 +2077,7 @@ $(document).on('change',"#Schlachtfeldselect",function(){
   let backgroundval:any = $('#Schlachtfeldselect').val();
   let imageUrl:string=getImageurl(backgroundval);
   $('#canvas').css("background", "url('"+imageUrl+"')");
+  $("#canvas2").css("background", "url('"+imageUrl+"')");
 });
 
 function getImageurl(nummer:number):string{
@@ -2115,5 +2125,9 @@ function getSymbolurl(nummer:number):string{
 
     //Initial call
     respondCanvas();
+
+    //FABRIC Canvas
+
+
 });
 //
