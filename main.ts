@@ -2032,7 +2032,7 @@ $(document).on('click', "#charsymbolbtn", function () {
   let charsymbolval:any = $('#SymbolSelect').val();
   let charsymbolUrl:string=getSymbolurl(charsymbolval);
   //Die Values vor 9 sind die generischen Symbole, die Darauffolgenden sind Chars
-  let imgInstance = new fabric.Image.fromURL("'"+charsymbolUrl+"'", function(oImg){
+  let imgInstance = new fabric.Image.fromURL(charsymbolUrl, function(oImg){
       console.log("test");
       oImg.scale(0.5).set('flipX',true);
       canvas.add(oImg);
@@ -2096,16 +2096,16 @@ function getImageurl(nummer:number):string{
 
 function getSymbolurl(nummer:number):string{
     var url = {
-    1: "/source/kampffeld/Symbole/enemyHeal.png" ,
-    2: "/source/kampffeld/Symbole/enemyMage.png" ,
-    3: "/source/kampffeld/Symbole/enemyMeele.png" ,
-    4: "/source/kampffeld/Symbole/enemyRanged.png" ,
-    5: "/source/kampffeld/Symbole/frendlyHeal.png" ,
-    6: "/source/kampffeld/Symbole/frendlyMage.png" ,
-    7: "/source/kampffeld/Symbole/frendlyMeele.png" ,
-    8: "/source/kampffeld/Symbole/frendlyRanged.png" ,
-    9: "/source/kampffeld/Symbole/ahros.png" ,
-    10: "/source/kampffeld/Symbole/lexys.png" ,
+    1: "source/kampffeld/Symbole/enemyHeal.png" ,
+    2: "source/kampffeld/Symbole/enemyMage.png" ,
+    3: "source/kampffeld/Symbole/enemyMeele.png" ,
+    4: "source/kampffeld/Symbole/enemyRanged.png" ,
+    5: "source/kampffeld/Symbole/frendlyHeal.png" ,
+    6: "source/kampffeld/Symbole/frendlyMage.png" ,
+    7: "source/kampffeld/Symbole/frendlyMeele.png" ,
+    8: "source/kampffeld/Symbole/frendlyRanged.png" ,
+    9: "source/kampffeld/Symbole/ahros.png" ,
+    10: "source/kampffeld/Symbole/lexys.png" 
     };
     return url[nummer];
  }
