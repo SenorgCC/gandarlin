@@ -1981,7 +1981,7 @@ $(document).on('click','#req_submit',function(){
 //------------------------------------------------------------------------------
 // Kampffeld ab hier
 //------------------------------------------------------------------------------
-var canvas = new fabric.Canvas('c');
+var canvas = new fabric.Canvas('canvas2');
 
 $(document).on('click', "#saveKObjCanvas", function (){
   //canvas objekt ins kampffeld uebertragen
@@ -2105,7 +2105,7 @@ function getSymbolurl(nummer:number):string{
     7: "source/kampffeld/Symbole/frendlyMeele.png" ,
     8: "source/kampffeld/Symbole/frendlyRanged.png" ,
     9: "source/kampffeld/Symbole/ahros.png" ,
-    10: "source/kampffeld/Symbole/lexys.png" 
+    10: "source/kampffeld/Symbole/lexys.png"
     };
     return url[nummer];
  }
