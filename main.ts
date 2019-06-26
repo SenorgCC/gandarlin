@@ -1981,8 +1981,6 @@ $(document).on('click','#req_submit',function(){
 //------------------------------------------------------------------------------
 // Kampffeld ab hier
 //------------------------------------------------------------------------------
-var canvas = new fabric.Canvas('canvas2');
-
 $(document).on('click', "#saveKObjCanvas", function (){
   //canvas objekt ins kampffeld uebertragen
   //let canvasbild:String = $('#objektcanvas').getCanvasImage('png');
@@ -2032,11 +2030,6 @@ $(document).on('click', "#charsymbolbtn", function () {
   let charsymbolval:any = $('#SymbolSelect').val();
   let charsymbolUrl:string=getSymbolurl(charsymbolval);
   //Die Values vor 9 sind die generischen Symbole, die Darauffolgenden sind Chars
-  let imgInstance = new fabric.Image.fromURL(charsymbolUrl, function(oImg){
-      console.log("test");
-      oImg.scale(0.5).set('flipX',true);
-      canvas.add(oImg);
-  });
   if(charsymbolval>8){
     $('#canvas').drawImage({
       layer: true,
@@ -2078,7 +2071,6 @@ $(document).on('change',"#Schlachtfeldselect",function(){
   let backgroundval:any = $('#Schlachtfeldselect').val();
   let imageUrl:string=getImageurl(backgroundval);
   $('#canvas').css("background", "url('"+imageUrl+"')");
-  $("#canvas2").css("background", "url('"+imageUrl+"')");
 });
 
 function getImageurl(nummer:number):string{
@@ -2111,7 +2103,6 @@ function getSymbolurl(nummer:number):string{
  }
  // Canvas Responsive machen
     var c = $('#canvas');
-    var c2=$('#canvas2');
     var ct = c.get(0).getContext('2d');
     var container = $(c).parent();
 
@@ -2122,8 +2113,6 @@ function getSymbolurl(nummer:number):string{
         c.attr('width', $(container).width() ); //max width
         c.attr('height', $(container).height() ); //max height
 
-        c2.attr('width', $(container).width() ); //max width
-        c2.attr('height', $(container).height() ); //max height
         //Call a function to redraw other content (texts, images etc)
     }
 
