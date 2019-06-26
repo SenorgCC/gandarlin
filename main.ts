@@ -1,4 +1,5 @@
 import "jquery";
+const Konva = require('konva-node');
 //import { Spieler } from "/source/js/spieler";
 var basiswert_arr= [];
 var sekundarwert_arr = [];
