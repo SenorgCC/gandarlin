@@ -27,14 +27,20 @@ span > h2 {
   background-color: #379627;
 }
 
-canvas {
+#canvas {
   border: 1px solid black;
   background: url('/source/kampffeld/hintergrund/Brucke.jpg');
 }
+#canvas{
+  max-width: 100%;
+  min-width: 100px;
+  max-height: auto;
+  min-height: 400px;
+}
 .toggletablespan {
   float:left;
-  max-width: 10%;
-  min-width: 20px;
+  max-width: 5%;
+  min-width: 30px;
   height: auto;
   margin-bottom: 1px;
 }
