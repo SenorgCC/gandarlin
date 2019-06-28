@@ -2059,6 +2059,7 @@ $(document).on('click', "#charsymbolbtn", function () {
           },
           mousedown:function(layer){
             touchstart=new Date().getTime();
+            console.log("hier"));
           },
           mouseup:function(layer){
             touchend=new Date().getTime();
@@ -2066,6 +2067,7 @@ $(document).on('click', "#charsymbolbtn", function () {
               console.log("Zeitdif:"+(touchend - touchstart));
               touchstart=new Date().getTime();
             }
+              console.log("Zeitdif:"+(touchend - touchstart));
             touchstart=0;
             touchend=0;
           }
