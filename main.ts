@@ -2026,7 +2026,8 @@ $(document).on('click', "#resetObjCanvas", function () {
           x:150,y:150
     });
 });
-
+var touchstart:number;
+var touchend:number;
 $(document).on('click', "#charsymbolbtn", function () {
   let charsymbolval:any = $('#SymbolSelect').val();
   let charsymbolUrl:string=getSymbolurl(charsymbolval);
@@ -2053,9 +2054,20 @@ $(document).on('click', "#charsymbolbtn", function () {
           height:100,
           source:charsymbolUrl,
           x:150,y:150,
-          click:function(layer){
+          dbclick:function(layer){
               $(this).removeLayer(layer);
           },
+          touchstart:function(layer){
+            touchstart=new Date().getTime();
+          },
+          touchend:function(layer){
+            touchend=new Date().getTime();
+            if (touchend - touchstart <=10){
+              touchstart=new Date().getTime();
+            }
+            touchstart=0;
+            touchend=0;
+          }
         });
   }
 });
