@@ -2121,6 +2121,7 @@ function getSymbolurl(nummer:number):string{
     respondCanvas();
 
     //Konva
+    /*
     var stage = new Konva.Stage({
       container:'konva',
       width:500,
@@ -2137,6 +2138,7 @@ function getSymbolurl(nummer:number):string{
         stage.add(layer);
         layer.add(image);
         layer.draw();
+        */
 
 });
 //
