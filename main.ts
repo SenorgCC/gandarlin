@@ -2048,7 +2048,7 @@ $(document).on('click', "#charsymbolbtn", function () {
           },
           mouseup:function(layer){
             touchend=Date.now();
-            if (touchend - touchstart <=100){
+            if ((touchend - touchstart <=100)&&(touchend - touchstart >=30) ){
               console.log("Zeitdif:"+(touchend - touchstart));
               $(this).removeLayer(layer);
             }

@@ -47,10 +47,12 @@ span > h2 {
 
 .togglenavspan {
   float:left;
-  width: 2%;
+  max-width: 5%;
+  min-width: 30px;
   height: auto;
   margin-bottom: 1px;
 }
+
 .step {
   height: 15px;
   width: 15px;
