@@ -2057,12 +2057,13 @@ $(document).on('click', "#charsymbolbtn", function () {
           dbclick:function(layer){
               $(this).removeLayer(layer);
           },
-          touchstart:function(layer){
+          mousedown:function(layer){
             touchstart=new Date().getTime();
           },
-          touchend:function(layer){
+          mouseup:function(layer){
             touchend=new Date().getTime();
             if (touchend - touchstart <=10){
+              console.log("Zeitdif:"+(touchend - touchstart));
               touchstart=new Date().getTime();
             }
             touchstart=0;
