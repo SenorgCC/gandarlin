@@ -2066,6 +2066,7 @@ $(document).on('click', "#charsymbolbtn", function () {
             if (touchend - touchstart <=10){
               console.log("Zeitdif:"+(touchend - touchstart));
               touchstart=new Date().getTime();
+              $(this).removeLayer(layer);
             }
               console.log("Zeitdif:"+(touchend - touchstart));
             touchstart=0;
