@@ -2004,6 +2004,9 @@ $(document).on('click','#canvasinzoom',function(){
 });
 
 $(document).on('click','#canvasoutzoom',function(){
+    if(zoomcounter<=1){
+      return
+    }
     zoomcounter=zoomcounter-0.1;
     $('#canvas').setLayer('background',{
       scale:zoomcounter
