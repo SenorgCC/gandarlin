@@ -1525,7 +1525,7 @@
 		</span>
 
 <div id="kampfobjekts">
-  <span id="kampfnav" style="display:none;" class="bg-light">
+  <nav id="kampfnav" style="display:none;" class="navbar navbar-expand-lg navbar-light bg-light">
        <!-- <button type="button" id="charsymbolbtn">Figursymbol</button> -->
         <!-- <button id="canvasoutzoom" type="button" class="btn btn-light">-</button>
         <button id="canvasinzoom" type="button" class="btn btn-light">+</button>
@@ -1540,7 +1540,7 @@
       <option value="6">Stein</option>
       <option value="7">Wiese</option>
     </select>
-    <select class="custom-select" id="SymbolSelect">
+    <select class="w-25 custom-select" id="SymbolSelect">
         <option selected disabled>Figursymbol</option>
         <option value="1">Gegner Priester</option>
         <option value="2">Gegner Magier</option>
@@ -1552,9 +1552,11 @@
         <option value="8">Verbündeter Fernkämpfer</option>
         <option value="9">Ahros</option>
         <option value="10">Lexys</option>
-    </select>
-      <button class="btn btn-outline-secondary" id="charsymbolbtn" type="button">Erzeugen</button>
-  </span>
+      </select>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" id="charsymbolbtn" type="button">Erzeugen</button>
+      </div>
+  </nav>
  </div>
       <canvas id="canvas">
         This text is displayed if your browser does not support HTML5 Canvas.
