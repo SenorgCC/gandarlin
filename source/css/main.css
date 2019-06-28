@@ -27,11 +27,9 @@ span > h2 {
   background-color: #379627;
 }
 
-#canvas {
-  border: 1px solid black;
-  background: url('/source/kampffeld/hintergrund/Brucke.jpg');
-}
 #canvas{
+  background: url('/source/kampffeld/hintergrund/Brucke.jpg');
+  border: 1px solid black;
   max-width: 100%;
   min-width: 100px;
   max-height: auto;
@@ -72,5 +70,7 @@ span > h2 {
 .step.finish {
   background-color: #4CAF50;
 }
-
+#SymbolSelect{
+  width: 30% !important;
+}
 /***/
