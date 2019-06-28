@@ -28,7 +28,7 @@ span > h2 {
 }
 
 #canvas{
-  background: url('/source/kampffeld/hintergrund/Brucke.jpg');
+/*  background: url('/source/kampffeld/hintergrund/Brucke.jpg');*/
   border: 1px solid black;
   max-width: 100%;
   min-width: 100px;
