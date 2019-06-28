@@ -2040,22 +2040,18 @@ $(document).on('click', "#charsymbolbtn", function () {
           height:100,
           source:charsymbolUrl,
           x:150,y:150,
-          dbclick:function(layer){
-              $(this).removeLayer(layer);
-          },
           mousedown:function(layer){
             touchstart=Date.now();
           },
           mouseup:function(layer){
             touchend=Date.now();
             if ((touchend - touchstart <=100)&&(touchend - touchstart >=30) ){
-              console.log("Zeitdif:"+(touchend - touchstart));
-              $(this).removeLayer(layer);
+              $(this).removeLayer(layer)
+              $('#canvas').drawLayers();
             }
-            console.log("Zeitdif:"+(touchend - touchstart));
             touchstart=0;
             touchend=0;
-          },
+          }
         });
 });
 
