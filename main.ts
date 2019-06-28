@@ -1996,12 +1996,14 @@ $(document).on('click', "#saveKObjCanvas", function (){
   });
 
 });
-
+var zoomcounter:number=0;
 $(document).on('click','#canvasinzoom',function(){
-    $('#canvas').css("zoom","5%");
+    zoomcounter++;
+    $('#canvas').scaleCanvas({scale:zoomcounter});
 });
 $(document).on('click','#canvasoutzoom',function(){
-    $('#canvas').css("zoom","-5%");
+    zoomcounter--;
+    $('#canvas').scaleCanvas({scale:zoomcounter});
 });
 
 $(document).on('click', "#resetObjCanvas", function () {
