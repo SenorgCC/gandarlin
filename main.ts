@@ -1994,20 +1994,20 @@ $(document).on('click', "#saveKObjCanvas", function (){
     source:"source/kampffeld/Symbole/frendlyMeele.png",
     x:150,y:150
   });
-
 });
-var zoomcounter:number=0;
+var zoomcounter:number=1;
 $(document).on('click','#canvasinzoom',function(){
-    zoomcounter++;
-    $('#canvas').scaleCanvas({
+    zoomcounter=zoomcounter+0.1;
+    $('#canvas').setLayer('background',{
       scale:zoomcounter
-    }).restoreCanvas();
+    }).drawLayers();
 });
+
 $(document).on('click','#canvasoutzoom',function(){
-    zoomcounter--;
-    $('#canvas').scaleCanvas({
+    zoomcounter=zoomcounter-0.1;
+    $('#canvas').setLayer('background',{
       scale:zoomcounter
-    }).restoreCanvas();
+    }).drawLayers();
 });
 
 $(document).on('click', "#resetObjCanvas", function () {
@@ -2068,11 +2068,31 @@ $(document).on('click','.togglenavspan', function(e:JQueryEventObject):void{
     //placeholder wenn was gemacht werden soll nach der animation
   });
 });
-
+$('#canvas').drawImage({
+      layer:true,
+      name:'background',
+      draggable:true,
+      index:-10,
+      x:0,
+      y:0,
+      source:"/source/kampffeld/hintergrund/Brucke.jpg"
+  });
+  $('#canvas').drawLayers();
 $(document).on('change',"#Schlachtfeldselect",function(){
   let backgroundval:any = $('#Schlachtfeldselect').val();
   let imageUrl:string=getImageurl(backgroundval);
-  $('#canvas').css("background", "url('"+imageUrl+"')");
+  $('#canvas').removeLayer('background');
+  //$('#canvas').css("background", "url('"+imageUrl+"')");
+  $('#canvas').drawImage({
+      layer:true,
+      name:'background',
+      draggable:true,
+      index:-10,
+      x:0,
+      y:0,
+      source:imageUrl
+  });
+  $('#canvas').drawLayers();
 });
 
 function getImageurl(nummer:number):string{
