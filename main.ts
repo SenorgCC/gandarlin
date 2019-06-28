@@ -2075,9 +2075,9 @@ $('#canvas').drawImage({
       layer:true,
       name:'background',
       draggable:true,
-      x:0,
+      x:100,
       y:0,
-      fromCenter: true,
+      fromCenter: false,
       index:-10,
       source:"/source/kampffeld/hintergrund/Brucke.jpg"
   });
@@ -2085,6 +2085,9 @@ $('#canvas').drawImage({
 $(document).on('change',"#Schlachtfeldselect",function(){
   let backgroundval:any = $('#Schlachtfeldselect').val();
   let imageUrl:string=getImageurl(backgroundval);
+  //bisherigekoordinaten
+  let oldx:number=$('#canvas').name('background').x();
+  let oldy:number=$('#canvas').name('background').y();
   $('#canvas').removeLayer('background');
   //$('#canvas').css("background", "url('"+imageUrl+"')");
   $('#canvas').drawImage({
@@ -2092,9 +2095,9 @@ $(document).on('change',"#Schlachtfeldselect",function(){
       name:'background',
       draggable:true,
       index:-10,
-      fromCenter: true,
-      x:0,
-      y:0,
+      fromCenter: flase,
+      x:oldx,
+      y:oldy,
       source:imageUrl
   });
   $('#canvas').drawLayers();
