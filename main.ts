@@ -2059,7 +2059,7 @@ $(document).on('click', "#charsymbolbtn", function () {
           },
           mousedown:function(layer){
             touchstart=new Date().getTime();
-            console.log("hier"));
+            console.log("hier");
           },
           mouseup:function(layer){
             touchend=new Date().getTime();
