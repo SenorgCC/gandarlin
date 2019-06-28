@@ -1999,11 +1999,15 @@ $(document).on('click', "#saveKObjCanvas", function (){
 var zoomcounter:number=0;
 $(document).on('click','#canvasinzoom',function(){
     zoomcounter++;
-    $('#canvas').scaleCanvas({scale:zoomcounter});
+    $('#canvas').scaleCanvas({
+      scale:zoomcounter
+    }).restoreCanvas();
 });
 $(document).on('click','#canvasoutzoom',function(){
     zoomcounter--;
-    $('#canvas').scaleCanvas({scale:zoomcounter});
+    $('#canvas').scaleCanvas({
+      scale:zoomcounter
+    }).restoreCanvas();
 });
 
 $(document).on('click', "#resetObjCanvas", function () {
