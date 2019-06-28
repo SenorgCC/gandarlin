@@ -2075,6 +2075,9 @@ $('#canvas').drawImage({
       layer:true,
       name:'background',
       draggable:true,
+      x:0,
+      y:0,
+      fromCenter: false,
       index:-10,
       source:"/source/kampffeld/hintergrund/Brucke.jpg"
   });
@@ -2089,6 +2092,7 @@ $(document).on('change',"#Schlachtfeldselect",function(){
       name:'background',
       draggable:true,
       index:-10,
+      fromCenter: false,
       x:0,
       y:0,
       source:imageUrl
