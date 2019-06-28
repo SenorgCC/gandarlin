@@ -2075,7 +2075,7 @@ $('#canvas').drawImage({
       layer:true,
       name:'background',
       draggable:true,
-      x:100,
+      x:50,
       y:0,
       fromCenter: false,
       index:-10,
@@ -2085,7 +2085,7 @@ $('#canvas').drawImage({
 $(document).on('change',"#Schlachtfeldselect",function(){
   let backgroundval:any = $('#Schlachtfeldselect').val();
   let imageUrl:string=getImageurl(backgroundval);
-  //bisherigekoordinaten
+  //TODO: bisherigekoordinaten
   let oldx:number=$('#canvas').getLayer('background').x();
   let oldy:number=$('#canvas').getLayer('background').y();
   $('#canvas').removeLayer('background');
@@ -2096,8 +2096,8 @@ $(document).on('change',"#Schlachtfeldselect",function(){
       draggable:true,
       index:-10,
       fromCenter: flase,
-      x:oldx,
-      y:oldy,
+      x:50,
+      y:0,
       source:imageUrl
   });
   $('#canvas').drawLayers();
