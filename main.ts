@@ -2086,8 +2086,8 @@ $(document).on('change',"#Schlachtfeldselect",function(){
   let backgroundval:any = $('#Schlachtfeldselect').val();
   let imageUrl:string=getImageurl(backgroundval);
   //bisherigekoordinaten
-  let oldx:number=$('#canvas').name('background').x();
-  let oldy:number=$('#canvas').name('background').y();
+  let oldx:number=$('#canvas').getLayer('background').x();
+  let oldy:number=$('#canvas').getLayer('background').y();
   $('#canvas').removeLayer('background');
   //$('#canvas').css("background", "url('"+imageUrl+"')");
   $('#canvas').drawImage({
