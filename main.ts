@@ -2032,20 +2032,6 @@ $(document).on('click', "#charsymbolbtn", function () {
   let charsymbolval:any = $('#SymbolSelect').val();
   let charsymbolUrl:string=getSymbolurl(charsymbolval);
   //Die Values vor 9 sind die generischen Symbole, die Darauffolgenden sind Chars
-  if(charsymbolval>8){
-    $('#canvas').drawImage({
-      layer: true,
-      draggable: true,
-      bringToFront: true,
-      width:100,
-      height:100,
-      source:charsymbolUrl,
-      x:150,y:150,
-      dblclick:function(layer){
-          $(this).removeLayer(layer);
-      }
-    });
-  }else{
     $('#canvas').drawImage({
           layer: true,
           draggable: true,
@@ -2058,22 +2044,19 @@ $(document).on('click', "#charsymbolbtn", function () {
               $(this).removeLayer(layer);
           },
           mousedown:function(layer){
-            touchstart=new Date().getTime();
-            console.log("hier");
+            touchstart=Date.now();
           },
           mouseup:function(layer){
-            touchend=new Date().getTime();
+            touchend=Date.now();
             if (touchend - touchstart <=100){
               console.log("Zeitdif:"+(touchend - touchstart));
-              touchstart=new Date().getTime();
               $(this).removeLayer(layer);
             }
-              console.log("Zeitdif:"+(touchend - touchstart));
+            console.log("Zeitdif:"+(touchend - touchstart));
             touchstart=0;
             touchend=0;
-          }
+          },
         });
-  }
 });
 
 $(document).on('click','.togglenavspan', function(e:JQueryEventObject):void{

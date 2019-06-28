@@ -33,7 +33,8 @@ canvas {
 }
 .toggletablespan {
   float:left;
-  width: 2%;
+  max-width: 10%;
+  min-width: 20px;
   height: auto;
   margin-bottom: 1px;
 }
