@@ -2076,8 +2076,6 @@ $('#canvas').drawImage({
       name:'background',
       draggable:true,
       index:-10,
-      x:0,
-      y:0,
       source:"/source/kampffeld/hintergrund/Brucke.jpg"
   });
   $('#canvas').drawLayers();
