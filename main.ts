@@ -2063,7 +2063,7 @@ $(document).on('click', "#charsymbolbtn", function () {
           },
           mouseup:function(layer){
             touchend=new Date().getTime();
-            if (touchend - touchstart <=10){
+            if (touchend - touchstart <=100){
               console.log("Zeitdif:"+(touchend - touchstart));
               touchstart=new Date().getTime();
               $(this).removeLayer(layer);
