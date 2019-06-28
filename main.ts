@@ -2053,8 +2053,7 @@ $(document).on('click', "#charsymbolbtn", function () {
           height:100,
           source:charsymbolUrl,
           x:150,y:150,
-
-          dblclick:function(layer){
+          click:function(layer){
               $(this).removeLayer(layer);
           },
         });
