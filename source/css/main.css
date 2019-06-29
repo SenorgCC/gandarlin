@@ -28,6 +28,9 @@ span > h2 {
 .fullrestbtn{
   background-color: #379627;
 }
+.ueberschriftspan{
+  display: inline-flex;
+}
 
 #canvas{
 /*  background: url('/source/kampffeld/hintergrund/Brucke.jpg');*/
