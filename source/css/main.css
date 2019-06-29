@@ -1,10 +1,11 @@
 table tr th::first-letter {
     text-transform:capitalize;
 }
-/*
+
 span > .toggletablespan + h1 {
   display: inline-block;
 }
+/*
 
 h1:after{
   content: '\A';
