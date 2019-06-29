@@ -2086,11 +2086,11 @@ $(document).on('change',"#Schlachtfeldselect",function(){
   let backgroundval:any = $('#Schlachtfeldselect').val();
   let imageUrl:string=getImageurl(backgroundval);
   //TODO: bisherigekoordinaten
-  let oldx:number=$('#canvas').getLayer('background').x();
-  let oldy:number=$('#canvas').getLayer('background').y();
-  $('#canvas').removeLayer('background');
+  //let oldx:number=$('#canvas').getLayer('background').x();
+  //let oldy:number=$('#canvas').getLayer('background').y();
+  //$('#canvas').removeLayer('background');
   //$('#canvas').css("background", "url('"+imageUrl+"')");
-  $('#canvas').drawImage({
+  /*$('#canvas').drawImage({
       layer:true,
       name:'background',
       draggable:true,
@@ -2099,6 +2099,10 @@ $(document).on('change',"#Schlachtfeldselect",function(){
       x:50,
       y:0,
       source:imageUrl
+  });
+  */
+  $('#canvas').setLayer('background',{
+    source:imageUrl
   });
   $('#canvas').drawLayers();
 });
