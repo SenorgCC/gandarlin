@@ -2,9 +2,6 @@ table tr th::first-letter {
     text-transform:capitalize;
 }
 
-h1{
-  position: absolute;
-}
 /*
 span > .toggletablespan + h1 {
   display: inline-block;
