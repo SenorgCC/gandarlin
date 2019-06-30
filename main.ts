@@ -2159,9 +2159,10 @@ function getSymbolurl(nummer:number):string{
         */
 
   // Sidebar
-  //$("#sidebar").mCustomScrollbar({
-   //    theme: "minimal"
-  //});
+  /*
+  $("#sidebar").mCustomScrollbar({
+       theme: "minimal"
+  });
   //$('#dismiss, .overlay').on('click', function () {
   $(document).on('click','#dismiss, .overlay', function(){
         // hide sidebar
@@ -2178,6 +2179,7 @@ function getSymbolurl(nummer:number):string{
       $('.collapse.in').toggleClass('in');
       $('a[aria-expanded=true]').attr('aria-expanded', 'false');
   });
+  */
 
 });
 //
