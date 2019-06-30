@@ -2159,9 +2159,9 @@ function getSymbolurl(nummer:number):string{
         */
 
   // Sidebar
-  $("#sidebar").mCustomScrollbar({
-       theme: "minimal"
-  });
+  //$("#sidebar").mCustomScrollbar({
+   //    theme: "minimal"
+  //});
   $('#dismiss, .overlay').on('click', function () {
         // hide sidebar
         $('#sidebar').removeClass('active');

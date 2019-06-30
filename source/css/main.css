@@ -82,18 +82,20 @@ span > h2 {
 
 /* SIDEBAR */
 .wrapper {
-    display: block;
+    display: flex;
+    width: 100%;
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    height: 100vh;
+    width: 250px;
     position: fixed;
     top: 0;
     left: 0;
-    /* top layer */
-    z-index: 9999;
+    height: 100vh;
+    z-index: 999;
+    background: #7386D5;
+    color: #fff;
+    transition: all 0.3s;
 }
 
 .overlay {
