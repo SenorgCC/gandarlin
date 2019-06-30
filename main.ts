@@ -1783,7 +1783,7 @@ $('.spielerinventar').on('click','tbody td', function(e:JQueryEventObject):void{
 
  // Tabelle verstecken oder anzeige)n
 $(document).on('click','.toggletablespan', function(e:JQueryEventObject):void{
-  var table=$(this).parent().next('.table');
+  var table=$(this).parent().find('.ueberschriftspan').next('.table');
   //table.toggle();
   table.slideToggle(470,function() {
     //Nach der Animation soll der Button gewechselt werden
