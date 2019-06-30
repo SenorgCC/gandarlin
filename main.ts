@@ -2162,13 +2162,15 @@ function getSymbolurl(nummer:number):string{
   //$("#sidebar").mCustomScrollbar({
    //    theme: "minimal"
   //});
-  $('#dismiss, .overlay').on('click', function () {
+  //$('#dismiss, .overlay').on('click', function () {
+  $(document).on('click','#dismiss, .overlay', function(){
         // hide sidebar
         $('#sidebar').removeClass('active');
         // hide overlay
         $('.overlay').removeClass('active');
   });
-  $('#sidebarCollapse').on('click', function () {
+  //$('#sidebarCollapse').on('click', function () {
+  $(document).on('click','#sidebarCollapse',function(){
       // open sidebar
       $('#sidebar').addClass('active');
       // fade in the overlay
