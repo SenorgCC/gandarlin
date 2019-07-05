@@ -2181,5 +2181,8 @@ function getSymbolurl(nummer:number):string{
   });
   */
 
+$(document).on('click','.sidebarbtn',function(){
+      $('.sidebar').collapse("toggle");
+})
 });
 //

@@ -1,23 +1,26 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="source/bootstrap/bootstrap_4_2_1_min.css">
-    <link rel="stylesheet" href="source/jquery/jquery.mCustomScrollbar.min.css">
-    <script src="source/jquery/jquery.js" type="text/javascript"></script>
-    <script src="source/jquery/jcanvas.js" type="text/javascript"></script>
-    <script src="source/jquery/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
-    <!-- <script src="source/konva/konva.js" type="text/javascript"></script> -->
 
-    <script> var exports = {}; </script>
-    <script src="source/js/bundle.js"></script>
-    <script src="source/bootstrap/poppersjs_min.js" type="text/javascript"></script>
-    <script src="source/bootstrap/bootstrap_4_2_1_min.js" type="text/javascript"></script>
-    <!-- <script src="source/require/require.js" type="text/javascript"></script> -->
-    <!-- Bootstrap CSS -->
-    <!--
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="source/bootstrap/bootstrap_4_2_1_min.css">
+  <link rel="stylesheet" href="source/jquery/jquery.mCustomScrollbar.min.css">
+  <script src="source/jquery/jquery.js" type="text/javascript"></script>
+  <script src="source/jquery/jcanvas.js" type="text/javascript"></script>
+  <script src="source/jquery/jquery.mCustomScrollbar.concat.min.js" type="text/javascript"></script>
+  <!-- <script src="source/konva/konva.js" type="text/javascript"></script> -->
+
+  <script>
+    var exports = {};
+  </script>
+  <script src="source/js/bundle.js"></script>
+  <script src="source/bootstrap/poppersjs_min.js" type="text/javascript"></script>
+  <script src="source/bootstrap/bootstrap_4_2_1_min.js" type="text/javascript"></script>
+  <!-- <script src="source/require/require.js" type="text/javascript"></script> -->
+  <!-- Bootstrap CSS -->
+  <!--
     <link rel="stylesheet" href="/source/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/source/bootstrap/css/bootstrap-table.css">
     <script src="source/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -25,34 +28,42 @@
     -->
 
 
-    <link rel="stylesheet" href="/source/css/main.css">
-    <title>Gandarlin danach</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-dark bg-dark">
-      <span id="NavName" class="navbar-brand mb-0 h1">NoName</span>
-        <!--<button type="button" id="gobtn" >tabelle!</button> -->
-        <div class="collapse navbar-collapse" data-toggle="collapse" id="navbarNavAltMarkup">
-          <span class="navbar-text">
-          <span id="NavLeben">Leben</span>
-          <span id="NavAusdauer">Ausdauer</span>
-          <span id="NavEE">EE</span>
-          <span id="navSheet"><button type="button" id="navSheetbtn">Spieler</button>
+  <link rel="stylesheet" href="/source/css/main.css">
+  <title>Gandarlin danach</title>
+</head>
+
+<body>
+  <div id="sidebar" class="collapsed">
+  <button class="sidebarbtn" id="closer" title="Close sidebar"></button>
+</div>
+
+  <nav class="navbar navbar-dark bg-dark">
+    <span id="NavName" class="navbar-brand mb-0 h1">NoName</span>
+    <!--<button type="button" id="gobtn" >tabelle!</button> -->
+    <div class="collapse navbar-collapse" data-toggle="collapse" id="navbarNavAltMarkup">
+      <span class="navbar-text">
+        <span id="NavLeben">Leben</span>
+        <span id="NavAusdauer">Ausdauer</span>
+        <span id="NavEE">EE</span>
+        <span id="navSheet"><button type="button" id="navSheetbtn">Spieler</button>
           <button type="button" id="navFightbtn">Kampf</button></span>
-        </span>
-      </div>
-      <form class="form-inline" id="Spielerdaten">
+      </span>
+      <button class="sidebarbtn" title="Toggle sidebar">Sidebar</button>
+    </div>
+    <form class="form-inline" id="Spielerdaten">
       <button id="myRegisterBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Register</button>
       <input id="SpielerID" class="form-control mr-sm-2" type="search" placeholder="SpilerID" aria-label="SpielerID">
       <button id="myClickBtn" class="btn btn-outline-success my-2 my-sm-0" type="submit">Go!</button>
     </form>
-    </nav>
-<div id="Spielersheet">
+  </nav>
+
+  <div id="content">
+  <div id="Spielersheet">
     <div id="Basiswertediv" style="container-fluid">
-     <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
-    	  <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
-      	<h1>Basiswerte</h1>
-  	</span>
+      <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
+        <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+        <h1>Basiswerte</h1>
+      </span>
       <table id="spielerbasiswerte" class="table table-striped table-responsive">
         <thead>
           <tr>
@@ -61,36 +72,36 @@
             <th scope="col" class="editColumn">Bonus-/Maluswert</th>
             <th scope="col">Final</th>
           </tr>
-      </thead>
-      <tbody>
-      </tbody>
+        </thead>
+        <tbody>
+        </tbody>
       </table>
     </div>
 
     <div id="Sekundarwertediv">
-		<span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
-      	<input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
-      		<h1> Sekundärwerte</h1>
-		</span>
+      <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
+        <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+        <h1> Sekundärwerte</h1>
+      </span>
       <table id="spielersekundarwerte" class="table table-striped table-responsive">
         <thead>
           <tr>
             <th scope="col"><button class="btn btn-light fullrestbtn" id="fullrest">Volle Regeneration</button></th>
             <th scope="col">Kalkulation</th>
             <th scope="col">Normalwert</th>
-            <th scope="col"class="editColumn">Aktuell</th>
+            <th scope="col" class="editColumn">Aktuell</th>
           </tr>
         </thead>
-      <tbody>
-      </tbody>
+        <tbody>
+        </tbody>
       </table>
     </div>
 
     <div id="KörperTalentediv">
-		<span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
-		  <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
-		  <h1>Körper Talente</h1>
-		</span>
+      <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
+        <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+        <h1>Körper Talente</h1>
+      </span>
       <table id="körpertalente" class="tablenttable table table-striped table-responsive">
         <thead>
           <tr>
@@ -108,10 +119,10 @@
     </div>
 
     <div id="wissenstalentediv">
-		<span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
-		  <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
-		  <h1>Wissenstalente</h1>
-		</span>
+      <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
+        <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+        <h1>Wissenstalente</h1>
+      </span>
       <table id="wissenstalente" class="tablenttable table table-striped table-responsive">
         <thead>
           <tr>
@@ -128,11 +139,11 @@
       </table>
     </div>
 
-  <div id="naturtalentediv">
-		<span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
-		  <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
-		  <h1>Natur Talente</h1>
-		</span>
+    <div id="naturtalentediv">
+      <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
+        <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+        <h1>Natur Talente</h1>
+      </span>
       <table id="naturtalente" class="tablenttable table table-striped table-responsive">
         <thead>
           <tr>
@@ -149,11 +160,11 @@
       </table>
     </div>
 
-  <div id="gesellschaftstalentediv">
-		<span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
-		  <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
-		  <h1>Gesellschafts Talente</h1>
-		</span>
+    <div id="gesellschaftstalentediv">
+      <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
+        <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+        <h1>Gesellschafts Talente</h1>
+      </span>
       <table id="gesellschaftstalente" class="tablenttable table table-striped table-responsive">
         <thead>
           <tr>
@@ -170,11 +181,11 @@
       </table>
     </div>
 
-  <div id="spezialetalentediv">
-		<span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
-		  <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
-		  <h1>Speziale Talente</h1>
-		</span>
+    <div id="spezialetalentediv">
+      <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
+        <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+        <h1>Speziale Talente</h1>
+      </span>
       <table id="spezialetalente" class="tablenttable table table-striped table-responsive">
         <thead>
           <tr>
@@ -189,15 +200,15 @@
         <tbody>
         </tbody>
       </table>
-  </div>
+    </div>
 
-  <div id="Kampftalentediv">
-    <h1>Kampftalente</h1>
-		<span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
-		  <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
-		<h2>Einhandwaffen</h2>
-		</span>
-    <table id="einhandwaffen" class="table table-striped table-responsive">
+    <div id="Kampftalentediv">
+      <h1>Kampftalente</h1>
+      <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
+        <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+        <h2>Einhandwaffen</h2>
+      </span>
+      <table id="einhandwaffen" class="table table-striped table-responsive">
         <thead>
           <tr>
             <th scope="col"></th>
@@ -205,15 +216,15 @@
             <th scope="col" class="editColumn">Bonus-/Maluswert</th>
             <th scope="col">Final</th>
           </tr>
-      </thead>
-      <tbody>
-      </tbody>
+        </thead>
+        <tbody>
+        </tbody>
       </table>
 
-		<span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
-		  <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
-		  <h2>Zweihandwaffen</h2>
-		</span>
+      <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
+        <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+        <h2>Zweihandwaffen</h2>
+      </span>
       <table id="zweihandwaffen" class="table table-striped table-responsive">
         <thead>
           <tr>
@@ -222,15 +233,15 @@
             <th scope="col" class="editColumn">Bonus-/Maluswert</th>
             <th scope="col">Final</th>
           </tr>
-      </thead>
-      <tbody>
-      </tbody>
+        </thead>
+        <tbody>
+        </tbody>
       </table>
 
-		<span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
-		  <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
-		  <h2>Fernkampf</h2>
-		</span>
+      <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
+        <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+        <h2>Fernkampf</h2>
+      </span>
       <table id="fernkampfwaffen" class="table table-striped table-responsive">
         <thead>
           <tr>
@@ -239,15 +250,15 @@
             <th scope="col" class="editColumn">Bonus-/Maluswert</th>
             <th scope="col">Final</th>
           </tr>
-      </thead>
-      <tbody>
-      </tbody>
+        </thead>
+        <tbody>
+        </tbody>
       </table>
 
-		<span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
-		 <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
-		<h2>Andere</h2>
-		</span>
+      <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
+        <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+        <h2>Andere</h2>
+      </span>
       <table id="anderewaffen" class="table table-striped table-responsive">
         <thead>
           <tr>
@@ -256,81 +267,81 @@
             <th scope="col" class="editColumn">Bonus-/Maluswert</th>
             <th scope="col">Final</th>
           </tr>
-      </thead>
-      <tbody>
-      </tbody>
+        </thead>
+        <tbody>
+        </tbody>
       </table>
-  </div>
-  <div id="handwerkstalentediv">
-	<span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
-      <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
-		<h1>Handwerkstalente</h1>
-	</span>
-    <table id="handwerkstalente" class="table table-striped table-responsive">
-      <thead>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col">Würfelwert</th>
-          <th scope="col">Talentwert</th>
-          <th scope="col" class="editColumn">Bonus-/Maluswert</th>
-        </tr>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
-  </div>
-  <div id="Inventardiv">
-    <h1>Inventar</h1>
-    <div id="Spielerwaffendiv">
-	<span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
-      <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
-      <h2>Waffen
-      <button class="btn btn-light addbtn" id="addWaffe">+</button>
-	</h2>
-	</span>
-      <table id="spielerwaffen" class="table table-striped table-responsive spielerinventar">
+    </div>
+    <div id="handwerkstalentediv">
+      <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
+        <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+        <h1>Handwerkstalente</h1>
+      </span>
+      <table id="handwerkstalente" class="table table-striped table-responsive">
         <thead>
-          <tr class="eqheader">
-            <th scope="col">id</th>
-            <th scope="col">Name</th>
-            <th scope="col">Beschreibung</th>
-            <th scope="col">Art</th>
-            <th scope="col">Exotisch</th>
-            <th scope="col">Schaden (mit KK)</th>
-            <th scope="col">KK-Bonus</th>
-            <th scope="col">Attackebonus</th>
-            <th scope="col">Paradebonus</th>
-            <th scope="col"  class="editfinal" id="Final_AT">Final AT</th>
-            <th scope="col" class="editfinal"  id="Final_PA">Final PA</th>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Würfelwert</th>
+            <th scope="col">Talentwert</th>
+            <th scope="col" class="editColumn">Bonus-/Maluswert</th>
           </tr>
         </thead>
         <tbody>
         </tbody>
       </table>
     </div>
-    <div id="spielerruestungendiv">
-	<span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
-      <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
-      <h2>Rüstungen
-      <button class="btn btn-light addbtn" id="addRuestung">+</button>
-	</h2>
-	</span>
-      <table id="spielerruestungen" class="table table-striped table-responsive spielerinventar">
-        <thead>
-          <tr class="eqheader">
-            <th scope="col">id</th>
-            <th scope="col">Name+Beschreibung</th>
-            <th scope="col" class="editColumn" id="Ruestwert">Rüstungswert</th>
-            <th scope="col" class="editColumn" >Ausrüstungsmalus/Bonus</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </div>
+    <div id="Inventardiv">
+      <h1>Inventar</h1>
+      <div id="Spielerwaffendiv">
+        <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
+          <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+          <h2>Waffen
+            <button class="btn btn-light addbtn" id="addWaffe">+</button>
+          </h2>
+        </span>
+        <table id="spielerwaffen" class="table table-striped table-responsive spielerinventar">
+          <thead>
+            <tr class="eqheader">
+              <th scope="col">id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Beschreibung</th>
+              <th scope="col">Art</th>
+              <th scope="col">Exotisch</th>
+              <th scope="col">Schaden (mit KK)</th>
+              <th scope="col">KK-Bonus</th>
+              <th scope="col">Attackebonus</th>
+              <th scope="col">Paradebonus</th>
+              <th scope="col" class="editfinal" id="Final_AT">Final AT</th>
+              <th scope="col" class="editfinal" id="Final_PA">Final PA</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div id="spielerruestungendiv">
+        <span class="ueberschriftspan"> <input class="toggletablespan" type="image" src="source/images/ArrowDown.svg">
+          <input class="toggletablespan" type="image" src="source/images/ArrowRight.svg" style="display:none">
+          <h2>Rüstungen
+            <button class="btn btn-light addbtn" id="addRuestung">+</button>
+          </h2>
+        </span>
+        <table id="spielerruestungen" class="table table-striped table-responsive spielerinventar">
+          <thead>
+            <tr class="eqheader">
+              <th scope="col">id</th>
+              <th scope="col">Name+Beschreibung</th>
+              <th scope="col" class="editColumn" id="Ruestwert">Rüstungswert</th>
+              <th scope="col" class="editColumn">Ausrüstungsmalus/Bonus</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
     </div>
 
-  <div class="modal fade" id="modalspielerbasiswerte" role="dialog">
+    <div class="modal fade" id="modalspielerbasiswerte" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
@@ -345,49 +356,56 @@
                   <td><input id="editKL" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
-                   </td>
+                  </td>
                 </tr>
                 <tr>
-                  <td>Gewandheit</td><td><input id="editGEW" type="number">
+                  <td>Gewandheit</td>
+                  <td><input id="editGEW" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Geschicklichkeit</td><td><input id="editGSK" type="number">
+                  <td>Geschicklichkeit</td>
+                  <td><input id="editGSK" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Charisma</td><td><input id="editCHA" type="number">
+                  <td>Charisma</td>
+                  <td><input id="editCHA" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Mut</td><td><input id="editMUT" type="number">
+                  <td>Mut</td>
+                  <td><input id="editMUT" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Konstitution</td><td><input id="editKON" type="number">
+                  <td>Konstitution</td>
+                  <td><input id="editKON" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Körperkraft</td><td><input id="editKK" type="number">
+                  <td>Körperkraft</td>
+                  <td><input id="editKK" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Intuition</td><td><input id="editIN" type="number">
+                  <td>Intuition</td>
+                  <td><input id="editIN" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
-                  </p>
+                    </p>
                 </tr>
               </tbody>
             </table>
@@ -401,7 +419,7 @@
       </div>
     </div>
 
-  <div class="modal fade" id="modalsekundaerwerte" role="dialog">
+    <div class="modal fade" id="modalsekundaerwerte" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
@@ -416,97 +434,112 @@
                   <td><input id="editHP" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
-                   </td>
+                  </td>
                 </tr>
                 <tr>
-                  <td>Ausdauer</td><td><input id="editAUSD" type="number">
+                  <td>Ausdauer</td>
+                  <td><input id="editAUSD" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Elementar Essenz</td><td><input id="editEE" type="number">
+                  <td>Elementar Essenz</td>
+                  <td><input id="editEE" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Ausweichen</td><td><input id="editAUSW" type="number">
+                  <td>Ausweichen</td>
+                  <td><input id="editAUSW" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Rüstung</td><td><input id="editRUE" type="number">
+                  <td>Rüstung</td>
+                  <td><input id="editRUE" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>initiative</td><td><input id="editINIT" type="number">
+                  <td>initiative</td>
+                  <td><input id="editINIT" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Attacke-Basiswert</td><td><input id="editATKB" type="number">
+                  <td>Attacke-Basiswert</td>
+                  <td><input id="editATKB" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Parade-Basiswert</td><td><input id="editPAB" type="number">
+                  <td>Parade-Basiswert</td>
+                  <td><input id="editPAB" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
-                  </p>
+                    </p>
                 </tr>
                 <tr>
-                  <td>Luftresistenz</td><td><input id="editLR" type="number">
+                  <td>Luftresistenz</td>
+                  <td><input id="editLR" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
-                  </p>
+                    </p>
                 </tr>
                 <tr>
-                  <td>Wasserresistenz</td><td><input id="editWR" type="number">
+                  <td>Wasserresistenz</td>
+                  <td><input id="editWR" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
-                  </p>
+                    </p>
                 </tr>
                 <tr>
-                  <td>Erdresistenz</td><td><input id="editER" type="number">
+                  <td>Erdresistenz</td>
+                  <td><input id="editER" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
-                  </p>
+                    </p>
                 </tr>
                 <tr>
-                  <td>Das Lebenderesistenz</td><td><input id="editLEBR" type="number">
+                  <td>Das Lebenderesistenz</td>
+                  <td><input id="editLEBR" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
-                  </p>
+                    </p>
                 </tr>
                 <tr>
-                  <td>Feuerresistenz</td><td><input id="editFR" type="number">
+                  <td>Feuerresistenz</td>
+                  <td><input id="editFR" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
-                  </p>
+                    </p>
                 </tr>
                 <tr>
-                  <td>Eisresistenz</td><td><input id="editEISR" type="number">
+                  <td>Eisresistenz</td>
+                  <td><input id="editEISR" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
-                  </p>
+                    </p>
                 </tr>
                 <tr>
-                  <td>Metallresistenz</td><td><input id="editMR" type="number">
+                  <td>Metallresistenz</td>
+                  <td><input id="editMR" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
-                  </p>
+                    </p>
                 </tr>
                 <tr>
-                  <td>Das Toteresistenz</td><td><input id="editDTR" type="number">
+                  <td>Das Toteresistenz</td>
+                  <td><input id="editDTR" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
-                  </p>
+                    </p>
                 </tr>
               </tbody>
             </table>
@@ -520,137 +553,149 @@
       </div>
     </div>
 
-  <div class="modal fade" id="modalkoerpertalente" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">körpertalente modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-        </div>
-        <div class="modal-body">
-          <table class="table table-striped table-responsive">
-            <tbody>
-              <tr>
-                <td>Schleichen</td>
-                <td><input id="editSchleichen" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                 </td>
-              </tr>
-              <tr>
-                <td>Aufmerksamkeit</td><td><input id="editAufm" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Robustheit</td><td><input id="editRobustheit" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Fingerfertigkeit</td><td><input id="editFingerF" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Zechen</td><td><input id="editZechen" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Taschendiebstahl</td><td><input id="editTaschenD" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <!-- TODO: Clear der Inputs einbauen -->
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" id="submitKörpertalente" class="btn btn-default" data-dismiss="modal">Save</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="modalwissenstalente" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Wissenstalente Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-        </div>
-        <div class="modal-body">
-          <table class="table table-striped table-responsive">
-            <tbody>
-              <tr>
-                <td>Heilung</td>
-                <td><input id="editHeilung" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                 </td>
-              </tr>
-              <tr>
-                <td>Gifte</td><td><input id="editGifte" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Schriften</td><td><input id="editSchriften" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Magie</td><td><input id="editMagie" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Gassenwissen</td><td><input id="editGassenwissen" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Weltenkenntnis</td><td><input id="editWeltenkenntnis" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Sprachen</td><td><input id="editSprachen" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Anatomie</td><td><input id="editAnatomie" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <!-- TODO: Clear der Inputs einbauen -->
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" id="submitwissenstalente" class="btn btn-default" data-dismiss="modal">Save</button>
+    <div class="modal fade" id="modalkoerpertalente" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">körpertalente modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped table-responsive">
+              <tbody>
+                <tr>
+                  <td>Schleichen</td>
+                  <td><input id="editSchleichen" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Aufmerksamkeit</td>
+                  <td><input id="editAufm" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Robustheit</td>
+                  <td><input id="editRobustheit" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Fingerfertigkeit</td>
+                  <td><input id="editFingerF" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Zechen</td>
+                  <td><input id="editZechen" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Taschendiebstahl</td>
+                  <td><input id="editTaschenD" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <!-- TODO: Clear der Inputs einbauen -->
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="submitKörpertalente" class="btn btn-default" data-dismiss="modal">Save</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="modal fade" id="modaleinhandwaffen" role="dialog">
+    <div class="modal fade" id="modalwissenstalente" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Wissenstalente Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped table-responsive">
+              <tbody>
+                <tr>
+                  <td>Heilung</td>
+                  <td><input id="editHeilung" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gifte</td>
+                  <td><input id="editGifte" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Schriften</td>
+                  <td><input id="editSchriften" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Magie</td>
+                  <td><input id="editMagie" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Gassenwissen</td>
+                  <td><input id="editGassenwissen" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Weltenkenntnis</td>
+                  <td><input id="editWeltenkenntnis" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Sprachen</td>
+                  <td><input id="editSprachen" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Anatomie</td>
+                  <td><input id="editAnatomie" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <!-- TODO: Clear der Inputs einbauen -->
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="submitwissenstalente" class="btn btn-default" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modaleinhandwaffen" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
@@ -665,22 +710,25 @@
                   <td><input id="editEinhandschwerter" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
-                   </td>
+                  </td>
                 </tr>
                 <tr>
-                  <td>Beile</td><td><input id="editBeile" type="number">
+                  <td>Beile</td>
+                  <td><input id="editBeile" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Flegel</td><td><input id="editFlegel" type="number">
+                  <td>Flegel</td>
+                  <td><input id="editFlegel" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Dolche</td><td><input id="editDolche" type="number">
+                  <td>Dolche</td>
+                  <td><input id="editDolche" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
@@ -697,119 +745,128 @@
       </div>
     </div>
 
-  <div class="modal fade" id="modalnaturtalente" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Naturtalente Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-        </div>
-        <div class="modal-body">
-          <table class="table table-striped table-responsive">
-            <tbody>
-              <tr>
-                <td>Kräuterkunde</td>
-                <td><input id="editkraeuter" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                 </td>
-              </tr>
-              <tr>
-                <td>Tierkunde</td><td><input id="edittierkunde" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Geographie</td><td><input id="editgeographie" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Überleben</td><td><input id="editueberleben" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Orientierung</td><td><input id="editorientierung" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Fährtenlesen</td><td><input id="editfaehrtenlesen" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <!-- TODO: Clear der Inputs einbauen -->
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" id="submitnaturtalente" class="btn btn-default" data-dismiss="modal">Save</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal fade" id="modalgesellschaftstalente" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Gesellschaftstalente Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-        </div>
-        <div class="modal-body">
-          <table class="table table-striped table-responsive">
-            <tbody>
-              <tr>
-                <td>Feilschen</td>
-                <td><input id="editfeilschen" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                 </td>
-              </tr>
-              <tr>
-                <td>Überreden</td><td><input id="editueberreden" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Betören</td><td><input id="editbetoeren" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Etikette</td><td><input id="editetikette" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-              <tr>
-              <td>Menschenkenntnis</td><td><input id="editmenschenkentnis" type="number">
-                  <button type="button" class="btn btn-success blussi">+</button>
-                  <button type="button" class="btn btn-danger minus">-</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <!-- TODO: Clear der Inputs einbauen -->
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" id="submitgesellschaftstalente" class="btn btn-default" data-dismiss="modal">Save</button>
+    <div class="modal fade" id="modalnaturtalente" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Naturtalente Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped table-responsive">
+              <tbody>
+                <tr>
+                  <td>Kräuterkunde</td>
+                  <td><input id="editkraeuter" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tierkunde</td>
+                  <td><input id="edittierkunde" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Geographie</td>
+                  <td><input id="editgeographie" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Überleben</td>
+                  <td><input id="editueberleben" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Orientierung</td>
+                  <td><input id="editorientierung" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Fährtenlesen</td>
+                  <td><input id="editfaehrtenlesen" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <!-- TODO: Clear der Inputs einbauen -->
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="submitnaturtalente" class="btn btn-default" data-dismiss="modal">Save</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="modal fade" id="modalspezialtalente" role="dialog">
+    <div class="modal fade" id="modalgesellschaftstalente" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Gesellschaftstalente Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+          </div>
+          <div class="modal-body">
+            <table class="table table-striped table-responsive">
+              <tbody>
+                <tr>
+                  <td>Feilschen</td>
+                  <td><input id="editfeilschen" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Überreden</td>
+                  <td><input id="editueberreden" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Betören</td>
+                  <td><input id="editbetoeren" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Etikette</td>
+                  <td><input id="editetikette" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Menschenkenntnis</td>
+                  <td><input id="editmenschenkentnis" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <!-- TODO: Clear der Inputs einbauen -->
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" id="submitgesellschaftstalente" class="btn btn-default" data-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalspezialtalente" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
@@ -824,28 +881,32 @@
                   <td><input id="editreiten" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
-                   </td>
+                  </td>
                 </tr>
                 <tr>
-                  <td>Schwimmen</td><td><input id="editschwimmen" type="number">
+                  <td>Schwimmen</td>
+                  <td><input id="editschwimmen" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Klettern</td><td><input id="editklettern" type="number">
+                  <td>Klettern</td>
+                  <td><input id="editklettern" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Gaukeleien</td><td><input id="editegaukeleien" type="number">
+                  <td>Gaukeleien</td>
+                  <td><input id="editegaukeleien" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                <td>Seefahrt</td><td><input id="editseefahrt" type="number">
+                  <td>Seefahrt</td>
+                  <td><input id="editseefahrt" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
@@ -862,7 +923,7 @@
       </div>
     </div>
 
-  <div class="modal fade" id="modalzweihandwaffen" role="dialog">
+    <div class="modal fade" id="modalzweihandwaffen" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
@@ -873,31 +934,36 @@
             <table class="table table-striped table-responsive">
               <tbody>
                 <tr>
-                  <td>Schwerter</td> <td><input id="editzweihandschwerter" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                   </td>
-                </tr>
-                <tr>
-                  <td>Äxte</td><td><input id="editaexte" type="number">
+                  <td>Schwerter</td>
+                  <td><input id="editzweihandschwerter" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Kolben</td><td><input id="editkolben" type="number">
+                  <td>Äxte</td>
+                  <td><input id="editaexte" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Stäbe</td><td><input id="editstaebe" type="number">
+                  <td>Kolben</td>
+                  <td><input id="editkolben" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                <td>Stangenwaffen</td><td><input id="editstangenwaffen" type="number">
+                  <td>Stäbe</td>
+                  <td><input id="editstaebe" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Stangenwaffen</td>
+                  <td><input id="editstangenwaffen" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
@@ -914,7 +980,7 @@
       </div>
     </div>
 
-  <div class="modal fade" id="modalfernkampf" role="dialog">
+    <div class="modal fade" id="modalfernkampf" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
@@ -925,19 +991,22 @@
             <table class="table table-striped table-responsive">
               <tbody>
                 <tr>
-                  <td>Wurfwaffen</td> <td><input id="editwurfwaffen" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                   </td>
-                </tr>
-                <tr>
-                  <td>Bögen</td><td><input id="editboegen" type="number">
+                  <td>Wurfwaffen</td>
+                  <td><input id="editwurfwaffen" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Armbrüste</td><td><input id="editarmbrueste" type="number">
+                  <td>Bögen</td>
+                  <td><input id="editboegen" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Armbrüste</td>
+                  <td><input id="editarmbrueste" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
@@ -954,7 +1023,7 @@
       </div>
     </div>
 
-  <div class="modal fade" id="modalanderewaffen" role="dialog">
+    <div class="modal fade" id="modalanderewaffen" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
@@ -965,19 +1034,22 @@
             <table class="table table-striped table-responsive">
               <tbody>
                 <tr>
-                  <td>Schilde</td> <td><input id="editschilde" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                   </td>
-                </tr>
-                <tr>
-                  <td>Exotische Waffen</td><td><input id="editexotische" type="number">
+                  <td>Schilde</td>
+                  <td><input id="editschilde" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
                 </tr>
                 <tr>
-                  <td>Unbewaffnet</td><td><input id="editunbewaffnet" type="number">
+                  <td>Exotische Waffen</td>
+                  <td><input id="editexotische" type="number">
+                    <button type="button" class="btn btn-success blussi">+</button>
+                    <button type="button" class="btn btn-danger minus">-</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Unbewaffnet</td>
+                  <td><input id="editunbewaffnet" type="number">
                     <button type="button" class="btn btn-success blussi">+</button>
                     <button type="button" class="btn btn-danger minus">-</button>
                   </td>
@@ -994,276 +1066,292 @@
       </div>
     </div>
 
-  </body>
+</body>
 
-  <div class="modal fade" id="modalhandwerkstalente" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Handwerkstalente Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-          </div>
-          <div class="modal-body">
-            <table class="table table-striped table-responsive">
-              <tbody>
-                <tr>
-                  <td>Schmieden</td> <td><input id="editschmieden" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                   </td>
-                </tr>
-                <tr>
-                  <td>Lederverarbeitung</td><td><input id="editlederverarbeitung" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Holzverarbeitung</td><td><input id="editholzverarbeitung" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Koch</td><td><input id="editkoch" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-                <tr>
-                <td>Lehren</td><td><input id="editlehren" type="number">
-                    <button type="button" class="btn btn-success blussi">+</button>
-                    <button type="button" class="btn btn-danger minus">-</button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <!-- TODO: Clear der Inputs einbauen -->
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" id="submithandwerkstalente" class="btn btn-default" data-dismiss="modal">Save</button>
-          </div>
-        </div>
+<div class="modal fade" id="modalhandwerkstalente" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Handwerkstalente Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
       </div>
-    </div>
-
-  <div class="modal fade" id="modalspielerruestungen" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Spielerrüstungen Bonus/Malus Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-          </div>
-          <div id="modtabruestung" class="modal-body">
-            <table class="table table-striped table-responsive">
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <!-- TODO: Clear der Inputs einbauen -->
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" id="submitspielerruesungen" class="btn btn-default" data-dismiss="modal">Save</button>
-          </div>
-        </div>
+      <div class="modal-body">
+        <table class="table table-striped table-responsive">
+          <tbody>
+            <tr>
+              <td>Schmieden</td>
+              <td><input id="editschmieden" type="number">
+                <button type="button" class="btn btn-success blussi">+</button>
+                <button type="button" class="btn btn-danger minus">-</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Lederverarbeitung</td>
+              <td><input id="editlederverarbeitung" type="number">
+                <button type="button" class="btn btn-success blussi">+</button>
+                <button type="button" class="btn btn-danger minus">-</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Holzverarbeitung</td>
+              <td><input id="editholzverarbeitung" type="number">
+                <button type="button" class="btn btn-success blussi">+</button>
+                <button type="button" class="btn btn-danger minus">-</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Koch</td>
+              <td><input id="editkoch" type="number">
+                <button type="button" class="btn btn-success blussi">+</button>
+                <button type="button" class="btn btn-danger minus">-</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Lehren</td>
+              <td><input id="editlehren" type="number">
+                <button type="button" class="btn btn-success blussi">+</button>
+                <button type="button" class="btn btn-danger minus">-</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-
-  <div class="modal fade" id="modspielerruestwert" role="dialog">
-      <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Spielerrüstungswert Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-          </div>
-          <div id="modtabruestungwert" class="modal-body">
-            <table class="table table-striped table-responsive">
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <!-- TODO: Clear der Inputs einbauen -->
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" id="submitspielerruesungswert" class="btn btn-default" data-dismiss="modal">Save</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <div class="modal fade" id="modalFinalATPA" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="titelATPA">TEST<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-        </div>
-        <div id="modtabATPA" class="modal-body">
-          <table class="table table-striped table-responsive">
-            <tbody>
-            </tbody>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <!-- TODO: Clear der Inputs einbauen -->
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" id="submitfinalATPA" class="btn btn-default" data-dismiss="modal">Save</button>
-        </div>
+      <div class="modal-footer">
+        <!-- TODO: Clear der Inputs einbauen -->
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submithandwerkstalente" class="btn btn-default" data-dismiss="modal">Save</button>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade input-group mb-3" id="modaladdwaffe" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Neue Waffe hinzufügen<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-        </div>
-        <div class="modal-body">
-          <table class="table table-striped table-responsive">
-            <tbody>
-              <tr>
-                <td>Waffenname</td> <td><input id="Waffenname" class="form-control" type="text" maxlength="100">
-                </td>
-              </tr>
-              <tr>
-                <td>Waffenart</td> <td>
-                    <div class="input-group mb-3">
-                        <select class="custom-select" id="Waffenartauswahl">
-                          <option selected>Waffenartauswahl</option>
-                          <option value="1">Einhandschwer</option>
-                          <option value="2">Beil</option>
-                          <option value="3">Flegel</option>
-                          <option value="4">Dolch</option>
-                          <option value="5">Zweihandschwert</option>
-                          <option value="6">Axt</option>
-                          <option value="7">Kolben</option>
-                          <option value="8">Stab</option>
-                          <option value="9">Stangenwaffe</option>
-                          <option value="10">Schild</option>
-                          <option value="11">Unbewaffnet</option>
-                          <option value="12">Bogen</option>
-                          <option value="13">Armbrust</option>
-                          <option value="14">Wurfwaffe</option>
-                        </select>
-                    </div>
-                   </td>
-                </tr>
-                <tr>
-                <td>Exotisch</td> <td>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-                      <input type="radio" class="form-check-input WaffenexoRadio" value="1" name="optradio">Ja
-                    </label>
-                  </div>
-                  <div class="form-check-inline">
-                    <label class="form-check-label">
-                      <input type="radio" class="form-check-input WaffenexoRadio" value="0" name="optradio">Nein
-                    </label>
-                  </div>
-                </tr>
-                <tr>
-                  <td>Beschreibung</td> <td><input class="form-control" id="Waffenbeschreibung" type="text" maxlength="100">
-                   </td>
-                </tr>
-                <tr>
-                  <td>Würfelschaden</td><td><input class="form-control" id="WaffenWuerfel" type="text" maxlength="30">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Zusatzschaden</td><td><input class="form-control" id="WaffenZschaden" type="number" min="0">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Attackebonus</td><td><input class="form-control" id="WaffeATKBonus" type="number" min="0">
-                  </td>
-                </tr>
-                <tr>
-                <td>Paradebonus</td><td><input class="form-control" id="WaffePABonus" type="number" min="0">
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <!-- TODO: Clear der Inputs einbauen -->
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" id="submitNeueWaffe" class="btn btn-default" data-dismiss="modal">Save</button>
-          </div>
-        </div>
+<div class="modal fade" id="modalspielerruestungen" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Spielerrüstungen Bonus/Malus Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
       </div>
-    </div>
-
-    <div class="modal fade input-group mb-3" id="modalInventaredit" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title" id="titelInventar">TEST<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-        </div>
-        <div id="modtabInventar" class="modal-body">
-          <table class="table table-striped table-responsive">
-            <tbody>
-            </tbody>
-          </table>
-        </div>
-        <div class="modal-footer">
-          <button type="button" id="deleteItem" class="btn btn-danger pull-left" data-dismiss="modal">Delete</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="button" id="submitInventaredit" class="btn btn-default" data-dismiss="modal">Save</button>
-        </div>
+      <div id="modtabruestung" class="modal-body">
+        <table class="table table-striped table-responsive">
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <!-- TODO: Clear der Inputs einbauen -->
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submitspielerruesungen" class="btn btn-default" data-dismiss="modal">Save</button>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="modal fade input-group mb-3" id="modaladdrues" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Neue Rüstung hinzufügen<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-        </div>
-        <div class="modal-body">
-          <table class="table table-striped table-responsive">
-            <tbody>
-              <tr>
-                <td>Rüstungsname+Beschreibung</td> <td><input id="ADDruestungsname" class="form-control" type="text" maxlength="100">
-                </td>
-              </tr>
-                <tr>
-                  <td>Rüstungswert</td><td><input class="form-control" id="Addruestwert" type="number" min="0">
-                  </td>
-                </tr>
-                <tr>
-                  <td>Ausrüstungsmodifikation</td><td><input class="form-control" id="AddruestAM" type="number">
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <!-- TODO: Clear der Inputs einbauen -->
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" id="submitNeueRues" class="btn btn-default" data-dismiss="modal">Save</button>
-          </div>
-        </div>
+<div class="modal fade" id="modspielerruestwert" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Spielerrüstungswert Modifikation<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+      </div>
+      <div id="modtabruestungwert" class="modal-body">
+        <table class="table table-striped table-responsive">
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <!-- TODO: Clear der Inputs einbauen -->
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submitspielerruesungswert" class="btn btn-default" data-dismiss="modal">Save</button>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="modal fade input-group mb-3" id="modalregister" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title">Neue Charakter registrieren<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
-        </div>
-        <div class="modal-body">
+<div class="modal fade" id="modalFinalATPA" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="titelATPA">TEST<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+      </div>
+      <div id="modtabATPA" class="modal-body">
+        <table class="table table-striped table-responsive">
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <!-- TODO: Clear der Inputs einbauen -->
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submitfinalATPA" class="btn btn-default" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-          <div class="container">
-            <!--Verschiedenen Talentwerteingaben-->
-            <!--
+<div class="modal fade input-group mb-3" id="modaladdwaffe" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Neue Waffe hinzufügen<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped table-responsive">
+          <tbody>
+            <tr>
+              <td>Waffenname</td>
+              <td><input id="Waffenname" class="form-control" type="text" maxlength="100">
+              </td>
+            </tr>
+            <tr>
+              <td>Waffenart</td>
+              <td>
+                <div class="input-group mb-3">
+                  <select class="custom-select" id="Waffenartauswahl">
+                    <option selected>Waffenartauswahl</option>
+                    <option value="1">Einhandschwer</option>
+                    <option value="2">Beil</option>
+                    <option value="3">Flegel</option>
+                    <option value="4">Dolch</option>
+                    <option value="5">Zweihandschwert</option>
+                    <option value="6">Axt</option>
+                    <option value="7">Kolben</option>
+                    <option value="8">Stab</option>
+                    <option value="9">Stangenwaffe</option>
+                    <option value="10">Schild</option>
+                    <option value="11">Unbewaffnet</option>
+                    <option value="12">Bogen</option>
+                    <option value="13">Armbrust</option>
+                    <option value="14">Wurfwaffe</option>
+                  </select>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Exotisch</td>
+              <td>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input WaffenexoRadio" value="1" name="optradio">Ja
+                  </label>
+                </div>
+                <div class="form-check-inline">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input WaffenexoRadio" value="0" name="optradio">Nein
+                  </label>
+                </div>
+            </tr>
+            <tr>
+              <td>Beschreibung</td>
+              <td><input class="form-control" id="Waffenbeschreibung" type="text" maxlength="100">
+              </td>
+            </tr>
+            <tr>
+              <td>Würfelschaden</td>
+              <td><input class="form-control" id="WaffenWuerfel" type="text" maxlength="30">
+              </td>
+            </tr>
+            <tr>
+              <td>Zusatzschaden</td>
+              <td><input class="form-control" id="WaffenZschaden" type="number" min="0">
+              </td>
+            </tr>
+            <tr>
+              <td>Attackebonus</td>
+              <td><input class="form-control" id="WaffeATKBonus" type="number" min="0">
+              </td>
+            </tr>
+            <tr>
+              <td>Paradebonus</td>
+              <td><input class="form-control" id="WaffePABonus" type="number" min="0">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <!-- TODO: Clear der Inputs einbauen -->
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submitNeueWaffe" class="btn btn-default" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade input-group mb-3" id="modalInventaredit" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="titelInventar">TEST<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+      </div>
+      <div id="modtabInventar" class="modal-body">
+        <table class="table table-striped table-responsive">
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="deleteItem" class="btn btn-danger pull-left" data-dismiss="modal">Delete</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submitInventaredit" class="btn btn-default" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade input-group mb-3" id="modaladdrues" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Neue Rüstung hinzufügen<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped table-responsive">
+          <tbody>
+            <tr>
+              <td>Rüstungsname+Beschreibung</td>
+              <td><input id="ADDruestungsname" class="form-control" type="text" maxlength="100">
+              </td>
+            </tr>
+            <tr>
+              <td>Rüstungswert</td>
+              <td><input class="form-control" id="Addruestwert" type="number" min="0">
+              </td>
+            </tr>
+            <tr>
+              <td>Ausrüstungsmodifikation</td>
+              <td><input class="form-control" id="AddruestAM" type="number">
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <!-- TODO: Clear der Inputs einbauen -->
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="submitNeueRues" class="btn btn-default" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade input-group mb-3" id="modalregister" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Neue Charakter registrieren<button type="button" class="close" data-dismiss="modal">&times;</button></h4>
+      </div>
+      <div class="modal-body">
+
+        <div class="container">
+          <!--Verschiedenen Talentwerteingaben-->
+          <!--
             <div class="stepwizard col-md-offset-3">
                 <div class="stepwizard-row setup-panel">
                   <div class="stepwizard-step">
@@ -1334,215 +1422,215 @@
                 </div>
               </div>
             -->
-            <div style="text-align:center;margin-top:40px;">
-              <span class="step"></span>
-              <span class="step"></span>
-              <span class="step"></span>
-              <span class="step"></span>
-              <span class="step"></span>
-              <span class="step"></span>
-              <span class="step"></span>
-            </div>
+          <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+          </div>
 
-              <form role="form" action="">
-              <div class="row setup-content" id="step-Allgemein">
-                <div class="col-xs-6 col-md-offset-3">
-                  <div class="col-md-12">
-                    <h3>Allgemein</h3>
-                    <div class="form-group">
-                      <label class="control-label">Name</label>
-                      <input id="reg_Name" maxlength="100" type="text" class="form-control" placeholder="Enter Name"  />
-                    </div>
-                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+          <form role="form" action="">
+            <div class="row setup-content" id="step-Allgemein">
+              <div class="col-xs-6 col-md-offset-3">
+                <div class="col-md-12">
+                  <h3>Allgemein</h3>
+                  <div class="form-group">
+                    <label class="control-label">Name</label>
+                    <input id="reg_Name" maxlength="100" type="text" class="form-control" placeholder="Enter Name" />
                   </div>
+                  <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
                 </div>
               </div>
-
-              <div class="row setup-content talentcontent" id="step-Basiswerte" style="display:none;">
-                <div class="col-xs-6 col-md-offset-3">
-                  <div class="col-md-12">
-                    <h3>Basiswerte</h3>
-
-                    <div class="form-group">
-                      <label class="control-label">Klugheit (KL) Basis</label>
-                      <input id="reg_klb" type="number" class="form-control basist" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Klugheit Bonus/Malus</label>
-                      <input id="reg_klmod" value="0" type="number" class="form-control modt" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Gewandtheit (GEW) Basis</label>
-                      <input id="reg_gewb" type="number" class="form-control basist" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Gewandtheit Bonus/Malus</label>
-                      <input id="reg_gewmod" value="0" type="number" class="form-control modt" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Geschicklichkeit (GSK) Basis</label>
-                      <input id="reg_gskb" type="number" class="form-control basist" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Geschicklichkeit Bonus/Malus</label>
-                      <input id="reg_gskmod" value="0" type="number" class="form-control modt" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Charisma (CHA) Basis</label>
-                      <input id="reg_chab" type="number" class="form-control basist" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Charisma Bonus/Malus</label>
-                      <input id="reg_chamod" value="0" type="number" class="form-control modt" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Mut (MUT) Basis</label>
-                      <input id="reg_mutb" type="number" class="form-control basist" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Mut Bonus/Malus</label>
-                      <input id="reg_mutmod" value="0" type="number" class="form-control modt" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Konstitution (KON) Basis</label>
-                      <input id="reg_konb" type="number" class="form-control basist" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Konstitution Bonus/Malus</label>
-                      <input id="reg_konmod" value="0" type="number" class="form-control modt" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Körperkraft (KK) Basis</label>
-                      <input id="reg_kkb" type="number" class="form-control basist" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Körperkraft Bonus/Malus</label>
-                      <input id="reg_kkmod" value="0" type="number" class="form-control modt" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Intuition (IN) Basis</label>
-                      <input id="reg_intb" type="number" class="form-control basist" max="20" />
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Intuition Bonus/Malus</label>
-                      <input id="reg_intmod" value="0" type="number" class="form-control modt" max="20" />
-                    </div>
-
-                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
-                  </div>
-                </div>
-              </div>
-
-                <div class="row setup-content talentcontent" id="step-Magietalente" style="display:none;">
-                  <div class="col-xs-6 col-md-offset-3">
-                    <div class="col-md-12">
-                      <h3>Magietalente</h3>
-                        <div class="form-group">
-                          <label class="control-label">Luft (KL) Basis</label>
-                          <input id="reg_magluftb" type="number" class="form-control basist" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Luft Bonus/Malus</label>
-                          <input id="reg_magluftmod" value="0" type="number" class="form-control modt" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Wasser (GEW) Basis</label>
-                          <input id="reg_magwasserb" type="number" class="form-control basist" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Wasser Bonus/Malus</label>
-                          <input id="reg_magwassermod" value="0" type="number" class="form-control modt" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Erde (GSK) Basis</label>
-                          <input id="reg_magerdeb" type="number" class="form-control basist" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Erde Bonus/Malus</label>
-                          <input id="reg_magerdemod" value="0" type="number" class="form-control modt" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Das Lebende (CHA) Basis</label>
-                          <input id="reg_magdaslebendeb" type="number" class="form-control basist" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Das Lebende Bonus/Malus</label>
-                          <input id="reg_magdaslebendemod" value="0" type="number" class="form-control modt" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Feuer (MUT) Basis</label>
-                          <input id="reg_magfeuerb" type="number" class="form-control basist" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Feuer Bonus/Malus</label>
-                          <input id="reg_magfeuermod" value="0"  type="number" class="form-control modt" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Eis (KON) Basis</label>
-                          <input id="reg_mageisb" type="number" class="form-control basist" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Eis Bonus/Malus</label>
-                          <input id="reg_mageismod" value="0" type="number" class="form-control modt" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Metall (KK) Basis</label>
-                          <input id="reg_magmetallb" type="number" class="form-control basist" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Metall Bonus/Malus</label>
-                          <input id="reg_magmetallmod" value="0" type="number" class="form-control modt" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Das Tote (IN) Basis</label>
-                          <input id="reg_magdastoteb" type="number" class="form-control basist" max="20" />
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label">Das Tote Bonus/Malus</label>
-                          <input id="reg_magdastotemod" value="0" type="number" class="form-control modt" max="20" />
-                        </div>
-
-                      <button class="btn btn-success btn-lg pull-right" id="req_submit" >Submit</button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-
             </div>
 
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+            <div class="row setup-content talentcontent" id="step-Basiswerte" style="display:none;">
+              <div class="col-xs-6 col-md-offset-3">
+                <div class="col-md-12">
+                  <h3>Basiswerte</h3>
+
+                  <div class="form-group">
+                    <label class="control-label">Klugheit (KL) Basis</label>
+                    <input id="reg_klb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Klugheit Bonus/Malus</label>
+                    <input id="reg_klmod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Gewandtheit (GEW) Basis</label>
+                    <input id="reg_gewb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Gewandtheit Bonus/Malus</label>
+                    <input id="reg_gewmod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Geschicklichkeit (GSK) Basis</label>
+                    <input id="reg_gskb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Geschicklichkeit Bonus/Malus</label>
+                    <input id="reg_gskmod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Charisma (CHA) Basis</label>
+                    <input id="reg_chab" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Charisma Bonus/Malus</label>
+                    <input id="reg_chamod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Mut (MUT) Basis</label>
+                    <input id="reg_mutb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Mut Bonus/Malus</label>
+                    <input id="reg_mutmod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Konstitution (KON) Basis</label>
+                    <input id="reg_konb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Konstitution Bonus/Malus</label>
+                    <input id="reg_konmod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Körperkraft (KK) Basis</label>
+                    <input id="reg_kkb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Körperkraft Bonus/Malus</label>
+                    <input id="reg_kkmod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Intuition (IN) Basis</label>
+                    <input id="reg_intb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Intuition Bonus/Malus</label>
+                    <input id="reg_intmod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+
+                  <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row setup-content talentcontent" id="step-Magietalente" style="display:none;">
+              <div class="col-xs-6 col-md-offset-3">
+                <div class="col-md-12">
+                  <h3>Magietalente</h3>
+                  <div class="form-group">
+                    <label class="control-label">Luft (KL) Basis</label>
+                    <input id="reg_magluftb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Luft Bonus/Malus</label>
+                    <input id="reg_magluftmod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Wasser (GEW) Basis</label>
+                    <input id="reg_magwasserb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Wasser Bonus/Malus</label>
+                    <input id="reg_magwassermod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Erde (GSK) Basis</label>
+                    <input id="reg_magerdeb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Erde Bonus/Malus</label>
+                    <input id="reg_magerdemod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Das Lebende (CHA) Basis</label>
+                    <input id="reg_magdaslebendeb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Das Lebende Bonus/Malus</label>
+                    <input id="reg_magdaslebendemod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Feuer (MUT) Basis</label>
+                    <input id="reg_magfeuerb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Feuer Bonus/Malus</label>
+                    <input id="reg_magfeuermod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Eis (KON) Basis</label>
+                    <input id="reg_mageisb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Eis Bonus/Malus</label>
+                    <input id="reg_mageismod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Metall (KK) Basis</label>
+                    <input id="reg_magmetallb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Metall Bonus/Malus</label>
+                    <input id="reg_magmetallmod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Das Tote (IN) Basis</label>
+                    <input id="reg_magdastoteb" type="number" class="form-control basist" max="20" />
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label">Das Tote Bonus/Malus</label>
+                    <input id="reg_magdastotemod" value="0" type="number" class="form-control modt" max="20" />
+                  </div>
+
+                  <button class="btn btn-success btn-lg pull-right" id="req_submit">Submit</button>
+                </div>
+              </div>
+            </div>
+          </form>
+
         </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-
-
   </div>
-  <div id="Kampfsheet" class="container-fluid">
-		<span class="ueberschriftspan"> <input class="togglenavspan" type="image" src="source/images/ArrowDown.svg" style="display:none">
-      	<input class="togglenavspan" type="image" src="source/images/ArrowRight.svg" >
-        <h1>Kampffeld</h1>
-		</span>
+</div>
 
-<div id="kampfobjekts">
-  <nav id="kampfnav" style="display:none;" class="navbar navbar-expand-lg navbar-light bg-light">
-       <!-- <button type="button" id="charsymbolbtn">Figursymbol</button> -->
-        <button id="canvasoutzoom" type="button" class="btn btn-light btn-sm">-</button>
-        <button id="canvasinzoom" type="button" class="btn btn-light btn-sm">+</button>
 
-    <select id="Schlachtfeldselect" class="w-25 custom-select">
-      <option selected disabled>Schlaftfeld</option>
-      <option value="1">Brücke</option>
-      <option value="2">Dorf</option>
-      <option value="3">Sand</option>
-      <option value="4">Schnee</option>
-      <option value="5">Stadt</option>
-      <option value="6">Stein</option>
-      <option value="7">Wiese</option>
-    </select>
-    <select class="w-25 custom-select" id="SymbolSelect">
+</div>
+<div id="Kampfsheet" class="container-fluid">
+  <span class="ueberschriftspan"> <input class="togglenavspan" type="image" src="source/images/ArrowDown.svg" style="display:none">
+    <input class="togglenavspan" type="image" src="source/images/ArrowRight.svg">
+    <h1>Kampffeld</h1>
+  </span>
+
+  <div id="kampfobjekts">
+    <nav id="kampfnav" style="display:none;" class="navbar navbar-expand-lg navbar-light bg-light">
+      <!-- <button type="button" id="charsymbolbtn">Figursymbol</button> -->
+      <button id="canvasoutzoom" type="button" class="btn btn-light btn-sm">-</button>
+      <button id="canvasinzoom" type="button" class="btn btn-light btn-sm">+</button>
+
+      <select id="Schlachtfeldselect" class="w-25 custom-select">
+        <option selected disabled>Schlaftfeld</option>
+        <option value="1">Brücke</option>
+        <option value="2">Dorf</option>
+        <option value="3">Sand</option>
+        <option value="4">Schnee</option>
+        <option value="5">Stadt</option>
+        <option value="6">Stein</option>
+        <option value="7">Wiese</option>
+      </select>
+      <select class="w-25 custom-select" id="SymbolSelect">
         <option selected disabled>Figursymbol</option>
         <option value="1">Gegner Priester</option>
         <option value="2">Gegner Magier</option>
@@ -1558,16 +1646,18 @@
       <div class="input-group-append">
         <button class="btn btn-outline-secondary" id="charsymbolbtn" type="button">Erzeugen</button>
       </div>
-  </nav>
- </div>
-      <canvas id="canvas">
-        This text is displayed if your browser does not support HTML5 Canvas.
-     </canvas>
+    </nav>
+  </div>
+  <canvas id="canvas">
+    This text is displayed if your browser does not support HTML5 Canvas.
+  </canvas>
 
-     <!--
+  <!--
       <canvas id="konva" width="200%" height="200%">
         This text is displayed if your browser does not support HTML5 Canvas.
       </canvas>
     -->
-  </div>
+</div>
+</div>
+
 </html>

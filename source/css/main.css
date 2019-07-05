@@ -1,5 +1,5 @@
 table tr th::first-letter {
-    text-transform:capitalize;
+  text-transform: capitalize;
 }
 
 /*
@@ -21,27 +21,30 @@ span > h2 {
   display: inline-block;
 }
 */
-.nichterlernt{
+.nichterlernt {
   /* Ist noch buggy! */
   /* background-color: #f9c7c7; */
 }
-.fullrestbtn{
+
+.fullrestbtn {
   background-color: #379627;
 }
-.ueberschriftspan{
+
+.ueberschriftspan {
   display: inline-flex;
 }
 
-#canvas{
-/*  background: url('/source/kampffeld/hintergrund/Brucke.jpg');*/
+#canvas {
+  /*  background: url('/source/kampffeld/hintergrund/Brucke.jpg');*/
   border: 1px solid black;
   max-width: 100%;
   min-width: 100px;
   max-height: auto;
   min-height: 400px;
 }
+
 .toggletablespan {
-  float:left;
+  float: left;
   max-width: 5%;
   min-width: 30px;
   height: auto;
@@ -49,7 +52,7 @@ span > h2 {
 }
 
 .togglenavspan {
-  float:left;
+  float: left;
   max-width: 5%;
   min-width: 30px;
   height: auto;
@@ -75,7 +78,50 @@ span > h2 {
 .step.finish {
   background-color: #4CAF50;
 }
-#SymbolSelect{
+
+#SymbolSelect {
   width: 30% !important;
 }
+
 /***/
+
+
+#sidebar, #content {
+  height: 100%;
+  overflow:auto;
+}
+
+#sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background:white;
+  width: 30%;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.5);
+  transition: width .35s;
+}
+
+#sidebar.collapsed {
+  width: 0;
+}
+
+#content {
+  background:gray;
+  width: 100%;
+}
+
+button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border:none;
+  outline:none;
+  background: black;
+  margin: 20px;
+  cursor:pointer;
+}
+
+#closer {
+  float:right;
+}
