@@ -2182,8 +2182,7 @@ function getSymbolurl(nummer:number):string{
   */
 
 $(document).on('click','.sidebarbtn',function(){
-      $('#sidebar').slideToggle(470,function() {
-      });
+      $('#sidebar').toggleClass("collapsed");
 })
 });
 //
