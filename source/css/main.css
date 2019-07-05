@@ -96,7 +96,7 @@ span > h2 {
   left: 0;
   top: 0;
   z-index: 1;
-  background:white;
+  background:#cecece;
   width: 30%;
   box-shadow: 2px 0 4px rgba(0,0,0,0.5);
   transition: width .35s;
@@ -107,19 +107,8 @@ span > h2 {
 }
 
 #content {
-  background:gray;
+  /* background:gray;*/
   width: 100%;
-}
-
-button {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border:none;
-  outline:none;
-  background: black;
-  margin: 20px;
-  cursor:pointer;
 }
 
 #closer {
