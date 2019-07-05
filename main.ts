@@ -2182,7 +2182,7 @@ function getSymbolurl(nummer:number):string{
   */
 
 $(document).on('click','.sidebarbtn',function(){
-      $('.sidebar').slideToggle(450, function() {
+      $('#sidebar').slideToggle(470,function() {
       });
 })
 });
