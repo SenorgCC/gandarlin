@@ -126,14 +126,14 @@ function sekwerte():void{
                       "initiative": "((MUT+GEW+2*IN)/5)+Aufmerksamkeit",
                       "attacke_basis" : "(GEW+MUT+KK)/5",
                       "parade_basis" : "(GEW+KK+IN)/5",
-                      "luftresistenz": "KL/4",
-                      "wasserresistenz": "GEW/4",
-                      "erdresistenz": "GSK/4",
-                      "das_lebenderesistenz": "CHA/4",
-                      "feuerresistenz" : "MUT/4",
-                      "eisresistenz" : "KON/4",
-                      "metallresistenz" : "KK/4",
-                      "das_toteresistenz" : "IN/4"}];
+                      "luftresistenz": "(KL/2)+Luftmagie",
+                      "wasserresistenz": "(GEW/2)+Wassermagie",
+                      "erdresistenz": "(GSK/2)+Erdmagie",
+                      "das_lebenderesistenz": "(CHA/2)+Das Lebendemagie",
+                      "feuerresistenz" : "(MUT/2)+Feuermagie",
+                      "eisresistenz" : "(KON/2)+Eismagie",
+                      "metallresistenz" : "(KK/2)+Metallmagie",
+                      "das_toteresistenz" : "(IN/2)+Das Totemagie"}];
   $.ajax({
       type:'POST',
       url:"/sekundaerwerte",
